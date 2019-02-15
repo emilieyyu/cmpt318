@@ -8,11 +8,11 @@ Analyzing text files using various techniques and extracting useful information 
 - 4th files
 
 ### Cleaning Up
-######time machine
-######travel
+###### time machine
+###### travel
 Manually remove errors and fix typos 'l;and' and 'manyof'  
-######xab  
-######4th file  
+###### xab  
+###### 4th file  
 
 ### Data Analysis
 Analyze by extracting useful information using:  
@@ -21,15 +21,15 @@ Analyze by extracting useful information using:
 - ngrams  
 - content words
 
-######time machine
+###### time machine
 
-######travel
+###### travel
 Script Execution *travelscript.sh*:  
 1. ```chmod +x travelscript.sh```  
 2. ```./travelscript.sh```  
 What the script does:  
 The script removes all extra tabs in front of each line. It then tokenizes the textfile and sorts based on alphabetical order, frequency, and also creates corresponding 2, 3, 4 gram files. *ngram_files* contains all temporary files created during the process for reference.
 
-######xab
+###### xab
 
-######4th file
+###### 4th file
