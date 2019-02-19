@@ -28,4 +28,21 @@ paste tmpfile3.txt tmpfile4.txt > tmpfile6.txt
 paste tmpfile6.txt tmpfile5.txt | sort | uniq -c | sort -rn > 4-grams.txt
 mkdir ngram_files
 mv tmpfile1.txt tmpfile2.txt tmpfile3.txt tmpfile4.txt tmpfile5.txt tmpfile6.txt ngram_files
+
+#lapos tagging based on frequency
+echo 'Tagging Text..'
+cat travel_types.txt | awk '{print $2}' > travel_tmp_types.txt
+cp travel_tmp_types.txt ~/Documents/GitHub/cmpt318/lapos-0.1.2/samples
+cd ..; cd lapos-0.1.2; ./lapos -m ./model_wsj02-21 < samples/travel_tmp_types.txt > travel_tag.txt
+rm  samples/travel_tmp_types.txt
+mv travel_tag.txt  ~/Documents/GitHub/cmpt318/travel
+cd ..; cd travel;
+#filtering content words
+echo 'Filtering Content Words...'
+grep '/NN' travel_tag.txt > nouns.txt
+grep '/VB' travel_tag.txt > verbs.txt
+grep '/JJ' travel_tag.txt > adj.txt
+grep '/RB' travel_tag.txt > adv.txt
+mkdir -p content_words
+mv nouns.txt verbs.txt adj.txt adv.txt content_words
 echo 'Complete.'
