@@ -1,0 +1,2128 @@
+delay, and can immediately of updates, also a common The disadvantage updated. to design
+
+or reply to the request. of CScAsr
+
+When a sender generates bursts
+
+pattern, the advantage
+
+over ABCAST is even greater. on the part of the table being it is not hard
+
+to using CBCAST is that the sender needs mutual exclusion our experience suggests that if mutual exclusion A single locking
+
+However, applications
+
+has strong benefits, may suffice
+
+to have this property.
+
+operation
+
+for a whole series structuring the data data
+
+of multicasts,
+
+and in some cases locking can be entirely
+
+avoided just by appropriate applications,
+
+itself. This translates to a huge benefit for many asynchronous presented in [BSS91 ]. The distinction settings. between causal and total event orderings system
+
+as seen in the performance
+
+(CBCAST and ABCAST) has parallels a causal delivery ordering
+
+in other as part of
+
+Although
+
+ISis was the first distributed
+
+to enforce
+
+_.n Isis applications,locks areused primarilyfor mutualexclusion on possiblyonflictingoperations,such as updateson related c data items. In the case of replicateddata.this results in an algoril_n similar to · primmy copy updatein which the "primary" copy changes dynamically.The execution model is non-transactionaL the_eis no need forresd-locks or for · two-phase locking rule. and This is discussed furtherin Sec. 7.
+
+19
+
+a communication time. Moreover,
+
+subsystem
+
+[Bir85].
+
+the approach draws on Lampon's respects anticipated
+
+prior work on logical
+
+notions of replication
+
+the approach [BHG87].
+
+was in some Similarly, software
+
+by work on primary copy both to Lamport's
+
+in database approach
+
+systems
+
+close
+
+synchrony
+
+is related
+
+state machine discussed
+
+to developing
+
+distributed
+
+[SclO0] archi_
+
+and to the database serializability has yielded a memory
+
+model,
+
+further below. consistency
+
+Work on parallel processor
+
+update model called weak in the cache
+
+[-DSB86, TH90], which uses a causal dependency And, a causal convxme_ [ABHN91]
+
+principle to increase parallelism
+
+of a parallel processo_ memory discussion mtdtiprocessors
+
+property has been used in work on/azy database systems [JB89, LLS90].
+
+update in shared A more detailed in [Sch88, BJ89].
+
+and distributed
+
+of the conditions
+
+under which _
+
+can be used in place of AI_&Vr appea_
+
+4.1
+
+Summary
+
+of benefits
+
+due to virtual
+
+synchrony
+
+Brevity precludes algorithms
+
+a more detailed discussion
+
+of virtual synchrony,
+
+or how it is used in developing the benefits of the model:
+
+distributed
+
+within ISLS. However,
+
+it may be useful to summarize
+
+. Allows code to be developed · Supports a meaningful
+
+assuming a simplified,
+
+closely
+
+synchronous
+
+execution
+
+model. replicated
+
+notion of group state and state transfer, both when groups manage is dynamically partitioned among group members.
+
+data, and when a computation · Asynchronous, · Treatment pipelined
+
+communica6o_ process group membership changes and failures through a single,
+
+of communication, execution model.
+
+event-oriented Failme
+
+handling through a consistently subsystem. This is in contrast
+
+presented
+
+system membership
+
+list integrated
+
+with the com-
+
+munication
+
+to the usual approach of sensing
+
+failures through timeouts
+
+and channels breaking, which would not guarantee consistency.
+
+The approach also has limitations:
+
+· Reduced
+
+availability
+
+during LAN partition failures:
+
+only allows progress
+
+in a single partition, and
+
+requires that a majority of sites be available in that partition. s Risks incorrectly classifying an operational site or process as faulty.
+
+The virtual synchrony theoretical
+
+model is unusual in offering
+
+these benefits
+
+within
+
+a single framework.
+
+Moreover, evade
+
+arguments exist that no system that provides consistent Our experience
+
+distributed behavior
+
+can completely
+
+these limitations.
+
+has been that the issues addressed applications, and that the approach
+
+by virtual synchrony is general, complete,
+
+are encountered and theoretically
+
+in even the simplest distributed sotmxi.
+
+2O
+
+Hgure 8: Styles of groups
+
+$
+
+The Isis Toolkit
+
+The ISlS toolkit provides a collection and implementing group-based
+
+of higher-level
+
+m_sms
+
+for forming and managing process groups of the approach by discussing of a distributed database
+
+software.
+
+This section illustrates the specifics
+
+the styles of prnce._ group supported by the system and giving application.
+
+a simple example
+
+ISlS is not the first system to use process groups as a programming developed, Cheriton's V system had received wide visibility [CZ83].
+
+tool: at the time the system
+
+was initially have
+
+More recently, group mechanisms the Chorus operating system
+
+become common,
+
+exemplified
+
+by the Ameoba system [KTHB89], system developed
+
+[RAA+88], IBM's AAS
+
+the Psync system [PBS$9], system [CDg0],
+
+a high availability
+
+by Ladin and Liskov
+
+[LLSg0],
+
+and Transis [ADKM91]. consistent
+
+Nonetheless, solutions °
+
+Isis was first to propose the virtual to a wide variety of problems
+
+synchrony model The
+
+and to offer high performance, approach is now gaining
+i
+
+through its toolkit.
+
+wide acceptance)
+
+5.1
+
+Styles of groups
+of a distributed system is limited by the information This was a consideration simplicity in developing available to the protocols employed for
+
+The efficiency communication.
+
+the Isis process group interface, of accurate
+
+where a trade, off information about
+
+had to be made between group membership introduces
+
+of the interface
+
+and the availability As a consequence, interact
+
+for use in multicast address
+
+expansion.
+
+the Isls application
+
+interface in
+
+four styles of process groups that differ in how processes
+writing our group is working with the_ _ftware
+
+with the group, illustrated
+of a new version
+
+teAt the time of _ technology
+
+Foundation which
+
+on integration
+
+of the
+
+into Mach (the OSF 1/AD version)
+
+and with Unix International,
+
+plans a reliable
+
+group mechanism
+
+for UI Atlas.
+
+21
+
+Fig. 8 (anonymousroupsarenot distinguished g fTomexplicit groups this level of the system).Isis is at optimized detect ndhandle to a each these of cases efficiently.
+Peer groups: These arise where a set of p_ cooperate closely, for example to replicate data. The
+
+membenhip
+
+is often used as an input to the algorithm used in handling requests, as for the concurrent earlier. with any group given the group's name and of a group will multicast to it repeatedly, better
+
+database search described Client-server groups:
+
+In Isis, any process can communicate However, if a non-member
+
+appropriate permissions. performance to optimize Diffusion groups:
+
+is obtained by lust registering the group addressing protocol.
+
+the sender as a c//ent of the group; this permits
+
+the system
+
+A diffusion group is a client-server
+
+group in which the clients register
+
+themselves
+
+but in
+
+which the members of the group send messages Hierarchical groups: A hie_cal Applications
+
+to the full client set and the clients are passive sinks. component groups, for
+
+group is a structure built from multiple that use the hierarchical group initially
+
+reasons of scale. are subsequently
+
+contact
+
+its root group, but be
+
+redirected to one of the constituent
+
+"subgroups".
+
+Group data would normally
+
+partitioned among the subgroups. of the hierarchy, the most common
+
+Although tools are provided for multicasting communication pattern involves interaction
+
+to the full membership between a client and
+
+the members of some subgroup.
+
+There is no requirement executed
+
+that the members of a group be identical,
+
+or even coded in the same language and an individual
+
+or
+
+on the same architecture.
+
+Moreover, multiple groups can be overlapped
+
+process
+
+can belong to as many as several hundred diffenmt groups, although further below.
+
+this is uncommon.
+
+Scaling is discussed
+
+5.2
+
+The toolkit
+
+interface
+
+As noted earlier, pipelining
+
+the performance
+
+of a distributed system of asynchronous less efficient
+
+is often limited by the degree of communication problems can be tricky, and For this reason, the toolkit paradigms. These tool by
+
+achieved.
+
+The development
+
+solutions to distributed than risk errors.
+
+many Isis users would rather employ includes asynchronous implementations
+
+solutions
+
+of the more important
+
+distributed programming
+
+include a synchronization for managing
+
+tool that supports a form of locking (based on distributed tokens), a replication primary-backup server design that load-balances
+
+replicated data, a tool for fault-tolerant
+
+making different
+
+group members act as the primary for different programming
+
+requests, and so forth (a partial list appears in d_c ISIS manual, even non-experts distributed software.
+
+in Table I. Using these tools, and following havc been successful in developing
+
+examples
+
+fault-tolerant,
+
+highly asynchronous
+
+22
+
+·
+
+Process
+
+groups:
+
+create, delete, join (transferring CBCAST, ABCAST, collecting
+
+state). 0, 1 QUORUM or ALL replies (0 replies gives an
+
+· Group multicast:
+
+asynchronousmulticas0.
+· Synchronization: Locking, with symbolic strings to represent locks. Deadlock detection or avoidance
+
+must be addressed at the application level. Token passing. Replicated processes data: Implemented by broadcasting updates to group having copies. Dynamic spooling system reconfiguration Transfer values to using replicated
+
+that join using state transfer facih'ty. data. _int/update facilities: logging,
+
+configuration Monitoring
+
+for state recovery
+
+after failure. Monitor
+
+Watch a process or site, trigger actions site failures, etc.
+
+after failures and recoveries.
+
+changes to process group membership, Distributed multiple Automated execution facilities:
+
+Redundant computation (primary/backup).
+
+(all take same action).
+
+Subdivided
+
+among
+
+servers.
+
+Coordinator-cohort
+
+recovery:
+
+When site recovers,
+
+program automatically I_se, atomically
+
+restarted.
+
+If first to recover, state
+
+loaded from logs (or initialized by soRwar¢).
+state.
+
+join active process group and transfer
+
+WAN communication:
+
+Reliablc long-haul
+
+message
+
+passing and file transfer facility.
+
+Table I: ISIS tools at process group level Figures 9 and 10 show a complete, fault-toleram database server for maintaining a mapping from names
+
+(ascii strings) to salaries Cmtegers). The example the procedures messages
+
+is in standard C. The server initializes The £s£s_ma£n].oop
+
+Isis and declares incoming
+
+that will handle update and inquiry requests.
+
+dispatches
+
+to these procedures generation
+
+as needed (other styles of main loop are also supported). and scanning is specific to the C interface,
+
+The formatted-I/O is not
+
+style of message available
+
+where type information
+
+at mntime. the current contents of the database to a server that an existing server to
+
+The "state transfer" routines are concerned with sending
+
+has just been started and is joining the group. In this situation, do a state transfer, invoking will cause to an invocation the message its state sending of zcv_st:ate p_ure.
+
+Isis arbitrarily selects
+
+Each call that this procedure makes side; in our example,
+
+to xger_out:
+
+on the receiving
+
+the latter simply passes and update). Of
+
+to the update procedure (the same mes._ge
+
+format is used by send_state it is possible
+
+course, there are many variants on this basic scheme; for example, only certain servers to join, and so forth. The client program does a pg_lookup to find the server. should be allowed to handle
+
+to indicate to the system that processes
+
+state transfer requests, to refuse to allow certain
+
+Subsequently,
+
+calls to its query and update
+
+proceduresaremapped intomessages to tlmserver. he nCAST calls T aremapped to theappropriate default 23
+
+#include #define #define main ()
+
+"isis.h" UPDATE QUERY
+
+isis_init isis_entry isis_entry
+
+(0) ; (UPDATE, (QUERY, update, query, "update") "query") ; send_state, rcv_state, 0); ;
+
+pg_join("/demos/salaries", isis_mainloop (0) ;
+
+PG_XFER,
+
+) update(._)
+register message *mp;
+
+I
+char int name[32]; salary; (rap, "%s, %d", name, ; &salary) ;
+
+_sg_get
+
+set_salary(name,
+
+salary)
+
+query
+
+(rap)
+message *mp;
+
+register
+
+char int
+
+name[32]; salary; "%s,%d",
+
+msg_get(mp, salary
+
+name)_
+
+- get_salary(name); "%d", salary);
+
+reply(mp,
+
+)
+send state()
+
+(
+struct for(sp sdb_entry sdb_head; *sp; sp !- sdb_tail; sp->s_name, sp sp->s_next) ;
+
+xfer
+
+out ("%s, %d",
+
+sp->s_salary)
+
+)
+rcv_state register (mp) message *mp;
+
+(
+update(mp);
+
+) Figure 9: A simple database servcr
+
+24
+
+#include #define #define address main ()
+
+"isis. h" UPDATE QUERY *server; 1 2
+
+isis_init /* Lookup database server pg_client
+gee
+
+(0) and register as a client (for better ; performance) */
+
+- pg_lookup("/demos/salaries") ;
+
+(server)
+
+}
+update char (name, *name; salary)
+
+bcast
+
+(server,
+
+UPDATE,
+
+"%s, %d",
+
+name,
+
+salary,
+
+0)
+
+}
+get salary (name)
+
+char
+
+*name;
+
+Ant
+
+salary; QUERY, ; "%s", name, 1, "%d", &salary);
+
+bcast(server, return (salary)
+
+Figun: I0: A clicnt of the simple database service
+
+25
+
+1RAI}ER QATA FEEDS
+
+Fignm 11: Process group architecture of brokerage system
+
+for the group - ABCAST in this case. The database server of Hgure 9 uses a redundant style of execution request and will receive multiple, identical replies from all copies. in which the client broadcasts In practice, each
+
+the client will wait for the reaction to a failure, but has where n is the size of the !/n'th
+
+first reply and ignore all others. Such an approach provides the fastest possible the disadvantage of consuming n times the w_urces of a fault-intolerant
+
+solution,
+
+process group. An alternative would have been to subdivide the search so that each server performs of the work. Here, the client would combine fails instead of replying, a condition Isis interfaces have been developed exist for UNIX-workstations responses from all the servers, in Isls.
+
+repeating the request ifa server
+
+readily detected
+
+forC, C++, Fortran, Common Lisp, Ada and Smalhalk, from all major vendors,
+
+and ports of Isis
+
+and mainframes
+
+as well as for Mach, Chorus, ISC and is represented in the
+
+SCO UNIX, the DEC VMS system, binary format used by the sending (if necessary), automatically
+
+and Honeywell's machine,
+
+Lynx OS. Data within messages
+
+and converted
+
+to the format of the destination
+
+upon reception
+
+and transparently.
+
+6
+
+Who uses Isis, and how?
+
+This section briefly reviews
+
+several Isls applications,
+
+looking
+
+at the roles that Isis plays.
+
+6.1
+
+Brokerage
+
+26
+
+A numberof
+introduction. underlying
+
+ISls users are concerned Hgure 11 illustrates employed
+
+with financial
+
+computing
+
+systems
+
+such as the one cited in the perspective in which groups one,
+
+such a system, now seen from an internal by the broker become streams of data. evident.
+
+the services
+
+The architecture
+
+is a client-server
+
+in which the servers
+
+filter and analyze
+
+Fault-tolerance
+
+here refers to two very different and reorganize there are specific
+
+aspects of the application. themselves so that service
+
+Hrst, financial is not interrupted
+
+systems
+
+must rapidly restart failed components or hardware failures. Second,
+
+by softw_
+
+system functions rebooting
+
+that require fault-tolerance
+
+at the level of files or database, such as a guarantee that after ISlS was designed
+
+a file or database manager will be able to recover local data files at low cost.
+
+to address the first sort of problem, but includes several tools for solving the latter one. Generally, information periods the approach taken is to represent key services using process groups, replicating service state
+
+so that even if one server process fails the other can respond to requests on its behalf.
+
+During
+
+when n service programs are operational, one can often exploit the redundancy to improve response must pay for fault-tolerance, begins to outweigh failures. more appm. the benefits of is
+
+time; thus, rather than asking how much such an application pilate questions concurrency, something concern the level of replication acceptable
+
+at which the overhead assuming
+
+and the minimum
+
+performance approach.
+
+k component
+
+Fault-tolerance
+
+of a side-effect
+
+of the replication computing
+
+A significant communication
+
+theme in financial primitives
+
+is use of a subscription/publication
+
+style.
+
+The basic ISls numing over the
+
+do not spool messages
+
+for future replay, hence an application ti_s functionality. a dynamically predicting varying collection
+
+system, the NEWS facility, has been developed A final aspect of brokerage systems
+
+to support
+
+ts that they _re
+
+of services.
+
+A
+
+firm may work with dozens or hundreds of financial models, instruments needed being waded under varying market Thus, systems conditions.
+
+market behavior
+
+for the financial will be
+
+Only a small subset consist of a processor
+
+of these services
+
+at any time.
+
+of this sort generally
+
+pool on which services execution and load a
+
+can be started as necessary, balancing mechanism. aspect
+
+and this creates a need to support an automatic of typical networks complicates
+
+remote
+
+The heterogeneity
+
+this problem, restrictions,
+
+by introducing or require special
+
+pattern matching processors,
+
+(i.e., certain programs may be subject to licensing
+
+or may simply have been compiled
+
+for some specific hardware configuration). described
+
+This problem is
+
+solved using the Isis network resource manager, an application
+
+later in this section.
+
+6.2
+
+Database
+
+replication
+
+and database
+
+triggers
+
+Although
+
+the Isls computation
+
+model differs from a transactional
+
+model (see also See. 7), Isis is useful
+
+in
+
+constructingistributed d databaseapplications. fact, many as halfof theapplications In as with which we are familiar are concerned with this problem. focus on replicating a database for fault-tolerance the database system or to support need not be
+
+Typical uses of Isls in database applications concurrent searches for improved
+
+performance.
+
+In such an architecture,
+
+27
+
+aware thatIslsispresent. Databaseclients ccessthedatabasethrougha layerof softwarethatmulticasts a updates (using A_A_) servers are supervised to the set of servers, by a process while issuing queries directly to the least loaded server. clients of load changes in the server updates. pool, The and
+
+group Oat informs
+
+supervises
+
+the restart of a failed server from a checkpoint
+
+and log of subsequent
+
+It is interesting
+
+to realize that even such an unsophisticated need among database users. _ would require extending standants. Beyond database replication,
+
+approach to database replication support
+
+addresses
+
+a widely perceived such as this
+
+the long run, of course, compw_ensive execution
+
+for applications
+
+Isls to support a transactional
+
+model and to implement
+
+the XA/XOpen
+
+IsIs users have developed By monitoring
+
+WAN databases by placing a local database system traffic on a LAN, updates of importance to
+
+on each LAN in a WAN system. remote users can be intercepted monitors for incoming control
+
+the update
+
+and distributed
+
+through
+
+the IsIs WAN architecture.
+
+On each LAN, a server To avoid a costly
+
+updates and applies developers
+
+them to the database server as necessary.
+
+concurrency
+
+problem,
+
+of applications
+
+such as these normally partition the database so
+
+that the data associated
+
+with each LAN is directly
+
+updated only from within that LAN. On remote LAN's, for many applications. A trigger is a query that if a if
+
+such data can only be queried and could be stale, but this is still sufficient A final use of Isls in database is incrementally specified evaluated becomes settings is to implement database
+
+_'ggers.
+
+against the database as updates true. For example, position exceeds
+
+occur, causing
+
+some action immediately to be sounded
+
+condition
+
+a broker might request that an alarm some threshold.
+
+the risk associated m_
+
+with a financial
+
+As data enters the financial
+
+database
+
+by the brokerage,
+
+such a query would be evaluated
+
+repeatedly.
+
+The role of ISlS is in providing programs
+
+tools for reliably notifying capable
+
+applications
+
+when such a trigger becomes
+
+enabled, and for developing
+
+of taking the desired actions despite failures.
+
+6.3
+
+Major
+
+Isis.based
+
+utilities
+
+In the above subsection,
+
+we alluded to some of the fault-tolerant
+
+utilities
+
+that have been built over Isis.
+
+There are currently five such systems:
+
+NEws: This application (obtaining names,
+
+supports a collection
+
+of communication
+
+topics
+
+to which users can subscribe with file-system address" style
+
+a replay of recent postings)
+
+or post messages.
+
+Topics are identified using
+
+and it is possible
+
+to post to topics
+
+on a remote network
+
+a "mail
+
+notation; The
+
+thus, a Swiss brokerage application of messages joins.
+
+firm might post some quotes to
+
+"/GENEVA/QUOT_/IBM@NEW-YORK".
+
+creates a process group for each topic, monitoring posted to it for replay to new subscribers,
+
+each such group to maintain a history
+
+using a state transfer when a new member
+
+NMGR: This program manages This involves monitoring
+
+batch-style
+
+jobs and performs
+
+load sharing in a distributed into a processor pool,
+
+setting. and then
+
+candidate
+
+machines, 28
+
+which are collected
+
+scheduling on thepool. jobs
+machines are suitable one (this criteria can readily opposed failed to running batch-style Parallel
+
+A pattern matching mechanism
+
+is used for job placement;
+
+if several
+
+for a given job, a criteria based on load and available memory be changed). When employed to manage each service critical
+
+is used to select services (as
+
+system
+
+jobs), the program monitors make is an example appficatiom
+
+and automatically program
+
+restarts that uses
+
+components.
+
+of a distributed
+
+application
+
+NMGR for job placement: machine& · Dg2EIT:. This system
+
+it compiles
+
+by fanning
+
+out compilation
+
+subtasks
+
+to compatible
+
+[SBM89]
+
+provides fault-to!erant
+
+NFS-compatible
+
+file storage. replicas)
+
+F'fles are repliand for fatdt-
+
+cated both to increase performance tolerance; the level of replication mntime.
+
+(by supporting parallel reads on different
+
+is varied depending on the style of access detected any filesit mmmged are automatically
+
+by the system at
+
+After a failed node recovers, file replication
+
+brought up to date. The file-system reactive control interface. applicaor or
+
+approach conceals · MErA/LOMrrA: lions [MCWB91, environment, monitored
+
+fzom the user, who sees an NF_-compatible system for building fault-tolerant
+
+META is an extensive Woo91]. It consists
+
+of a layer for instrumenting A sensor
+
+a distributed
+
+application
+
+by defining sensors by the system;
+
+and actuators.
+
+is any typed value that can be polled on request.
+
+an actuator is any entity capable of taking an action the status of software User-defined sensors
+
+Built-in
+
+sensors include the load on a machine, and the set of users on each machine. The "raw" sensors layer,
+
+and hardware components
+
+of the system,
+
+and actuators extend this initial set. sensors by an intermediate facility. This layer sensors, such
+
+and actuators of the lowest layer are mapped to abstract a simple database-style interface
+
+which also supports an entity-relation f_lueney
+
+and a triggering
+
+supports as polling
+
+data model and conceals Sensors
+
+many of the details of the physical can be aggregated, for example
+
+and fault-tolerance.
+
+by taking the
+
+average load on the servers that manage a replicated language, which will initiate a pre-specified
+
+database. The interface
+
+supports a simple trigger is detected. terms, called
+
+action when a specified for specifying control
+
+condition
+
+Running over Mm'A is a distributed language
+LoMrrA. LOMITA code i$ imbedded
+
+actions in high-level interpretor. triggered
+
+into the UNIX CSH command
+
+At runtime, LoMrrA by events that can
+
+control statements be sensed
+
+are expanded
+
+into distributed
+
+finite state machines
+
+local to a sensor
+
+or system component;
+
+a process group is used to implement when a monitored condition
+
+aggregates,
+
+perform these state transition, and to notify applications · SPOOLER/I_Iqo-HAUL F^_.rrY: and for saving messages This subsystem
+
+arises. [MB90] and
+
+is responsible
+
+for wide-area communication It conceals
+
+to groups that are only active periodically. communication interface.
+
+link failures
+
+presents an exactly-once
+
+6.4
+
+Other
+
+Isis applications
+
+Although
+
+this section covered
+
+a variety of Isis applications, over the system. 29
+
+brevity precludes In addition
+
+a systematic
+
+review of the full
+
+range of soRwate
+
+that has been developed
+
+to the problems
+
+cited above, Isis has
+
+beenapplied
+systems, reliable
+
+to telecommunications replacement
+
+switching for the AEGIS
+
+and "inteLligent aircraft tracking
+
+networking" and combat
+
+applications, engagement
+
+military systems, system, medical control, weather
+
+such as a proposed
+
+graphics and virtual reality applications, management and resource scheduling
+
+seismology, for shared
+
+factory automation facilities,
+
+and production and a wide-area popular
+
+computing
+
+prediction computing
+
+and storm tracking system at laboratories
+
+[1oh93, Thog0. ASC92].
+
+Isxs has also proved
+
+for scientific as a beam
+
+such as CERN and Los Alamos, accelerator,
+
+and has been applied to such problems that combines a highly parallel
+
+focusing system for a particle with a vectorized management It should architecture atmospheric
+
+a weather-simulation
+
+ocean model and resource
+
+model and displays output on advanced graphics workstations, facilities. on LAN issues,
+
+sot_ware
+
+for shared supercomputing that although
+
+also be noted
+
+the paper has focused composed
+
+Isls aLso supports
+
+a WAN cited
+
+and has been used in WANs as LAN solutions
+
+of up to ten LANs. It Many of the applications by a reliable, but less responsive, WAN layer.
+
+above are structmed
+
+intew.onnected
+
+7
+
+Isis and other distributed
+
+computing
+
+technologies
+
+Our discussion a next-generation
+
+has overlooked
+
+the sorts of real-thne
+
+issues that arise in the Advanced
+
+Automation CASD85],
+
+System, which
+
+air-traffic control
+
+system being developed model.
+
+by IBM for the FAA [CD90,
+
+also uses a process-group rondel compares
+
+based computing
+
+SimUarly, one might wonder how the Isis execution models. a lengthy Unfommately, digression. these are complex a technology issues, like the
+
+with transactional
+
+database execution to them without
+
+and it would be difficult to do justice
+
+Briefly,
+
+one used in AAS differs from ISlS in providing strong real-time are tespecte_ However, a process that experiences
+
+guarantees provided that timing assumptions
+
+a timing fault in the AAS model could receive messages because the criteria for accepting violations. or rejecting if fault of such will
+
+that other processes a message is transient a process accepL deadlin_
+
+reject, or reject messages
+
+others accept,
+
+uses the value of the local clock. (e.g. could the clock is subsequently "spread:" nothing prevents
+
+This can lead to comistency resynchmnized it from initiating
+
+Moreover,
+
+with other clocks), new multicasts,
+
+the inconsistency
+
+which other processes
+
+ISIS, on the other hand, guarantees that consistency will be achieved.
+
+will be maintained,
+
+but not that reaJ-time delivery
+
+The relationship and transactional offered
+
+between
+
+Isis and transactional are order-based focus on isolation
+
+systems execution
+
+originates models
+
+in the fact that both virtual synchrony [BHG87]. However, where the "tools" persistent between
+
+serializability
+
+by a database system
+
+of concurrent
+
+transactions
+
+from one another,
+
+data and rollback (abort) mechanisms, members of groups, failure handling,
+
+those offered in Isls are concerned
+
+with direct cooperation reconfigure
+
+and ensuring that a system can dynamically
+
+itself to make
+
+tiThe WAN ttchiteclare of isis ii similar to the I,AN structure, bet because WAN partilionJ are more common, encourages a more uynci_nous programming style. WAN communication and link state is logged 1o disk files (unlike I.AN communication), WAN issues are which enables LSLS retrammit messages lost when · WAN partition oexm and to suppressduplicate messages. to discuued in more detail in [MB90].
+
+3O
+
+forward progress
+
+when partial failures occur.
+
+Persistency
+
+of data is a big issue in database systems, but a commit of a multicast
+
+but
+
+much less so in Isis. For example, serializabUity and permanence
+
+the commit problem
+
+is a form of reliable multicast, while delivery
+
+implies in isis
+
+of the transaction
+
+being committed,
+
+provides much weaker guarantees.
+
+8
+
+Conclusions
+
+We have argued
+
+that the next generation
+
+of distributed Arriving
+
+computing
+
+systems semantics exceed
+
+will benefit from support
+
+for
+
+process groups and group programming. is a difficult problem, application performance develope_. and implementing
+
+at an appropriate would
+
+for a process group mechanism of many distributed or the reliability and
+
+those semantics
+
+the abRities
+
+Either the operating system must implement applications
+
+these mechanisms
+
+of group-structured
+
+is unlikely to be acceptable. with process groups. A review of research on the system
+
+The Isis system provides leads us to the following
+
+tools for programming conclusions:
+
+s Process nization.
+
+groups should embody strong semantics A simple and powerful
+
+for group membership,
+
+communication, distributed
+
+and synchroexecution, is syn-
+
+model can be based on closely
+
+sync.hronized
+
+but high performance heavily pipelined.
+
+requires a more asynchronous The v/rtua/synchrony approach
+
+style of execution combines
+
+in which communication using a closely
+
+these benefits,
+
+chronous execution safely be relaxed. · Efficient protocols · Non-experts
+
+model, but deriving a substantial performance
+
+benefit when message
+
+ordering can
+
+have been developed
+
+for supporting
+
+virtual synchmny.
+
+find the resulting system relatively
+
+easy to use.
+
+This paper is being written as the first phase of the ISlS effort approaches system has demonstrated achieves levels the feasibility of a new style ofdistributed to those afforded
+
+its conclusion.
+
+We feel that the initial in [BSS91], Isis
+
+computing.
+
+As reported
+
+of performance
+
+comparable
+
+by standard
+
+technologies
+
+(RPC and streams) suitable for
+
+on the same platforms. integration incorporate however, Proce_
+
+Looking to the future, we are now developing operating [RBG92] systems
+
+an ISls "microkemer'
+
+into next-generation a security architecture
+
+such as Mach and Chorus.
+
+This new system
+
+will also model,
+
+and a real time communication
+
+suite. The programming
+
+will be unchanged. group programming could ignite a wave of advances platforms. in reliable distributed computing, and of
+
+applications developers
+
+that operate on distributed to implement high reliability
+
+Using current technologies,
+
+it is impractical to employ
+
+for typical replicated after a
+
+software, self-managing or to develop software
+
+distributed systems, that reconfigures
+
+data or simple coarse-grained
+
+parallelism,
+
+automatically
+
+31
+
+failureor recovery.Consequently, although current
+resources, deficient distributed the programmers software who develop software infrastructure. By removing
+
+networks
+
+embody
+
+tremendously
+
+powerful
+
+computing by a
+
+for these environments obstacles,
+
+are severely
+
+constrained
+
+these unnecessary
+
+a vast groundswell
+
+of reliable
+
+application
+
+development
+
+can be unleaslr.d.
+
+9
+
+Acknowledgements
+
+The IslS effort
+
+would not have been possible
+
+without
+
+extensive
+
+contributions
+
+by many past and present computing. Thanks
+
+members of the project, users of the system,
+
+and wacaw_rs
+
+in the field of distributed
+
+are due to: Micah Beck, Tim Clark, Robert Cooper, Hunt, Tommy Ricciardi, Robbert Joseph.
+
+Brad Glade, Barry Gleeson. Makpangou,
+
+Holger Herzog, Guemey Mike Reiter, Aleta
+
+Ken Kane, Jacob Levy, Messac Andre Schiper, Frank Schmuck, In addition,
+
+Keith Marzullo,
+
+Fred Schneider, van Renes._,
+
+Stefan Sharkansky, Alex Siegel, Pat Stephenson, acknowledges referees, the help of whose careful in the
+
+and Mark Wood.
+
+the author also gratefutly
+
+Mauren Robinson, and constructive p_esentation.
+
+who prepared the figures for this paper, and the anonymous comments on an initial version of this paper lead
+
+to a substantial
+
+improvements
+
+32
+
+References
+[ABHN91] Mustaque Ahamad, James Bums, Phillip Hutto, and Gil Neiger. of Computing, Dolev, Georgia Institute of Technology, Kramer, and Dalia Malki. Causal memory. Technical
+
+report, College
+
+Atlanta, GA, July 1991. Transis: A communication Science Department,
+
+[ KM91]
+
+Yair Amir, Danny subsystem
+
+Shlomo
+
+for high availability.
+
+Technical
+
+Report TR 91-13, Computer 1991.
+
+The Hebrew University
+
+of Jerusalem,
+
+November
+
+[, .qC92]
+
+T. Anthony Allen, Wdliam Sbeppard, and Steve Condon. formatting system. In Proceedings of the SUN Users
+
+Imis: A distributed query and report Group Meeting, pages 94-101. Sun
+
+I¢ficnx_stems Ken Birman programming ating Systems
+
+Inc., 1992. and Robert system. Review, Cooper. The ISIS project: Workshop, Real experience September 1990. with a fault tolerant To appear Computer in OperScience
+
+European SIGOPS April
+
+1991; also available
+
+as Comer
+
+University
+
+Department [BHG87]
+
+Technical Report TR90-1138. Vassm Hadzilacos, and Nathan Goodman. 1987. in the ISIS system. In Proceedings pages 79-86, of the Tenth Concurrency Control and
+
+Pldlip A. Bemstein, Recovery In Database
+
+Systems.
+
+Addison-Wesley, and availability Systems
+
+[Bir85]
+
+Kem_th
+
+P. Birman. Replication on Operating
+
+ACM Symposium December [BJ87]
+
+Principles,
+
+Orcas Island, Washington,
+
+1985. ACM SIGOPS. in distributed systems.
+
+Kenneth P. Birman and Thomas A. Joseph. Exploiting virtual synchrony In Proceedings of the Eleventh ACM Symposium on Operating
+
+Systems Principles,
+
+pages 123-
+
+138, Austin, Texas, November [B J89]
+
+1987. ACM SIGOPS. Exploiting replication in distributed systems. In Sape Mul-
+
+Ken Birman and Tommy Joseph. lender, Wesley. editor, Distributed Systems,
+
+pages 319-368,
+
+New York, 1989. ACM Press, Addison-
+
+[BSS91]
+
+Kenneth Birman, group multicast.
+
+Andre Schiper, ACM Transactions
+
+and Patrick Stephenson. on Computer Systems,
+
+Lightweight 9(3), August
+
+causal and atomic 1991. broadcast: From
+
+[CASD85]
+
+Haviu
+
+Cristian, Houtan Aghili, diffusion
+
+H. Ray Strong, and Danny Dolev.
+
+Atomic
+
+simple message Symposium
+
+to Byzantine agreement. In Proceedings Computing, pages 200-206,
+
+of the Fifteenth International June I985.
+
+on Fault-Tolerant
+
+Ann Arbor, Michigan,
+
+Institution of Electrical Report RJ5244.
+
+and Electronic Engineers.
+
+A revised version appears as IBM Technical
+
+[CD90]
+
+Flaviu Cristian Technical
+
+and Robert
+
+D_y.
+
+Fault-tolerance
+
+in the advanced automation San Jose, California, April 1990.
+
+system.
+
+Report RJ7424, IBM Research Laboratory,
+
+33
+
+[CriSS]
+
+Flaviu Cristian. Reaching uted systems.
+
+agreement
+
+on processor
+
+group membership
+
+in synchronous
+
+distrib-
+
+Technical Report RJ5964, IBM Research Laboratory, March 1988. The distributed V kernel and its performance on Operating for
+
+[CZ83]
+
+David diskless
+
+Cheriton and W'flly Zwaenepoel. workstations. In Proceedings
+
+of the Ninth ACM Symposium New Hampshire, Memory access October buffering
+
+Systems
+
+Principles, [DSB86] M. Dubois, Proceedings 434--442, [ms9]
+
+pages 129-140, C. Schettdch_
+
+Bretton Woods, and E Briggs.
+
+1983. ACM SIGOPS. in multiprocessors. Architecture, In pages
+
+of the 13th Annual International
+
+Symposium
+
+on Computer
+
+June 1986. of triplicated data in fault-tolerant 4(1):54-70, February 1989. and
+
+Thomas Joseph and Kenneth Binnan. Low cost management distributed systems. A CM Transactions on Computer
+
+Systems,
+
+[Joh93]
+
+Dag Johansen. Stormcast: F_
+
+Yet another exercise
+
+in distributed
+
+computing.
+
+In Dag/ohansen
+
+Brazier, editors, Distributed Andrew
+
+Open Systems
+
+in Perspective.
+
+IEEE, New York, 1993. and Henri E. Bal. An
+
+[KTHB89)
+
+M. Frmm Kaashoek, _ent
+
+S. Tanenbaum, Operating
+
+Susan Flynn Hummel, Systons Review,
+
+reliable broadcast protocol. Tune, docks,
+
+23(4):5-19,
+
+October 1989. system. Commwff-
+
+[LamTS]
+
+Leslie Lamport. cations
+
+and the ordering of events July 1978. Highly-available
+
+in a distributed
+
+oftheACM,
+
+21(7):558-565,
+
+ILL86]
+
+Barbara Liskov distributed Distributed
+
+and Rivka Ladin.
+
+distributed
+
+services
+
+and fault-tolerant on Principles of
+
+garbage collection. Computing,
+
+In Proceedings
+
+of the F_fth ACM Symposium
+
+pages 29-39,
+
+Calgary, Alberta, August 1986. ACM SIGOPS-SIGACT. Exploring on Principles the semantics of Distributed of
+
+_]
+
+Rivka Ladin, Barbara Liskov, and Liuba Shrira. Lazy replication: ¢fistributed services. Computing, In Proceedings of the Tenth A CM Symposium City, Quebec, August
+
+pages 43--58, Qeubec
+
+1990. ACM SIGOPS-SIGACT. in wide area network Comell University,
+
+[MB90]
+
+Messac Makpangou and Kenneth settings. 1990. Technical
+
+Birman. Designing Department
+
+application software of Computer Science,
+
+Report 90-1165,
+
+[MCWB91]
+
+Keith
+
+Marzullo,
+
+Robert Cooper,
+
+Mark Wood, and Kenneth August 1991. Schlichting. ACM
+
+Birman.
+
+Tools for distributed
+
+application [PBS89] Larry
+
+management.
+
+IEEE Computer,
+
+L. Peterson,
+
+Nick C. Bucholz,
+
+and Richard
+
+Preserving
+
+and using
+
+con-
+
+text information interprocess in communication. 7(3):217-246, August 1989. [PetS7] Larry Pcterson.
+
+Transactions Computer Systems, on
+
+Preserving contextinformation an ipcabstraction. SixthSymposium on in In
+
+Reliability Distributed in Softwareand Database Systems,pages 22-31.IEEE, March 1987.
+
+34
+
+[RAA+88]
+
+M. Rozier, V. Abrossimov, W. Neuhauser.
+
+M. Armand,
+
+E Hermann, (2. Kaiser, Computer Systems,
+
+S. Langlois,
+
+P. Leonard, and Fall 1988. in
+
+The chorus distributed system. and Kenneth environments. Computing,
+
+pages 299-328,
+
+[RB91]
+
+Aleta Ricciardi asynchronous of Distributed
+
+Birman. Using process In Proceedings
+
+groups to implement
+
+failure detection on Principles
+
+of the Eleventh ACM Symposium August
+
+Montreal, Quebec,
+
+1991. ACM SIGOPS-SIGACT. Integrating security in a group oriented
+
+tReG92]
+
+Michael
+
+Reiter, Kenneth R Birman,
+
+and Li Gong.
+
+cfmtributed system. In Proceedingsof theIEEE Symposium on Research In Securityand Pr/vacy, pages 18-32,May 1992. [SBM89] Alex Siegel, Kenneth Birman, and Keith MarzuIIo.Deceit:A flexible distributed system. file Technical Report 89-1042,Department of Computer Science, Comell University,989. 1 [Sch88] Frank Schmuck. Systems. The Use of Efficient University, Broadcast 1988. services using the state machine 1990. an approach Systems, to designing 1(3):222-238, approach: A Primitives in Asynchronous Distributed
+
+PhD thesis, Comell
+
+[SChg0]
+
+Fred B. Schneide_
+
+Implementing Surveys,
+
+fault-tolerant 22(4):299-319,
+
+tutorial. ACM Computing [SS83] Richard D. Schlichting fault-tolerant August [Tan88] [THg0] 1983. computing
+
+December
+
+and Fred B. Schneider. systems.
+
+Fail-stop processors: on Computer
+
+ACM Transactions
+
+Andrew Tanenbaum.
+
+Computer
+
+Networks.
+
+Prentice Hall, second edition, the performance
+
+1988. of relaxing Computer
+
+Josep TorreRas and $ohn Hennessey. consistency Systems
+
+Estimating
+
+advantages
+
+in a shared memory multiprocessm:
+
+Technical
+
+Report CSL-TN-90-365,
+
+Laboratory, Stanford University, C. Bache of America, et. a/. The intelligent
+
+February 1990. monitoring 1990. in distributed systems. IEEE system. Bulletin of the Seismological
+
+[Tho90]
+
+Thomas Society
+
+80(6):59--77,
+
+December
+
+[TS92]
+
+John Turek and Dennis Shasha. Computer, 25(6):8-1% 1992.
+
+The many faces of Consensus
+
+[Woo91]
+
+Mark Wood.
+
+Constructing Science,
+
+reliable
+
+reactive 1991.
+
+systems.
+
+PhD thesis, Comer
+
+University,
+
+Depart-
+
+ment of Computer
+
+December
