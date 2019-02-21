@@ -24,7 +24,7 @@ Analyze by extracting useful information using:
   2. Verbs: base form (VB), past tense (VBD), gerund/present participle (VBG), past participle (VBN), single present non-3rd person (VBP), single present 3rd-person (VBZ)
   3. Adjectives: base fore (JJ), comparative (JJR), superlative (JJS)
   4. Adverbs: base form (RB), comparative (RBR), superlative (RBS)
-
+* Interesting note: A word, depending on the context, can be of multiple forms. We addressed this issue by tagging first, and then reorganizing.
 ###### time machine
 
 ###### travel
