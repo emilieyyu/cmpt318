@@ -1,0 +1,3 @@
+Average sentence length = 16.2401 words. 
+Average word length =  5.6766 chars. 
+Average chars per sentence = 92.1888 chars.
