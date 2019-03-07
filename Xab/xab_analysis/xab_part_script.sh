@@ -28,10 +28,6 @@ paste tmpfile3 tmpfile4 > tmpfile6
 paste tmpfile6 tmpfile5 | sort | uniq -c | sort -rn > 4-grams.txt
 rm -f tmpfile1 tmpfile2 tmpfile3 tmpfile4 tmpfile5 tmpfile6
 
-## Calculate average words per sentence (see xab clean details for unsolved problems)
-# version 1:
-# cat $* | tr '\r\n' ' ' | tr '.?!' '[\012*]' > sentences.txt
-
 ## Identify content words (common nouns): 
 # Segment text into sentences -> tag with "Lapos" -> tokenize -> extract types and sort -> grep common nouns.
 echo "Tagging text..."
