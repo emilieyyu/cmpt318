@@ -29,6 +29,9 @@ paste tmpfile6.txt tmpfile5.txt | sort | uniq -c | sort -rn > 4-grams.txt
 mkdir ngram_files
 mv tmpfile1.txt tmpfile2.txt tmpfile3.txt tmpfile4.txt tmpfile5.txt tmpfile6.txt ngram_files
 
+#average calculations
+cat travel_clean.txt | tr '\r\n' ' ' | tr '[.?!]' '[\n*]' | wc | awk '{print "Average sentence length =", $2/$1, "words.", "\nAverage word length = ", $3/$2, "chars.", "\nAverage chars per sentence =", $3/$1, "chars."}' > averages.txt
+
 #lapos tagging on cleaned version
 echo 'Tagging Text..'
 cp travel_clean.txt ~/Documents/GitHub/cmpt318/lapos-0.1.2/samples
