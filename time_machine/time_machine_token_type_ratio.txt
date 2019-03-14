@@ -1,0 +1,3 @@
+Number of Tokens = 35868 
+Number of Types = 3145 
+Token/type ratio = 11.4048
