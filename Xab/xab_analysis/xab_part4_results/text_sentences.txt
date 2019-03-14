@@ -1,0 +1,583 @@
+Repeatable Evaluation of Search Services in Dynamic Environments
+ ERIC C
+ JENSEN Summize Inc
+ STEVEN M
+ BEITZEL Illinois Institute of Technology ABDUR CHOWDHURY Summize Inc
+ and OPHIR FRIEDER Illinois Institute of Technology and Georgetown University In dynamic environments such as the World Wide Web a changing document collection query population and set of search services demands frequent repetition of search effectiveness relevance evaluations
+ Reconstructing static test collections such as in TREC requires considerable human effort as large collection sizes demand judgments deep into retrieved pools
+ In practice it is common to perform shallow evaluations over small numbers of live engines often pairwise engine A vs
+ engine B without system pooling
+ Although these evaluations are not intended to construct reusable test collections their utility depends on conclusions generalizing to the query population as a whole
+ We leverage the bootstrap estimate of the reproducibility probability of hypothesis tests in determining the query sample sizes required to ensure this finding they are much larger than those required for static collections
+ We propose a semiautomatic evaluation framework to reduce this effort
+ We validate this framework against a manual evaluation of the top ten results of ten Web search engines across 896 queries in navigational and informational tasks
+ Augmenting manual judgments with pseudo relevance judgments mined from Web taxonomies reduces both the chances of missing a correct pairwise conclusion and those of finding an errant conclusion by approximately 50 
+ 1
+ INTRODUCTION Evaluating the effectiveness of information retrieval systems in terms of relevance requires a large amount of human effort
+ Many environments such as the World Wide Web grow and change too rapidly for a single evaluation to carry meaning for any extended period
+ Changes in their document collection query population and set of search services demand the repetition of evaluations over time
+ In these environments static test collections become outdated too quickly and require too much effort to reconstruct
+ Rather practitioners often compare a small number of live engines by judging every result retrieved at a shallow depth without system pooling
+ The number of queries necessary for such an evaluation to be reliable1 must be determined however
+ We hypothesize that combining automatic evaluation techniques with a smaller set of manual relevance judgments can provide more reliable pairwise conclusions engine A outperforms engine B than the manual set alone
+ We propose a semiautomatic framework for combining manually judged queries with automatically evaluated ones our ultimate goal being to reduce manual evaluation effort by finding reliable conclusions using less manually judged queries
+ To test our hypothesis we adopt the reproducibility probability 
+ 
+ 
+ probability of observing a significant clinical result from a future trial 
+ 
+ 
+ Shao and Chow 2002 as our estimate of reliability
+ We then compare conclusions drawn with high reproducibility probability from semiautomatic evaluations against those from a manual evaluation of the top ten results of ten Web search engines over 896 queries
+ 2 The available content on the Web changes 8 every week along with dramatic changes in the number of servers and pages Cho et al
+ 2000 Ntoulas et al
+ 2004 
+ In our experimentation we found that only 61 of Web search engines top ten results remained the same three months later on average and only 38 for the most changed engine Jensen 2006 
+ Searchers interests and the popular queries they use to express them are also in a constant state of flux with 20 of even the 30 000 most popular queries changing from one week to the next and less than half remaining the same after six months Pass et al
+ 2006 
+ Even the topical categories these queries fall into have changing relative popularities within days weeks months and years Beitzel et al
+ 2004b 2006 Jansen and Spink 2005 
+ Not only is the query population rapidly changing but its size and diversity also indicate that a large number of queries are required to construct a representative random sample Pass et al
+ 2006 
+ Popular queries and even popular query terms make up only a small portion of the total query stream with approximately half of all queries being repeated ten or fewer times over a week Beitzel et al
+ 2006 Jansen et al
+ 2005 
+ Developing new algorithms or even tuning traditional retrieval strategies for emerging applications image search blog search etc
+ requires reliable repeatable3 evaluations on their respective dynamic environments
+ Static test collections such as those constructed for the Text Retrieval Conference TREC become outdated too quickly to address these changes in popular queries and their associated relevant results
+ With typical TREC evaluations requiring well over 500 assessor hours see Section 2 these sorts of collections are too expensive to reconstruct when changes in effectiveness over time must be measured
+ This effort is exacerbated by rapidly growing collection sizes as the reusability of such collections depends on the depth of their pooled evaluations also detailed in Section 2 
+ Therefore practitioners in dynamic environments often dispense with efforts to build reusable test collections in favor of reevaluating each engine as decisions are required
+ However based on analysis of our manual evaluation we find that such shallow judgments demand a large number of queries to provide reliable conclusions as many as 650 in our environment 
+ A method of reducing the effort needed to draw reliable conclusions in such an environment is needed
+ To make the repetition of such large evaluations over time feasible we propose a semiautomatic framework that incorporates automatically evaluated queries using pseudo relevance judgments with manually judged ones
+ This provides insight into conclusions earlier in the evaluation process so that poorly performing engines can be eliminated before judging every result from every engine over a large query sample
+ We identify two methods for integrating automatic judgments
+ Each provides a different form of guidance for evaluators to reach reliable conclusions with less effort than manual judgments alone Semiautomatic Filtering Verify conclusions drawn from a smaller number of manual judgments based on their agreement with automatic techniques
+ Semiautomatic Prediction Directly combine automatically judged queries with manual ones to yield samples of larger sizes whose conclusions can be used as an estimate of those that might be found with that many manual judgments
+ To test our hypothesis that this semiautomatic framework yields more reliable conclusions than those available from the manually judged sample alone we must adopt a specific method of estimating reliability
+ We use reproducibility probability how likely a pairwise conclusion is to hold across any query sample of a given size as our estimate of reliability for two reasons
+ First measuring changes in performance over time in a dynamic environment demands conclusions that generalize to the query population as a whole at the time of evaluation
+ If applying an identical evaluation methodology to different query samples from the same time period yields inconsistent conclusions nothing can be concluded about changes in engine performance over time
+ Comparing the conclusions from any two evaluations that use different query samples would be impossible
+ Implicit in this assertion is our view of the query stream at a given point in time as a hypothetical infinite population in following with the frequentist approach we adopt well reviewed recently for information retrieval in Cormack and Lynam 2006 
+ Second we seek to reduce manual evaluation effort by exploiting the fact that larger differences in evaluation scores are detectable with smaller query sample sizes possibly available from an evaluation in progress
+ Information retrieval traditionally uses a priori heuristics for determining the necessary query sample size to yield a desired level of reliability such as TREC rules of thumb about the minimum absolute difference between scores often derived from empirical meta evaluation see Section 2
+2
+3 
+ However these do not address the problem of detecting reliable conclusions from an evaluation in progress
+ We leverage the pointwise bootstrap estimate of reproducibility probability of hypothesis tests that quantifies the reliability of conclusions from any pairwise evaluation without the prerequisite of a sufficient query sample size to estimate parameters such as the mean score difference or a context of meta evaluation over a diverse set of engine pairs
+ The ability to develop intelligent evaluation strategies such as discarding results from an engine that is clearly inferior based on a small number of judgments is largely unexplored because the running averages available from evaluations over small query sample sizes have been shown to be unreliable when viewed as whole Voorhees and Buckley 2002 
+ Quantifying the utility of intelligent evaluation strategies is also difficult using existing methods of comparing evaluations meta evaluation 
+ For example prior automatic evaluation and implicit preference research reviewed in Section 2
+3 focuses on optimizing the correlation of engine rankings from a purely automatic evaluation to a manual one
+ However critical decisions such as which search service to employ and so forth demand a more rigorous comparison of conclusions drawn by these methods with those from manual judgment
+ By leveraging reproducibility probability we ensure only conclusions with high reproducibility probability are compared those that would not generalize to other query samples using the same evaluation technique are considered ties
+ Next we review related work in information retrieval evaluation and reliability estimation
+ In Section 3 we show that our manual Web search evaluation is reliable and we validate reproducibility probability estimation techniques on it
+ Having established that prerequisite we propose and validate our semiautomatic framework in Section 4 using two simple automatic evaluation techniques
+ Even with these na ve techniques errors are often reduced by half i compared to using small sets of manual judgments alone
+ More importantly metrics for comparing evaluations and measuring the utility of semiautomatic methods are developed
+ 2
+ RELATED WORK First we review evaluation of information retrieval systems on the Web
+ We then examine four methods for estimating the reliability of evaluations hypothesis testing confidence intervals empirical meta evaluation and reproducibility probability estimation
+ Finally we review prior work in automatic evaluation techniques
+ 2
+1 Web Search Evaluation Evaluating the effectiveness relevance of live Web search engines provides many unique challenges because they operate on data that are continually changing Hawking et al
+ 1999 Savoy and Picard 2001 
+ The set of popular Web queries and the relevant documents for those queries changes dramatically over time Pass et al
+ 2006 
+ Previous studies concluded that overlap among results from different Web search engines was too high for them to be deemed significantly different Ding and Marchionini 1996 
+ However when a decision must be made some form of reliable evaluation is necessary
+ Most of the work in evaluating search effectiveness follows the Text Retrieval Conference TREC methodology for constructing reusable test collections
+ TREC holds constant the document collection and query set pooling the top ranked results up to a given depth typically 100 from each engine and manually judging each document in this pool as relevant or not relevant
+ If this judgment depth is large enough these collections are reusable in that the relative effectiveness of runs from new engines over the same documents and queries can be evaluated simply by applying the existing judgments and assuming documents that are not judged are not relevant Zobel 1998 
+ Studies of evaluation in TREC meta evaluations have shown that although relevance is an ambiguous concept Borlund 2003 variations in relevance judgments due to assessor disagreement do not destabilize evaluation Voorhees 1998 
+ The TREC Web track applies this methodology to static Web document collections
+ The recognition that Web search users perform tasks other than the TREC standard informational task searching for many relevant documents topically related to the query has led to the incorporation of navigational homepage or namedpage finding evaluations that assume there is a single best known item sans duplications the searcher wants to find
+ Most recently TREC has begun to address the question of whether building reusable collections through pooled evaluation is scalable to terabyte sized collections Clarke et al
+ 2005 
+ Recent work by Sanderson and Zobel 2005 shows that judging only the top ten results of each engine provides reliable evaluation for less effort than system pooling
+ Evaluations are very labor intensive
+ Our own precision oriented evaluation of the top ten results of ten Web search engines over 896 queries required 225 assessor hours to complete Jensen et al
+ 2005 Jensen 2006 
+ This is approximately 15 minutes per query to assign binary relevance and choose the best result from an average of 43 distinct results
+ A previous navigational evaluation we performed selecting only the best page and its duplicates from a pool of six Web search engines results about 25 on average over 418 queries required 87 hours or approximately 12 minutes per query on average Beitzel et al
+ 2003b 
+ Creating reusable test collections such as those developed in TREC requires a larger amount of effort
+ Recent TREC efforts have employed six assessors generally working 20 hour weeks for over a month Soboroff 2006 
+ The TREC 2001 Web ad hoc search task required 761
+25 assessor hours to perform judgments over 50 topics and an additional 283 hours to develop those topics
+ The 2004 terabyte track ad hoc task required 1037
+5 hours total with over half spent performing judgments over 50 topics
+ Even in the 2003 homepage
+named page task where the query was developed for a prechosen best document the process of simply checking shallow retrieved pools for duplicates over the 300 queries required as many as 100 120 hours
+ 2
+2 Estimating Evaluation Reliability The ultimate goal of evaluation is to facilitate the construction of engines that are a meaningful improvement over the state of the art
+ However this improvement often characterized as a level of difference discernable to users may be achieved through several iterations of reliable improvements
+ We specialize on Tague Sutcliffe s 1996 definition of reliability for the case of a pairwise conclusion from an information retrieval evaluation as its reproducibility probability across any random query sample of equivalent size
+ We focus only on the reliability of conclusions as minimum levels of difference could easily be incorporated into such analysis by selecting a different null hypothesis and would only increase the required sample sizes
+ Next we review several methods of estimating reliability
+ 2
+2
+1 Hypothesis Tests
+ Applying statistical hypothesis tests to information retrieval evaluations has a history of controversy as most tests rely on observations conforming to continuous often particular distributions but typical information retrieval evaluation metrics are bounded discrete and often non normal in nature van Rijsbergen 1979 
+ Bootstrap hypothesis tests such as those applied to information retrieval evaluation by Savoy 1997 or Sakai 2006 do not require these assumptions because they estimate the empirical distribution by resampling thousands of times
+ When performing a handful of these tests this computational cost is not of consequence but estimating their power is computationally and theoretically challenging Davidson and MacKinnon 2006 
+ Therefore we choose the Wilcoxon signed rank test with standard corrections for noncontinuity in our experimentation because its nonparametric nature does not require assuming a particular distribution but it is easily calculable and maintains higher power than very simple tests such as the sign test Hollander and Wolfe 1973 
+ Although the reproducibility probability of any test could be estimated with the nonparametric bootstrap we leverage below the distribution of scores in our evaluation motivated this decision
+ They failed a Shapiro Wilk test for normality but did appear to be symmetric as required for the Wilcoxon test Jensen 2006 
+ Our own and others experimentation with the t test the sign test with and without the zero fudge Wilcoxon test with both the continuity correction and normal approximation and also an exact version of the Wilcoxon test that computes every permutation in the case of tied ranks found none that resulted in substantially more reliable reproducibility probability estimates than others Jensen 2006 Sanderson and Zobel 2005 
+ Our same prior investigation showed that reliable reproducibility probability estimates with a 95 confidence level would have required more queries so we chose 0
+10
+ The fundamental problem with relying on the p value from a single hypothesis test is that it does not address the problem of adequately representing the query population to ensure reproducibility Goodman 1992 
+ Because of this it is possible to find statistically significant differences over a particular sample of queries that may not generalize to the query population
+ Another factor that must be considered in applying hypothesis tests to information retrieval evaluation is that performing multiple tests with the same null hypothesis requires simultaneous testing procedures such as the commonly used Bonferroni correction to account for the overall larger probability of finding a significant result by random chance
+ Miller distinguishes between experiments designed for uncovering leads that can be pursued further to determine their relevance to the problem versus those that report final conclusions suggesting that multiple test procedures are more important in the latter case Miller 1981 
+ Our primary endpoint is comparing conclusions that result from pairwise hypothesis tests of semiautomatic evaluations versus those of benchmark manual ones
+ Because each comparison between a pair of engines has its own hypothesis differing from others multiple testing procedures are not required in our analysis
+ However if the primary endpoint is to find the best engine or to rank the engines multiple testing procedures for step wise and pairwise comparisons should be considered to ensure conservative estimates Munzel 2001 
+ 2
+2
+2 Confidence Intervals
+ Many advocate reporting confidence intervals for the parameter of interest which in evaluation is typically the score difference rather than hypothesis testing because they are easier to interpret correctly
+ Cormack and Lynam 2006 construct confidence intervals of average precision over varying document collections in the TREC informational task using the bootstrap
+ If we use a confidence interval to decide whether or not one engine significantly outperforms another by checking whether the null hypothesis typically zero difference in scores lies outside the interval we are performing exactly the same analysis as the equivalent hypothesis test
+ Again this does not address the problem of adequately representing the query population or quantifying reproducibility
+ 2
+2
+3 Empirical Meta Evaluation
+ Empirical meta evaluation studying the results of an evaluation over a large number of engines focuses on estimating the reliability of an evaluation as a whole
+ This sort of analysis is a key component of TREC where it is almost exclusively applied due to the lack of such a large diverse set of engines in proprietary environments
+ In empirical meta evaluation reliability is defined as the stability consistency of the ranked list of engines across query sets
+ Kendall s Tau or Spearman s rank correlation measures are often used to compare evaluations based on their ranking of engines
+ However the most relevant metric to our work is the error rate probability of a pair of engines flipping positions relative to one another in the ranked list of engines when using a different query sample as defined in Buckley and Voorhees 2000 
+ It is estimated post hoc by counting the number of pairwise flips in the rankings of a large number of engines across varying query samples by resampling the pilot query set total available judged queries into smaller samples
+ In Voorhees and Buckley 2002 they focused on performing this calculation for several different query sample sizes up to half the size of the pilot sample and then extrapolating to estimate the error rate at the total pilot set s size
+ By also calculating the error rate for several different fuzziness minimum difference in average scores to not be considered a tie values and leveraging the extrapolations to the pilot set size these estimates can be used to devise a priori heuristics sometimes cited when planning or analyzing experiments at TREC
+ Typically these take the form of an X difference in mean average precision is needed to ensure an error rate of less than 5 with 50 queries
+ However these heuristics do not account for the differences in distribution of a particular pair of engines scores their variance for example 
+ While error rate is useful for post hoc comparison these general heuristics derived from it are only applicable to a completed evaluation
+ Applying these heuristics to an evaluation in progress is questionable as preliminary differences in average scores are subject to influence from outlying scores such as zero and one
+ Recent work builds on error rate with improved theoretical foundations
+ Sanderson and Zobel 2005 mitigate distributional issues by requiring both that a pair of engines pass a hypothesis test and have a difference in average scores large enough to correspond with a low error rate
+ Lin and Hauptmann 2005 derive error rate from statistical principles showing that variance in engines scores dramatically impacts the reliability of evaluations
+ Sakai 2006 uses bootstrapping to find the score difference required to achieve a given significance level in bootstrap hypothesis testing
+ Each of these methods has in common the use of a large number of diverse runs to provide a general rule for the difference in average scores required
+ They do not address the problem of reducing the effort needed to answer specific questions without such a context such as does engine A outperform engine B
+ from an evaluation in progress
+ 2
+2
+4 Reproducibility Probability
+ Although we are unaware of its application to information retrieval evaluation we adopt reproducibility probability because it directly measures the likelihood that a particular pairwise conclusion generalizes to the query population as a whole while its generality enables its application to evaluations in progress and does not require a large number of diverse engines as a context
+ Shao and Chow 2002 analyze several methods of estimating reproducibility probability
+ We follow their first in which the reproducibility probability can be defined as an estimated power of the future trial using the data from the previous trial s 
+ For clarity we briefly diverge to differentiate between the true power typically referred to simply as the power or probability of rejecting a legitimately false null hypothesis and this estimated power described by Shao and Chow
+ The true power defined as an expectation in Equation 1 borrowing notation from Lehmann 1986 is commonly used a priori in experimental design to determine what sample size will be large enough to detect a significance difference if one exists
+ However calculating the true power depends on specifying a particular distribution F that satisfies the alternative hypothesis
+ This can be inaccurate when little is known about the actual distribution of observations Bacchetti 2002 
+ When F is unknown the true power of nonparametric tests is most accurately estimated using the bootstrap by creating artificial subsamples of a pilot sample in which the alternative hypothesis is enforced Troendle 1999 
+ We are primarily concerned with comparing evaluations based only on their conclusions with high reproducibility probability not the true power of hypothesis tests which determines the likelihood of detecting a significant difference where one exists
+ True power of a hypothesis test
+ The estimated power method of estimating reproducibility probability described by Shao and Chow differs from this true power in that it comes from observed experimental data where the truth value of the null hypothesis is unknown
+ For this reason it is also known as the observed power
+ Like Shao and Chow however we prefer the term reproducibility probability to avoid any implication about the truth of the null hypothesis inference 
+ Post hoc power analysis has drawn criticism for the way it has been misinterpreted as evidence against the null hypothesis for tests that do not reject the null hypothesis since the observed power is greater than zero we must simply not have a large enough sample to support our conclusions Hoenig and Heisey 2001 
+ This is the trap of the large sample that any two nonidentical engines are significantly different with a large enough sample
+ We focus only on tests that do reject the null hypothesis and have high reproducibility probability at sample sizes just large enough to reliably estimate reproducibility probability as analyzed in Section 3
+3 
+ Although their definition is general Shao and Chow 2002 only apply the estimated power approach to reproducibility probability for the parametric t test
+ However it can be applied in the general case to include nonparametrics using the point wise bootstrap estimate i
+e
+ as done by De Martini 2006 
+ This pointwise estimate Equation 2 is based on Efron and Tibshirani s 1993 nonparametric bootstrap A preliminary data set datan is used to estimate a probability distribution in this case F 
+ Then the desired power or sample size calculations are carried out as if F were the true distribution as discussed in their example of estimating the true power of a bioequivalence test
+ We provide an algorithm implementing Equation 2 specifically for information retrieval in Section 3
+2
+ Note that this is in the same spirit as the error rate heuristic discussed in Section 2
+2
+3 but formalizes reproducibility probability of a particular pairwise conclusion without requiring a completed evaluation over a large variety of engines
+ Point wise nonparametric bootstrap estimate of reproducibility probability
+ However these reproducibility probability estimates are just that estimates that are influenced by the variability in the observed data pilot sample 
+ The necessary pilot sample size required to reliably reproducibly across pilot samples estimate them must be established
+ We leverage graphical methods for comparing true power to estimates that have been developed for just this purpose Collings and Hamilton 1988 
+ Aggregated numerical methods have also been introduced but they are targeted at relative comparison of power estimation techniques rather than our focus of determining necessary sample sizes De Martini and Rapallo 2003 
+ One method of making more conservative bootstrap estimates is to perform a double bootstrap essentially performing secondary bootstrap replications of each of the bootstrap samples De Martini 2006 Hall and Martin 1988 
+ When performing a hypothesis test for each bootstrap sample of reasonable size this is computationally prohibitive
+ Our validation of the reliability of reproducibility probability estimates in Section 3
+3 follows a limited version of this procedure visualizing differences in estimates over several pilot samples
+ 2
+3 Reducing Evaluation Effort Two aspects of reducing evaluation effort have been studied in prior work evaluation strategies that reduce the number of judgments needed in a manual evaluation and automatic evaluation techniques that heuristically infer pseudo relevance judgments
+ Studies in each of these areas suffer from a difficulty in comparing conclusions drawn from one evaluation to another to ensure lower effort techniques provide correct conclusions with respect to more thorough methods
+ Simply knowing that the engine rankings of one evaluation correlate with another does not address differing levels of confidence in conclusions and the associated issue of whether too many errant conclusions are being drawn or too few correct conclusions too many ties are found
+ Several evaluation strategies are proposed as extensions or alternatives to the TREC pooling methodology to reduce manual effort
+ Soboroff 2006 focused on the problem of changes in the document collection proposing to maintain existing TREC collections to limit the impact of these changes over time
+ Recent work dramatically improves on the evaluation effort required in TREC by intelligently selecting results to be evaluated Aslam et al
+ 2006 Carterette et al
+ 2006 
+ Cormack et al
+ 1998 proposed interactive searching and judging in which no system pooling is used evaluators simply perform various queries for a topic marking relevant documents as they proceed
+ Sanderson and Joho 2004 analyze methods of producing test collections without any system pooling and find that their quality correlates with that of TREC collections
+ Sanderson and Zobel 2005 quantified the relative advantage of not pooling in terms of the evaluation effort required to achieve a desired error rate
+ Fully automatic evaluation techniques are widely employed in domains where manual evaluation would require a prohibitive amount of effort Goldstein et al
+ 2005 
+ Two categories of automatic evaluation techniques proposed for information retrieval are inferring pseudo relevance judgments from the retrieved documents themselves and using external resources to aid in this inference
+ Several approaches randomly sample the documents from the retrieved pools based on known statistics about the typical distribution of relevant documents as pseudo relevant documents but find that the effectiveness of only typical engines but not the best engines can be predicted Aslam et al
+ 2003 Nuray and Can 2006 Soboroff et al
+ 2001 Wu and Crestani 2003 
+ Others use similarity functions between documents and the query to automatically estimate relevance Shang and Li 2002 
+ Several methods of leveraging external resources to infer pseudo relevance judgments have been proposed
+ Some advocate the use of click through data tuples consisting of a query and a user clicked result for automatic assessment
+ However there is a well known presentation bias inherent in these data users are more likely to click on highly ranked documents regardless of their quality Boyan et al
+ 1996 
+ Joachims et al
+ 2005 find that clickthrough data can however be used to infer relative preferences between documents
+ Others have made use of taxonomies to fuel automatic evaluation such as the Open Directory Project referred to as DMOZ or ODP Yahoo s directory and Looksmart Haveliwala et al
+ 2002 Srinivasan et al
+ 2005 
+ These taxonomies divide the Web into a hierarchy of categories with some pages placed in multiple categories
+ Each category has a title and a path that represents its placement in the hierarchy
+ They also typically have editor entered page titles that do not necessarily correspond to the titles of the pages themselves
+ 3
+ RELIABLE MANUAL EVALUATION Evaluating our semiautomatic framework requires a reliable manual evaluation for comparison
+ We are unaware of currently available large manual evaluation in a dynamic environment such as the Web
+ Therefore we performed our own evaluation of ten Web search engines over 896 queries based on the assessor time we allocated with no preference for this particular number 
+ We briefly review this experimental environment with more details available in Jensen 2006 
+ We then examine the question of reliability of conclusions drawn from such an evaluation
+ With prior techniques for estimating reliability inapplicable we review reproducibility probability and specifically the pointwise bootstrap estimate that we leverage
+ As with any reliability estimate the conditions for the estimate itself to be reliable must be verified
+ We therefore continue by validating the reliability of these reproducibility probability estimates themselves finding the minimum query sample size necessary in our environment to ensure that high reproducibility probability estimates from a sample correspond to similarly high levels on larger samples
+ 3
+1 Experimental Environment We manually evaluated the top ten results of ten Web search engines over 896 queries without system pooling
+ The engines evaluated AltaVista AllTheWeb Gigablast Google Lycos MSN MSN Tech Preview now their main engine Teoma Wisenut and Yahoo are anonymized in no particular order as E1 E2 
+ 
+ 
+ E10
+ We randomly sampled 896 distinct queries from an AOL Search query log consisting of the entire search traffic hundreds of millions of queries for the two days 9
+17 and 9
+18 2004
+ Queries in the log are lowercased and stripped of most punctuation
+ We were careful to randomly select from the true distribution of queries creating a sample that approximates the frequency distribution of the query population Beitzel et al
+ 2004b 2006 
+ Results from all ten engines were pooled in a uniform interface based on canonicalized URL including the surrogate document representations consisting of title snippet and the link to the page that assessors could optionally click through
+ For each query a group of AOL editors undergraduate and graduate computer science student assessors manually assigned each result as relevant or not relevant and selected a single best result from the entire pool
+ Assessors were instructed to imagine they had posed the query to determine the most likely information need based on only the typically short query from the log
+ Of course this environment may suffer from problems of assigning navigational and informational interpretations to each query shifting definitions of relevance or differing perceptions of relevance based on the quality of surrogates
+ Our focus on finding conclusions that generalize to the query population as a whole motivated us to use the limited number of assessor hours available to us to judge more queries rather than attempt to reduce such sources of random error
+ A more controlled evaluation environment would likely reduce the number of queries required but at a cost of higher effort per query
+ Detailed statistics about this evaluation including score distributions and so on are available in Jensen 2006 
+ For each engine over each query we calculated three evaluation metrics average precision at ten precision averaged at each retrieved relevant document limiting the denominator to the maximum number of retrieved results ten denoted as AvgP precision at ten denoted as P 10 and reciprocal rank of the best page denoted as MRR for familiarity despite our point wise use of it
+ See Table I for mean and median scores ranked by mean
+ Next we performed pairwise hypothesis testing for significant differences in median score using the Wilcoxon test as motivated by Section 2
+2
+1
+ While overall median is not terribly descriptive in Table I due to the discretized nature of a top ten evaluation simply the discrepancies between means and medians are indicative of non normal distributions
+ We visualize the significant differences found as a hierarchy where any path to a lower node represents that the higher node significantly outperforms the lower one Figure 1 
+ These hierarchies are simply a visualization conveying the same information as more common textual approaches to represent groups such as those provided in TREC using IR STAT PAK Blustein and Tague Sutcliffe 1995 
+ We believe they are more readable than purely textual approaches when engines are not strictly ranked by their average scores
+ Nodes are collapsed together when they have an equivalent set of relationships
+ For example E1 significantly outperforms every other engine under the MRR evaluation metric because there is a path from E1 to E2 to E3 and E10 and so on
+ E6 and E4 under MRR by contrast neither outperform nor are outperformed by E8 but they both significantly outperform E9
+ We make our best effort to place engines with larger scores higher but favor readability over enforcing this strictly
+ As one would hope for any measure of reliability all of our results produce figures that are associative never requiring more than one node to represent an engine
+ Precision at ten is not shown as it is nearly identical to average precision over the top ten results with only two differences in significant conclusions E6 E8 with AvgP read engine six significantly outperforms engine eight and E9 E6 with P 10
+ While average precision is not typically used for retrieved sets of ten it does help to reduce the number of tied scores across engines compared to the more discretized P 10 see Jensen 2006 which we hypothesized would increase reliability
+ However we do not find any meaningful differences in either the reliability or conclusions of AvgP versus P 10 see Section 3
+3 so for the remainder of this article we simply choose AvgP
+ 3
+2 Bootstrapping Reproducibility Probability The algorithm we employ for bootstrap estimates of reproducibility probability in pairwise information retrieval evaluations is detailed in Figure 2
+ This is a specialization of the nonparametric bootstrap from prior work described in Section 2
+2
+4 particularly an implementation of Equation 2 for the pairwise information retrieval evaluation problem
+ We first analyzed point wise estimates such as this in a preliminary investigation Jensen et al
+ 2005 
+ For generality we leave the hypotheses stated as E A E B engine A significantly outperforms engine B and the converse because the specific hypotheses depend on the test chosen
+ The null hypothesis for both tests is that there is no difference between the two engines
+ We favor one sided tests because the conclusions we are ultimately interested in are whether one engine outperforms another not simply whether they differ
+ Implicit in deciding the direction of differences is the risk of type III error actually drawing firm but incorrect conclusions but for even minimal differences in engines this risk is small Spiegelhalter and Freedman 1986 
+ For the conclusions included in our comparisons calculating reproducibility probability for each direction makes this choice abundantly clear we compare only conclusions with at least 90 reproducibility probability in which case the converse conclusions typically have reproducibility probability less than 1 
+ Performing this procedure for every pair of k 10 engines results in k k 1 90 reproducibility probability estimates from which we simply discard the weakest estimate of each pair E A E B or E B E A leaving k k 1 
+2 45 estimates in our analyses
+ Throughout our experimentation we set the number of bootstrap iterations B 2 401 where B has no relation to engine B which we always represent as E B 
+ We have no preference for such an odd number except that it is larger than the recommended minimums for bootstrap calculations including those for bootstrapped hypothesis tests Davidson and MacKinnon 2000 
+ Preliminary experimentation also confirmed this was more than sufficient
+ 3
+3 Reliability of Point wise Bootstrap Power Estimates The margin of error for reliability estimates due to variability in their pilot samples is rarely studied
+ Since we cannot evaluate the entire query population any estimate of reliability is biased by the pilot query sample used to calculate it
+ We focus on determining the sample size required to ensure that high reproducibility probability estimates from any pilot sample correspond to similarly high reproducibility probability estimates for the same engine pair from our entire sample of 896 queries
+ Although this analysis must be performed separately in each evaluation environment it serves as a simple method for establishing that high reproducibility probability estimates converge in that they remain high across pilot samples at a particular pilot sample size
+ Requiring a certain number of pilot queries simply to estimate reproducibility probability would seem to dissolve all hope of reducing evaluation effort but as we demonstrate in Section 5 incorporating automatic judgments allows us to meet this minimum sample size without manually evaluating each query
+ In Figure 3 we provide an example of the growth of reproducibility probability for two example engine pairs with increasing bootstrap sample size m and corresponding size of pilot samples n 
+ Hereafter the Wilcoxon test with 0
+10 is assumed
+ The scores for these three engines and their associated rankings are detailed in Section 3
+1
+ The points on the lines of Figure 3 provide relatively smooth curves because they are estimates from the same pilot sample Q of all 896 queries
+ The error bars however represent the range of reproducibility probability estimates calculated using several other pilot samples Q created by randomly sampling m 50 queries from Q
+ Throughout we use a bootstrap sample size of 50 less than the pilot sample to dampen the issue of tied score differences due to duplicated queries created by sampling with repetition
+ Equivalent score differences result in tied ranks in the Wilcoxon test that reduce its accuracy
+ Error bars are not shown for m 850 because creating pilot samples that vary substantially out of the 896 queries available is not possible
+ With over 600 queries we are able to conclude that E2 reliably outperforms E3 their median AvgP scores are 
+676 and 
+646 respectively 
+ The candidate conclusion E5 E3 however clearly lacks the reproducibility probability to support it with these sample sizes
+ With a very large number of queries we might expect to be able to distinguish between E3 and E5 reliably
+ As discussed in Section 2
+2
+4 increasing the sample size until significant differences are found is a dangerous and inefficient method of comparing engines
+ Any nonidentical engines can be declared significantly different with a large enough sample size
+ As our goal is to compare evaluations that use differing query samples the sample sizes used in our analysis are determined by the reliability of reproducibility probability estimates for any engine pair not the significance or reproducibility of particular conclusions
+ How can we use reproducibility probability to determine the sample size necessary to ensure reliable conclusions
+ One option would be to extrapolate reproducibility probability estimates from smaller sample sizes to project the sample size at which a conclusion will be reliable as is often done for error rate
+ However we can see from the error bars in Figure 3 that estimates based on small pilot samples vary wildly
+ Having only evaluated 450 queries for example we might extrapolate that with 650 we would find a reliable difference between E5 and E3
+ Instead we favor a conservative approach of evaluating enough queries to make it clear that reproducibility probability estimates are converging to similar values across varying pilot samples for all pairs of engines
+ The discrepancies between reproducibility probability estimates from one pilot sample to another can be dramatic even with substantial numbers of evaluated queries
+ For example in Figure 4 we plot reproducibility probability estimates over all 45 pairs candidate conclusions E A E B at bootstrap sample size 450 from varying pilot samples of 500 queries created as described for Figure 3 versus identically sized estimates using all 896 queries as the pilot sample
+ Just as varying pilot samples produced large error margins in Figure 3 here we see that reproducibility probability estimates above 0
+9 from a pilot of 500 queries might correspond to estimates as low as 0
+4 for the same conclusion when using all 896 queries
+ To determine the minimum query sample size necessary to ensure that highly reproducible probability estimates from a given pilot sample will correspond to similarly high estimates from other samples we employ a simple metric the minimum reproducibility probability estimate from a pilot sample to ensure a reproducibility probability of at least 90 using our entire sample of 896 queries as the pilot
+ In Figure 4 for example we would judge that 500 queries are insufficient because only sample estimates very near 1
+0 meet this criterion
+ The corresponding y axis estimates from all 896 queries are below 0
+9 for even high sample estimates
+ As our metric decreases with larger sample sizes the entire discrepancy graph continues to grow tighter to the diagonal
+ This analysis is a limited version of the conservative double bootstrap method proposed by De Martini 2006 which is computationally infeasible for our sample sizes
+ While such analysis could be performed on each engine pair individually or by bucketing pairs by levels of difference this creates the same dependencies that make error rate difficult to apply in new environments defining the level of difference from unreliable preliminary values and an exaggerated dependence on the diversity of engines evaluated
+ Ensuring that none of the pairs of engines especially those with small differences yields a falsely high reproducibility probability estimate removes the dependence on determining levels of differences from small query sets
+ Rather than generating synthetic differences or engines this analysis provides a minimum sample size that makes false positive errors unlikely for any new engine with similar score distribution in the given environment
+ In Table II we detail this analysis for our web search evaluation presenting the minimum pm n 50 0
+10 from 20 varying pilot samples of size n to ensure pm n 50 0
+10 0
+90 using all 896 as the pilot sample
+ For P 10 with samples of 300 queries and MRR with 450 even an estimate of 1
+0 does not guarantee the estimate from all 896 is above 0
+90 for the same candidate conclusion
+ Because of the margin of error for bootstrap estimates from a single pilot sample which depends on B minimums of 0
+99 and above are difficult to enforce
+ With pilot samples of size 650 however estimates begin to converge to ensure that high reproducibility probability from a sample corresponds to a high reproducibility probability estimate using all 896
+ Therefore we conclude that 650 queries are necessary to estimate reproducibility probability reliably in our environment
+ Because this convergence takes place nearly 250 queries below the size of our entire sample of queries we conclude that it is not an artifact of pilot sample size approaching that of our entire sample
+ This convergence takes place near the same size for each evaluation metric leading us to hypothesize that the size of the pilot samples has more impact than the distributions under evaluation and providing further evidence that even different engines would likely have reliable reproducibility probability estimates with this number of queries
+ We performed this same analysis on several TREC collections in Jensen 2006 finding conclusions difficult to generalize here as such collections are not intended to represent a query population
+ 3
+4 Conclusions From Manual Web Search Evaluation Having established that the point wise bootstrap estimate of reproducibility probability is reliable for high reproducibility probability estimates on large enough sample sizes we conclude by applying it to our manual evaluation
+ The metric we chose for measuring reliability is also convenient for providing an ad hoc correction to our reproducibility probability estimates
+ While we are interested in conclusions with at least 90 reproducibility probability we saw that estimates from a pilot sample of even 800 queries must be above 98 to ensure this is valid for the population
+ To ensure we only examine reliable conclusions therefore we only include those with reproducibility probability of at least 99 for the remainder of our investigation
+ These benchmark high reproducibility probability conclusions from Wilcoxon tests using 0
+10 are shown in Figure 5
+ While many conclusions are significant based on a Wilcoxon test see Figure 1 approximately half of these have high reproducibility probability
+ 4
+ SEMIAUTOMATIC EVALUATION We have shown that evaluations in dynamic environments are capable of yielding conclusions that are reproducible across query samples
+ However the sample sizes necessary to ensure this are large demanding substantial effort to evaluate each query manually
+ To reduce the required manual judgment effort so that evaluations can feasibly be repeated as the environment changes we propose a semiautomatic evaluation framework for integrating automatic judgments with manual ones
+ Whereas small numbers of manually evaluated queries are of little use on their own due to the large number of false positives we saw in Section 3 combining them with automatic evaluation provides insight into conclusions
+ Although any automatic evaluation technique using implicit preferences such as clickthrough data fusion or metasearch based approaches and so on could be applied in this framework we leverage the resource based approach we developed in prior work mining pseudo relevance judgments from taxonomies such as the Open Directory Project referred to as DMOZ Chowdhury 2005 
+ This serves as both an analysis of the utility of our resource based automatic evaluation technique and more importantly a vehicle for developing our semiautomatic framework and demonstrating how to apply and validate it
+ First we provide an overview of mining pseudo relevance judgments from taxonomies and give conclusions derived from its automatic judgments alone
+ Next we present the two basic ways in which automatic techniques can augment manual ones by predicting conclusions that are likely to be found with larger query sets by using a combination of a smaller number of manual judgments with automatic ones and by filtering conclusions from small manual evaluations to improve their reliability
+ Finally we present simple methods for leveraging each of these two aspects
+ We compare the reliable pairwise engine A vs
+ engine B conclusions they provide with those drawn from our manual evaluation
+ Our analysis serves as an example of that which would be required using any automatic evaluation technique in a given environment thus illustrating our framework and corresponding metrics for analyzing the utility of semiautomatic methods
+ 4
+1 Mining Automatic Relevance Judgments To validate our semiautomatic framework we employ automatic evaluation techniques developed in our previous work that address both the informational and navigational tasks Beitzel et al
+ 2003a Chowdhury 2005 Jensen 2006 
+ These automatic techniques leverage two types of resources that are likely to be available in most dynamic search environments a log sufficiently representing the population of queries and a human edited taxonomy of documents in the collection that is large enough to include a representative sample of the collection
+ This could be any form of taxonomy such as a corporate intranet directory Web taxonomy or large collection of categorized bookmarks but it must represent human matches of topics to documents and not be biased towards particular search services
+ Our initial investigations into automatic evaluation used the DMOZ and LookSmart taxonomies to show that on the Web these techniques are not biased towards particular engines by the choice of taxonomy to mine judgments from finding a 0
+931 Pearson correlation between MRR1 scores the reciprocal rank of the first relevant result in the retrieved list of automatic evaluations using each Beitzel et al
+ 2003b Chowdhury and Soboroff 2002 
+ These purely automatic techniques have correlations in the 0
+7 range with manual evaluation scores Beitzel et al
+ 2003a Chowdhury 2005 
+ For the following experimentation we repeated our automatic evaluations on the Web using more recent DMOZ data downloaded on 12
+8
+2004 applying their judgments to queries from the same log and results from the same set of ten Web search engines as in our manual evaluation
+ Details of this process are provided in Appendix A
+1
+ An example of each technique is provided in Figure 6
+ For the navigational homepage
+named page finding task we mine pseudo relevance judgments using a technique we term Title Match
+ It collects documents from the taxonomy whose editor supplied titles exactly match a given query
+ These documents are treated as the best or most relevant documents for that query
+ For the informational topical search task we use a technique termed Category Match
+ If the most specific component of a category name exactly matches a given query all documents from that category are used as the pseudo relevant set
+ Scores for the ten engines using these automatic techniques are available in Appendix A
+1
+ As with manual evaluations ranking engines by their average score and comparing rankings using correlations is insufficient
+ To compare only the reliable conclusions drawn from automatic evaluations with those from manual ones we apply the same reproducibility probability analysis
+ Using the randomly selected Title Matched queries as the pilot sample and setting the bootstrap sample size equivalent to that of our manual evaluation so that we would detect differences of comparable magnitude we found those diagrammed in Figure 7
+ Comparing these conclusions with those of our manual evaluation in Figure 5 duplicated for convenience the automatic technique ranks E10 and E6 relatively lower while it ranks E4 and E5 higher
+ Category Match has a similar correlation see Appendix A
+1 
+ Although our focus is on demonstrating our framework we investigated several methods of improving this correlation including correcting for query popularity distribution topical category distribution and number of relevant results
+ None of these preliminary investigations substantially improved correlation Jensen 2006 
+ 4
+2 Integrating Manual and Automatic Judgments Although they are useful in examining evaluation characteristics over query sample sizes difficult to evaluate manually we have seen that these purely automatic techniques are often inaccurate
+ We have also shown in Section 3
+3 that evaluation of search engines in dynamic environments demands a large query sample size even to estimate reproducibility probability
+ Incorporating automatic techniques with smaller numbers of manual judgments provides a sort of evaluation roadmap where there would otherwise have been little information about engines relative performances
+ We focus on providing guidance for developing an intelligent evaluation strategy without having to manually evaluate the requisite number of queries for a reliable evaluation over every engine
+ We examine the two basic advantages semiautomatic methods can offer towards this goal expanding the set of conclusions by predicting which will have high reproducibility probability with more manual evaluation and pruning the set of conclusions from a manually judged query sample by removing those that do not seem to be reproducible across samples of this size
+ 4
+2
+1 Semiautomatic Prediction
+ To aid evaluators in focusing on conclusions that are likely to be reliable with further manual evaluation we propose the technique detailed in Figure 8
+ Although automatic and manual judgments could also be combined per result rather than on a query by query basis we hypothesized that evaluating only some of the results from a query is not dramatically less effort than evaluating all of a query s results
+ We employ this probabilistic sampling rather than simply using the same entire Q man sample in each bootstrap replication to reduce false positives by increasing the diversity of the samples
+ We assume the number of queries with automatic judgments is much larger than that used in each bootstrap replication to prevent a large number of tied scores
+ The primary goal of the following experimentation is to determine the range of rman and nman parameters at which the semiautomatic method predicts more of the correct conclusions than simply using Q man alone while maintaining a relatively low probability of finding errant false positive conclusions
+ 4
+2
+2 Semiautomatic Filtering
+ To finalize conclusions from manually evaluated query samples too small to provide reliable conclusions on their own removing the need for further judgments of the associated engines we propose the technique detailed in Figure 9
+ This technique leverages the large sample sizes possible using automatic techniques to reduce the likelihood that initial conclusions are simply artifacts of the insufficient manual sample size
+ For sizes nman too small to yield reliable conclusions on their own as discussed in Section 3
+3 we hypothesize that filtering their conclusions with those from an automatic evaluation can reduce false positive errors enough to allow them to be accepted
+ The primary goal of our experimentation with this technique is to determine the range of sizes nman for which this effect is achieved while not discarding too many of the conclusions from the purely manual evaluation that are actually correct
+ 4
+3 Utility of Semiautomatic Evaluation The primary goal of these semiautomatic methods is to make repeating evaluations feasible in large dynamic environments
+ They address this by providing insight into conclusions before completing an evaluation of every engine s results over the entire query sample size required to ensure reliability
+ This enables the development of intelligent evaluation strategies that reduce manual effort by removing engines from an evaluation in progress
+ However acceptable levels of error for making decisions such as discarding an engine depend on factors specific to evaluation goals making conclusions about total effort difficult to generalize
+ The level of investigation are we trying to divide the best engines from the worst or determine whether one of the top two is truly better than the other
+ or even the relative efficiency monetary cost and so on of the engines considered to be likely determines whether we are willing to tolerate some false alarms or missed conclusions
+ This is outside the scope of comparing the relative utility of various semiautomatic techniques
+ Therefore we focus only on the general utility of these semiautomatic techniques versus manual judgments at finding the correct pairwise E A E B conclusions using only a small pilot sample of manually evaluated queries
+ We quantify this utility by measuring the number of errant pairwise conclusions each of them yield and the number of correct conclusions they miss
+ This is a typical method of evaluating pairwise conclusions in filtering and categorization Beitzel et al
+ 2004a Manmatha et al
+ 2002 
+ Our motivation for focusing on binary pairwise conclusions themselves as opposed to the underlying reproducibility probability estimates is twofold
+ First we found in Section 3
+3 that for reasonable sample sizes only very high reproducibility probability estimates are reliable
+ Based on that analysis throughout the following evaluation we only treat reproducibility probability estimates greater than 99 as asserting a conclusion
+ Second practitioners are likely more concerned with making errant conclusions rather than the accuracy of actual values of reproducibility probability estimates
+ For the same reasons we provide the raw counts of errors rather than their percentages as the magnitude of number of errors is often of at least as much concern as their proportions
+ Unlike using only the correlation of engine rankings to compare evaluations this framework focuses on conclusions with high reproducibility probability accounting for ties and exposing whether an evaluation is too weak to find correct conclusions or too confident in errant conclusions
+ Comparing evaluations is complicated by the need to define the correct conclusions
+ For example if an evaluation of 300 queries finds that E A outperforms E B and a larger evaluation of 800 queries finds the same thing but if it also shows that 300 was not enough to reliably conclude that is the conclusion E A E B based on the initial 300 queries errant
+ 
+ To mitigate these issues each of our analyses spans several benchmark query sample sizes most easily characterized by the bootstrap sample size m since we vary the size of the pilot samples 
+ Because our baseline is purely manual judgments the following analysis also provides an interesting corollary to our investigation into the reliability of reproducibility probability estimates from manual judgments as it further describes the type of errant conclusions they cause
+ 4
+3
+1 Results of Predicting from Auto Manual Mixed Samples
+ First we evaluate the utility of the prediction procedure described in Section 4
+2
+1 against simply using the pilot sample of manually evaluated queries alone
+ In the task of predicting what conclusions will be found with larger query sample sizes than those that have been evaluated we seek to determine the range of r man the ratio of manual to automatically judged queries and nman the size of the pilot sample parameters for which the semiautomatic procedure substantially reduces errors compared to the manual
+ As we did in Section 3
+3 we analyze the manual method by finding the set of conclusions from each of 20 different distinct query samples Q man with 50 more queries than the size we bootstrap
+ With a mixture of automatically and manually evaluated queries in the semiautomatic method the need for a larger pilot manual sample than the bootstrap sample size needed to prevent a large number of ties is diminished
+ To ensure a conservative evaluation we therefore used sets Q man of size nman E m for the semiautomatic method
+ man We begin with an examination of the navigational evaluation using the best page MRR manual evaluation and the Title Match automatic approach
+ In Figure 10 we compare the correct set of manual conclusions based on our benchmark pilot of all 896 queries bootstrapped into sets of 850 a copy of Figure 5 for convenience to those from one of the twenty semiautomatic prediction runs
+ This is in fact the worst case the largest number of missed conclusions out of the twenty pilot Q man samples of size 350 for the m 850 E m 350 test
+ man Comparing these example semiautomatic conclusions in Figure 10 to those of the purely automatic technique in Figure 7 shows that the same general discrepancies exist but their severity is markedly decreased
+ The semiautomatic still ranks E10 and E6 relatively too low and E4 and E5 higher than the manual just as the automatic method did
+ However the number of errors is dramatically fewer because it commits these infractions in only a small number of engine pairs whereas the automatic method is certain of its incorrectness in many more cases
+ This serves as an illustrative example of how the aggregated errors in the following tables such as Table III are counted
+ Recalling that any path from a higher node to a lower one implies that engine outperforms the lower one each of these sets contain 16 distinct conclusions by chance 
+ As recorded in the final row of Table III this case of the semiautomatic technique misses 7 of the 16 correct conclusions the largest absolute number of them across all 20 pilot samples
+ The missed conclusions are r E1 E2 E4 r E1 E5 E7 E8 E10 r E6 E9 Of the 16 conclusions this case draws 9 are false alarms errant false positives r r r r E2 E5 E10 E6 E3 E4 E7 E6 E5 E8 E8 E9
+ The first column is the benchmark bootstrap sample size taken from the pilot of all 896 that we compare with both the small manual and semiautomatic
+ The expected number of manual queries in each test bootstrap sample for the semiautomatic approach is given in the second column
+ This is equivalent to the test bootstrap sample size for the purely manual approach as we are interested in how well a small number of manually evaluated queries predict the conclusions of a larger number
+ The probability of a false alarm is expressed as the ratio of the average number of false alarms to the average number of conclusions drawn
+ The maximum absolute number of false alarms across all 20 runs is given with its associated number of conclusions on that pilot sample
+ The probability of a miss is based on the number of correct conclusions which is constant for each benchmark m the same for the manual and semiautomatic method 
+ There is one special case E m 0 where a purely automatic apman proach is provided
+ That case does not make use of any pilot manual samples so there is only a single result
+ Table III includes selected rows where the semiautomatic approach reduces errors dramatically compared to the manual
+ Complete results for these and other ratios of manual to automatic results are provided in Appendix A
+2
+ Predictions based on expanding the small manual sample with queries automatically evaluated using Title Match typically miss approximately half as many of the correct conclusions as those from the manual sample alone
+ We examine predictions to four larger sizes 300 to investigate our ability to predict dramatic differences with very few judgments 450 the first point when high reproducibility probability estimates in the manual case begin to become reliable see Table II 600 where manual conclusions are reliable and 850 the most detailed conclusions our set of judgments can support
+ The small number of correct conclusions three in the 300 queries case makes it difficult to choose one over the other as both the manual and semiautomatic methods have difficulty
+ The manual one often misses all three while the semiautomatic one draws far too many conclusions in general with over half of them being false alarms
+ Random performance however would draw nearly all false alarms as only three conclusions of 45 are correct
+ Across the other prediction sizes the manual method often misses nearly all the correct conclusions at a maximum the semiautomatic often cuts this by half
+ Its number of false alarms however is greater than when using manual queries alone
+ This can be mitigated by incorporating a large enough ratio of manual queries see Appendix A
+2 which also reduces the number of conclusions it draws in general the denominator of the probability of false alarm 
+ Of course larger available pilot samples for the manual method increase the number of conclusions it draws on average subsequently decreasing the average number of misses with little increase in false alarms
+ When a larger number of manual judgments are available the semiautomatic method may not be justified
+ Compared to not being able to draw any conclusions at all even a prediction method prone to some degree of false alarms is likely useful but how do we determine the bounds of this utility
+ Clearly we need a combined metric to compare these two methods and determine when the semiautomatic method s relative benefits justify its use
+ To directly compare the cost of errors in the manual and semiautomatic methods we leverage a standard cost function Equation 3 adopted from the Topic Detection and Tracking TDT conference Manmatha et al
+ 2002 
+ A lower cost indicates fewer errors were made
+ This combines the ratios of errors shown in the table with relative costs for each type of error and normalizes them by the relative number of correct conclusions in general
+ In our calculation of P rel we assume the maximum number of pair wise conclusions that could be found among our 10 engines with 45 as the denominator
+ Because the actual numbers of correct conclusions for our four prediction sizes are much less than 45 this may inherently provide extra weight to the false alarm errors
+ Equation 3 The TDT cost function
+ In the prediction task we set Cmiss 5 Cfa to reflect the importance of finding correct conclusions over suggesting errant ones
+ With the cost of misses twice or equal to false alarms the manual method typically outperforms the semiautomatic although this may be inflated by the aforementioned bias from P rel 
+ We hypothesized that the key parameter was the ratio of manually judged queries in the bootstrap samples regardless of the overall magnitude of the sample
+ In Figure 11 we show the costs for the manual and semiautomatic methods at various ratios of manually evaluated queries to the predicted query sample size when predicting sizes of 450 600 and 850
+ This and each of the following cost graphs include trend lines for readability created using a second order polynomial regression since that yielded the largest R 2 fitness measure for each graph
+ We do not intend to make any general assertions about the shape of such curves as it is obvious they differ depending on the automatic technique used
+ Errors are very highly correlated to the ratio of manual judgments regardless of total sample size
+ When less than 50 of the sample size to be predicted has been manually evaluated the semiautomatic technique is more effective at predicting conclusions than the smaller number of manually judged queries alone
+ When roughly half of the sample size to be predicted has been manually evaluated the cost of false alarms introduced by the semiautomatic method outweighs the reduction in missed correct conclusions compared to using the manual sample alone
+ We also hypothesized that conclusions with dramatically differing engines could be predicted with very few manual judgments
+ As we saw in the raw error counts of Table III however predicting conclusions at sample size 300 using the semiautomatic technique results in so many false alarms that its cost is higher than using the small manual sets alone despite their propensity to miss many relevant conclusions see Figure 12 
+ When no manual judgments are available however the cost of errors from the purely automatic method is not terribly high
+ Again it is likely to be useful compared to not being able to predict any conclusions whatsoever
+ The proposed semiautomatic framework and metrics enable us to compare the effectiveness of different automatic judgment techniques in the hopes of moving beyond these na ve ones
+ We performed the same experiments and i analysis with combining the average precision at 10 manual judgments and Category Match automatic judgments
+ The complete error counts are included in Appendix A
+2
+ Errors in the semiautomatic informational evaluation are also very highly correlated with the ratio of manual results as evidenced by Figure 13
+ As with Title Match predicting distant conclusions is more useful than nearer ones
+ However integrating the Category Match judgments does not offer as much benefit as those of Title Match in the navigational evaluation
+ The number of false alarms does not decrease as quickly with larger ratios of manually evaluated queries and the number of misses actually increases slightly whereas it decreases with Title Match
+ We believe this is because the Category Match evaluation has more disagreement with the manual AvgP evaluation causing the integration of more manual judgments to reduce the number of both correct and incorrect Category Match predictions
+ Like the navigational evaluation however the manual samples alone often miss nearly all of the correct conclusions
+ Just as with the navigational evaluation predicting conclusions for small sample sizes such as 300 is better achieved with very few manual judgments than with the semiautomatic technique due to the large number of false alarms see Appendix A
+2 
+ 4
+3
+2 Results of Filtering Conclusions from Small Manual Samples
+ Next we evaluate the utility of the filtering procedure described in Section 4
+2
+2 as opposed to simply using the manually evaluated queries alone
+ The intent here is to reduce the number of false alarms from sample sizes too small to ensure reliability as per Section 3
+3 
+ We seek to determine the range of manually evaluated queries nman for which the semiautomatic technique is beneficial
+ As in our analysis of prediction we create 20 distinct query samples Q man of size nman m 50 and compare the set of conclusions from each to that of bootstrapping our entire pilot sample of 896 into sets of size m
+ We begin with an examination of the navigational evaluation using the best page MRR manual evaluation and the Title Match automatic approach see Table IV 
+ Using the same metrics as in the previous section it is clear from Table IV that semiautomatic filtering reduces false alarms by approximately half throughout the experiments while not substantially increasing misses especially the maximum number of them
+ At nman 500 there is a dramatic decrease in the number of false alarms
+ Interestingly this correlates with the smallest size at which reproducibility probability estimates begin to become reliable across all metrics in Table II
+ To compare the semiautomatic method to the manual with a single metric we again use the TDT cost function defined in Equation 3
+ In contrast to predicting conclusions filtering increases reliability of candidate conclusions so we set the cost of false alarms to be twice that of misses
+ With the costs set equal the manual approach is preferred for some sample sizes
+ In Figure 14 we show the cost of the manual and semiautomatic methods at increasing sample sizes
+ Here the steep drop in false alarms causes the corresponding total cost to drop dramatically with samples of size 500 and above
+ By 600 the costs are roughly equivalent but filtering can still be useful to ensure the reliability of a conclusion to a stricter standard as evidenced by the raw counts in Table IV
+ The results for the informational search task and Category Match automatic judgments are similar
+ Unlike the navigational evaluation however the number of false alarm and miss errors for the semiautomatic technique increases consistently with sample size
+ However it still cuts the average number of false alarms by approximately half
+ Like the navigational evaluation there is a drop in cost see Figure 15 with samples of size 500 and above but unlike it the utility of filtering is also immediately diminished at that same point
+ 5
+ CONCLUSIONS Dynamic environments such as the World Wide Web demand frequent repetition of costly search effectiveness evaluations
+ We have detailed a semiautomatic framework that combines automatic evaluation with manual judgments to make this feasible
+ We employ methods for comparing conclusions of one evaluation to another that go beyond simple correlation of engine rankings
+ Compared to small numbers of manually judged queries alone semiautomatic prediction often reduces the number of missed correct conclusions by half and semiautomatic filtering reduces the number of errant conclusions by half
+ This provides evaluators with insight into conclusions before naively evaluating every engine over the requisite number of queries for a reliable evaluation
+ To validate this framework we leveraged reproducibility probability to determine which conclusions generalize to the query population as a whole
+ Applying this method to our own precision oriented manual Web search evaluation over 896 queries shows that the query sample sizes required to ensure reliability in such evaluations are often much larger than those previously studied 650 in our environment 
+ Because precision oriented evaluations are performed without system pooling they do not depend on the number of engines being judged enabling evaluation strategies that reduce effort by discarding poorly performing engines early
+ However semiautomatic methods such as those proposed are needed to exploit this by building query samples of sufficient size before manually evaluating each one
+ In a conservative example from our navigational evaluation a combination of semiautomatic filtering and prediction using only 300 manually judged queries would enable us to reliably conclude that E6 and E9 are indeed the worst performing engines
+ Removing them from the evaluation would reduce the size of the result pools in the following 350 queries left to evaluate by 19 based on overlap analysis in Jensen 2006 
+ There is a great deal of future work in this area
+ Using this framework we will evaluate and refine other automatic evaluation techniques especially implicit preferences such as clickthrough data to determine which or what combination best enables semiautomatic methods to determine the correct conclusions with fewer manual judgments
+ We will also further investigate manual judgment techniques for those that optimize the effort required to reach a desired level of reliability such as judgments with varying levels of relevance beyond binary
+ In addition each automatic evaluation technique has its own spamming issues that need to be investigated
+ 

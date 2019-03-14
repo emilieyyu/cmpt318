@@ -1,0 +1,248 @@
+delay/NN and/CC can/MD immediately/RB of/IN updates/NNS also/RB a/DT common/JJ disadvantage/NN updated/VBN
+To/TO design/VB or/CC reply/VB to/TO the/DT request/NN of/IN CScAsr/NNP when/WRB a/DT sender/NN generates/VBZ bursts/NNS pattern/VBP the/DT advantage/NN over/IN ABCAST/NNP is/VBZ even/RB greater/JJR
+On/IN the/DT part/NN of/IN the/DT table/NN being/VBG it/PRP is/VBZ not/RB hard/JJ to/TO using/VBG CBCAST/NNP is/VBZ that/IN the/DT sender/NN needs/VBZ mutual/JJ exclusion/NN our/PRP$ experience/NN suggests/VBZ that/IN if/IN mutual/JJ exclusion/NN A/DT single/JJ locking/NN
+However/WRB applications/NNS have/VBP strong/JJ benefits/NNS may/MD suffice/VB to/TO have/VB this/DT property/NN
+Operation/NN for/IN a/DT whole/JJ series/NN structuring/VBG the/DT data/NNS of/IN multicasts/NNS and/CC in/IN some/DT case/NN locking/NN can/MD be/VB entirely/RB avoided/VBN just/RB by/IN the/DT appropriate/JJ application/NN itself/PRP
+This/DT translates/VBZ to/TO a/DT huge/JJ benefit/NN for/IN many/JJ asynchronous/JJ presented/VBN in/IN BSS91/CD
+The/DT distinction/NN settings/NNS between/IN causal/NN and/CC total/JJ event/NN orderings/NNS system/NN as/IN seen/VBN in/IN the/DT performance/NN
+CBCAST/NNP and/CC ABCAST/NNP have/VBP parallels/NNS a/DT causal/JJ delivery/NN ordering/VBG in/IN other/JJ as/IN part/NN of/IN
+Although/IN Isis/NNP was/VBD the/DT first/JJ distributed/VBN to/TO enforce/VB Isis/NNP applications/NNS locks/NNS are/VBP used/VBN primarily/RB for/IN mutual/JJ exclusion/NN on/IN possibly/RB conflicting/VBG operations/NNS such/JJ as/IN updates/NNS on/IN related/JJ data/NNS items/NNS
+In/IN the/DT case/NN of/IN replicated/JJ data/NNS this/DT results/NNS in/IN an/DT algorithm/NN similar/JJ to/TO primary/JJ copy/JJ update/NN in/IN which/WDT the/DT primary/JJ copy/JJ changes/NNS dynamically/RB
+The/DT execution/NN model/NN is/VBZ non/RB transactional/JJ thesis/NN no/DT need/NN for/IN read/JJ locks/NNS or/CC for/IN two/CD phase/NN locking/NN rule/NN
+This/DT is/VBZ discussed/VBN further/RBR in/IN Sec/NNP
+7/CD
+19/CD a/DT communication/NN time/NN
+Moreover/JJR subsystem/NN Bir85/CD
+the/DT approach/NN draws/VBZ on/IN Lampon/NNP s/NNS respects/VBZ anticipated/VBN prior/JJ work/NN on/IN logical/JJ notions/NNS of/IN replication/NN the/DT approach/NN BHG87/CD
+was/VBD in/IN some/DT Similarly/JJ software/NN by/IN work/NN on/IN primary/JJ copy/NN both/DT to/TO Lamport/NNP s/NNS in/IN database/NN approach/NN systems/NNS close/JJ synchrony/NN is/VBZ related/VBN state/NN machine/NN discussed/VBD to/TO developing/VBG distributed/VBN SclO0/CD architecture/NN and/CC to/TO the/DT database/NN serializability/NN has/VBZ yielded/VBN a/DT memory/NN model/NN further/RB below/IN
+Work/NN on/IN a/DT parallel/JJ processor/NN update/NN model/NN called/VBD weak/JJ in/IN the/DT cache/NN DSB86/NNP TH90/NNP which/WDT uses/VBZ a/DT causal/JJ dependency/NN and/CC a/DT causal/NN ABHN91/CD principle/NN to/TO increase/VB the/DT parallelism/NN of/IN a/DT parallel/JJ processor/NN memory/NN discussion/NN multiprocessors/NNS property/NN has/VBZ been/VBN used/VBN in/IN work/NN on/IN lazy/JJ database/NN systems/NNS JB89/CD LLS90/CD
+A/DT more/RBR detailed/JJ in/IN Sch88/NNP BJ89/NNP and/CC distribution/NN of/IN the/DT conditions/NNS under/IN which/WDT can/MD be/VB used/VBN in/IN place/NN of/IN AI/NNP Vr/NNP
+Summary/NNP of/IN benefits/NNS due/JJ to/TO virtual/JJ synchrony/NN
+Brevity/NNP precludes/VBZ algorithms/RB a/DT more/RBR detailed/JJ discussion/NN of/IN virtual/JJ synchrony/NN or/CC how/WRB it/PRP is/VBZ used/VBN in/IN developing/VBG the/DT benefits/NNS of/IN the/DT model/NN distributed/VBN within/IN Isis/NNP
+However/RB it/PRP may/MD be/VB useful/JJ to/TO summarize/VB
+Allows/VBZ code/NN to/TO be/VB developed/VBN supports/VBZ a/DT meaningful/JJ assuming/VBG a/DT simplified/VBN closely/RB synchronous/JJ execution/NN model/NN
+Replicated/VBN notion/NN of/IN group/NN state/NN and/CC state/NN transfer/NN both/DT when/WRB groups/NNS manage/VBP is/VBZ dynamically/RB partitioned/VBN among/IN group/NN members/NNS
+Data/NNP and/CC when/WRB a/DT computation/NN asynchronous/JJ treatment/NN pipelined/VBD communication/NN process/NN group/NN membership/NN changes/NNS and/CC failures/NNS through/IN a/DT single/JJ of/IN communication/NN execution/NN model/NN
+Event/NN oriented/VBD failures/NNS handling/VBG through/IN a/DT consistent/JJ subsystem/NN
+This/DT is/VBZ in/IN contrast/NN presented/JJ system/NN membership/NN list/NN integrated/VBN with/IN the/DT communication/NN to/TO the/DT usual/JJ approach/NN of/IN sensing/VBG failures/NNS through/IN timeouts/NNS and/CC channels/NNS breaking/VBG which/WDT would/MD not/RB guarantee/VB consistency/NN
+The/DT approach/NN also/RB has/VBZ limitations/NNS reduced/VBN availability/NN during/IN LAN/NNP partition/NN failures/NNS
+Only/RB allows/VBZ progress/NN in/IN a/DT single/JJ partition/NN and/CC requires/VBZ that/IN a/DT majority/NN of/IN sites/NNS be/VB available/JJ in/IN that/DT partition/NN risks/NNS incorrectly/RB classifying/VBG an/DT operational/JJ site/NN or/CC process/NN as/IN faulty/NN
+The/DT virtual/JJ synchrony/NN theoretical/JJ model/NN is/VBZ unusual/JJ in/IN offering/VBG these/DT benefits/NNS within/IN a/DT single/JJ framework/NN
+Moreover/RB evade/VB arguments/NNS exist/VBP that/IN no/DT system/NN that/WDT provides/VBZ consistency/NN
+Our/PRP$ experience/NN distributed/VBN behavior/NN can/MD completely/RB these/DT limitations/NNS has/VBZ been/VBN that/IN the/DT issues/NNS addressed/VBD
+Applications/NNS and/CC that/IN the/DT approach/NN by/IN virtual/JJ synchrony/NN is/VBZ general/JJ complete/JJ are/VBP encountered/VBN and/CC theoretically/RB in/IN even/RB the/DT simplest/JJS distributed/VBN system/NN
+The/DT Isis/NNP toolkit/NN provides/VBZ a/DT collection/NN and/CC implementing/VBG group/NN based/VBN of/IN higher/JJR level/NN for/IN forming/VBG and/CC managing/VBG process/NN groups/NNS of/IN the/DT approach/NN by/IN discussing/VBG of/IN a/DT distributed/VBN database/NN software/NN
+This/DT section/NN illustrates/VBZ the/DT specifics/NNS the/DT styles/NNS of/IN group/NN supported/VBN by/IN the/DT system/NN and/CC giving/VBG application/NN
+A/DT simple/JJ example/NN Isis/NN is/VBZ not/RB the/DT first/JJ system/NN to/TO use/VB process/NN groups/NNS as/IN programmers/NNS developed/VBD
+Cheriton/NNP s/VBZ V/NNP system/NN had/VBD received/VBN wide/JJ visibility/NN CZ83/CD
+More/RBR recently/RB group/NN mechanisms/VBZ the/DT Chorus/NNP operating/NN system/NN become/VBP common/JJ exemplified/VBN by/IN the/DT Ameoba/NNP system/NN KTHB89/CD system/NN developed/VBD RAA/NNP 88/CD IBM/NNP s/VBZ AAS/NNP the/DT Psync/NNP system/NN PBS/NNP 9/CD system/NN CDg0/NNP a/DT high/JJ availability/NN by/IN Ladin/NNP and/CC Liskov/NNP LLSg0/NNP and/CC Transis/NNP ADKM91/NNP
+Nonetheless/JJ solutions/NNS Isis/NNP was/VBD first/JJ to/TO propose/VB the/DT virtual/NN to/TO a/DT wide/JJ variety/NN of/IN problems/NNS synchrony/NN model/NN
+The/DT high/JJ performance/NN approach/NN is/VBZ now/RB gaining/VBG through/IN its/PRP$ toolkit/NN wide/JJ acceptance/NN
+5/CD
+1/CD Styles/NNP of/IN groups/NNS Styles/NNP of/IN groups/NNS of/IN a/DT distributed/VBN system/NN is/VBZ limited/VBN by/IN the/DT information/NN
+This/DT was/VBD a/DT consideration/NN simplicity/NN in/IN developing/VBG available/JJ to/TO the/DT protocols/NNS employed/VBN for/IN efficient/JJ communication/NN
+The/DT Isis/NNP process/NN group/NN interface/NN of/IN accurate/JJ where/WRB trade/NN off/RP information/NN about/RB had/VBD to/TO be/VB made/VBN between/IN group/NN membership/NN introduces/VBZ of/IN the/DT interface/NN and/CC the/DT availability/NN
+As/IN a/DT consequence/NN interact/NN for/IN use/NN in/IN multicast/JJ address/NN expansion/NN
+The/DT Isis/NNP application/NN interface/NN in/IN four/CD styles/NNS of/IN process/NN groups/NNS that/WDT differ/VBP in/IN how/WRB processes/NNS writing/VBG
+Our/PRP$ group/NN is/VBZ working/VBG with/IN the/DT software/NN with/IN the/DT group/NN illustrated/VBD of/IN a/DT new/JJ version/NN that/IN the/DT time/NN of/IN technology/NN foundation/NN which/WDT on/IN integration/NN into/IN Mach/NNP the/DT OSF/NNP 1/CD
+AD/NN version/NN and/CC with/IN Unix/NNP International/NNP plans/VBZ a/DT reliable/JJ group/NN mechanism/NN for/IN UI/NNP Atlas/NNP
+Fig/NNP
+8/CD anonymous/JJ groups/NNS are/VBP not/RB distinguished/VBN from/IN explicit/JJ groups/NNS this/DT level/NN of/IN the/DT system/NN
+Isis/NNP is/VBZ optimized/VBN to/TO detect/VB and/CC handle/VB each/DT of/IN these/DT cases/NNS efficiently/RB
+Peer/NNP groups/NNS These/DT arise/VB where/WRB a/DT set/NN of/IN p/NN cooperate/VBP closely/RB for/IN example/NN to/TO replicate/VB data/NNS
+The/DT membership/NN is/VBZ often/RB used/VBN as/IN an/DT input/NN to/TO the/DT algorithm/NN used/VBN in/IN handling/VBG requests/NNS as/IN for/IN the/DT concurrent/JJ earlier/NN
+With/IN any/DT group/NN given/VBN the/DT group/NN s/VBZ name/NN and/CC of/IN a/DT group/NN will/MD multicast/VB to/TO it/PRP repeatedly/RB better/JJR database/NN search/NN described/VBD Client/JJ server/NN groups/NNS
+In/IN Isis/NNP any/DT process/NN can/MD communicate/VB
+However/RB if/IN a/DT non/JJ member/NN appropriate/JJ permissions/NNS performance/NN to/TO optimize/VB
+Diffusion/NN group/NN is/VBZ obtained/VBN by/IN lust/NN registering/VBG the/DT group/NN addressing/VBG protocol/NN the/DT sender/NN as/IN a/DT client/NN of/IN the/DT group/NN
+A/DT diffusion/NN group/NN is/VBZ a/DT client/NN server/NN group/NN in/IN which/WDT the/DT clients/NNS register/VBP themselves/PRP but/CC in/IN which/WDT the/DT members/NNS of/IN the/DT group/NN send/NN messages/NNS
+Hierarchical/JJ groups/NNS a/DT hierarchical/JJ application/NN to/TO the/DT full/JJ client/NN set/VBN and/CC the/DT clients/NNS are/VBP passive/JJ sinks/NNS
+Component/NNP groups/VBZ the/DT group/NN is/VBZ a/DT structure/NN built/VBN from/IN multiple/JJ that/WDT use/VBP the/DT hierarchical/JJ group/NN initially/RB reasons/NNS of/IN scale/NN
+are/VBP subsequently/RB contact/VB its/PRP$ root/NN group/NN but/CC be/VB redirected/VBN to/TO one/CD of/IN the/DT constituent/NN subgroups/NNS
+Group/NNP data/NNS would/MD normally/RB be/VB partitioned/VBN among/IN the/DT subgroups/NNS of/IN the/DT hierarchy/NN the/DT most/RBS common/JJ
+Although/IN tools/NNS are/VBP provided/VBN for/IN multicasting/VBG communication/NN pattern/NN involves/VBZ interaction/NN with/IN the/DT full/JJ membership/NN between/IN a/DT client/NN and/CC the/DT members/NNS of/IN some/DT subgroup/NN
+There/EX is/VBZ no/DT requirement/NN executed/VBD that/IN the/DT members/NNS of/IN a/DT group/NN be/VB identical/JJ or/CC even/RB coded/VBN in/IN the/DT same/JJ language/NN and/CC an/DT individual/JJ or/CC on/IN the/DT same/JJ architecture/NN
+Moreover/RB multiple/JJ groups/NNS can/MD be/VB overlapped/VBN process/NN can/MD belong/VB to/TO as/RB many/JJ as/IN several/JJ hundred/CD different/JJ groups/NNS although/IN scaling/NN is/VBZ discussed/VBN further/RB below/IN this/DT is/VBZ uncommon/JJ
+5/CD
+2/CD The/DT toolkit/NN interface/NN As/IN noted/VBN earlier/RBR pipelining/VBG the/DT performance/NN of/IN a/DT distributed/VBN system/NN of/IN asynchronous/JJ less/CC efficient/JJ is/VBZ often/RB limited/VBN by/IN the/DT degree/NN of/IN communication/NN problems/NNS can/MD be/VB tricky/JJ and/CC for/IN this/DT reason/NN the/DT toolkit/NN paradigms/VBZ these/DT tool/NN by/IN achieved/VBN
+The/DT development/NN solutions/NNS to/TO distributed/VBN than/IN risk/NN errors/NNS
+Many/JJ Isis/NN users/NNS would/MD rather/RB employ/VB includes/VBZ asynchronous/JJ implementations/NNS solutions/NNS of/IN the/DT more/RBR important/JJ distributed/VBN programming/NN include/VBP a/DT synchronization/NN for/IN managing/VBG tool/NN that/WDT supports/VBZ a/DT form/NN of/IN locking/VBG based/VBN on/IN distributed/VBN tokens/NNS a/DT replication/NN primary/JJ backup/JJ server/NN design/NN that/IN load/NN balances/NNS replicated/VBD data/NNS a/DT tool/NN for/IN fault/NN tolerant/NN making/VBG different/JJ group/NN members/NNS act/VBP as/IN the/DT primary/NN for/IN different/JJ programming/NN requests/NNS and/CC so/RB forth/RB
+A/DT partial/JJ list/NN appears/VBZ in/IN ISIS/NNP manual/JJ even/RB non/JJ experts/NNS distributed/VBN software/NN in/IN Table/NNP I/PRP
+Using/VBG these/DT tools/NNS and/CC following/VBG have/VBP been/VBN successful/JJ in/IN developing/VBG examples/NNS fault/NN tolerant/NN highly/RB asynchronous/JJ process/NN
+Groups/NNS create/VBP delete/JJ join/NN transferring/VBG CBCAST/NNP ABCAST/NNP collecting/VBG state/NN
+0/CD 1/CD QUORUM/NNP or/CC ALL/NNP replies/VBZ
+0/CD replies/NNS gives/VBZ an/DT group/NN multicast/VBD asynchronous/JJ multicast/NN
+Synchronization/NN Locking/VBG with/IN symbolic/JJ strings/NNS to/TO represent/VB locks/NNS
+Deadlock/NNP detection/NN or/CC avoidance/NN must/MD be/VB addressed/VBN at/IN the/DT application/NN level/NN
+Token/NNP passing/VBG
+Replicated/VBN processes/VBZ data/NNS Implemented/VBN by/IN broadcasting/VBG updates/NNS to/TO group/VB having/VBG copies/NNS
+Dynamic/NNP spooling/VBG system/NN reconfiguration/NN Transfer/NNP values/VBZ to/TO using/VBG replicated/VBN that/IN join/NN using/VBG state/NN transfer/NN facility/NN data/NNS in/IN an/DT update/JJ facility/NN logging/VBG configuration/NN
+Monitoring/VBG for/IN state/NN recovery/NN after/IN failure/NN
+Monitor/NNP watch/VB a/DT process/NN a/DT site/NN trigger/NN actions/NNS site/VBP failures/NNS and/CC etc/FW after/IN failures/NNS and/CC recoveries/NNS
+Changes/NNS to/TO process/VB group/NN membership/NN Distributed/VBD multiple/JJ automated/JJ execution/NN facilities/NNS
+Redundant/JJ computation/NN primary/NN
+backup/RB all/DT take/VBP the/DT same/JJ action/NN subdivided/VBD among/IN servers/NNS
+Coordinator/NNP cohort/NN recovery/NN when/WRB site/NN recovers/VBZ program/NN automatically/RB restarted/VBD
+If/IN first/JJ to/TO recover/VB state/NN loaded/VBN from/IN logs/NNS or/CC initialized/VBN by/IN
+State/NN join/NN active/JJ process/NN group/NN and/CC transfer/VB WAN/NNP communication/NN Reliable/NNP long/JJ haul/NN message/NN passing/VBG and/CC file/NN transfer/NN facility/NN
+The/DT example/NN the/DT procedures/NNS messages/NNS is/VBZ in/IN standard/JJ C/NNP
+The/DT server/NN initializes/VBZ main/JJ loop/NN in/IN Isis/NNP and/CC declares/VBZ incoming/JJ that/WDT will/MD handle/VB update/VB and/CC inquiry/VB requests/NNS dispatches/NNS to/TO these/DT procedures/NNS generation/NN as/IN needed/VBN other/JJ styles/NNS of/IN main/JJ loop/NN are/VBP also/RB supported/VBN
+Scanning/NNP is/VBZ specific/JJ to/TO the/DT C/NNP interface/NN
+The/DT formatted/VBD I/PRP
+O/NNP is/VBZ not/RB style/NN of/IN message/NN available/JJ where/WRB type/NN information/NN at/IN runtime/NN
+the/DT current/JJ contents/NNS of/IN the/DT database/NN to/TO a/DT server/NN that/IN an/DT existing/VBG server/NN
+The/DT state/NN transfer/NN routines/NNS are/VBP concerned/VBN with/IN sending/VBG has/VBZ just/RB been/VBN started/VBN and/CC is/VBZ joining/VBG the/DT group/NN
+In/IN this/DT situation/NN do/VBP a/DT state/NN transfer/NN invoking/NN will/MD cause/VB to/TO an/DT invocation/NN the/DT message/NN its/PRP$ state/NN sending/VBG of/IN its/PRP$ state/NN
+Isis/NNP arbitrarily/RB selects/VBZ each/DT call/NN that/IN this/DT procedure/NN makes/VBZ side/NN in/IN our/PRP$ example/NN on/IN the/DT receiving/VBG the/DT latter/JJ simply/RB passes/VBZ and/CC update/VB to/TO the/DT update/JJ procedure/NN the/DT same/JJ message/NN format/NN is/VBZ used/VBN by/IN send/JJ state/NN it/PRP is/VBZ possible/JJ
+Of/IN course/NN there/EX are/VBP many/JJ variants/NNS on/IN this/DT basic/JJ scheme/NN for/IN example/NN only/RB certain/JJ servers/NNS to/TO join/VB and/CC so/RB forth/RB
+The/DT client/NN program/NN does/VBZ a/DT pg/NN lookup/NN to/TO find/VB the/DT server/NN
+should/MD be/VB allowed/VBN to/TO handle/VB to/TO indicate/VB to/TO the/DT system/NN that/WDT processes/VBZ state/NN transfer/NN requests/NNS to/TO refuse/VB to/TO allow/VB certain/JJ calls/NNS to/TO its/PRP$ query/NN and/CC update/VB
+Subsequently/NNP procedures/NNS are/VBP mapped/VBN into/IN messages/NNS to/TO timeserver/VB
+Here/RB are/VBP some/DT programming/VBG examples/NNS on/IN how/WRB isis/NN handles/VBZ incoming/JJ SQL/NNP queries/NNS
+For/IN the/DT group/NN ABCAST/NNP in/IN this/DT case/NN the/DT database/NN server/NN of/IN Figure/NN 9/CD uses/VBZ a/DT redundant/JJ style/NN of/IN execution/NN request/NN and/CC will/MD receive/VB multiple/JJ identical/JJ replies/NNS from/IN all/DT copies/NNS in/IN which/WDT the/DT client/NN broadcasts/NNS
+In/IN practice/NN each/DT client/NN will/MD wait/VB for/IN the/DT reaction/NN to/TO failure/NN but/CC reply/RB and/CC ignore/VB all/DT others/NNS
+Such/JJ an/DT approach/NN provides/VBZ the/DT fastest/JJS possible/JJ solution/NN
+The/DT disadvantage/NN of/IN consuming/VBG n/JJ times/NNS the/DT sources/NNS of/IN a/DT fault/NN intolerant/JJ process/NN group/NN
+An/DT alternative/NN would/MD have/VB been/VBN to/TO subdivide/VB the/DT search/NN so/RB that/IN each/DT server/NN performs/VBZ the/DT work/NN
+Here/RB the/DT client/NN would/MD combine/VB fails/VBZ instead/RB of/IN replying/VBG a/DT condition/NN Isis/NN interfaces/NNS have/VBP been/VBN developed/VBN exist/VBP for/IN UNIX/NNP workstations/NNS responses/NNS from/IN all/PDT the/DT servers/NNS in/IN Isis/NNP
+Repeating/VBG the/DT request/NN if/IN a/DT server/NN readily/RB detected/VBD
+For/IN C/NNP C/NNP Fortran/NNP Common/NNP Lisp/NNP Ada/NNP and/CC Smalltalk/NNP from/IN all/DT major/JJ vendors/NNS and/CC ports/NNS of/IN Isis/NNP and/CC mainframes/NNS as/RB well/RB as/IN for/IN Mach/NNP Chorus/NNP ISC/NNP and/CC is/VBZ represented/VBN in/IN the/DT SCO/NNP UNIX/NNP the/DT DEC/NNP VMS/NNP system/NN binary/JJ format/NN used/VBN by/IN the/DT sending/VBG if/IN necessary/JJ automatically/RB and/CC Honeywell/NNP s/NNS machine/NN Lynx/NNP OS/NNP
+Data/NNP within/IN messages/NNS and/CC converted/VBD to/TO the/DT format/NN of/IN the/DT destination/NN upon/IN reception/NN transparently/RB
+6/CD
+Who/WP uses/VBZ Isis/NNP and/CC how/WRB
+This/DT section/NN briefly/NN reviews/VBZ several/JJ Isis/NNP applications/NNS looking/VBG at/IN the/DT roles/NNS that/IN Isis/PRP$ plays/NNS
+6/CD
+1/CD Brokerage/NNP a/DT number/NN of/IN introduction/NN Underlying/VBG Isis/NNP users/NNS are/VBP concerned/VBN Figure/NNP 11/CD illustrates/VBZ employed/VBN with/IN financial/JJ computing/NN systems/NNS such/JJ as/IN the/DT one/CD cited/VBN in/IN the/DT perspective/NN in/IN which/WDT groups/NNS one/CD
+Such/JJ a/DT system/NN now/RB seen/VBN from/IN an/DT internal/JJ by/IN the/DT broker/NN become/IN streams/NNS of/IN data/NNS evident/JJ the/DT services/NNS
+The/DT architecture/NN is/VBZ a/DT client/NN server/NN in/IN which/WDT the/DT servers/NNS filter/NN and/CC analyze/NN and/CC reorganize/VB themselves/PRP so/RB that/IN service/NN is/VBZ not/RB interrupted/VBN
+Fault/NN tolerance/NN here/RB refers/VBZ to/TO two/CD very/RB different/JJ specific/JJ aspects/NNS of/IN the/DT application/NN
+First/JJ financial/JJ systems/NNS must/MD rapidly/RB restart/VB after/IN failed/VBN components/NNS or/CC hardware/NN failures/NNS
+Second/JJ software/NN system/NN functions/NNS rebooting/VBG that/IN require/VBP fault/NN tolerance/NN at/IN the/DT level/NN of/IN files/NNS or/CC database/NN such/JJ as/IN a/DT guarantee/NN that/IN after/IN Isis/NNP was/VBD designed/VBN a/DT file/NN or/CC database/NN manager/NN will/MD be/VB able/JJ to/TO recover/VB local/JJ data/NNS files/NNS at/IN low/JJ cost/NN
+To/TO address/VB the/DT first/JJ sort/NN of/IN problem/NN but/CC includes/VBZ several/JJ tools/NNS for/IN solving/VBG the/DT latter/JJ one/CD
+Generally/RB information/NN periods/VBZ the/DT approach/NN taken/VBN is/VBZ to/TO represent/VB key/JJ services/NNS using/VBG process/NN groups/NNS replicating/VBG service/NN state/NN so/RB that/IN even/RB if/IN one/CD server/NN process/NN fails/VBZ the/DT other/JJ can/MD respond/VB to/TO requests/NNS on/IN its/PRP$ behalf/NN
+When/WRB n/JJ service/NN programs/NNS are/VBP operational/JJ one/NN can/MD often/RB exploit/VB the/DT redundancy/NN to/TO improve/VB response/NN must/MD pay/VB for/IN fault/NN tolerance/NN begins/VBZ to/TO outweigh/VB failures/NNS
+The/DT benefit/NN is/VBZ time/NN
+Thus/RB rather/RB than/IN asking/VBG how/WRB much/JJ such/PDT an/DT application/NN pilate/NN questions/NNS concurrency/NN something/NN concern/NN the/DT level/NN of/IN replication/NN acceptable/JJ at/IN which/WDT the/DT overhead/NN assuming/VBG and/CC the/DT minimum/JJ performance/NN approach/NN
+k/NN component/NN Fault/NNP tolerance/NN of/IN a/DT side/NN effect/NN of/IN the/DT replication/NN computing/NN
+A/DT significant/JJ communication/NN theme/NN in/IN financial/JJ primitives/NNS is/VBZ the/DT use/NN of/IN a/DT subscription/NN
+publication/NN style/NN
+The/DT basic/JJ Isis/NN numbing/VBG over/IN the/DT do/NN not/RB spool/VB messages/NNS for/IN future/JJ replay/NN hence/RB an/DT application/NN ti/NN s/NNS functionality/NN
+a/DT dynamically/RB predicting/VBG varying/VBG collection/NN system/NN the/DT NEWS/NNP facility/NN has/VBZ been/VBN developed/VBN
+A/DT final/JJ aspect/NN of/IN brokerage/NN systems/NNS to/TO support/VB that/DT service/NN
+A/DT firm/NN may/MD work/VB with/IN dozens/NNS or/CC hundreds/NNS of/IN financial/JJ models/NNS instruments/NNS needed/VBN to/TO be/VB waded/VBN under/IN varying/VBG market/NN
+Market/NN behavior/NN for/IN the/DT financial/JJ will/MD be/VB only/RB a/DT small/JJ subset/NN consists/VBZ of/IN a/DT processor/NN of/IN these/DT services/NNS at/IN any/DT time/NN
+Thus/RB systems/NNS conditions/NNS of/IN this/DT sort/NN generally/RB pool/NN on/IN which/WDT services/NNS execution/NN and/CC load/NN a/DT remote/NN can/MD be/VB started/VBN as/IN necessary/JJ balancing/NN mechanism/NN
+And/CC this/DT creates/VBZ a/DT need/NN to/TO support/VB an/DT automatic/JJ of/IN typical/JJ network/NN complicates/NNS
+The/DT heterogeneity/NN by/IN introducing/VBG or/CC require/VB special/JJ pattern/NN matching/VBG processors/NNS i/.
+e/NN
+certain/JJ programs/NNS may/MD be/VB subject/JJ to/TO licensing/VBG for/IN some/DT specific/JJ hardware/NN configuration/NN described/VBN or/CC may/MD simply/RB have/VB been/VBN compiled/VBN
+This/DT problem/NN is/VBZ solved/VBN using/VBG the/DT Isis/NNP network/NN resource/NN manager/NN an/DT application/NN later/RB in/IN this/DT section/NN
+6/CD
+2/CD Database/NNP replication/NN and/CC database/NN triggers/NNS Although/IN the/DT Isls/NNP computation/NN model/NN differs/VBZ from/IN a/DT transactional/JJ model/NN see/NN also/RB Sec/NNP
+7/CD Isis/NNP is/VBZ useful/JJ in/IN constructing/VBG distributed/VBN database/NN applications/NNS
+In/IN fact/NN many/JJ as/IN half/NN of/IN the/DT applications/NNS as/IN with/IN which/WDT we/PRP are/VBP familiar/JJ are/VBP concerned/VBN with/IN this/DT problem/NN
+focus/NN on/IN replicating/VBG a/DT database/NN for/IN fault/NN tolerance/NN the/DT database/NN system/NN or/CC to/TO support/VB need/NN not/RB be/VB
+Typical/JJ uses/NNS of/IN Isis/NNP in/IN database/NN applications/NNS concurrent/JJ searches/NNS for/IN improved/JJ performance/NN
+In/IN such/PDT an/DT architecture/NN that/IN aware/JJ Isis/NNP is/VBZ present/JJ
+Database/NNP clients/NNS access/VBP the/DT database/NN through/IN a/DT layer/NN of/IN software/NN that/WDT multicasts/VBZ updates/NNS
+Servers/NNS are/VBP supervised/VBN to/TO the/DT set/NN of/IN servers/NNS by/IN a/DT process/NN while/IN issuing/VBG queries/NNS directly/RB to/TO the/DT least/JJS loaded/JJ server/NN
+Clients/NNS of/IN load/NN changes/NNS in/IN the/DT server/NN updates/VBZ
+Isis/NNP supervises/VBZ the/DT restart/NN of/IN a/DT failed/JJ server/NN from/IN a/DT checkpoint/NN and/CC log/NN of/IN subsequent/JJ addresses/NNS
+It/PRP is/VBZ interesting/JJ to/TO realize/VB that/IN even/RB such/JJ an/DT unsophisticated/JJ need/NN among/IN database/NN users/NNS would/MD require/VB extending/VBG standards/NNS
+Beyond/IN database/NN replication/NN approach/NN to/TO database/NN replication/NN support/NN addresses/VBZ a/DT widely/RB perceived/VBN such/JJ as/IN this/DT long/JJ run/NN
+Of/IN course/NN comprehensive/JJ execution/NN for/IN applications/NNS Isis/NNP to/TO support/VB a/DT transactional/JJ model/NN and/CC to/TO implement/VB the/DT XA/NNP
+XOpen/NNP Isis/NNP users/NNS have/VBP developed/VBN
+By/IN monitoring/VBG WAN/NNP databases/NNS by/IN placing/VBG a/DT local/JJ database/NN system/NN traffic/NN on/IN a/DT LAN/NNP updates/NNS of/IN importance/NN to/TO each/DT LAN/NNP in/IN a/DT WAN/NNP system/NN
+Remote/VB users/NNS can/MD be/VB intercepted/VBN monitors/NNS for/IN incoming/JJ control/NN the/DT update/NN and/CC distributed/VBN through/IN the/DT IsIs/NNP WAN/NNP architecture/NN
+To/TO avoid/VB costly/JJ updates/NNS and/CC applies/VBZ developers/NNS send/VBP them/PRP to/TO the/DT database/NN server/NN as/IN necessary/JJ
+Concurrency/NN problem/NN of/IN applications/NNS such/JJ as/IN these/DT normally/RB partition/NN the/DT database/NN so/RB that/IN the/DT data/NNS associated/VBN with/IN each/DT LAN/NNP is/VBZ directly/RB updated/VBN only/RB from/IN within/IN that/DT LAN/NN
+On/IN remote/JJ LAN/NN s/NNS for/IN many/JJ applications/NNS
+A/DT trigger/NN is/VBZ a/DT query/NN that/IN if/IN such/JJ data/NNS can/MD only/RB be/VB queried/VBN and/CC could/MD be/VB stale/JJ but/CC this/DT is/VBZ still/RB sufficient/JJ
+A/DT final/JJ use/NN of/IN Isis/NNP in/IN database/NN is/VBZ incrementally/RB specified/VBN evaluated/VBN becomes/VBZ settings/NNS is/VBZ to/TO implement/VB database/NN triggers/NNS against/IN the/DT database/NN as/IN updates/NNS true/JJ
+For/IN example/NN position/NN exceeds/VBZ condition/NN occur/VBP causing/VBG some/DT action/NN immediately/RB to/TO be/VB sounded/VBN
+A/DT broker/NN might/MD request/VB that/IN an/DT alarm/NN some/DT threshold/NN
+As/IN data/NNS enters/VBZ the/DT financial/JJ database/NN by/IN the/DT brokerage/NN such/PDT a/DT query/NN would/MD be/VB evaluated/VBN repeatedly/RB
+The/DT role/NN of/IN Isis/NNP is/VBZ in/IN providing/VBG programs/NNS tools/NNS for/IN reliably/RB notifying/VBG capable/JJ applications/NNS when/WRB such/JJ a/DT trigger/NN becomes/VBZ enabled/JJ and/CC for/IN developing/VBG of/IN taking/VBG the/DT desired/VBN actions/NNS despite/IN failures/NNS
+6/CD
+3/CD Major/NNP Isis/NNP based/VBN utilities/NNS In/IN the/DT above/JJ subsection/NN we/PRP alluded/VBD to/TO some/DT of/IN the/DT fault/NN tolerant/NN utilities/NNS that/WDT have/VBP been/VBN built/VBN over/IN Isis/NNP
+There/EX are/VBP currently/RB five/CD such/JJ systems/NNS
+NeWS/NNP This/DT application/NN supports/VBZ a/DT collection/NN of/IN communication/NN topics/NNS to/TO which/WDT users/NNS can/MD subscribe/VB with/IN file/NN system/NN address/NN style/NN a/DT replay/NN of/IN recent/JJ postings/NNS or/CC post/NN messages/NNS
+Topics/NNS are/VBP identified/VBN using/VBG and/CC it/PRP is/VBZ possible/JJ to/TO post/VB to/TO topics/NNS on/IN a/DT remote/JJ network/NN a/DT mail/NN notation/NN
+Thus/RB a/DT Swiss/JJ brokerage/NN application/NN of/IN messages/NNS joins/VBZ firm/NN might/MD post/VB some/DT quotes/NNS to/TO
+GENEVA/NNP
+QUOT/NNP
+IBM/NNP NEW/NNP YORK/NNP
+It/PRP creates/VBZ a/DT process/NN group/NN for/IN each/DT topic/NN monitoring/NN posted/VBD to/TO it/PRP for/IN replay/NN to/TO new/JJ subscribers/NNS each/DT such/JJ group/NN to/TO maintain/VB a/DT history/NN using/VBG a/DT state/NN transfer/NN when/WRB a/DT new/JJ member/NN NMGR/NNP this/DT program/NN manages/VBZ
+This/DT involves/VBZ monitoring/VBG batch/NN style/NN jobs/NNS and/CC performs/VBZ load/NN sharing/VBG in/IN a/DT distributed/VBN into/IN a/DT processor/NN pool/NN setting/VBG
+And/CC the/DT candidate/NN machines/NNS which/WDT are/VBP collected/VBN scheduling/NN on/IN the/DT pool/NN job/NN machines/NNS are/VBP suitable/JJ one/CD
+This/DT criteria/NNS can/MD readily/RB be/VB opposed/VBN failed/VBD to/TO run/VB batch/NN style/NN Parallel/NNP
+A/DT pattern/NN matching/NN mechanism/NN is/VBZ used/VBN for/IN job/NN placement/NN for/IN a/DT given/VBN job/NN a/DT criteria/NNS based/VBN on/IN load/NN and/CC available/JJ memory/NN be/VB changed/VBN
+When/WRB employed/VBN to/TO manage/VB each/DT service/NN critical/JJ is/VBZ used/VBN to/TO select/VB services/NNS as/IN system/NN jobs/VBZ the/DT program/NN monitors/NNS make/VBP is/VBZ an/DT example/NN application/NN and/CC automatically/RB program/NN restarts/NNS that/WDT uses/VBZ components/NNS of/IN a/DT distributed/VBN application/NN NMGR/NNP for/IN job/NN placement/NN
+This/DT system/NN compiles/VBZ by/IN fanning/VBG out/RP compilation/NN subtasks/NNS to/TO compatible/JJ SBM89/NNP provides/VBZ fault/NN tolerant/NN NFS/VBZ compatible/JJ file/NN storage/NN
+Replicates/VBZ files/NNS are/VBP replied/VBN for/IN both/DT to/TO increase/VB performance/NN tolerance/NN the/DT level/NN of/IN replication/NN meantime/NN is/VBZ varied/VBN depending/VBG on/IN the/DT style/NN of/IN access/NN detected/VBD any/DT files/NNS managed/VBN are/VBP automatically/RB by/IN the/DT system/NN after/IN a/DT failed/VBD node/JJ recovers/NNS file/VBP replication/NN brought/VBD up/RP to/TO date/NN
+The/DT file/NN system/NN reactive/JJ control/NN interface/NN applicator/NN or/CC approach/NN conceals/NNS MErA/NNP
+LOMrrA/NNP lions/NNS MCWB91/NNP environment/NN monitored/VBD from/IN the/DT user/NN who/WP sees/VBZ a/DT compatible/JJ system/NN for/IN building/VBG fault/NN tolerant/NN META/NNP is/VBZ an/DT extensive/JJ Woo91/CD
+It/PRP consists/VBZ of/IN a/DT layer/NN for/IN instrumenting/VBG a/DT sensor/NN a/DT distributed/VBN application/NN by/IN defining/VBG sensors/NNS by/IN the/DT system/NN sensors/NNS and/CC actuators/NNS
+An/DT actuator/NN is/VBZ any/DT entity/NN capable/JJ of/IN taking/VBG an/DT action/NN the/DT status/NN of/IN software/NN
+User/NNP defined/VBD is/VBZ any/DT typed/JJ value/NN that/WDT can/MD be/VB polled/VBN on/IN request/NN
+Built/VBN in/IN sensors/NNS include/VBP the/DT load/NN on/IN a/DT machine/NN and/CC the/DT set/NN of/IN users/NNS on/IN each/DT machine/NN
+The/DT raw/JJ sensors/NNS layer/NN and/CC hardware/NN components/NNS of/IN the/DT system/NN and/CC actuators/NNS extend/VBP this/DT initial/JJ set/NN
+sensors/NNS by/IN an/DT intermediate/JJ facility/NN
+This/DT layer/NN sensors/NNS such/JJ actuators/NNS of/IN the/DT lowest/JJS layer/NN are/VBP mapped/VBN to/TO abstract/VB a/DT simple/JJ database/NN style/NN interface/NN which/WDT also/RB supports/VBZ an/DT entity/NN relation/NN fluency/NN and/CC a/DT triggering/NN supports/VBZ as/IN polling/VBG data/NNS model/NN and/CC fault/NN tolerance/NN
+and/CC conceals/VBZ Sensors/NNS
+many/JJ of/IN the/DT details/NNS of/IN the/DT physical/NN can/MD be/VB aggregated/VBN for/IN example/NN by/IN taking/VBG the/DT average/JJ load/NN on/IN the/DT servers/NNS that/WDT manage/VBP a/DT replicated/VBN language/NN which/WDT will/MD initiate/VB a/DT pre/NN specified/VBN database/NN
+The/DT interface/NN supports/VBZ a/DT simple/JJ trigger/NN is/VBZ detected/VBN
+Terms/NNS called/VBD action/NN when/WRB a/DT specified/VBN for/IN specifying/VBG control/NN condition/NN
+Running/VBG over/IN Mm/NNP A/NNP is/VBZ a/DT distributed/VBN language/NN LoMrrA/NNP
+LoMrrA/NNP code/NN is/VBZ embedded/VBN actions/NNS in/IN a/DT high/JJ level/NN interpreter/NN triggered/VBD into/IN the/DT UNIX/NNP CSH/NNP command/NN
+At/IN runtime/NN LoMrrA/NNP by/IN events/NNS that/WDT can/MD control/VB statements/NNS is/VBZ expanded/VBN into/IN distributed/VBN finite/JJ state/NN machines/NNS local/JJ to/TO a/DT sensor/NN or/CC system/NN components/NNS
+A/DT process/NN group/NN is/VBZ used/VBN to/TO implement/VB when/WRB a/DT monitored/JJ condition/NN aggregates/NNS perform/VBP these/DT state/NN transition/NN and/CC to/TO notify/VB applications/NNS and/CC for/IN saving/VBG messages/NNS
+This/DT subsystem/NN arises/VBZ MB90/NNP and/CC is/VBZ responsible/JJ for/IN wide/JJ area/NN communication/NN
+It/PRP conceals/VBZ to/TO groups/NNS that/WDT are/VBP only/RB active/JJ periodically/RB
+Communication/NN interface/NN link/NN failures/NNS present/VBP an/DT exactly/RB once/RB
+6/CD
+4/CD Other/JJ Isis/NNP applications/NNS Although/IN this/DT section/NN covered/VBD a/DT variety/NN of/IN Isis/NNP applications/NNS over/IN the/DT system/NN
+In/IN addition/NN a/DT systematic/JJ review/NN of/IN the/DT full/JJ range/NN of/IN soRwate/NNP that/WDT has/VBZ been/VBN developed/VBN to/TO the/DT problems/NNS cited/VBD above/IN
+Isis/NNP has/VBZ been/VBN applied/VBN to/TO systems/NNS reliable/JJ to/TO telecommunications/NNS replacement/NN switching/VBG for/IN the/DT AEGIS/NNP and/CC intelligent/JJ aircraft/NN tracking/NN networking/NN and/CC combat/NN applications/NNS engagement/NN military/JJ systems/NNS system/NN medical/JJ control/NN weather/NN such/JJ as/IN a/DT proposed/VBN graphics/NNS and/CC virtual/JJ reality/NN applications/NNS management/NN and/CC resource/NN scheduling/NN seismology/NN for/IN shared/VBN factory/NN automation/NN facilities/NNS and/CC production/NN and/CC a/DT wide/JJ area/NN popular/JJ computing/NN prediction/NN computing/NN and/CC storm/NN tracking/NN system/NN at/IN laboratories/NNS 1oh93/CD Thog0/CD
+ASC92/CD
+Isis/NNP has/VBZ also/RB proved/VBN for/IN scientific/JJ as/IN a/DT beam/NN such/JJ as/IN CERN/NNP and/CC Los/NNP Alamos/NNP accelerator/NN and/CC has/VBZ been/VBN applied/VBN to/TO such/JJ problems/NNS that/WDT combine/VBP a/DT highly/RB parallel/JJ focusing/VBG system/NN for/IN a/DT particle/NN with/IN a/DT vectorized/VBN management/NN
+It/PRP should/MD architecture/VB atmospheric/IN a/DT weather/NN simulation/NN ocean/NN model/NN and/CC resource/NN model/NN and/CC displays/NNS output/NN on/IN advanced/JJ graphics/NNS workstations/NNS facilities/NNS
+On/IN LAN/NNP issues/NNS software/NN for/IN shared/VBN supercomputing/NN that/IN although/IN also/RB be/VB noted/VBN the/DT paper/NN has/VBZ focused/VBN compose/NN
+Isls/NNS also/RB supports/VBZ a/DT WAN/NNP cited/VBD and/CC has/VBZ been/VBN used/VBN in/IN WANs/NNP as/IN LAN/NNP solutions/NNS of/IN up/IN to/TO ten/VB LANs/NNS
+Many/JJ of/IN the/DT applications/NNS by/IN a/DT reliable/JJ but/CC less/RBR responsive/JJ WAN/NNP layer/NN
+above/IN are/VBP structured/VBN interconnected/VBN
+7/CD Isis/NNP and/CC other/JJ distributed/VBN computing/NN technologies/NNS Our/PRP$ discussion/NN has/VBZ overlooked/VBN next/JJ generation/NN issues/NNS that/WDT arise/VBP in/IN the/DT Advanced/NNP Automation/NNP System/NNP CASD85/NNP which/WDT also/RB uses/VBZ a/DT process/NN group/NN model/NN compares/VBZ the/DT sorts/NNS of/IN real/JJ time/NN air/NN traffic/NN similarly/RB one/PRP might/MD wonder/VB how/WRB the/DT Isis/NNP execution/NN models/NNS
+Unfortunately/RB these/DT are/VBP complex/JJ technology/NN issues/NNS like/IN the/DT one/CD used/VBN in/IN AAS/NNP differs/VBZ from/IN Isis/NNP in/IN providing/VBG strong/JJ real/JJ time/NN control/NN based/VBN computing/VBG system/NN being/VBG developed/VBN with/IN transactional/JJ model/NN by/IN IBM/NNP for/IN the/DT FAA/NNP CD90/NNP
+It/PRP would/MD be/VB difficult/JJ to/TO do/VB justice/NN database/NN execution/NN to/TO them/PRP without/IN a/DT lengthy/JJ proof/NN
+Briefly/NNP a/DT process/NN that/WDT experiences/VBZ a/DT timing/NN fault/NN in/IN the/DT AAS/NNP model/NN could/MD receive/VB messages/NNS because/IN the/DT criteria/NNS for/IN accepting/VBG violations/NNS or/CC rejecting/VBG if/IN faulty/NN of/IN such/JJ will/MD reject/VB or/CC reject/VB messages/NNS guarantees/NNS provided/VBD that/DT timing/NN assumptions/NNS
+This/DT can/MD lead/VB to/TO consistency/VB resynchronized/VBN it/PRP from/IN initiating/VBG others/NNS accept/VBP uses/VBZ the/DT value/NN of/IN the/DT local/JJ clock/NN
+e/NN
+g/NN
+could/MD the/DT clock/NN is/VBZ subsequently/RB spread/VBN nothing/NN that/IN other/JJ processes/VBZ a/DT message/NN is/VBZ transient/JJ a/DT process/NN accept/VB deadline/NN prevents/NNS with/IN other/JJ clocks/NNS Moreover/RB the/DT inconsistency/NN which/WDT other/JJ processes/NNS will/MD be/VB maintained/VBN
+Isis/NNP on/IN the/DT other/JJ hand/NN guarantees/NNS that/WDT consistency/VBP will/MD be/VB achieved/VBN
+The/DT relationship/NN and/CC transactional/JJ offered/VBN between/IN Isis/NNP and/CC transactional/JJ are/VBP order/NN based/VBN focus/NN on/IN isolation/NN of/IN concurrent/JJ transactions/NNS but/CC not/RB that/IN real/JJ time/NN delivery/NN
+However/RB where/WRB the/DT tools/NNS persistent/JJ between/IN data/NNS and/CC rollback/NN abort/NN mechanisms/VBZ members/NNS of/IN groups/NNS failure/NN handling/VBG by/IN a/DT database/NN system/NN from/IN one/CD another/DT in/IN the/DT fact/NN that/IN both/DT virtual/JJ synchrony/NN BHG87/CD
+Systems/NNPS execution/NN originates/VBZ models/NNS those/DT offered/VBN in/IN Isis/NNP are/VBP concerned/VBN with/IN direct/JJ cooperation/NN reconfigure/NN and/CC ensuring/VBG that/IN a/DT system/NN can/MD dynamically/RB itself/PRP to/TO make/VB serializability/NN
+The/DT WAN/NNP architecture/NN of/IN isis/NN ii/NNS similar/JJ to/TO the/DT WAN/NNP structure/NN bet/NN because/IN WAN/NNP partition/NN are/VBP more/RBR common/JJ encourages/VBZ a/DT more/RBR synchronous/JJ programming/NN style/NN
+WAN/DT communication/NN and/CC link/NN state/NN is/VBZ logged/VBN to/TO disk/VB files/NNS unlike/IN WAN/NNP communication/NN WAN/NNP issues/NNS are/VBP which/WDT enables/VBZ Isis/NNP to/TO retransmit/VB messages/NNS lost/VBN when/WRB WAN/NNP partition/NN to/TO suppress/VB duplicate/JJ messages/NNS
+to/TO discuss/VB in/IN more/JJR detail/NN in/IN MB90/CD
+Persistency/NNP of/IN data/NNS is/VBZ a/DT big/JJ issue/NN in/IN database/NN systems/NNS but/CC a/DT commit/NN of/IN a/DT multicast/JJ forward/JJ progress/NN when/WRB partial/JJ failures/NNS occur/VBP is/VBZ a/DT form/NN of/IN reliable/JJ multicast/NN while/IN delivery/NN much/RB less/RBR so/RB in/IN Isis/NNP
+For/IN example/NN serializability/NN and/CC permanence/NN of/IN the/DT transaction/NN being/VBG committed/VBN in/IN isis/NN provides/VBZ much/RB weaker/JJR guarantees/NNS
+8/CD Conclusions/NNS We/PRP have/VBP argued/VBN that/IN the/DT next/JJ generation/NN of/IN distributed/VBN computing/NN systems/NNS semantics/NNS exceed/VBP will/MD benefit/VB from/IN support/NN for/IN process/NN groups/NNS and/CC group/NN programming/NN
+Arriving/VBG the/DT abilities/NNS or/CC the/DT reliability/NN would/MD be/VB a/DT difficult/JJ problem/NN application/NN performance/NN development/NN and/CC implementing/VBG those/DT semantics/NNS for/IN a/DT process/NN group/NN mechanism/NN of/IN many/JJ distributed/VBN systems/NNS
+Either/CC the/DT operating/NN system/NN must/MD implement/VB applications/NNS of/IN group/NN structured/VBN is/VBZ unlikely/JJ to/TO be/VB acceptable/JJ with/IN process/NN groups/NNS
+The/DT Isis/NNP system/NN provides/VBZ tools/NNS for/IN programming/NN leads/VBZ us/PRP to/TO the/DT following/JJ conclusions/NNS
+Process/NNP synchronized/VBD groups/NNS should/MD embody/VB strong/JJ semantics/NNS
+A/DT simple/JJ and/CC powerful/JJ communication/NN distributed/VBN for/IN group/NN membership/NN and/CC synchronous/JJ execution/NN is/VBZ a/DT synchronized/JJ model/NN can/MD be/VB based/VBN on/IN closely/RB but/CC high/JJ performance/NN heavily/RB pipelined/VBD
+The/DT virtual/JJ synchrony/NN approach/NN in/IN which/WDT communication/NN using/VBG a/DT closely/RB style/NN of/IN execution/NN combines/VBZ these/DT benefits/NNS synchronous/JJ execution/NN safely/RB be/VB relaxed/VBN
+Efficient/JJ protocols/NNS Non/NNP experts/NNS model/NN but/CC deriving/VBG a/DT substantial/JJ performance/NN benefit/NN when/WRB message/NN ordering/VBG can/MD have/VB been/VBN developed/VBN for/IN supporting/VBG virtual/JJ synchrony/NN
+This/DT paper/NN is/VBZ being/VBG written/VBN as/IN the/DT first/JJ phase/NN of/IN the/DT Isis/NNP effort/NN approaches/VBZ system/NN has/VBZ demonstrated/VBN achieves/VBZ levels/NNS the/DT feasibility/NN of/IN a/DT new/JJ style/NN of/IN distributed/VBN to/TO those/DT afforded/VBN a/DT resulting/VBG system/NN relatively/RB easy/JJ to/TO use/VB
+We/PRP feel/VBP that/IN the/DT initial/NN in/IN BSS91/NNP Isis/NNP computing/VBG suitable/JJ for/IN integration/NN incorporate/JJ on/IN the/DT same/JJ platforms/NNS
+As/IN reported/VBN of/IN performance/NN comparable/JJ by/IN standard/JJ technologies/NNS RPC/NNP and/CC streams/NNS Looking/VBG to/TO the/DT future/NN we/PRP are/VBP now/RB developing/VBG operating/VBG RBG92/CD systems/NNS an/DT Isis/NNP microkernel/NN into/IN next/JJ generation/NN a/DT security/NN architecture/NN such/JJ as/IN Mach/NNP and/CC Chorus/NNP
+This/DT new/JJ system/NN will/MD be/VB a/DT real/JJ time/NN communication/NN that/WDT operate/VBP on/IN distributed/VBN to/TO implement/VB high/JJ reliability/NN suite/NN
+The/DT programming/NN model/NN will/MD be/VB unchanged/JJ
+Group/NNP programming/NN could/MD ignite/VB a/DT wave/NN of/IN advances/NNS platforms/NNS in/IN reliable/JJ distributed/VBN computing/NN and/CC of/IN applications/NNS developers/NNS
+Using/VBG current/JJ technologies/NNS it/PRP is/VBZ impractical/JJ to/TO employ/VB software/NN self/NN managing/VBG or/CC to/TO develop/VB software/NN for/IN typical/JJ replicated/VBN after/IN distributed/VBN systems/NNS that/WDT reconfigures/VBZ data/NNS or/CC simple/JJ coarse/NN grained/VBD parallelism/NN automatically/RB failure/NN or/CC recovery/NN
+Consequently/RB although/IN current/JJ resources/NNS deficient/VBP distributed/VBN the/DT programmers/NNS are/VBP severely/RB constrained/VBN software/NN who/WP develop/VBP software/NN infrastructure/NN
+By/IN removing/VBG these/DT unnecessary/JJ environments/NNS obstacles/NNS embody/VBP tremendously/RB powerful/JJ networks/NNS computing/VBG a/DT vast/JJ groundswell/NN of/IN reliable/JJ application/NN development/NN can/MD be/VB unleashed/VBN
+

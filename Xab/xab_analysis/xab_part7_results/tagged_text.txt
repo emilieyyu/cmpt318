@@ -1,0 +1,635 @@
+Frequency/NNP Based/NNP Identification/NNP of/IN Correct/NNP Translation/NNP Equivalents/NNP FITE/NNP Obtained/NNP Through/NNP Transformation/NNP Rules/NNP ARI/NNP PIRKOLA/NNP JARMO/NNP TOIVONEN/NNP HEIKKI/NNP KESKUSTALO/NNP and/CC KALERVO/NNP JARVELIN/NNP University/NNP of/IN Tampere/NNP We/NNP devised/VBD a/DT novel/JJ statistical/JJ technique/NN for/IN the/DT identification/NN of/IN the/DT translation/NN equivalents/NNS of/IN source/NN words/NNS obtained/VBN by/IN transformation/NN rule/NN based/VBN translation/NN TRT/NN
+The/DT effectiveness/NN of/IN the/DT technique/NN called/VBD frequency/NN based/VBN identification/NN of/IN translation/NN equivalents/NNS FITE/NNP was/VBD tested/VBN using/VBG biological/JJ and/CC medical/JJ cross/NN lingual/JJ spelling/NN variants/NNS and/CC out/IN of/IN vocabulary/JJ OOV/NNP words/NNS in/IN Spanish/NNP English/NNP and/CC Finnish/NNP English/NNP TRT/NNP
+The/DT results/NNS showed/VBD that/IN depending/VBG on/IN the/DT source/NN language/NN and/CC frequency/NN corpus/NN FITE/NNP TRT/NNP the/DT identification/NN of/IN translation/NN equivalents/NNS from/IN TRT/NN s/NNS translation/NN set/VBN by/IN means/NNS of/IN the/DT FITE/NNP technique/NN may/MD achieve/VB high/JJ translation/NN recall/NN
+In/IN the/DT case/NN of/IN the/DT Web/NNP as/IN the/DT frequency/NN corpus/NN translation/NN recall/NN was/VBD 89/CD
+2/CD 91/CD
+0/CD for/IN Spanish/NNP English/NNP FITE/NNP TRT/NNP
+For/IN both/DT language/NN pairs/NNS FITE/VBP TRT/NNP achieved/VBD high/JJ translation/NN precision/NN 95/CD
+0/CD 98/CD
+8/CD
+The/DT technique/NN also/RB reliably/RB identified/VBN native/JJ source/NN language/NN words/NNS source/NN words/NNS that/WDT can/MD not/RB be/VB correctly/RB translated/VBN by/IN TRT/NNP
+Dictionary/NNP based/VBN CLIR/NNP augmented/VBD with/IN FITE/NNP TRT/NNP performed/VBD substantially/RB better/JJR than/IN basic/JJ dictionary/JJ based/VBN CLIR/NN where/WRB OOV/NNP keys/NNS were/VBD kept/VBN intact/JJ
+FITE/NNP TRT/NNP with/IN Web/NNP document/NN frequencies/NNS was/VBD the/DT best/JJS technique/NN among/IN several/JJ fuzzy/JJ translation/NN
+matching/VBG approaches/NNS tested/VBN in/IN cross/JJ language/NN retrieval/NN experiments/NNS
+We/PRP also/RB discuss/VBZ the/DT application/NN of/IN FITE/NNP TRT/NNP in/IN the/DT automatic/JJ construction/NN of/IN multilingual/JJ dictionaries/NNS
+1/CD
+INTRODUCTION/NNP Out/NNP of/IN vocabulary/NNP OOV/NNP words/NNS constitute/VBP a/DT major/JJ problem/NN in/IN cross/JJ language/NN information/NN retrieval/NN CLIR/NNP and/CC machine/NN translation/NN MT/NNP
+In/IN those/DT cases/NNS where/WRB equivalent/JJ terms/NNS in/IN different/JJ languages/NNS are/VBP etymologically/RB related/VBN technical/JJ terms/NNS cross/VBP lingual/JJ spelling/NN variants/NNS as/IN German/JJ konstruktion/NN and/CC English/JJ construction/NN it/PRP is/VBZ possible/JJ to/TO use/VB a/DT transliteration/NN type/NN of/IN translation/NN to/TO recognize/VB the/DT target/NN language/NN equivalents/NNS of/IN the/DT source/NN language/NN words/NNS
+In/IN Pirkola/NNP et/NN al/NN
+2003/CD we/PRP generated/VBD automatically/RB large/JJ collections/NNS of/IN character/NN correspondences/NNS in/IN several/JJ language/NN pairs/NNS for/IN the/DT translation/NN of/IN cross/NN lingual/JJ spelling/NN variants/NNS
+Equivalent/JJ term/NN pairs/NNS in/IN two/CD languages/NNS were/VBD first/RB extracted/VBN automatically/RB from/IN translation/NN dictionaries/NNS and/CC then/RB regular/JJ character/NN correspondences/NNS between/IN the/DT words/NNS in/IN the/DT two/CD languages/NNS were/VBD identified/VBN using/VBG an/DT edit/NN distance/NN measure/NN
+Large/JJ sets/NNS of/IN transformation/NN rules/NNS augmented/VBN with/IN statistical/JJ information/NN were/VBD generated/VBN for/IN automatic/JJ translation/NN of/IN spelling/NN variants/NNS
+We/PRP call/VBP the/DT translation/NN technique/NN based/VBN on/IN the/DT generated/JJ rules/NNS transformation/NN rule/NN based/VBN translation/NN TRT/NN
+TRT/NN is/VBZ similar/JJ to/TO transliteration/NN except/IN that/IN no/DT phonetic/JJ elements/NNS are/VBP involved/VBN in/IN it/PRP
+The/DT term/NN fuzzy/JJ translation/NN is/VBZ used/VBN in/IN connection/NN with/IN TRT/NN
+It/PRP refers/VBZ to/TO the/DT fact/NN that/IN TRT/NNP often/RB gives/VBZ many/JJ possible/JJ equivalents/NNS for/IN a/DT source/NN word/NN not/RB one/CD equivalent/JJ or/CC several/JJ alternatives/NNS like/IN regular/JJ translation/NN
+In/IN Toivonen/NNP et/NN al/NN
+2005/CD we/PRP showed/VBD that/IN high/JJ translation/NN recall/VBP the/DT proportion/NN of/IN source/NN words/NNS for/IN which/WDT TRT/NN yields/NNS equivalents/NNS among/IN all/DT source/NN words/NNS may/MD be/VB achieved/VBN when/WRB most/JJS of/IN the/DT rules/NNS available/JJ for/IN a/DT source/NN word/NN are/VBP used/VBN in/IN TRT/NNP
+However/RB high/JJ translation/NN recall/NN is/VBZ associated/VBN with/IN low/JJ translation/NN precision/NN the/DT proportion/NN of/IN equivalents/NNS among/IN all/DT word/NN forms/NNS yielded/VBN by/IN TRT/NNP
+In/IN other/JJ words/NNS the/DT translation/NN set/VBD containing/VBG the/DT target/NN language/NN word/NN forms/NNS often/RB includes/VBZ the/DT correct/JJ translation/NN equivalent/NN of/IN a/DT source/NN word/NN and/CC a/DT large/JJ number/NN of/IN other/JJ word/NN forms/NNS
+It/PRP is/VBZ obvious/JJ that/IN a/DT technique/NN where/WRB words/NNS not/RB found/VBN in/IN a/DT dictionary/NN are/VBP translated/VBN by/IN transformation/NN rules/NNS would/MD be/VB useful/JJ in/IN many/JJ information/NN systems/NNS where/WRB automatic/JJ translation/NN is/VBZ part/NN of/IN the/DT system/NN
+However/RB in/IN many/JJ cases/NNS the/DT TRT/NNP technique/NN may/MD be/VB useless/JJ if/IN it/PRP just/RB indicates/VBZ a/DT set/NN of/IN possible/JJ translations/NNS for/IN a/DT source/NN word/NN but/CC is/VBZ not/RB able/JJ to/TO indicate/VB the/DT one/CD correct/NN equivalent/NN which/WDT was/VBD the/DT case/NN in/IN Pirkola/NNP et/VBP al/JJ
+2003/CD as/RB well/RB as/IN in/IN Toivonen/NNP et/VBP al/JJ
+2005/CD
+In/IN the/DT present/JJ research/NN we/PRP attack/VBP this/DT problem/NN moving/VBG TRT/NNP from/IN fuzzy/JJ translation/NN towards/IN dictionary/JJ like/IN translation/NN where/WRB for/IN each/DT source/NN word/NN either/CC one/CD translation/NN equivalent/NN is/VBZ indicated/VBN or/CC the/DT source/NN word/NN is/VBZ indicated/VBN not/RB to/TO be/VB translatable/JJ by/IN means/NNS of/IN TRT/NNP
+For/IN this/DT we/PRP developed/VBD a/DT novel/JJ statistical/JJ equivalent/JJ identification/NN technique/NN called/VBD frequency/NN based/VBN identification/NN of/IN translation/NN equivalents/NNS FITE/VBP
+The/DT identification/NN of/IN equivalents/NNS is/VBZ based/VBN on/IN regular/JJ frequency/NN patterns/NNS associated/VBN with/IN the/DT target/NN word/NN forms/NNS obtained/VBN by/IN TRT/NNP
+In/IN this/DT paper/NN we/PRP also/RB present/VBP a/DT novel/JJ feature/NN of/IN TRT/NNP translation/NN through/IN indirect/JJ translation/NN routes/NNS
+If/IN a/DT direct/JJ translation/NN from/IN a/DT source/NN language/NN into/IN a/DT target/NN language/NN fails/VBZ to/TO find/VB an/DT equivalent/JJ the/DT source/NN word/NN is/VBZ retranslated/VBN into/IN a/DT target/NN language/NN through/IN intermediate/JJ pivot/NN languages/NNS
+As/IN in/IN the/DT case/NN of/IN direct/JJ translation/NN the/DT equivalents/NNS are/VBP identified/VBN from/IN TRT/NNP s/NNS translation/NN set/VBN by/IN means/NNS of/IN the/DT novel/NN FITE/-RRB- technique/NN
+Transitive/JJ translation/NN through/IN a/DT pivot/NN language/NN is/VBZ a/DT well/RB known/VBN technique/NN in/IN CLIR/NNP used/VBD to/TO address/VB the/DT problem/NN of/IN limited/JJ availability/NN of/IN translation/NN resources/NNS Ballesteros/NNP 2000/CD Gollins/NNP and/CC Sanderson/NNP 2001/CD Lehtokangas/NNP et/VB al/JJ
+2004/CD
+Indirect/JJ translation/NN could/MD be/VB used/VBN in/IN TRT/NNP in/IN cases/NNS where/WRB direct/JJ translation/NN is/VBZ not/RB possible/JJ due/RB to/TO the/DT lack/NN of/IN translation/NN resources/NNS transformation/NN rules/NNS
+In/IN this/DT study/NN however/RB we/PRP investigate/VBP whether/IN indirect/JJ translation/NN improves/VBZ FITE/NNP TRT/NNP effectiveness/NN
+It/PRP may/MD compensate/VB the/DT failures/NNS of/IN direct/JJ translation/NN and/CC thereby/RB increase/VB translation/NN recall/NN
+We/PRP explore/VBP the/DT effectiveness/NN of/IN FITE/NNP in/IN Spanish/NNP English/NNP and/CC FinnishEnglish/NNP TRT/NNP
+German/JJ and/CC French/JJ serve/NN as/IN intermediate/JJ languages/NNS for/IN both/DT language/NN pairs/NNS
+As/IN test/NN words/NNS we/PRP use/VBP terms/NNS in/IN the/DT domains/NNS of/IN biology/NN and/CC medicine/NN
+The/DT terms/NNS were/VBD selected/VBN from/IN texts/NNS and/CC real/JJ information/NN requests/NNS of/IN biomedical/JJ researchers/NNS
+FITE/NNP TRT/NNP is/VBZ also/RB applied/VBN as/IN part/NN of/IN an/DT actual/JJ CLIR/NN system/NN
+The/DT effectiveness/NN of/IN dictionary/JJ based/VBN CLIR/NNP augmented/VBD with/IN FITE/NNP TRT/NNP is/VBZ compared/VBN to/TO the/DT effectiveness/NN of/IN dictionary/JJ based/VBN CLIR/NNP augmented/VBD with/IN plain/JJ TRT/NN and/CC skipgram/NN Keskustalo/NNP et/VB al/JJ
+2003/CD OOV/NNP word/NN methods/NNS
+We/PRP also/RB run/VBP dictionary/JJ translationonly/RB no/DT OOV/NNP word/NN technique/NN is/VBZ applied/VBN and/CC monolingual/JJ English/JJ queries/NNS as/IN baselines/NNS
+In/IN Pirkola/NNP et/NN al/NN
+2006/CD we/PRP presented/VBD the/DT main/JJ features/NNS of/IN FITE/NNP TRT/NNP and/CC the/DT first/JJ results/NNS on/IN FITE/NNP TRT/NNP effectiveness/NN and/CC the/DT effectiveness/NN of/IN CLIR/NNP augmented/VBD with/IN FITE/NNP TRT/NNP
+In/IN this/DT article/NN we/PRP describe/VBP the/DT FITE/NNP TRT/NNP technique/NN in/IN more/JJR detail/NN present/VBP the/DT find/NN equivalent/JJ algorithm/NN and/CC extend/VB the/DT first/JJ study/NN by/IN using/VBG large/JJ word/NN frequency/NN lists/NNS mined/VBN from/IN the/DT Web/NNP as/IN FITE/NNP TRT/NNP s/VBZ frequency/NN source/NN and/CC by/IN comparing/VBG FITE/NNP TRT/NNP to/TO other/JJ OOV/NNP word/NN methods/NNS in/IN cross/JJ language/NN retrieval/NN experiments/NNS
+The/DT novel/NN FITE/NNP TRT/NNP technique/NN is/VBZ fundamentally/RB different/JJ from/IN other/JJ OOV/NNP word/NN methods/NNS
+systems/NNS presented/VBN in/IN the/DT literature/NN
+For/IN instance/NN Cheng/NNP et/VB al/JJ
+2004/CD and/CC Zhang/NNP and/CC Vines/NNP 2004/CD both/DT developed/VBD a/DT Web/NNP based/VBN translation/NN method/NN for/IN Chinese/NNP English/NNP OOV/NNP words/NNS where/WRB the/DT OOV/NNP words/NNS were/VBD extracted/VBN from/IN bilingual/JJ Chinese/NNP English/NNP texts/NNS found/VBN in/IN Chinese/NNP Web/NNP pages/NNS using/VBG word/NN co/NN occurrence/NN statistics/NNS and/CC syntactic/JJ structures/NNS
+Meng/NNP et/VB al/JJ
+2000/CD employed/VBD a/DT TRT/NNP type/NN rule/NN based/VBN approach/NN to/TO the/DT OOV/NNP word/NN problem/NN
+Phonetic/JJ mappings/NNS were/VBD derived/VBN from/IN English/NNP and/CC Chinese/NNP Mandarin/NNP pronunciation/NN rules/NNS for/IN English/NNP Chinese/NNP spoken/JJ document/NN retrieval/NN
+The/DT researchers/NNS also/RB considered/VBN Chinese/JJ name/NN variation/NN
+An/DT English/JJ proper/JJ name/NN may/MD have/VB several/JJ character/NN sequence/NN variants/NNS and/CC pronunciations/NNS in/IN Chinese/JJ
+To/TO combat/VB this/DT problem/NN the/DT transliteration/NN approach/NN should/MD involve/VB approximate/JJ matches/NNS between/IN the/DT English/NNP and/CC Chinese/JJ pronunciations/NNS
+Fujii/NNP and/CC Ishikawa/NNP 2001/CD used/VBD characterbased/JJ rules/NNS to/TO establish/VB mapping/NN between/IN English/JJ characters/NNS and/CC romanized/VBD Japanese/JJ katakana/NN characters/NNS
+They/PRP also/RB utilized/VBD probabilistic/JJ character/NN based/VBN language/NN models/NNS which/WDT can/MD be/VB seen/VBN as/IN a/DT variation/NN of/IN fuzzy/JJ matching/NN
+The/DT technique/NN is/VBZ different/JJ from/IN FITE/NNP TRT/NNP but/CC bears/VBZ some/DT resemblance/NN to/TO the/DT fuzzy/JJ translation/NN reported/VBN in/IN Pirkola/NNP et/VBP al/JJ
+2003/CD however/RB focusing/VBG on/IN languages/NNS with/IN different/JJ orthographies/NNS thus/RB having/VBG a/DT different/JJ focus/NN
+The/DT skipgram/NN fuzzy/NN matching/VBG approach/NN to/TO OOV/NNP words/NNS by/IN Keskustalo/NNP et/VB al/JJ
+2003/CD is/VBZ discussed/VBN in/IN Section/NN 5/CD
+2/CD
+1/CD
+The/DT rest/NN of/IN this/DT article/NN is/VBZ organized/VBN as/IN follows/VBZ
+Section/NN 2/CD presents/VBZ the/DT TRT/NNP technique/NN its/PRP$ background/NN research/NN the/DT transformation/NN rule/NN collections/NNS and/CC the/DT dictionary/JJ data/NNS that/WDT was/VBD used/VBN in/IN the/DT rule/NN generation/NN
+In/IN Section/NN 3/CD we/PRP define/VBP the/DT terms/NNS cross/VBP lingual/JJ spelling/NN variant/NN and/CC native/JJ word/NN and/CC present/VB the/DT research/NN problems/NNS and/CC evaluation/NN measures/NNS used/VBN in/IN the/DT experiments/NNS
+The/DT novel/NN FITE/POS technique/NN is/VBZ described/VBN in/IN Section/NN 4/CD
+Section/NN 5/CD presents/VBZ the/DT methods/NNS and/CC data/NNS used/VBN in/IN the/DT experiments/NNS and/CC the/DT findings/NNS
+Section/NN 6/CD contains/VBZ discussion/NN and/CC conclusions/NNS
+2/CD
+TRT/NNP TRANSFORMATION/NNP RULES/NNP AND/CC BACKGROUND/NNP RESEARCH/NNP The/DT idea/NN of/IN TRT/NNP and/CC the/DT automatic/JJ method/NN to/TO generate/VB transformation/NN rules/NNS is/VBZ described/VBN in/IN Pirkola/NNP et/VBP al/JJ
+2003/CD
+A/DT transformation/NN rule/NN contains/VBZ source/NN and/CC target/NN language/NN characters/NNS that/WDT are/VBP transformed/VBN and/CC their/PRP$ context/JJ characters/NNS
+In/IN addition/NN there/EX are/VBP two/CD important/JJ numerical/JJ factors/NNS associated/VBN with/IN a/DT rule/NN frequency/NN and/CC confidence/NN factor/NN which/WDT may/MD be/VB used/VBN as/IN thresholds/NNS to/TO select/VB the/DT most/RBS common/JJ and/CC reliable/JJ rules/NNS for/IN TRT/NN
+Frequency/NNP refers/VBZ to/TO the/DT number/NN of/IN the/DT occurrences/NNS of/IN the/DT rule/NN in/IN the/DT dictionary/JJ data/NNS that/WDT was/VBD used/VBN for/IN the/DT rule/NN generation/NN
+Confidence/NN factor/NN CF/NNP is/VBZ defined/VBN as/IN the/DT frequency/NN of/IN a/DT rule/NN divided/VBN by/IN the/DT number/NN of/IN source/NN words/NNS where/WRB the/DT source/NN substring/NN of/IN the/DT rule/NN occurs/VBZ
+Below/IN we/PRP present/VBP an/DT example/NN of/IN a/DT German/NNP English/NNP rule/NN ekt/MD ect/VB middle/JJ 191/CD 214/CD 89/CD
+25/CD The/DT rule/NN is/VBZ read/VBN as/IN follows/VBZ the/DT letter/NN k/NN prior/RB to/TO t/VB and/CC after/IN e/NN is/VBZ transformed/VBN into/IN the/DT letter/NN c/NN in/IN the/DT middle/NN of/IN words/NNS with/IN the/DT confidence/NN factor/NN being/VBG 89/CD
+25/CD 100/CD 191/CD
+214/CD
+Examples/NNS of/IN target/NN word/NN forms/NNS obtained/VBN in/IN TRT/NNP are/VBP shown/VBN in/IN Sections/NNS 4/CD
+2/CD and/CC 4/CD
+3/CD
+In/IN Pirkola/NNP et/NN al/NN
+2003/CD we/PRP studied/VBD TRT/NNP in/IN combination/NN with/IN fuzzy/JJ matching/NN digram/NN and/CC trigram/NN matching/NN
+We/PRP investigated/VBD five/CD source/NN languages/NNS with/IN English/NNP being/VBG a/DT target/NN language/NN for/IN all/PDT the/DT source/NN languages/NNS
+The/DT results/NNS showed/VBD that/IN for/IN Finnish/JJ German/JJ and/CC Spanish/VB the/DT combined/VBN technique/NN performed/VBN better/RBR than/IN digrams/NNS and/CC trigrams/NNS alone/RB
+For/IN French/JJ and/CC Swedish/JJ performance/NN changes/NNS were/VBD slight/JJ
+In/IN Toivonen/NNP et/NN al/NN
+2005/CD we/PRP studied/VBD how/WRB effective/JJ TRT/NN is/VBZ without/IN fuzzy/JJ matching/NN
+We/PRP found/VBD that/IN translation/NN recall/NN was/VBD high/JJ when/WRB low/JJ frequency/NN and/CC confidence/NN factor/NN were/VBD used/VBN as/IN thresholds/NNS to/TO select/VB the/DT rules/NNS for/IN TRT/NN
+However/RB at/IN low/JJ confidence/NN factor/NN and/CC frequency/NN levels/NNS translation/NN precision/NN was/VBD low/JJ
+The/DT FITE/NNP TRT/NNP technique/NN addresses/VBZ this/DT problem/NN and/CC as/IN we/PRP will/MD show/VB in/IN this/DT article/NN it/PRP achieves/VBZ both/DT high/JJ recall/NN and/CC precision/NN
+The/DT transformation/NN rules/NNS used/VBN in/IN TRT/NNP in/IN this/DT study/NN were/VBD generated/VBN using/VBG the/DT rule/NN generation/NN method/NN based/VBN on/IN the/DT use/NN of/IN dictionary/JJ data/NNS described/VBN in/IN Pirkola/NNP et/VBP al/JJ
+2003/CD
+The/DT dictionary/JJ data/NNS consisted/VBD of/IN a/DT multilingual/JJ medical/JJ dictionary/NN by/IN Andre/NNP Fairchild/NNP http/NN
+
+members/NNS
+interfold/NN
+com/NN
+translator/NN
+for/IN the/DT language/NN pairs/NNS of/IN Spanish/NNP English/NNP Spanish/JJ German/JJ Spanish/JJ French/JJ German/JJ English/NNP and/CC French/NNP English/NNP
+For/IN Finnish/JJ English/NNP the/DT data/NNS for/IN rule/NN generation/NN was/VBD obtained/VBN by/IN translating/VBG 1/CD a/DT list/NN of/IN Finnish/JJ medical/JJ terms/NNS into/IN English/NNP using/VBG a/DT medical/JJ dictionary/NN by/IN Kielikone/NNP Inc/NNP
+and/CC 2/CD a/DT list/NN of/IN Finnish/JJ terms/NNS in/IN various/JJ domains/NNS into/IN English/NNP using/VBG Kielikone/NNP s/NNS general/JJ purpose/NN dictionary/JJ
+Thus/RB for/IN Finnish/JJ English/NNP we/PRP constructed/VBD two/CD collections/NNS
+The/DT second/JJ collection/NN was/VBD constructed/VBN because/IN the/DT first/JJ collection/NN missed/VBD many/JJ important/JJ rules/NNS
+Table/JJ I/PRP shows/VBZ the/DT number/NN of/IN entries/NNS and/CC the/DT average/JJ number/NN of/IN translations/NNS per/IN an/DT entry/NN for/IN each/DT dictionary/JJ used/VBN in/IN the/DT rule/NN generation/NN columns/NNS 2/CD and/CC 3/CD
+Table/JJ I/PRP also/RB shows/VBZ the/DT total/JJ number/NN of/IN rules/NNS in/IN the/DT generated/JJ rule/NN collections/NNS as/RB well/RB the/DT number/NN of/IN rules/NNS at/IN or/CC above/IN the/DT thresholds/NNS of/IN CF/NNP 4/CD
+0/CD and/CC frequency/NN 2/CD applied/VBN in/IN this/DT study/NN columns/VBZ 4/CD and/CC 5/CD
+We/PRP applied/VBD the/DT confidence/NN factor/NN and/CC frequency/NN thresholds/NNS because/IN TRT/NNP may/MD give/VB very/RB large/JJ translation/NN sets/NNS and/CC at/IN the/DT present/JJ stage/NN of/IN development/NN the/DT TRT/NN program/NN is/VBZ not/RB efficient/JJ enough/RB to/TO process/VB very/RB large/JJ word/NN sets/NNS
+Due/JJ to/TO the/DT efficiency/NN issues/NNS we/PRP also/RB applied/VBD a/DT limit/NN of/IN 40/CD word/NN forms/NNS if/IN there/EX were/VBD more/JJR than/IN 40/CD word/NN forms/NNS in/IN a/DT translation/NN set/NN of/IN an/DT intermediate/JJ language/NN the/DT source/NN word/NN was/VBD retranslated/VBN by/IN TRT/NNP with/IN a/DT confidence/NN factor/NN of/IN 10/CD
+0/CD and/CC frequency/NN of/IN 10/CD to/TO yield/VB a/DT smaller/JJR translation/NN set/VBN
+As/IN can/MD be/VB seen/VBN in/IN Table/NNP I/PRP each/DT rule/NN collection/NN contains/VBZ a/DT high/JJ number/NN of/IN rules/NNS which/WDT suggests/VBZ that/IN the/DT rule/NN generation/NN method/NN effectively/RB captured/VBN spelling/NN variation/NN between/IN the/DT language/NN pairs/NNS
+3/CD
+RESEARCH/NNP PROBLEMS/NNP AND/CC EVALUATION/NNP MEASURES/NNP We/PRP distinguish/VBP between/IN two/CD kinds/NNS of/IN words/NNS in/IN a/DT language/NN with/IN respect/NN to/TO the/DT words/NNS in/IN another/DT language/NN cross/VB lingual/JJ spelling/NN variants/NNS and/CC native/JJ words/NNS
+Cross/NNP lingual/JJ spelling/NN variants/NNS are/VBP etymologically/RB related/VBN words/NNS and/CC therefore/RB similar/JJ in/IN the/DT two/CD languages/NNS differing/VBG only/RB slightly/RB in/IN spelling/NN
+A/DT native/JJ word/NN and/CC its/PRP$ target/NN language/NN equivalent/NN are/VBP not/RB related/VBN to/TO each/DT other/JJ morphologically/RB even/RB if/IN they/PRP share/VBP the/DT same/JJ meaning/NN
+The/DT words/NNS have/VBP different/JJ origins/NNS and/CC etymologies/NNS in/IN the/DT history/NN of/IN the/DT respective/JJ languages/NNS
+The/DT words/NNS do/VBP not/RB have/VB morphological/JJ or/CC phonetic/JJ resemblance/NN or/CC if/IN there/EX is/VBZ some/DT it/PRP is/VBZ purely/RB accidental/JJ
+As/IN examples/NNS consider/VBP the/DT English/JJ words/NNS computer/NN and/CC chemotherapy/NN and/CC their/PRP$ Finnish/JJ equivalents/NNS tietokone/NN and/CC kemoterapia/NN
+The/DT first/JJ pair/NN computertietokone/NN do/VBP not/RB have/VB morphological/JJ or/CC phonetic/JJ resemblance/NN computer/NN originating/VBG from/IN Latin/JJ computare/NN to/TO calculate/VB and/CC tietokone/VB being/VBG a/DT compound/NN of/IN knowledge/NN and/CC machine/NN
+The/DT Finnish/JJ words/NNS tieto/TO and/CC kone/NN are/VBP old/JJ words/NNS in/IN the/DT language/NN
+In/IN the/DT second/JJ pair/NN chemotherapy/NN kemoterapia/IN both/DT words/NNS originate/VBP from/IN Greek/JJ chemeia/NN therapeia/NN and/CC albeit/IN having/VBG been/VBN modified/VBN to/TO fit/VB the/DT style/NN of/IN their/PRP$ present/JJ languages/NNS still/RB have/VBP not/RB lost/VBN their/PRP$ morphological/JJ or/CC phonetic/JJ resemblance/NN
+TRT/NN is/VBZ intended/VBN to/TO translate/VB spelling/NN variants/NNS and/CC FITE/NNP is/VBZ intended/VBN to/TO identify/VB the/DT translation/NN equivalents/NNS of/IN spelling/NN variants/NNS and/CC to/TO indicate/VB the/DT native/JJ source/NN language/NN words/VBZ the/DT source/NN words/NNS that/WDT can/MD not/RB be/VB correctly/RB translated/VBN by/IN TRT/NNP
+Using/VBG test/NN word/NN sets/NNS containing/VBG both/DT types/NNS of/IN words/NNS we/PRP examine/VBP the/DT following/VBG research/NN questions/NNS r/VBP In/IN the/DT case/NN of/IN spelling/NN variants/NNS how/WRB to/TO effectively/RB identify/VB the/DT correct/JJ equivalent/NN of/IN a/DT source/NN word/NN among/IN the/DT many/JJ word/NN forms/NNS produced/VBN by/IN TRT/NNP when/WRB most/JJS of/IN the/DT transformation/NN rules/NNS available/JJ for/IN a/DT language/NN pair/NN are/VBP used/VBN in/IN TRT/NNP
+r/NN How/WRB to/TO reliably/RB identify/VB native/JJ source/NN language/NN words/NNS
+r/NN Are/VBP word/NN frequency/NN lists/NNS mined/VBN from/IN the/DT Web/NNP competitive/JJ with/IN the/DT Web/NNP as/IN a/DT collection/NN of/IN documents/NNS as/IN FITE/NNP TRT/NNP s/VBZ frequency/NN source/NN
+r/NN What/WP are/VBP the/DT translation/NN recall/NN and/CC precision/NN and/CC indication/NN precision/NN see/VBP the/DT definitions/NNS below/IN of/IN the/DT proposed/VBN FITE/NNP TRT/NNP method/NN
+r/NN What/WP is/VBZ the/DT contribution/NN of/IN each/DT step/NN in/IN the/DT FITE/NNP TRT/NNP process/NN to/TO its/PRP$ overall/JJ effectiveness/NN
+r/NN What/WP is/VBZ the/DT effectiveness/NN of/IN a/DT standard/JJ CLIR/NNP system/NN boosted/VBN by/IN the/DT use/NN of/IN FITE/NNP TRT/NNP in/IN comparison/NN to/TO a/DT CLIR/NNP system/NN augmented/VBD with/IN TRT/NNP and/CC fuzzy/JJ matching/NN OOV/NNP word/NN methods/NNS and/CC in/IN comparison/NN to/TO dictionary/VB translationonly/RB CLIR/NNP and/CC monolingual/JJ baselines/NNS
+The/DT effectiveness/NN of/IN FITE/NNP TRT/NNP was/VBD evaluated/VBN by/IN using/VBG the/DT measures/NNS of/IN translation/NN recall/VBP translation/NN precision/NN and/CC indication/NN precision/NN
+For/IN spelling/VBG variants/NNS translation/NN recall/NN is/VBZ defined/VBN as/IN the/DT proportion/NN of/IN source/NN words/NNS for/IN which/WDT FITE/NNP identifies/VBZ correct/JJ equivalents/NNS among/IN all/DT source/NN words/NNS
+For/IN example/NN if/IN there/EX are/VBP 10/CD source/NN words/NNS and/CC TRT/NNP gives/VBZ for/IN these/DT 100/CD target/NN language/NN word/NN forms/NNS among/IN which/WDT there/EX are/VBP correct/JJ equivalents/NNS for/IN 8/CD source/NN words/NNS then/RB translation/NN recall/NN is/VBZ 8/CD
+10/CD 80/CD
+Translation/NN precision/NN is/VBZ defined/VBN as/IN the/DT proportion/NN of/IN correct/JJ equivalents/NNS among/IN all/DT words/NNS that/WDT are/VBP indicated/VBN as/IN equivalents/NNS
+For/IN example/NN if/IN FITE/NNP identifies/VBZ 10/CD translation/NN equivalents/NNS of/IN which/WDT 9/CD are/VBP correct/JJ equivalents/NNS translation/NN precision/NN is/VBZ 9/CD
+10/CD 90/CD
+For/IN native/JJ words/NNS the/DT question/NN of/IN what/WP share/NN of/IN them/PRP is/VBZ translated/VBN by/IN TRT/NNP is/VBZ an/DT irrelevant/JJ question/NN and/CC naturally/RB recall/VBP is/VBZ not/RB measured/VBN for/IN them/PRP
+For/IN native/JJ source/NN words/NNS indication/NN precision/NN is/VBZ defined/VBN as/IN the/DT proportion/NN of/IN words/NNS correctly/RB indicated/VBD to/TO be/VB untranslatable/JJ by/IN TRT/NN
+For/IN example/NN if/IN there/EX are/VBP 5/CD native/JJ source/NN words/NNS and/CC FITE/NNP indicates/VBZ that/IN none/NN of/IN these/DT translation/NN equivalents/NNS are/VBP contained/VBN in/IN the/DT translation/NN sets/VBZ indication/NN precision/NN is/VBZ 5/CD
+5/CD 100/CD
+Retrieval/NNP effectiveness/NN was/VBD evaluated/VBN using/VBG the/DT measures/NNS of/IN mean/JJ average/JJ precision/NN MAP/NNP and/CC precision/NN at/IN 20/CD documents/NNS
+MAP/NNP is/VBZ a/DT standard/JJ evaluation/NN measure/NN used/VBN in/IN TREC/NNP http/NN
+
+trec/NN
+nist/NN
+gov/NN and/CC it/PRP refers/VBZ to/TO the/DT average/NN of/IN the/DT precision/NN values/NNS obtained/VBN after/IN each/DT relevant/JJ document/NN is/VBZ retrieved/VBN
+MAP/NNP is/VBZ a/DT system/NN oriented/JJ measure/NN while/IN precision/NN at/IN 20/CD documents/NNS is/VBZ important/JJ from/IN the/DT practical/JJ IR/NNP standpoint/NN
+The/DT probability/NN of/IN a/DT searcher/NN scanning/VBG further/RBR down/IN a/DT ranked/JJ result/NN list/NN decreases/VBZ as/IN s/NNS he/PRP scans/VBZ down/RB and/CC we/PRP use/VBP a/DT document/NN cutoff/NN value/NN of/IN 20/CD as/IN a/DT rule/NN of/IN thumb/NN for/IN the/DT stopping/VBG point/NN of/IN scan/JJ
+4/CD
+THE/DT FITE/NNP TECHNIQUE/NNP 4/CD
+1/CD Frequency/NNP Data/NNP FITE/NNP identifies/VBZ the/DT correct/JJ translation/NN equivalents/NNS among/IN the/DT TRT/NNP generated/VBD word/NN forms/NNS by/IN their/PRP$ frequency/NN distribution/NN in/IN some/DT corpus/NN
+Frequencies/NNS for/IN FITE/NNP were/VBD taken/VBN from/IN the/DT Web/NNP and/CC word/NN frequency/NN lists/NNS
+In/IN the/DT case/NN of/IN the/DT Web/NNP we/PRP consider/VBP document/NN frequency/NN DF/NNP and/CC in/IN the/DT case/NN of/IN frequency/NN lists/NNS word/NN frequency/NN WF/.
+DF/NNP statistics/NNS were/VBD collected/VBN using/VBG the/DT Altavista/NNP search/NN engine/NN and/CC its/PRP$ language/NN selection/NN feature/NN
+A/DT research/NN assistant/NN fed/VBD the/DT word/NN forms/NNS into/IN the/DT search/NN engine/NN which/WDT reported/VBD for/IN each/DT word/NN form/IN the/DT number/NN of/IN documents/NNS containing/VBG the/DT word/NN form/NN
+The/DT word/NN frequency/NN lists/NNS were/VBD mined/VBN from/IN the/DT Web/NNP using/VBG a/DT Web/NNP mining/NN technique/NN which/WDT is/VBZ described/VBN next/JJ
+In/IN the/DT first/JJ step/NN of/IN the/DT Web/NNP mining/NN process/NN a/DT query/NN script/NN based/VBN on/IN the/DT use/NN of/IN text/NN based/VBN Web/NNP browser/NN Lynx/NNP was/VBD run/VBN to/TO fetch/VB medical/JJ and/CC biological/JJ documents/NNS in/IN a/DT desired/VBN language/NN from/IN the/DT Google/NNP search/NN engine/NN
+The/DT query/NN script/VBD described/VBN in/IN Zhang/NNP and/CC Vines/NNP 2004/CD was/VBD modified/VBN for/IN this/DT purpose/NN
+We/PRP used/VBD the/DT following/JJ parameters/NNS and/CC parameter/NN values/NNS in/IN the/DT script/JJ language/NN English/NNP
+Finnish/JJ
+German/JJ
+Spanish/VB the/DT number/NN of/IN documents/NNS to/TO fetch/VB 700/CD query/NN keys/VBZ the/DT words/NNS medicine/NN biology/NN and/CC disease/NN conjuncted/VBN by/IN the/DT AND/CC operator/NN and/CC the/DT corresponding/JJ words/NNS in/IN Finnish/JJ German/JJ and/CC Spanish/JJ
+The/DT use/NN of/IN these/DT keys/NNS directed/VBD the/DT actual/JJ Web/NNP mining/NN towards/IN medical/JJ and/CC biological/JJ sub/NN Webs/NNS
+In/IN the/DT second/JJ step/NN URLs/NNS were/VBD extracted/VBN from/IN the/DT fetched/VBN documents/NNS and/CC were/VBD saved/VBN in/IN a/DT file/NN
+In/IN the/DT third/JJ step/NN the/DT URL/NNP file/NN was/VBD cleaned/VBN by/IN removing/VBG duplicates/NNS so/RB that/IN only/RB URLs/NNPS with/IN unique/JJ domain/NN names/NNS were/VBD kept/VBN in/IN the/DT file/NN
+The/DT URL/NNP file/NN served/VBD as/IN an/DT input/NN for/IN the/DT fourth/JJ step/NN the/DT actual/JJ Web/NNP mining/NN stage/NN where/WRB documents/NNS were/VBD downloaded/VBN from/IN each/DT Web/NNP site/NN represented/VBN in/IN the/DT URL/NNP file/NN using/VBG a/DT wget/JJ program/NN http/NN
+
+www/NN
+gnu/NN
+org/NN
+software/NN
+wget/NN
+
+Wget/NNP s/VBZ parameter/NN directory/NN depth/NN was/VBD set/VBN at/IN 3/CD on/IN each/DT Web/NNP site/NN documents/NNS at/IN directory/NN depths/NNS 1/CD 3/CD were/VBD downloaded/VBN
+In/IN the/DT fifth/JJ step/NN of/IN the/DT process/NN all/DT downloaded/JJ documents/NNS were/VBD combined/VBN into/IN one/CD large/JJ file/NN
+In/IN the/DT sixth/JJ step/NN word/NN frequency/NN lists/NNS were/VBD constructed/VBN from/IN the/DT combined/VBN document/NN file/NN
+The/DT number/NN of/IN documents/NNS downloaded/VBN from/IN the/DT Web/NNP varied/VBD depending/VBG on/IN the/DT language/NN
+For/IN example/NN for/IN German/JJ 35/CD 000/CD documents/NNS were/VBD downloaded/VBN
+The/DT total/JJ size/NN of/IN these/DT documents/NNS was/VBD 2/CD
+26/CD GB/NNP
+The/DT numbers/NNS of/IN unique/JJ words/NNS contained/VBN in/IN the/DT frequency/NN lists/NNS are/VBP as/IN follows/VBZ English/NNP 762/CD 000/CD words/NNS Finnish/JJ 886/CD 000/CD words/NNS German/JJ 470/CD 000/CD words/NNS Spanish/JJ 386/CD 000/CD words/NNS intermediate/JJ language/NN French/NNP was/VBD small/JJ it/PRP was/VBD not/RB considered/VBN in/IN the/DT frequency/NN list/NN experiments/NNS and/CC we/PRP did/VBD not/RB construct/VB a/DT word/NN frequency/NN list/NN for/IN French/JJ
+Its/PRP$ minor/JJ contribution/NN was/VBD probably/RB due/JJ to/TO the/DT fact/NN that/IN it/PRP was/VBD used/VBN as/IN the/DT second/JJ intermediate/JJ language/NN rather/RB than/IN due/JJ to/TO its/PRP$ linguistic/JJ features/NNS
+In/IN statistical/JJ MT/NNP the/DT choice/NN between/IN translation/NN alternatives/NNS depends/VBZ on/IN the/DT translation/NN probabilities/NNS of/IN the/DT alternatives/NNS and/CC their/PRP$ context/NN Al/NNP Onaizan/NNP et/VBD al/JJ
+1999/CD Brown/NNP et/VB al/JJ
+1990/CD
+Translation/NN probabilities/NNS are/VBP computed/VBN on/IN a/DT basis/NN of/IN aligned/JJ corpora/NN
+In/IN contrast/NN to/TO this/DT the/DT source/NN and/CC target/NN language/NN corpora/NN used/VBN by/IN FITE/NNP are/VBP independent/JJ of/IN each/DT other/JJ
+In/IN statistical/JJ MT/NNP bigram/NN and/CC trigram/NN language/NN models/NNS are/VBP typically/RB used/VBN to/TO capture/VB the/DT context/NN
+FITE/NNP is/VBZ based/VBN on/IN a/DT unigram/NN language/NN model/NN no/DT context/NN dependence/NN of/IN translations/NNS is/VBZ assumed/VBN
+4/CD
+2/CD Frequency/NNP Pattern/NNP In/IN order/NN to/TO avoid/VB several/JJ long/JJ function/NN definitions/NNS not/RB precisely/RB in/IN the/DT focus/NN of/IN our/PRP$ article/NN we/PRP introduce/VBP some/DT notational/JJ conventions/NNS used/VBN in/IN the/DT definition/NN of/IN the/DT FITE/NNP method/NN
+Notational/JJ Convention/NN 1/CD
+Let/VB SL/NNP be/VB a/DT source/NN language/NN and/CC TL/VB a/DT target/NN language/NN and/CC sw/VB be/VB some/DT source/NN language/NN word/NN in/IN the/DT source/NN language/NN collection/NN S/NNS
+We/PRP denote/VBP this/DT by/IN sw/NN SL/NNP
+We/PRP denote/VBP the/DT word/NN set/NN produced/VBN by/IN our/PRP$ TRT/NNP translation/NN by/IN TRT/NNP S/NNP L/NNP T/NNP L/NNP sw/NN using/VBG the/DT transformation/NN rules/NNS for/IN SL/NNP TL/NNP translation/NN
+The/DT result/NN is/VBZ a/DT set/NN its/PRP$ elements/NNS tw/WDT hold/VBP the/DT relationship/NN tw/POS TRT/NNP S/NNP L/NNP T/NNP L/NNP sw/NN
+If/IN the/DT TRT/NNP translation/NN is/VBZ performed/VBN using/VBG a/DT strict/JJ confidence/NN factor/NN 10/CD and/CC a/DT strict/JJ rule/NN frequency/NN 10/CD see/NN Section/NN 2/CD we/PRP denote/VBP this/DT by/IN TRT/NNP S/NNP L/NNP T/NNP L/NNP strict/JJ sw/NN
+Notational/JJ Convention/NN 2/CD
+Let/VB sw/PRP be/VB some/DT word/NN in/IN source/NN language/NN SL/NNP sw/VBD SL/NNP
+We/PRP denote/VBP its/PRP$ document/NN frequency/NN in/IN the/DT source/NN language/NN collection/NN S/NNP by/IN df/JJ S/NNS sw/VBP
+Note/VB that/IN if/IN sw/NN does/VBZ not/RB appear/VB in/IN any/DT documents/NNS of/IN S/NNP then/RB df/VBD S/NNP sw/NN 0/CD
+If/IN S/NNP is/VBZ a/DT source/NN language/NN wordlist/NN containing/VBG word/NN frequencies/NNS we/PRP denote/VBP the/DT frequency/NN of/IN sw/NN in/IN S/NNP by/IN wf/NNP S/NNP sw/NN
+Notational/JJ Convention/NN 3/CD
+Let/VB tw/CC be/VB some/DT word/NN of/IN the/DT target/NN language/NN TL/NNP in/IN the/DT target/NN language/NN document/NN collection/NN T/NNP tw/CD TL/NNP
+We/PRP denote/VBP its/PRP$ document/NN frequency/NN in/IN T/NNP by/IN dfT/NNP tw/.
+It/PRP refers/VBZ to/TO the/DT frequency/NN of/IN target/NN language/NN documents/NNS that/WDT contain/VBP the/DT word/NN tw/.
+Note/VB that/IN if/IN tw/NN does/VBZ not/RB appear/VB in/IN any/DT documents/NNS of/IN T/NNP then/RB dfT/NNP tw/RB 0/CD
+If/IN T/NNP is/VBZ a/DT target/NN language/NN wordlist/NN containing/VBG word/NN frequencies/NNS we/PRP denote/VBP the/DT frequency/NN of/IN tw/NN in/IN T/NNP by/IN wfT/NNP tw/.
+Notational/JJ Convention/NN 4/CD
+Let/VB sw/PRP be/VB some/DT source/NN language/NN SL/NNP word/NN sw/NN SL/NNP TL/NNP a/DT target/NN language/NN TWS/NNP TRT/NNP S/NNP L/NNP T/NNP L/NNP sw/VBD the/DT word/NN set/NN produced/VBN by/IN our/PRP$ TRT/NNP translation/NN and/CC T/VB a/DT target/NN language/NN document/NN collection/NN or/CC word/NN list/NN
+The/DT frequency/NN ranked/VBD list/NN of/IN words/NNS of/IN TWS/NNP in/IN T/NNP is/VBZ denoted/VBN by/IN R/NNP trt/NN frank/NN TWS/NNP T/NNP
+Table/NNP II/NNP is/VBZ an/DT example/NN of/IN such/PDT a/DT list/NN with/IN the/DT frequency/NN data/NNS added/VBD
+For/IN a/DT given/VBN source/NN language/NN word/NN sw/VBD we/PRP obtain/VB this/DT list/NN by/IN trt/NN frank/NN TRT/NNP S/NNP L/NNP T/NNP L/NNP sw/NN T/NNP
+The/DT elements/NNS of/IN this/DT list/NN are/VBP denoted/VBN by/IN the/DT usual/JJ notation/NN for/IN example/NN trt/NN frank/NN TWS/NNP T/NNP 3/CD gives/VBZ its/PRP$ third/JJ component/NN
+As/IN an/DT example/NN in/IN the/DT case/NN of/IN Table/NNP II/NNP trt/NN frank/NN TRTSPA/NNP ENG/NNP biosintesis/NN EngWeb/NNP 3/CD biosyntesis/NN
+Its/PRP$ frequency/NN is/VBZ dfEngWeb/NNP trt/NN frank/NN TRTSPA/NNP ENG/NNP biosintesis/NN EngWeb/NNP 3/CD dfEngWeb/NNP biosyntesis/NN 634/CD
+The/DT core/NN of/IN FITE/NNP is/VBZ that/IN except/IN for/IN the/DT translation/NN equivalents/VBZ the/DT word/NN forms/NNS yielded/VBN by/IN TRT/NNP are/VBP malformed/VBN rather/RB than/IN real/JJ words/NNS or/CC they/PRP are/VBP rare/JJ words/NNS for/IN example/NN foreign/JJ language/NN words/NNS in/IN the/DT target/NN language/NN text/NN
+The/DT equivalents/NNS belong/VBP to/TO a/DT language/NN s/VBZ basic/JJ lexicon/NN and/CC are/VBP much/RB more/RBR common/JJ in/IN the/DT language/NN than/IN the/DT other/JJ word/NN forms/NNS
+This/DT regular/JJ frequency/NN pattern/NN allows/VBZ the/DT identification/NN of/IN the/DT equivalents/NNS
+The/DT example/NN in/IN Table/NNP II/NNP shows/VBZ the/DT document/NN frequency/NN pattern/NN associated/VBN with/IN the/DT word/NN forms/NNS obtained/VBN by/IN TRT/NNP for/IN the/DT Spanish/JJ word/NN biosintesis/NN in/IN Spanish/NNP English/NNP TRT/NNP in/IN the/DT English/JJ sub/NN Web/NNP
+The/DT word/NN forms/NNS are/VBP sorted/VBN by/IN document/NN frequency/NN by/IN trt/NN frank/NN TRTSPA/NNP ENG/NNP biosintesis/NN EngWeb/NNP
+We/PRP can/MD see/VB that/IN the/DT DF/NNP of/IN biosynthesis/NN the/DT equivalent/NN of/IN biosintesis/NN is/VBZ remarkably/RB higher/JJR than/IN the/DT DFs/NNP of/IN the/DT other/JJ the/DT word/NN forms/NNS
+This/DT type/NN of/IN frequency/NN distribution/NN is/VBZ very/RB common/JJ for/IN word/NN forms/NNS within/IN a/DT translation/NN set/NN of/IN TRT/NN
+Given/VBN a/DT target/NN word/NN form/NN ranking/VBG R/NNP trt/NN frank/NN TWS/NNP T/NNP the/DT magnitude/NN of/IN difference/NN between/IN the/DT document/NN frequency/NN of/IN the/DT first/JJ word/NN form/NN dfT/NNP R/NNP 1/CD and/CC the/DT document/NN frequency/NN of/IN the/DT second/JJ word/NN form/NN dfT/NNP R/NNP 2/CD or/CC the/DT frequencies/NNS between/IN R/NNP 2/CD and/CC R/NNP 3/CD see/NN Section/NN 4/CD
+5/CD forms/NNS the/DT basis/NN of/IN the/DT equivalent/JJ identification/NN
+We/PRP used/VBD the/DT coefficient/JJ value/NN the/DT magnitude/NN of/IN difference/NN of/IN 10/CD for/IN the/DT identification/NN of/IN equivalents/NNS both/DT for/IN Web/NNP and/CC word/NN frequency/NN lists/NNS
+The/DT same/JJ pattern/NN holds/VBZ for/IN the/DT Web/NNP and/CC word/NN frequency/NN lists/NNS with/IN the/DT main/JJ differences/NNS being/VBG in/IN that/DT in/IN the/DT case/NN of/IN frequency/NN lists/NNS word/NN frequencies/NNS instead/RB of/IN document/NN frequencies/NNS are/VBP considered/VBN and/CC in/IN that/DT Web/NNP gives/VBZ more/RBR malformed/JJ words/NNS than/IN the/DT frequency/NN lists/NNS
+The/DT following/VBG definition/NN of/IN the/DT function/NN freqpattern/JJ ok/JJ checks/NNS whether/IN the/DT frequencies/NNS of/IN two/CD target/NN language/NN words/NNS twi/VBP and/CC tw/VBP j/NNS have/VBP the/DT required/VBN pattern/NN
+Definition/NN 1/CD
+Let/VB twi/NNS and/CC tw/JJ j/NN be/VB two/CD candidate/NN word/NN forms/NNS in/IN the/DT target/NN language/NN sub/NN Web/NNP document/NN collection/NN or/CC word/NN frequency/NN list/NN T/NNP as/IN given/VBN by/IN TRT/NNP
+Let/VB dfT/NN twi/NNS and/CC dfT/NNP tw/MD j/RB be/VB their/PRP$ frequencies/NNS in/IN T/NNP
+Let/VB be/VB a/DT corpus/JJ dependent/JJ normalizing/JJ factor/NN 1/CD
+The/DT Boolean/NNP function/NN freq/NN pattern/NN ok/NN gives/VBZ the/DT value/NN true/JJ if/IN the/DT frequency/NN of/IN twi/NNS in/IN T/NNP is/VBZ at/IN least/JJS times/NNS the/DT frequency/NN of/IN tw/JJ j/NN in/IN T/NNP
+freq/JJ pattern/NN ok/NN twi/NNS tw/VBP j/NN T/NNP true/JJ if/IN dfT/NNP twi/IN dfT/NNP tw/JJ j/NN false/JJ otherwise/RB
+Typically/RB the/DT function/NN freq/NN pattern/NN ok/NN is/VBZ applied/VBN on/IN two/CD consecutive/JJ words/NNS in/IN a/DT frequency/NN ranked/VBD order/NN
+For/IN example/NN freq/NN pattern/NN ok/NN biosynthesis/NN biosintesis/NN 10/CD EngWeb/NNP yields/VBZ the/DT value/NN true/JJ Table/NNP II/NNP
+In/IN the/DT tests/NNS the/DT coefficient/NN was/VBD experimentally/RB set/VBN at/IN 10/CD using/VBG the/DT training/NN data/NNS Section/NN 5/CD
+1/CD
+1/CD
+4/CD
+3/CD Relative/NNP Frequency/NNP There/EX are/VBP situations/NNS where/WRB the/DT highest/JJS DF/NNP WF/NNP is/VBZ possessed/VBN by/IN a/DT word/NN that/WDT is/VBZ not/RB the/DT correct/JJ equivalent/NN
+For/IN example/NN the/DT source/NN word/NN may/MD occur/VB frequently/RB in/IN a/DT target/NN language/NN collection/NN if/IN TRT/NNP fails/VBZ to/TO translate/VB the/DT source/NN word/NN it/PRP may/MD appear/VB at/IN the/DT first/JJ position/NN in/IN a/DT translation/NN set/VBN
+A/DT source/NN word/NN is/VBZ always/RB included/VBN in/IN TRT/NNP s/NNS translation/NN set/VBN because/IN source/NN and/CC target/NN language/NN words/NNS may/MD be/VB identical/JJ
+Also/RB in/IN the/DT case/NN of/IN Web/NNP as/IN a/DT document/NN collection/NN there/EX are/VBP mixed/JJ language/NN pages/VBZ some/DT of/IN which/WDT a/DT search/NN engine/NN may/MD consider/VB target/NN language/NN pages/NNS which/WDT wrongly/RB increases/VBZ the/DT target/NN DF/NNP of/IN a/DT source/NN word/NN found/VBN in/IN the/DT mixed/JJ language/NN pages/NNS
+TRT/NN may/MD also/RB accidentally/RB give/VB high/JJ DF/NNP words/NNS that/WDT are/VBP not/RB correct/JJ equivalents/NNS
+As/IN a/DT solution/NN for/IN this/DT problem/NN we/PRP compute/VBP relative/JJ document/NN frequency/NN rel/NN df/NN and/CC relative/JJ word/NN frequency/NN rel/NN wf/NN defined/VBN as/IN follows/VBZ
+Definition/NN 2/CD
+Let/VB sw/PRP be/VB a/DT source/NN language/NN word/NN in/IN the/DT source/NN language/NN collection/NN S/NNP and/CC tw/VB a/DT target/NN language/NN word/NN form/NN in/IN the/DT target/NN language/NN sub/NN Web/NNP document/NN collection/NN T/NNP as/IN given/VBN by/IN TRT/NNP
+Let/VB df/NN S/NNS sw/VBP be/VB the/DT frequency/NN of/IN sw/NN in/IN S/NNP and/CC dfT/NNP tw/VBP the/DT frequency/NN of/IN the/DT target/NN language/NN word/NN tw/NN in/IN T/NNP
+Let/VB be/VB a/DT corpus/JJ dependent/JJ normalizing/JJ factor/NN 0/CD
+The/DT function/NN rel/NN df/NN gives/VBZ the/DT relative/JJ document/NN frequency/NN for/IN tw/NN in/IN T/NNP
+Definition/NN 3/CD
+Let/VB sw/PRP be/VB a/DT source/NN language/NN word/NN in/IN the/DT source/NN language/NN word/NN list/NN S/NNP and/CC tw/VB a/DT target/NN language/NN word/NN form/NN in/IN the/DT target/NN language/NN word/NN list/NN T/NNP as/IN given/VBN by/IN TRT/NNP
+Let/VB wf/IN S/NNS sw/VBP be/VB the/DT frequency/NN of/IN sw/NN in/IN S/NNP and/CC wfT/NNP tw/VBP the/DT frequency/NN of/IN the/DT target/NN language/NN word/NN tw/NN in/IN T/NNP
+Let/VB be/VB a/DT corpus/JJ dependent/JJ normalizing/JJ factor/NN 0/CD
+The/DT function/NN rel/NN wf/NN gives/VBZ the/DT relative/JJ word/NN frequency/NN for/IN tw/NN in/IN T/NNP
+rel/NN wf/MD tw/RB sw/VB T/NNP S/NNP wfT/NNP tw/.
+xwf/IN S/NNS sw/VBP
+The/DT coefficient/NN is/VBZ a/DT corpus/JJ dependent/JJ normalizing/JJ factor/NN
+It/PRP is/VBZ assigned/VBN such/PDT a/DT value/NN that/WDT rel/VBP df/NN and/CC rel/NN wf/NN 1/CD indicate/VBP that/IN the/DT target/NN word/NN form/NN is/VBZ an/DT equivalent/JJ and/CC rel/JJ df/NN and/CC rel/NN wf/NN 1/CD indicate/VBP the/DT equivalent/NN is/VBZ not/RB found/VBN in/IN the/DT translation/NN set/NN
+The/DT coefficient/JJ values/NNS reflect/VBP the/DT relative/JJ sizes/NNS of/IN the/DT sub/NN Webs/NNS
+word/NN frequency/NN lists/NNS in/IN relation/NN to/TO each/DT other/JJ
+In/IN our/PRP$ case/NN 2/CD was/VBD used/VBN in/IN all/DT test/NN conditions/NNS
+The/DT value/NN 2/CD was/VBD determined/VBN experimentally/RB
+The/DT values/NNS of/IN from/IN 1/CD to/TO 2/CD are/VBP appropriate/JJ for/IN the/DT conditions/NNS where/WRB the/DT target/NN corpus/NN is/VBZ much/RB larger/JJR than/IN the/DT source/NN corpus/NN which/WDT was/VBD the/DT case/NN in/IN our/PRP$ experiments/NNS
+The/DT Finnish/JJ word/NN frequency/NN list/NN contains/VBZ more/JJR words/NNS than/IN the/DT English/JJ list/NN Section/NN 4/CD
+1/CD
+However/RB the/DT sum/NN frequency/NN over/IN all/DT words/NNS is/VBZ substantially/RB higher/JJR in/IN the/DT English/NNP than/IN Finnish/JJ list/NN
+This/DT allows/VBZ the/DT use/NN of/IN 2/CD in/IN the/DT rel/NN wf/NN formula/NN also/RB for/IN Finnish/JJ English/JJ
+The/DT example/NN in/IN Table/NNP III/NNP illustrates/VBZ the/DT case/NN where/WRB the/DT word/NN with/IN the/DT highest/JJS DF/NNP is/VBZ not/RB the/DT correct/JJ equivalent/NN
+The/DT translation/NN set/NN contains/VBZ the/DT word/NN forms/NNS and/CC the/DT associated/VBN frequencies/NNS of/IN English/NNP Web/NNP pages/NNS for/IN a/DT Spanish/JJ source/NN word/NN fraccionamiento/NN
+A/DT typical/JJ frequency/NN pattern/NN is/VBZ found/VBN
+However/RB fraccionamiento/IN the/DT word/NN with/IN the/DT highest/JJS DF/NNP is/VBZ the/DT Spanish/JJ source/NN word/NN not/RB translated/VBN into/IN English/NNP
+Its/PRP$ DF/NNP in/IN the/DT Spanish/JJ portion/NN of/IN Web/NNP is/VBZ 416/CD 000/CD
+It/PRP is/VBZ not/RB accepted/VBN as/IN an/DT equivalent/NN since/IN rel/NN df/NN fraccionamiento/IN fraccionamiento/NN 2/CD EngWeb/NNP SpaWeb/NNP 1/CD
+We/PRP considered/VBD the/DT two/CD highest/JJS ranked/VBD word/NN forms/NNS and/CC naturally/RB also/RB for/IN the/DT second/JJ form/NN fraccionamento/IN rel/NN df/NN 1/CD
+4/CD
+4/CD Length/NNP Factor/NNP Cross/NNP lingual/JJ spelling/NN variants/NNS are/VBP close/JJ to/TO each/DT other/JJ in/IN word/NN length/NN
+A/DT great/JJ difference/NN between/IN the/DT length/NN of/IN a/DT target/NN word/NN form/NN and/CC the/DT source/NN word/NN is/VBZ an/DT indication/NN of/IN a/DT wrong/JJ equivalent/NN
+The/DT length/NN factor/NN is/VBZ taken/VBN into/IN account/NN as/IN FITE/NNP identifies/VBZ equivalents/NNS
+The/DT length/NN criteria/NNS for/IN accepting/VBG an/DT equivalent/JJ candidate/NN as/IN an/DT equivalent/NN are/VBP shown/VBN in/IN Table/NNP IV/NNP
+It/PRP can/MD be/VB seen/VBN for/IN example/NN that/IN when/WRB a/DT source/NN word/NN contains/VBZ 7/CD characters/NNS the/DT target/NN word/NN form/NN has/VBZ to/TO have/VB from/IN 5/CD to/TO 9/CD characters/NNS in/IN order/NN to/TO be/VB accepted/VBN as/IN an/DT equivalent/NN
+Definition/NN 4/CD
+Let/VB sw/PRP be/VB a/DT source/NN language/NN word/NN and/CC len/NN sw/VBD its/PRP$ length/NN in/IN characters/NNS
+Likewise/RB let/VB tw/CC be/VB a/DT target/NN language/NN word/NN and/CC len/VB tw/VB its/PRP$ length/NN in/IN characters/NNS
+The/DT Boolean/NNP function/NN tw/NN len/VBN ok/RP gives/VBZ the/DT value/NN true/JJ if/IN the/DT length/NN of/IN the/DT target/NN word/NN tw/NN is/VBZ within/IN the/DT range/NN defined/VBN in/IN Table/NNP IV/NNP
+tw/CD len/NN ok/MD tw/VB sw/NN true/JJ if/IN 4/CD len/VBN tw/NN 7/CD and/CC len/MD sw/VB 5/CD true/JJ if/IN 5/CD len/VBN tw/NN 8/CD and/CC len/MD sw/VB 6/CD true/JJ if/IN len/JJ tw/NN len/MD sw/VB 2/CD and/CC 7/CD len/VBN sw/NN 10/CD true/JJ if/IN len/JJ tw/NN len/MD sw/VB 3/CD and/CC len/JJ sw/NN 10/CD false/JJ otherwise/RB 4/CD
+5/CD The/DT Application/NNP of/IN FITE/NNP In/IN the/DT empirical/JJ experiments/NNS the/DT source/NN test/NN words/NNS Section/NN 5/CD
+1/CD
+1/CD were/VBD translated/VBN into/IN English/NNP by/IN the/DT TRT/NNP translation/NN program/NN
+The/DT applied/NN thresholds/NNS were/VBD described/VBN in/IN Section/NN 2/CD
+The/DT equivalents/NNS were/VBD searched/VBN for/IN from/IN the/DT translation/NN sets/VBZ using/VBG the/DT FITE/NNP technique/NN
+As/IN described/VBN in/IN Sections/NNS 4/CD
+2/CD 4/CD
+4/CD the/DT main/JJ criteria/NNS of/IN equivalent/JJ identification/NN of/IN FITE/NNP are/VBP the/DT following/VBG 1/CD the/DT frequency/NN patterns/NNS of/IN the/DT top/JJ word/NN forms/NNS tested/VBN by/IN the/DT function/NN freq/NN pattern/NN ok/NN 2/CD the/DT relative/JJ frequency/NN criterion/NN tested/VBN by/IN the/DT rel/NN df/NN
+rel/NN wf/NN functions/NNS and/CC 3/CD length/NN criterion/NN tested/VBN by/IN the/DT function/NN tw/NN len/NN ok/NN
+The/DT basic/JJ idea/NN is/VBZ to/TO apply/VB the/DT criteria/NNS 1/CD 3/CD in/IN three/CD steps/NNS A/DT C/NNP First/NNP in/IN Step/NNP A/NNP direct/JJ translation/NN is/VBZ tried/VBN and/CC then/RB in/IN Steps/NNP B/NNP and/CC C/NNP the/DT pivot/NN language/NN translations/NNS one/CD after/IN the/DT other/JJ
+The/DT criteria/NNS are/VBP first/RB applied/VBN to/TO the/DT highest/JJS ranking/JJ target/NN word/NN candidate/NN as/IN given/VBN by/IN the/DT function/NN trt/NN frank/NN
+If/IN these/DT steps/NNS do/VBP not/RB yield/VB a/DT solution/NN then/RB basically/RB the/DT same/JJ steps/NNS are/VBP repeated/VBN with/IN the/DT second/JJ highest/JJS ranking/JJ target/NN word/NN candidate/NN
+This/DT process/NN is/VBZ specified/VBN as/IN Algorithm/NNP find/VBP equivalent/JJ which/WDT is/VBZ presented/VBN in/IN the/DT Appendix/NNP
+The/DT algorithm/NN is/VBZ for/IN the/DT case/NN of/IN word/NN frequency/NN lists/VBZ S/NNP and/CC T/NNP for/IN the/DT source/NN and/CC target/NN languages/NNS
+In/IN the/DT case/NN of/IN Web/NNP document/NN collections/NNS the/DT word/NN frequency/NN lists/NNS are/VBP replaced/VBN by/IN a/DT function/NN that/WDT gives/VBZ the/DT Web/NNP document/NN frequency/NN for/IN a/DT given/VBN source/NN word/NN
+The/DT TRT/NN rule/NN bases/NNS for/IN the/DT source/NN pivot/NN and/CC target/NN languages/NNS as/IN described/VBN above/IN need/NN to/TO be/VB available/JJ but/CC are/VBP not/RB precisely/RB defined/VBN see/VBP notational/JJ conventions/NNS in/IN Section/NN 4/CD
+2/CD
+We/PRP use/VBP the/DT notations/NNS and/CC functions/NNS of/IN preceding/VBG sections/NNS in/IN the/DT definition/NN of/IN the/DT algorithm/NN
+The/DT algorithm/NN find/VB equivalent/JJ first/RB tries/VBZ the/DT first/JJ candidates/NNS produced/VBN by/IN the/DT TRT/NNP direct/JJ or/CC pivoted/JJ processes/NNS
+It/PRP calls/VBZ the/DT procedure/NN direct/JJ trans/NNS to/TO produce/VB the/DT frequency/NN based/VBN ranking/NN of/IN the/DT direct/JJ TRT/NN candidates/NNS
+The/DT procedure/NN generates/VBZ them/PRP as/IN the/DT list/NN R/NNP and/CC then/RB the/DT first/JJ component/NN of/IN R/NNP is/VBZ tested/VBN for/IN the/DT criteria/NNS 1/CD 3/CD by/IN the/DT procedure/NN test/NN cand/NN
+If/IN the/DT first/JJ component/NN passes/VBZ the/DT test/NN it/PRP is/VBZ given/VBN as/IN the/DT equivalent/NN
+If/IN not/RB the/DT algorithm/JJ find/NN equivalent/NN then/RB uses/VBZ the/DT first/JJ and/CC finally/RB the/DT second/JJ pivot/NN language/NN translation/NN given/VBN by/IN the/DT procedure/NN pivot/NN trans/NNS which/WDT first/RB checks/VBZ the/DT number/NN of/IN pivot/NN language/NN word/NN forms/NNS obtained/VBD
+The/DT TRT/NNP rules/NNS are/VBP used/VBN liberally/RB the/DT thresholds/NNS of/IN CF/NNP 4/CD
+0/CD and/CC frequency/NN 2/CD are/VBP used/VBN see/JJ Section/NN 2/CD if/IN there/EX are/VBP at/IN most/JJS 40/CD candidates/NNS and/CC otherwise/RB strictly/RB the/DT thresholds/NNS of/IN CF/NNP 10/CD
+0/CD and/CC frequency/NN 10/CD are/VBP used/VBN
+Either/DT way/NN produces/VBZ a/DT target/NN language/NN word/NN candidate/NN list/NN TWS/NNS which/WDT then/RB is/VBZ ranked/VBN by/IN frequency/NN and/CC the/DT first/JJ component/NN tested/VBN for/IN the/DT criteria/NNS 1/CD 3/CD
+If/IN the/DT first/JJ pass/NN focusing/VBG on/IN the/DT first/JJ ranked/JJ components/NNS is/VBZ not/RB successful/JJ then/RB the/DT algorithm/NN find/VB equivalent/JJ tries/VBZ the/DT second/JJ equivalent/JJ candidate/NN produced/VBN by/IN the/DT TRT/NN processes/VBZ
+The/DT first/JJ component/NN is/VBZ still/RB selected/VBN as/IN the/DT equivalent/NN if/IN the/DT three/CD criteria/NNS are/VBP fulfilled/VBN as/IN follows/VBZ the/DT second/JJ component/NN passes/VBZ the/DT frequency/NN pattern/NN and/CC relative/JJ frequency/NN criteria/NNS and/CC the/DT first/JJ one/CD the/DT length/NN criterion/NN
+The/DT second/JJ word/NN form/NN is/VBZ selected/VBN as/IN the/DT equivalent/NN only/RB if/IN the/DT first/JJ word/NN form/NN does/VBZ not/RB meet/VB the/DT length/NN criterion/NN and/CC the/DT second/JJ form/NN meets/VBZ all/PDT the/DT three/CD criteria/NNS
+Otherwise/RB the/DT source/NN word/NN is/VBZ indicated/VBN to/TO be/VB untranslatable/JJ by/IN means/NNS of/IN TRT/NNP the/DT string/NN nil/NN is/VBZ returned/VBN
+We/PRP found/VBD empirically/RB the/DT need/NN to/TO compare/VB the/DT second/JJ candidate/NN word/NN form/NN to/TO the/DT third/JJ form/NN to/TO find/VB out/RP if/IN there/EX are/VBP more/JJR than/IN one/CD correct/JJ target/NN language/NN words/NNS high/JJ frequency/NN word/NN forms/NNS in/IN the/DT translation/NN set/NN
+If/IN there/EX are/VBP exactly/RB two/CD acceptable/JJ words/NNS the/DT first/JJ word/NN rather/RB than/IN the/DT second/JJ is/VBZ selected/VBN as/IN the/DT equivalent/NN based/VBN on/IN our/PRP$ observations/NNS that/IN in/IN these/DT cases/NNS the/DT equivalent/NN tends/VBZ to/TO be/VB at/IN the/DT first/JJ position/NN
+The/DT second/JJ word/NN form/NN is/VBZ accepted/VBN as/IN the/DT equivalent/NN only/RB if/IN the/DT first/JJ form/NN does/VBZ not/RB meet/VB the/DT length/NN criterion/NN
+In/IN the/DT actual/JJ experiments/NNS described/VBN in/IN Section/NN 5/CD the/DT algorithm/NN findequivalent/NN was/VBD applied/VBN
+modified/VBN as/RB follows/VBZ
+In/IN the/DT case/NN of/IN frequency/NN lists/VBZ the/DT second/JJ pivot/NN language/NN French/NNP was/VBD not/RB considered/VBN
+Finnish/JJ English/JJ experiments/NNS differed/VBN from/IN the/DT Spanish/NNP English/NNP experiments/NNS in/IN that/IN there/EX were/VBD two/CD direct/JJ translation/NN routes/VBZ thanks/NNS to/TO two/CD Finnish/JJ English/JJ rule/NN collections/NNS
+The/DT order/NN of/IN the/DT use/NN of/IN the/DT translation/NN routes/NNS for/IN Finnish/JJ English/NNP was/VBD as/IN follows/VBZ Finnish/JJ English/JJ
+collection/NN 1/CD Finnish/JJ English/JJ
+collection/NN 2/CD Finnish/JJ GermanEnglish/JJ and/CC Finnish/JJ French/JJ English/JJ
+All/PDT the/DT source/NN words/NNS were/VBD in/IN base/NN form/NN and/CC only/JJ base/NN form/NN equivalents/NNS were/VBD accepted/VBN as/IN correct/JJ equivalents/NNS
+Thus/RB equivalents/NNS in/IN plural/JJ form/NN and/CC the/DT derivatives/NNS of/IN the/DT actual/JJ equivalents/NNS were/VBD not/RB accepted/VBN as/IN correct/JJ equivalents/NNS
+This/DT is/VBZ because/IN our/PRP$ aim/NN is/VBZ to/TO develop/VB a/DT dictionary/NN like/IN rule/NN based/VBN translation/NN method/NN which/WDT indicates/VBZ the/DT precise/JJ equivalents/NNS of/IN source/NN words/NNS
+We/PRP conclude/VBP this/DT section/NN by/IN summarizing/VBG in/IN Figure/NN 1/CD the/DT FITE/NNP TRT/NNP process/NN
+The/DT left/JJ side/NN of/IN the/DT figure/NN describes/VBZ the/DT production/NN of/IN transformation/NN rules/NNS and/CC the/DT translation/NN of/IN OOV/NNP words/NNS by/IN means/NNS of/IN TRT/NNP
+The/DT FITE/NNP technique/NN the/DT focus/NN of/IN the/DT present/JJ article/NN is/VBZ the/DT grey/NN shaded/VBD area/NN
+FITE/NNP TRT/NNP effectiveness/NN was/VBD evaluated/VBN using/VBG the/DT measures/NNS of/IN translation/NN recall/NN and/CC precision/NN and/CC indication/NN precision/NN
+5/CD
+EXPERIMENTS/NNS AND/CC FINDINGS/NNS In/IN this/DT section/NN we/PRP present/VBP the/DT methods/NNS and/CC data/NNS used/VBN in/IN the/DT FITE/NNP TRT/NNP and/CC CLIR/NNP effectiveness/NN experiments/NNS and/CC the/DT experimental/JJ results/NNS
+Subsection/NN 5/CD
+1/CD presents/VBZ the/DT training/NN and/CC test/NN words/NNS describes/VBZ how/WRB the/DT words/NNS were/VBD translated/VBN by/IN means/NNS of/IN TRT/NNP and/CC presents/VBZ the/DT findings/NNS of/IN the/DT FITE/NNP TRT/NNP effectiveness/NN experiments/NNS
+The/DT CLIR/NNP experiments/NNS are/VBP dealt/VBN with/IN in/IN Subsection/NNP 5/CD
+2/CD
+5/CD
+1/CD FITE/NNP TRT/NNP Effectiveness/NNP 5/CD
+1/CD
+1/CD Training/NNP and/CC Test/NNP Word/NNP Sets/NNPS and/CC Translation/NN by/IN TRT/NN
+FITE/NNP TRT/NNP is/VBZ intended/VBN to/TO handle/VB both/DT spelling/NN variants/NNS and/CC native/JJ source/NN language/NN words/NNS
+The/DT training/NN and/CC test/NN word/NN sets/NNS contained/VBD both/DT types/NNS of/IN words/NNS
+Next/IN we/PRP describe/VBP the/DT selection/NN of/IN training/NN and/CC test/NN words/NNS
+Then/RB we/PRP characterize/VBP quantitatively/RB the/DT difference/NN between/IN cross/JJ lingual/JJ spelling/NN variants/NNS and/CC native/JJ words/NNS
+We/PRP used/VBD a/DT training/NN word/NN set/VBN for/IN the/DT development/NN of/IN the/DT FITE/NNP technique/NN
+The/DT set/NN contained/VBD the/DT title/NN words/NNS n/VBP 75/CD of/IN the/DT Spanish/NNP CLEF/NNP topics/NNS numbered/VBD 91/CD to/TO 109/CD
+In/IN addition/NN to/TO native/JJ Spanish/JJ words/NNS the/DT titles/NNS contain/VBP Spanish/NNP English/NNP spelling/NN variants/NNS native/JJ English/JJ words/NNS and/CC English/JJ acronyms/NNS
+The/DT effectiveness/NN of/IN FITE/NNP TRT/NNP was/VBD evaluated/VBN using/VBG four/CD sets/NNS of/IN test/NN words/NNS
+For/IN each/DT source/NN language/NN word/NN set/VBD there/EX was/VBD a/DT corresponding/JJ English/JJ word/NN set/NN that/WDT contained/VBD the/DT equivalents/NNS of/IN the/DT source/NN words/NNS
+For/IN the/DT first/JJ two/CD test/NN word/NN sets/VBZ a/DT list/NN of/IN English/JJ biological/JJ and/CC medical/JJ terms/NNS was/VBD gathered/VBN manually/RB from/IN the/DT index/NN of/IN CLEF/NNP s/NNPS Peters/NNP 2005/CD LA/NNP Times/NNP collection/NN
+The/DT English/JJ terms/NNS were/VBD translated/VBN into/IN Spanish/JJ and/CC Finnish/JJ by/IN means/NNS of/IN translation/NN dictionaries/NNS and/CC monolingual/JJ Spanish/JJ and/CC Finnish/JJ medical/JJ dictionaries/NNS
+From/IN these/DT words/NNS we/PRP selected/VBD Spanish/NNP English/NNP and/CC Finnish/NNP English/NNP spelling/NN variants/NNS for/IN our/PRP$ tests/NNS
+The/DT identification/NN of/IN spelling/NN variants/NNS was/VBD done/VBN based/VBN on/IN the/DT similarity/NN of/IN the/DT Spanish/NNP English/NNP and/CC Finnish/NNP English/NNP word/NN pairs/NNS judged/VBN by/IN a/DT researcher/NN
+The/DT similarity/NN feature/NN used/VBN as/IN a/DT selection/NN criterion/NN is/VBZ discussed/VBN in/IN Section/NN 3/CD and/CC later/RB in/IN this/DT section/NN
+The/DT Spanish/JJ terms/NNS formed/VBD the/DT first/JJ and/CC the/DT Finnish/JJ terms/NNS the/DT second/JJ test/NN word/NN set/VBN
+Both/DT contained/VBD the/DT same/JJ terms/NNS n/VBP 89/CD albeit/IN in/IN different/JJ languages/NNS
+These/DT terms/NNS are/VBP called/VBN bio/NN terms/NNS
+For/IN the/DT third/JJ and/CC fourth/JJ test/NN word/NN sets/VBZ TREC/NNP Genomics/NNP Track/NNP 2004/CD topics/NNS in/IN Spanish/JJ and/CC Finnish/JJ Section/NN 5/CD
+2/CD
+1/CD were/VBD translated/VBN into/IN English/NNP using/VBG the/DT UTACLIR/NNP system/NN an/DT automatic/JJ dictionary/NN based/VBN query/NN translation/NN and/CC construction/NN system/NN developed/VBN in/IN the/DT Information/NNP Retrieval/NNP Laboratory/NNP at/IN the/DT University/NNP of/IN Tampere/NNP Hedlund/NNP et/VBD al/JJ
+2004/CD
+The/DT OOV/NNP keys/NNS of/IN the/DT UTACLIR/NNP runs/NNS were/VBD used/VBN as/IN test/NN words/NNS
+Among/IN the/DT OOV/NNP keys/NNS there/EX were/VBD in/IN addition/NN to/TO spelling/NN variants/NNS native/VBP Spanish/JJ
+Finnish/JJ words/NNS as/RB well/RB as/IN English/JJ words/NNS and/CC English/JJ acronyms/NNS
+The/DT Spanish/JJ word/NN set/VBD contained/VBN 98/CD and/CC the/DT Finnish/JJ set/NN 53/CD OOV/NNP keys/NNS after/IN the/DT removal/NN of/IN short/JJ words/NNS
+The/DT difference/NN in/IN the/DT number/NN of/IN the/DT OOV/NNP keys/NNS reflects/VBZ the/DT different/JJ sizes/NNS of/IN UTACLIR/NNP s/VBZ Spanish/NNP English/NNP and/CC Finnish/NNP English/NNP dictionaries/NNS
+These/DT test/NN key/JJ sets/NNS are/VBP here/RB called/VBN OOV/NNP UTACLIR/NNP SPA/NNP ENG/NNP and/CC OOV/NNP UTACLIR/NNP FIN/NNP ENG/NNP
+Words/NNS containing/VBG four/CD or/CC less/JJR letters/NNS were/VBD not/RB translated/VBN by/IN TRT/NNP
+This/DT restriction/NN was/VBD set/VBN because/IN the/DT short/JJ words/NNS were/VBD English/JJ acronyms/NNS and/CC they/PRP need/MD not/RB be/VB translated/VBN
+Generally/RB acronyms/NNS can/MD not/RB be/VB translated/VBN by/IN means/NNS of/IN TRT/NNP which/WDT only/RB handles/VBZ spelling/NN variants/NNS
+On/IN the/DT other/JJ hand/NN cross/NN lingual/JJ spelling/NN variants/NNS are/VBP not/RB very/RB short/JJ words/NNS
+Within/IN the/DT four/CD test/NN word/NN sets/VBZ there/EX were/VBD two/CD short/JJ 4/CD letter/NN spelling/NN variants/NNS which/WDT were/VBD removed/VBN from/IN the/DT sets/NNS according/VBG to/TO the/DT short/JJ word/NN restriction/NN
+The/DT total/JJ number/NN of/IN unique/JJ source/NN words/NNS translated/VBN by/IN TRT/NNP was/VBD 89/CD 98/CD Spanish/JJ 89/CD 53/CD Finnish/JJ 329/CD words/NNS
+To/TO characterize/VB quantitatively/RB the/DT difference/NN between/IN cross/JJ lingual/JJ spelling/NN variants/NNS and/CC native/JJ words/NNS we/PRP computed/VBD for/IN both/DT types/NNS of/IN source/NN language/NN test/NN words/NNS their/PRP$ degree/NN of/IN similarity/NN with/IN respect/NN to/TO their/PRP$ English/JJ equivalents/NNS using/VBG a/DT simple/JJ measure/NN of/IN longest/JJS common/JJ subsequence/NN divided/VBN by/IN the/DT mean/JJ length/NN of/IN source/NN and/CC target/NN words/NNS LCS/VBP
+MWL/NNP
+LCS/NNP is/VBZ defined/VBN as/IN the/DT length/NN of/IN the/DT longest/JJS subsequence/NN of/IN characters/NNS shared/VBN by/IN two/CD words/NNS
+The/DT closer/NN to/TO 1/CD
+0/CD LCS/NNS
+MWL/NNP is/VBZ the/DT more/RBR similar/JJ the/DT words/NNS are/VBP
+As/IN an/DT example/NN for/IN the/DT Spanish/JJ bioterm/NN omnivoro/NN LCS/VBZ
+MWL/NNP 7/CD
+8/CD 8/CD
+2/CD 0/CD
+875/CD with/IN respect/NN to/TO the/DT English/JJ equivalent/JJ omnivore/NN
+For/IN the/DT native/JJ Spanish/NNP OOV/NNP word/NN vinculante/NN LCS/NNS
+MWL/NNP 0/CD
+353/CD with/IN respect/NN to/TO the/DT equivalent/JJ binding/NN
+Table/NNP V/NNP shows/VBZ the/DT results/NNS of/IN LCS/NNP
+MWL/NNP calculations/NNS
+From/IN the/DT viewpoint/NN of/IN TRT/NNP the/DT target/NN language/NN English/JJ words/NNS as/IN source/NN words/NNS are/VBP similar/JJ cases/NNS as/IN spelling/NN variants/NNS and/CC they/PRP were/VBD thus/RB regarded/VBN as/IN spelling/NN variants/NNS in/IN the/DT sets/NNS OOV/NNP UTACLIR/NNP SPA/NNP ENG/NNP and/CC OOV/NNP UTACLIR/NNP FIN/NNP ENG/NNP
+As/IN mentioned/VBN in/IN Section/NN 4/CD
+3/CD a/DT source/NN word/NN is/VBZ included/VBN in/IN TRT/NNP s/NNS translation/NN set/VBN because/IN source/NN and/CC target/NN language/NN words/NNS may/MD be/VB identical/JJ
+In/IN cases/NNS where/WRB native/JJ Spanish/JJ and/CC Finnish/JJ words/NNS had/VBD multiple/JJ meanings/NNS in/IN English/NNP the/DT meaning/NN that/WDT appeared/VBD in/IN the/DT Genomics/NNP Track/NNP topic/NN was/VBD selected/VBN for/IN LCS/NNS
+MWL/NNP calculation/NN
+Both/DT the/DT Spanish/NNP English/NNP and/CC Finnish/NNP English/NNP OOV/NNP word/NN sets/NNS contained/VBD five/CD native/JJ words/NNS
+It/PRP can/MD be/VB seen/VBN in/IN Table/NNP V/NNP that/IN for/IN bio/NN terms/NNS and/CC spelling/VBG variant/JJ OOV/NNP words/NNS the/DT average/JJ LCS/NNS
+MWLs/NNS are/VBP 0/CD
+839/CD and/CC 0/CD
+911/CD Spanish/NNP English/NNP and/CC 0/CD
+784/CD and/CC 0/CD
+853/CD Finnish/JJ English/JJ
+For/IN native/JJ Spanish/JJ and/CC Finnish/JJ words/NNS average/JJ LCS/NNS
+MWLs/NNS are/VBP much/RB lower/JJR 0/CD
+339/CD for/IN Spanish/JJ and/CC 0/CD
+361/CD for/IN Finnish/JJ
+Low/NNP standard/JJ deviation/NN figures/NNS show/VBP that/IN the/DT LCS/NNS
+MWL/NNP values/NNS are/VBP clustered/VBN around/IN the/DT average/JJ values/NNS
+In/IN the/DT experiments/NNS the/DT source/NN words/NNS were/VBD translated/VBN by/IN the/DT TRT/NNP program/NN through/IN direct/JJ and/CC indirect/JJ translation/NN routes/NNS into/IN English/NNP using/VBG the/DT confidence/NN factor/NN and/CC rule/NN frequency/NN thresholds/VBZ Section/NN 2/CD
+The/DT equivalents/NNS of/IN source/NN words/NNS were/VBD identified/VBN from/IN TRT/NNP s/NNPS English/NNP translation/NN sets/NNS by/IN means/NNS of/IN the/DT FITE/NNP technique/NN as/IN described/VBN in/IN Section/NN 4/CD
+5/CD
+Like/IN target/NN language/NN translation/NN sets/VBZ the/DT intermediate/JJ translation/NN sets/NNS are/VBP often/RB large/JJ and/CC only/RB five/CD top/JJ German/JJ and/CC French/JJ forms/NNS in/IN a/DT frequency/NN ranked/VBD translation/NN set/NN were/VBD further/RB translated/VBN into/IN English/NNP
+Different/NNP English/NNP translation/NN sets/NNS corresponding/VBG to/TO the/DT same/JJ Finnish/JJ
+Spanish/JJ source/NN word/NN were/VBD combined/VBN
+5/CD
+1/CD
+2/CD Findings/NNS
+Table/NNP VI/NNP reports/VBZ the/DT translation/NN recall/NN and/CC precision/NN results/NNS for/IN bio/NN terms/NNS and/CC Table/NNP VII/NNP the/DT contribution/NN of/IN different/JJ translation/NN routes/NNS to/TO the/DT recall/NN for/IN bio/NN terms/NNS
+Table/NNP VIII/NNP presents/VBZ the/DT translation/NN recall/NN and/CC precision/NN and/CC indication/NN precision/NN results/NNS for/IN OOV/NNP UTACLIR/NNP SPA/NNP ENG/NNP and/CC OOVUTACLIR/NNP FIN/NNP ENG/NNP words/NNS
+Table/NNP VI/NNP shows/VBZ that/IN Spanish/NNP English/NNP FITE/NNP TRT/NNP reaches/VBZ 91/CD
+0/CD recall/NN in/IN the/DT case/NN of/IN Web/NNP document/NN frequencies/NNS and/CC 82/CD
+0/CD recall/NN in/IN the/DT case/NN of/IN word/NN frequency/NN lists/NNS
+Finnish/JJ English/NNP FITE/NNP TRT/NNP reaches/VBZ 71/CD
+9/CD Web/NNP and/CC 67/CD
+4/CD frequency/NN lists/NNS recall/VBP
+While/IN Spanish/NNP English/NNP FITE/NNP TRT/NNP achieves/VBZ higher/JJR recall/NN precision/NN is/VBZ approximately/RB the/DT same/JJ and/CC it/PRP is/VBZ remarkably/RB high/JJ for/IN both/DT language/NN pairs/VBZ 97/CD
+0/CD 98/CD
+8/CD
+The/DT same/JJ trends/NNS hold/VBP for/IN the/DT OOV/NNP words/NNS Table/NNP VIII/NNP for/IN Spanish/NNP English/NNP recall/NN is/VBZ higher/JJR than/IN for/IN Finnish/NNP English/NNP and/CC for/IN both/DT language/NN pairs/NNS precision/NN is/VBZ very/RB high/JJ 95/CD
+0/CD 97/CD
+6/CD
+Table/NNP VII/NNP shows/VBZ that/IN the/DT contribution/NN of/IN direct/JJ translation/NN to/TO the/DT recall/NN is/VBZ substantial/JJ for/IN both/DT language/NN pairs/NNS
+For/IN Finnish/JJ English/NNP FITE/NNP TRT/NNP the/DT contribution/NN of/IN the/DT second/JJ direct/JJ route/NN collection/NN 2/CD to/TO the/DT recall/NN is/VBZ high/JJ
+Indirect/JJ translation/NN adds/NNS recall/VBP only/RB for/IN Spanish/JJ English/JJ
+In/IN the/DT case/NN of/IN Web/NNP as/IN a/DT frequency/NN corpus/VBZ the/DT first/JJ pivot/NN language/NN adds/NNS recall/VBP by/IN 6/CD
+7/CD while/IN the/DT second/JJ one/CD adds/VBZ recall/NN only/RB by/IN 2/CD
+2/CD
+For/IN the/DT native/JJ words/NNS indication/NN precision/NN is/VBZ 100/CD in/IN all/DT test/NN situations/NNS Table/NNP VIII/NNP
+There/EX were/VBD only/RB 10/CD native/JJ Spanish/JJ and/CC Finnish/JJ words/NNS in/IN all/DT however/RB the/DT results/NNS are/VBP reasonable/JJ since/IN the/DT cases/NNS where/WRB TRT/NNP accidentally/RB gives/VBZ correct/JJ words/NNS are/VBP not/RB common/JJ
+5/CD
+2/CD CLIR/NNP Effectiveness/NNP 5/CD
+2/CD
+1/CD Methods/NNS and/CC Data/NNP
+FITE/NNP TRT/NNP was/VBD applied/VBN as/IN part/NN of/IN an/DT actual/JJ CLIR/NN system/NN
+As/IN test/NN data/NNS we/PRP used/VBD TREC/NNP Genomics/NNP Track/NNP 2004/CD data/NNS Hersh/MD et/VB al/JJ
+2005/CD
+The/DT data/NNS consisted/VBD of/IN 50/CD test/NN topics/NNS a/DT subset/NN of/IN the/DT Medline/NNP collection/NN containing/VBG around/IN 4/CD
+5/CD million/CD documents/NNS and/CC relevance/NN judgments/NNS
+Queries/NNS were/VBD formulated/VBN on/IN the/DT basis/NN of/IN the/DT Title/NNP and/CC Need/NNP fields/NNS of/IN the/DT topics/NNS
+The/DT data/NNS are/VBP well/RB suited/VBN for/IN investigating/VBG FITE/NNP TRT/NNP since/IN the/DT topics/NNS are/VBP rich/JJ in/IN technical/JJ mainly/RB biological/JJ and/CC medical/JJ terms/NNS
+The/DT topics/NNS were/VBD translated/VBN manually/RB into/IN Spanish/JJ and/CC Finnish/JJ by/IN a/DT researcher/NN
+The/DT final/JJ Spanish/JJ topics/NNS were/VBD formulated/VBN by/IN a/DT knowledgeable/JJ Spanish/JJ speaker/NN a/DT university/NN teacher/NN of/IN Spanish/JJ
+The/DT researcher/NN is/VBZ a/DT native/JJ Finnish/JJ speaker/NN and/CC has/VBZ expertise/NN in/IN medical/JJ informatics/NNS
+The/DT test/NN system/NN was/VBD the/DT InQuery/NNP retrieval/NN system/NN Allan/MD et/VB al/JJ
+2000/CD Larkey/NNP and/CC Connell/NNP 2005/CD
+InQuery/NNP is/VBZ a/DT probabilistic/JJ retrieval/NN system/NN based/VBN on/IN the/DT Bayesian/JJ inference/NN network/NN model/NN
+Queries/NNS can/MD be/VB presented/VBN as/IN a/DT bag/NN of/IN word/NN queries/NNS or/CC they/PRP can/MD be/VB structured/VBN using/VBG a/DT variety/NN of/IN query/NN operators/NNS
+In/IN this/DT study/NN the/DT translated/VBN queries/NNS were/VBD structured/VBN using/VBG InQuery/NNP s/NNS syn/VBP operator/NN as/IN described/VBN in/IN Pirkola/NNP 1998/CD and/CC Sperer/NNP and/CC Oard/NNP 2000/CD
+The/DT keys/NNS within/IN the/DT syn/NN operator/NN are/VBP treated/VBN as/IN instances/NNS of/IN one/CD key/NN
+The/DT Spanish/JJ and/CC Finnish/JJ topics/NNS were/VBD translated/VBN back/RB into/IN English/NNP using/VBG the/DT UTACLIR/NNP system/NN and/CC the/DT queries/NNS were/VBD then/RB run/VBN on/IN the/DT Genomics/NNP Track/NNP test/NN collection/NN
+UTACLIR/NNP s/VBZ output/NN without/IN any/DT OOV/NNP word/NN technique/NN provides/VBZ crosslingual/JJ baseline/NN for/IN the/DT FITE/NNP TRT/NNP queries/NNS for/IN which/WDT UTACLIR/NNP s/VBZ OOV/NNP words/NNS were/VBD translated/VBN by/IN means/NNS of/IN TRT/NNP and/CC equivalents/NNS were/VBD identified/VBN using/VBG FITE/NNP
+The/DT original/JJ English/JJ queries/NNS were/VBD also/RB run/VBN to/TO show/VB the/DT performance/NN level/NN of/IN the/DT translated/VBN queries/NNS
+We/PRP also/RB compared/VBD the/DT effectiveness/NN of/IN FITE/NNP TRT/NNP queries/VBZ to/TO the/DT effectiveness/NN of/IN plain/JJ TRT/NNP and/CC skipgram/NN queries/NNS
+Plain/NNP TRT/NNP is/VBZ the/DT TRT/NNP part/NN of/IN FITE/NNP TRT/NNP and/CC for/IN plain/JJ TRT/NNP queries/VBZ UTACLIR/NNP s/VBZ OOV/NNP words/NNS were/VBD translated/VBN by/IN TRT/NNP with/IN CF/NNP 4/CD and/CC frequency/NN 2/CD
+All/DT translations/NNS of/IN a/DT source/NN word/NN were/VBD included/VBN in/IN a/DT query/NN and/CC were/VBD wrapped/VBN in/IN the/DT syn/NN operator/NN
+In/IN skipgram/NN queries/VBZ the/DT OOV/NNP words/NNS were/VBD translated/VBN using/VBG a/DT skipgram/NN fuzzy/NN matching/VBG technique/NN Keskustalo/NNP et/VBD al/JJ
+2003/CD
+This/DT string/NN matching/VBG technique/NN is/VBZ a/DT generalization/NN of/IN the/DT n/JJ gram/NN technique/NN where/WRB words/NNS are/VBP split/VBN into/IN digrams/NNS on/IN the/DT basis/NN of/IN both/DT consecutive/JJ as/RB well/RB as/IN nonconsecutive/JJ characters/NNS see/VBP below/IN
+In/IN these/DT comparison/NN experiments/NNS only/RB direct/JJ translation/NN
+matching/NN was/VBD examined/VBN since/IN it/PRP is/VBZ not/RB sensible/JJ to/TO study/VB indirect/JJ fuzzy/JJ matching/NN
+Also/RB indirect/JJ TRT/NNP without/IN frequency/NN based/VBN selection/NN of/IN intermediate/JJ word/NN forms/NNS for/IN further/JJ translation/NN would/MD give/VB very/RB long/JJ queries/NNS that/WDT would/MD be/VB hard/JJ to/TO manage/VB
+The/DT skipgram/NN fuzzy/NN matching/VBG technique/JJ constructs/NNS digrams/NNS of/IN both/DT consecutive/JJ and/CC nonconsecutive/JJ characters/NNS of/IN words/NNS Keskustalo/NNP et/VB al/JJ
+2003/CD
+The/DT generated/JJ digrams/NNS are/VBP put/VBN into/IN comparable/JJ categories/NNS based/VBN on/IN the/DT number/NN of/IN skipped/JJ characters/NNS as/IN digrams/NNS are/VBP constructed/VBN
+The/DT character/NN combination/NN index/NN CCI/NNP indicates/VBZ the/DT number/NN of/IN skipped/JJ characters/NNS as/RB well/RB as/IN the/DT comparable/JJ categories/NNS
+Here/RB we/PRP used/VBD CCI/NNP 0/CD 1/CD 2/CD
+This/DT means/VBZ that/IN digrams/NNS formed/VBN of/IN consecutive/JJ characters/NNS form/VBP one/CD comparable/JJ category/NN and/CC digrams/NNS with/IN one/CD and/CC two/CD skipped/JJ characters/NNS the/DT other/JJ
+CCI/NNP 0/CD 1/CD 2/CD was/VBD very/RB effective/JJ in/IN the/DT study/NN conducted/VBN by/IN Keskustalo/NNP et/VB al/JJ
+2003/CD who/WP explored/VBD the/DT same/JJ general/JJ problem/NN as/IN we/PRP do/VBP in/IN this/DT article/NN the/DT identification/NN of/IN translation/NN equivalents/NNS of/IN cross/NN lingual/JJ spelling/NN variants/NNS
+Skipgrams/NNS with/IN CCI/NNP 0/CD 1/CD 2/CD outperformed/VBD conventional/JJ digrams/NNS formed/VBN of/IN consecutive/JJ characters/NNS of/IN words/NNS
+In/IN the/DT skipgram/NN experiments/NNS each/DT OOV/NNP word/NN was/VBD matched/VBN against/IN each/DT string/NN in/IN the/DT index/NN of/IN the/DT TREC/NNP collection/NN
+Two/CD types/NNS of/IN queries/NNS were/VBD constructed/VBN for/IN each/DT OOV/NNP word/NN 1/CD two/CD best/JJS matches/NNS and/CC 2/CD five/CD best/JJS matches/NNS were/VBD selected/VBN for/IN a/DT query/NN
+In/IN the/DT query/NN the/DT best/JJS matches/NNS were/VBD linked/VBN to/TO each/DT other/JJ with/IN InQuery/NNP s/NNS syn/NN operator/NN
+All/DT inflected/VBN query/NN words/NNS were/VBD rendered/VBN into/IN base/NN form/NN for/IN a/DT dictionary/JJ lookup/NN
+For/IN Finnish/JJ UTACLIR/NNP s/NNS morphological/JJ analyzer/NN gave/VBD base/NN forms/NNS for/IN most/JJS inflected/JJ words/NNS and/CC those/DT that/IN the/DT analyzer/NN was/VBD not/RB able/JJ to/TO handle/VB were/VBD lemmatized/VBN manually/RB
+All/DT Spanish/JJ inflected/JJ words/NNS were/VBD lemmatized/VBN manually/RB
+Manual/JJ lemmatization/NN of/IN the/DT inflected/VBN keys/NNS was/VBD necessary/JJ because/IN at/IN this/DT stage/NN of/IN development/NN TRT/NNP only/RB translates/VBZ lemmas/NNS
+Thus/RB the/DT results/NNS show/VBP CLIR/NNP performance/NN when/WRB a/DT searcher/NN gives/VBZ query/NN keys/NNS in/IN base/NN form/NN
+The/DT results/NNS were/VBD tested/VBN for/IN significance/NN by/IN the/DT Wilcoxon/NNP signed/VBD rank/NN test/NN Conover/NNP 1980/CD
+The/DT Wilcoxon/NNP test/NN takes/VBZ into/IN account/NN both/DT the/DT direction/NN and/CC magnitude/NN of/IN change/NN between/IN each/DT comparable/JJ result/NN of/IN a/DT query/NN
+In/IN summary/NN we/PRP run/VBP the/DT following/VBG queries/NNS in/IN Spanish/NNP English/NNP and/CC FinnishEnglish/NNP CLIR/NNP experiments/NNS r/VBP Original/NNP English/NNP queries/NNS r/VBP UTACLIR/NNP baseline/NN with/IN OOV/NNP words/NNS passed/VBN through/IN unchanged/JJ r/NN UTACLIR/NNP FITE/NNP TRT/NNP Web/NNP r/NN UTACLIR/NNP FITE/NNP TRT/NNP frequency/NN lists/NNS r/VBP UTACLIR/NNP TRT/NNP r/NN UTACLIR/NNP skipgrams/NNS with/IN two/CD best/JJS matches/NNS r/VBP UTACLIR/NNP skipgrams/NNS with/IN five/CD best/JJS matches/NNS 5/CD
+2/CD
+2/CD Findings/NNS
+The/DT results/NNS of/IN the/DT retrieval/NN experiments/NNS are/VBP presented/VBN in/IN Tables/NNP IX/NNP XI/NNP
+The/DT statistical/JJ significance/NN of/IN the/DT test/NN queries/NNS was/VBD tested/VBN against/IN the/DT UTACLIR/NNP baseline/NN Tables/NNP IX/NNP X/NNP and/CC against/IN UTACLIR/NNP FITE/NNP TRT/NNP
+Web/NNP Table/NNP XI/NNP
+In/IN the/DT tables/NNS the/DT statistical/JJ significance/NN is/VBZ indicated/VBN by/IN asterisks/NNS
+As/IN expected/VBN the/DT queries/NNS where/WRB OOV/NNP keys/NNS are/VBP translated/VBN by/IN FITE/NNP TRT/NNP perform/VB better/JJR than/IN the/DT baseline/NN queries/VBZ where/WRB OOV/NNP keys/NNS are/VBP retained/VBN untranslatable/JJ Tables/NNP IX/NNP and/CC X/NNP
+In/IN Spanish/NNP English/NNP CLIR/NNP MAP/NNP improvement/NN percentages/NNS are/VBP 40/CD
+3/CD Web/NNP and/CC 35/CD
+2/CD frequency/NN lists/NNS
+Precision/NN at/IN 20/CD documents/NNS is/VBZ improved/VBN by/IN 50/CD
+5/CD Web/NNP and/CC 49/CD
+2/CD frequency/NN lists/NNS
+Also/RB FinnishEnglish/JJ FITE/NNP TRT/NNP queries/VBZ remarkably/RB outperform/VBP the/DT CLIR/NNP baseline/NN although/IN performance/NN improvements/NNS are/VBP smaller/JJR than/IN in/IN the/DT case/NN of/IN Spanish/NNP English/NNP Table/NNP X/NNP
+All/DT Spanish/JJ English/NNP and/CC Finnish/NNP English/NNP results/NNS are/VBP statistically/RB significant/JJ at/IN p/NN 0/CD
+001/CD
+These/DT findings/NNS are/VBP in/IN agreement/NN with/IN the/DT high/JJ number/NN of/IN OOV/NNP keys/NNS in/IN the/DT UTACLIR/NNP runs/VBZ and/CC FITE/NNP TRT/NNP s/VBZ high/JJ translation/NN recall/NN and/CC precision/NN
+It/PRP should/MD be/VB noted/VBN that/IN some/DT OOV/NNP words/NNS may/MD only/RB be/VB marginally/RB topical/JJ in/IN which/WDT case/NN correct/VBP FITE/NNP TRT/NNP identification/NN may/MD result/VB in/IN a/DT performance/NN drop/NN
+Therefore/IN FITE/NNP TRT/NNP performance/NN does/VBZ not/RB always/RB correlate/VB linearly/RB with/IN CLIR/NNP FITE/NNP TRT/NNP performance/NN
+Spanish/JJ English/NNP FITE/NNP TRT/NNP queries/NNS perform/VBP better/JJR than/IN Finnish/JJ English/NNP FITE/NNP TRT/NNP queries/NNS which/WDT were/VBD much/RB longer/JJR and/CC more/RBR ambiguous/JJ than/IN SpanishEnglish/JJ queries/NNS due/JJ to/TO the/DT larger/JJR coverage/NN of/IN UTACLIR/NNP s/VBZ Finnish/JJ English/JJ dictionary/JJ
+The/DT higher/JJR degree/NN of/IN translation/NN ambiguity/NN and/CC FITE/NNP TRT/NNP s/VBZ lower/JJR performance/NN resulted/VBD in/IN lower/JJR CLIR/NN performance/NN
+The/DT higher/JJR performance/NN of/IN English/JJ queries/NNS with/IN respect/NN to/TO the/DT performance/NN of/IN Spanish/NNP English/NNP and/CC in/IN particular/JJ Finnish/JJ English/JJ queries/NNS is/VBZ mostly/RB caused/VBN by/IN translation/NN ambiguity/NN
+Table/NNP XI/NNP shows/VBZ the/DT performance/NN of/IN FITE/NNP TRT/NNP TRT/NNP and/CC skipgram/NN queries/NNS
+The/DT results/NNS are/VBP ranked/VBN based/VBN on/IN MAP/NNP values/NNS
+It/PRP can/MD be/VB seen/VBN that/IN for/IN both/DT language/NN pairs/VBZ the/DT best/JJS OOV/NNP word/NN method/NN is/VBZ FITE/NNP TRT/NNP with/IN Web/NNP document/NN frequencies/NNS
+However/RB it/PRP shows/VBZ significantly/RB better/JJR results/NNS only/RB against/IN the/DT cases/NNS of/IN Spanish/NNP English/NNP
+skipgram/NN
+2/CD and/CC Finnish/JJ English/JJ
+TRT/NN and/CC the/DT results/NNS are/VBP significant/JJ only/RB at/IN p/NN 0/CD
+05/CD
+In/IN the/DT latter/JJ case/NN the/DT difference/NN in/IN MAP/NNP is/VBZ small/JJ 0/CD
+2447/CD 0/CD
+2393/CD but/CC systematic/JJ and/CC hence/RB significant/JJ
+In/IN comparison/NN to/TO UTACLIR/NNP baselines/NNS Tables/NNP IX/NNP and/CC X/NNP all/DT queries/NNS perform/VBP well/RB
+It/PRP was/VBD expected/VBN that/IN plain/JJ TRT/NNP queries/NNS yield/VBP good/JJ results/NNS since/IN TRT/NNP with/IN CF/NNP 4/CD and/CC frequency/NN 2/CD very/RB often/RB gives/VBZ a/DT source/NN word/NN s/NNS correct/VBP equivalent/JJ while/IN the/DT other/JJ translations/NNS typically/RB are/VBP malformed/VBN word/NN forms/NNS not/RB occurring/VBG in/IN the/DT database/NN index/NN and/CC having/VBG no/DT effects/NNS whatsoever/RB on/IN retrieval/NN results/NNS
+In/IN many/JJ applications/NNS outside/IN cross/NN language/NN document/NN retrieval/NN it/PRP is/VBZ however/RB important/JJ to/TO avoid/VB the/DT ambiguity/NN of/IN TRT/NNP and/CC obtain/VB one/CD reliable/JJ translation/NN as/IN given/VBN by/IN FITE/NNP TRT/NNP
+6/CD
+DISCUSSION/NN AND/CC CONCLUSIONS/NNS In/IN this/DT study/NN we/PRP first/RB examined/VBD the/DT following/JJ two/CD basic/JJ questions/NNS
+Regarding/VBG spelling/NN variants/NNS how/WRB to/TO effectively/RB identify/VB the/DT correct/JJ equivalent/NN of/IN a/DT source/NN word/NN among/IN the/DT many/JJ word/NN forms/NNS produced/VBN by/IN TRT/NNP when/WRB most/JJS of/IN the/DT transformation/NN rules/NNS available/JJ for/IN a/DT language/NN pair/NN are/VBP used/VBN in/IN TRT/NNP
+How/WRB to/TO reliably/RB identify/VB native/JJ source/NN language/NN words/NNS source/NN words/NNS that/WDT can/MD not/RB be/VB correctly/RB translated/VBN by/IN TRT/NNP
+We/PRP devised/VBD the/DT FITE/NNP TRT/NNP technique/NN a/DT novel/NN OOV/NNP word/NN translation/NN technique/NN
+Its/PRP$ effectiveness/NN was/VBD tested/VBN for/IN Spanish/NNP English/NNP and/CC Finnish/NNP English/NNP spelling/NN variants/NNS and/CC actual/JJ OOV/NNP words/NNS in/IN the/DT domains/NNS of/IN biology/NN and/CC medicine/NN
+Here/RB the/DT research/NN questions/NNS were/VBD as/RB follows/VBZ
+What/WP are/VBP the/DT translation/NN recall/NN and/CC precision/NN and/CC indication/NN precision/NN of/IN the/DT proposed/VBN FITE/NNP TRT/NNP method/NN
+Are/VBP word/NN frequency/NN lists/NNS mined/VBN from/IN the/DT Web/NNP competitive/JJ with/IN the/DT Web/NNP as/IN a/DT collection/NN of/IN documents/NNS as/IN FITE/NNP TRT/NNP s/VBZ frequency/NN source/NN
+What/WP is/VBZ the/DT contribution/NN of/IN each/DT step/NN direct/JJ and/CC indirect/JJ translation/NN routes/NNS in/IN the/DT FITE/NNP TRT/NNP process/NN to/TO its/PRP$ overall/JJ effectiveness/NN
+We/PRP found/VBD that/IN depending/VBG on/IN the/DT source/NN language/NN and/CC frequency/NN source/NN FITETRT/NNP may/MD achieve/VB high/JJ translation/NN recall/NN
+When/WRB equivalents/NNS were/VBD identified/VBN on/IN the/DT basis/NN of/IN Web/NNP document/NN frequencies/NNS Spanish/VBP English/NNP FITE/NNP TRT/NNP achieved/VBD 89/CD
+2/CD 91/CD
+0/CD recall/NN
+For/IN Finnish/JJ English/NNP and/CC for/IN frequency/NN lists/NNS mined/VBN from/IN the/DT Web/NNP recall/NN was/VBD lower/JJR but/CC still/RB substantial/JJ
+The/DT lowest/JJS recall/VBP 67/CD
+4/CD was/VBD obtained/VBN for/IN Finnish/JJ English/JJ
+frequency/NN lists/NNS
+The/DT results/NNS indicated/VBD that/IN FITETRT/NNP achieves/VBZ high/JJ precision/NN
+FITE/NNP indicates/VBZ precisely/RB the/DT equivalents/NNS of/IN source/NN words/NNS as/RB well/RB as/IN the/DT native/JJ words/NNS
+For/IN Spanish/NNP English/NNP and/CC Finnish/NNP English/NNP test/NN words/NNS translation/NN precision/NN was/VBD 95/CD
+0/CD 98/CD
+8/CD
+All/DT native/JJ OOV/NNP words/NNS were/VBD correctly/RB indicated/VBN to/TO be/VB untranslatable/JJ by/IN TRT/NN
+The/DT test/NN requests/VBZ only/RB contained/VBN 10/CD native/JJ OOV/NNP words/NNS the/DT results/NNS reported/VBD here/RB need/VBN to/TO be/VB corroborated/VBN using/VBG a/DT larger/JJR set/NN of/IN native/JJ words/NNS
+The/DT contribution/NN of/IN direct/JJ translation/NN to/TO the/DT overall/JJ recall/NN was/VBD substantial/JJ for/IN Spanish/JJ English/JJ bio/NN terms/NNS
+Direct/JJ translation/NN achieved/VBD 82/CD
+0/CD recall/NN while/IN the/DT overall/JJ recall/NN was/VBD 91/CD
+0/CD
+We/PRP expected/VBD that/IN Finnish/NNP English/NNP FITE/NNP TRT/NNP through/IN pivot/NN languages/NNS would/MD have/VB compensated/VBN failures/NNS of/IN direct/JJ translation/NN but/CC that/DT did/VBD not/RB happen/VB
+Indirect/JJ translation/NN did/VBD not/RB help/VB at/IN all/DT
+These/DT findings/NNS suggest/VBP that/IN that/IN the/DT costs/NNS of/IN indirect/JJ translation/NN against/IN its/PRP$ benefits/NNS are/VBP high/JJ
+Because/IN a/DT pivot/NN language/NN increases/VBZ FITE/NNP TRT/NNP complexity/NN it/PRP does/VBZ not/RB seem/VB sensible/JJ to/TO use/VB two/CD pivot/NN languages/NNS as/IN part/NN of/IN a/DT FITE/NNP TRT/NNP system/NN
+Last/JJ we/PRP examined/VBD the/DT effectiveness/NN of/IN a/DT standard/JJ CLIR/NNP system/NN boosted/VBN by/IN the/DT use/NN of/IN FITE/NNP TRT/NNP in/IN comparison/NN to/TO a/DT CLIR/NNP system/NN augmented/VBD with/IN TRT/NNP and/CC fuzzy/JJ matching/NN OOV/NNP word/NN methods/NNS and/CC in/IN comparison/NN to/TO dictionarytranslation/NN only/RB CLIR/NNP and/CC monolingual/JJ baselines/NNS
+It/PRP was/VBD shown/VBN that/IN FITETRT/NNP with/IN Web/NNP document/NN frequencies/NNS was/VBD the/DT best/JJS technique/NN among/IN several/JJ approaches/NNS to/TO handling/VBG OOV/NNP words/NNS tested/VBN in/IN the/DT experiments/NNS
+Dictionarybased/VBN CLIR/NNP augmented/VBD with/IN FITE/NNP TRT/NNP performed/VBD substantially/RB better/JJR than/IN the/DT baseline/NN where/WRB OOV/NNP keys/NNS were/VBD kept/VBN intact/JJ
+In/IN Spanish/NNP English/NNP CLIR/NNP MAP/NNP improvement/NN percentages/NNS were/VBD 40/CD
+3/CD Web/NNP and/CC 35/CD
+2/CD frequency/NN lists/NNS
+Also/RB Finnish/JJ English/NNP FITE/NNP TRT/NNP queries/VBZ remarkably/RB outperformed/VBD the/DT CLIR/NNP baseline/NN although/IN performance/NN improvements/NNS were/VBD smaller/JJR than/IN in/IN the/DT case/NN of/IN Spanish/NNP English/NNP about/IN 26/CD for/IN both/DT Web/NNP and/CC frequency/NN lists/NNS
+The/DT TRT/NNP program/NN we/PRP used/VBD in/IN this/DT study/NN was/VBD not/RB able/JJ to/TO process/VB a/DT high/JJ number/NN of/IN word/NN forms/NNS in/IN a/DT reasonable/JJ time/NN frame/NN and/CC we/PRP had/VBD to/TO apply/VB CF/NNP and/CC frequency/NN thresholds/NNS
+In/IN the/DT preliminary/JJ tests/NNS we/PRP translated/VBN without/IN using/VBG any/DT thresholds/NNS and/CC for/IN long/JJ words/NNS we/PRP had/VBD to/TO end/VB the/DT program/NN because/IN it/PRP was/VBD not/RB able/JJ to/TO complete/VB the/DT translation/NN process/NN within/IN a/DT day/NN
+We/PRP observed/VBD that/IN for/IN many/JJ source/NN words/NNS equivalents/NNS were/VBD not/RB found/VBN in/IN translation/NN sets/NNS because/IN the/DT CFs/NNP and/CC
+or/CC frequencies/NNS of/IN the/DT relevant/JJ rules/NNS were/VBD below/IN the/DT thresholds/NNS
+We/PRP therefore/RB expect/VBP that/WDT recall/VBP values/NNS can/MD still/RB be/VB improved/VBN by/IN using/VBG a/DT more/RBR sophisticated/JJ TRT/NN program/NN that/WDT allows/VBZ efficient/JJ TRT/NNP even/RB without/IN the/DT use/NN of/IN thresholds/NNS
+For/IN example/NN in/IN the/DT case/NN of/IN Spanish/JJ
+bio/NN terms/NNS
+Web/NNP there/EX were/VBD 81/CD correct/JJ identifications/NNS one/CD wrong/JJ identification/NN and/CC seven/CD words/NNS for/IN which/WDT TRT/NNP did/VBD not/RB identify/VB equivalents/NNS
+For/IN five/CD of/IN the/DT seven/CD words/NNS equivalents/NNS were/VBD not/RB contained/VBN in/IN the/DT translation/NN sets/VBZ because/IN of/IN low/JJ CF/NNP or/CC frequency/NN rules/NNS
+The/DT five/CD words/NNS and/CC the/DT rules/NNS are/VBP shown/VBN in/IN Table/NNP XII/NNP
+Also/RB deficiencies/NNS in/IN the/DT Finnish/NNP English/NNP rule/NN collections/NNS and/CC word/NN frequency/NN lists/NNS caused/VBD recall/NN errors/NNS
+FITE/NNP TRT/NNP effectiveness/NN was/VBD better/JJR for/IN SpanishEnglish/NNP than/IN Finnish/NNP English/NNP
+The/DT better/JJR effectiveness/NN can/MD be/VB attributed/VBN to/TO the/DT higher/JJR quality/NN of/IN Spanish/NNP English/NNP rule/NN collection/NN
+Deficiencies/NNS in/IN the/DT FinnishEnglish/JJ transformation/NN rules/NNS can/MD be/VB overcome/VBN by/IN using/VBG more/JJR data/NNS in/IN rule/NN generation/NN
+The/DT frequency/NN lists/VBZ we/PRP constructed/VBD using/VBG Web/NNP mining/NN turned/VBD out/RP to/TO be/VB good/JJ frequency/NN data/NNS for/IN FITE/NNS
+However/RB for/IN some/DT source/NN word/NN
+equivalent/JJ pairs/NNS frequencies/NNS were/VBD too/RB low/JJ for/IN rel/NN wf/NN formula/NN which/WDT resulted/VBD in/IN a/DT decrease/NN in/IN recall/NN performance/NN
+This/DT deficiency/NN can/MD be/VB overcome/VBN by/IN adding/VBG more/JJR data/NNS to/TO the/DT existing/VBG lists/NNS
+The/DT main/JJ advantage/NN of/IN using/VBG frequency/NN lists/NNS is/VBZ that/IN after/IN the/DT lists/NNS have/VBP been/VBN constructed/VBN FITE/NNP TRT/NNP is/VBZ independent/JJ of/IN the/DT Web/NNP
+This/DT is/VBZ important/JJ when/WRB a/DT practical/JJ FITE/NNP TRT/NNP implementation/NN is/VBZ developed/VBN
+The/DT frequency/NN lists/VBZ we/PRP used/VBD contain/VB biological/JJ and/CC medical/JJ terms/NNS in/IN accordance/NN with/IN the/DT test/NN terminology/NN used/VBN in/IN the/DT study/NN
+The/DT lists/NNS are/VBP large/JJ and/CC contain/JJ terms/NNS in/IN various/JJ domains/NNS
+The/DT application/NN of/IN FITE/NNP TRT/NNP in/IN the/DT other/JJ domains/NNS may/MD require/VB lists/NNS with/IN different/JJ types/NNS of/IN terms/NNS
+However/RB for/IN each/DT domain/NN the/DT lists/NNS are/VBP concise/VBG enough/RB to/TO be/VB held/VBN in/IN main/JJ memory/NN for/IN efficient/JJ implementation/NN
+Overall/PDT the/DT percentage/NN of/IN wrong/JJ equivalents/NNS indicated/VBN by/IN FITE/NNP was/VBD small/JJ
+The/DT identification/NN of/IN derivatives/NNS and/CC plural/JJ forms/NNS of/IN the/DT correct/JJ equivalents/NNS was/VBD the/DT primary/JJ cause/NN of/IN precision/NN errors/NNS
+As/IN an/DT example/NN for/IN the/DT Finnish/JJ word/NN leukosyytti/NNS and/CC the/DT Spanish/JJ word/NN bacteria/NNS the/DT correct/JJ equivalents/NNS are/VBP leucocyte/JJ and/CC bacterium/NN while/IN FITE/NNP gave/VBD the/DT words/NNS leucocytic/JJ and/CC bacteria/NNS
+Many/JJ of/IN these/DT types/NNS of/IN cases/NNS could/MD be/VB solved/VBN by/IN augmenting/VBG the/DT transformation/NN rules/NNS with/IN word/NN class/NN information/NN for/IN example/NN that/IN a/DT rule/NN is/VBZ likely/JJ to/TO refer/VB an/DT adjective/NN rather/RB than/IN a/DT noun/NN
+Information/NN on/IN OOV/NNP word/NN s/NNS word/NN class/NN is/VBZ achieved/VBN when/WRB the/DT sentential/JJ context/NN of/IN the/DT OOV/NNP word/NN is/VBZ known/VBN
+At/IN present/JJ TRT/NN is/VBZ only/RB intended/VBN to/TO translate/VB singular/JJ base/NN forms/NNS
+Word/NNP class/NN information/NN is/VBZ needed/VBN if/IN FITE/NNP TRT/NNP will/MD be/VB applied/VBN to/TO running/VBG texts/NNS containing/VBG inflectional/JJ word/NN forms/NNS
+This/DT would/MD imply/VB the/DT supplementation/NN of/IN rule/NN collections/NNS with/IN word/NN class/NN information/NN
+The/DT next/JJ main/JJ challenge/NN in/IN the/DT FITE/NNP TRT/NNP research/NN is/VBZ to/TO improve/VB the/DT rules/NNS such/JJ that/IN FITE/NNP TRT/NNP can/MD handle/VB words/NNS in/IN a/DT running/VBG text/NN
+The/DT CLIR/NNP experiments/NNS showed/VBD that/IN the/DT best/JJS fuzzy/JJ translation/NN
+matchingbased/VBN query/NN was/VBD FITE/NNP TRT/NNP with/IN Web/NNP document/NN frequencies/NNS
+The/DT FITE/NNP component/NN of/IN FITE/NNP TRT/NNP was/VBD the/DT focus/NN of/IN this/DT article/NN and/CC here/RB an/DT important/JJ issue/NN is/VBZ its/PRP$ contribution/NN in/IN CLIR/NNP
+The/DT results/NNS showed/VBD that/IN in/IN the/DT case/NN of/IN Finnish/JJ English/NNP FITE/NNP TRT/NNP was/VBD significantly/RB better/JJR than/IN plain/JJ TRT/NN but/CC only/RB at/IN p/NN 0/CD
+05/CD
+In/IN the/DT case/NN of/IN Spanish/NNP English/NNP FITE/NNP TRT/NNP did/VBD not/RB show/VB significantly/RB better/JJR results/NNS
+Overall/PDT the/DT results/NNS are/VBP inconclusive/JJ and/CC the/DT issue/NN needs/VBZ to/TO be/VB investigated/VBN more/RBR thoroughly/RB in/IN future/JJ research/NN
+Such/JJ factors/NNS as/IN query/NN structure/NN and/CC other/JJ than/IN OOV/NNP keys/NNS affect/VBP the/DT effectiveness/NN of/IN FITE/NNP TRT/NNP and/CC TRT/NNP queries/NNS
+Also/RB efficiency/NN needs/VBZ to/TO be/VB taken/VBN into/IN account/NN in/IN future/JJ research/NN
+TRT/NN queries/NNS are/VBP much/RB longer/JJR than/IN FITE/NNP TRT/NNP queries/NNS and/CC thus/RB require/VB more/JJR processing/NN power/NN
+On/IN the/DT other/JJ hand/NN the/DT FITE/NNP component/NN of/IN FITE/NNP TRT/NNP increases/VBZ computational/JJ expense/NN
+In/IN other/JJ information/NN systems/NNS than/IN retrieval/JJ systems/NNS in/IN particular/JJ in/IN MT/NNP fuzzy/JJ translation/NN TRT/NN does/VBZ not/RB come/VB into/IN question/NN
+The/DT good/JJ quality/NN of/IN translations/NNS achieved/VBN through/IN FITE/NNP TRT/NNP suggests/VBZ that/IN it/PRP can/MD contribute/VB to/TO better/JJR MT/NNP performance/NN
+There/EX is/VBZ still/RB one/CD CLIR/NN related/JJ application/NN of/IN FITE/NNP TRT/NNP that/WDT is/VBZ worth/JJ mentioning/VBG an/DT automatic/JJ construction/NN of/IN multilingual/JJ dictionaries/NNS of/IN technical/JJ terms/NNS and/CC proper/JJ names/NNS by/IN means/NNS of/IN FITE/NNP TRT/NNP
+The/DT dictionary/JJ construction/NN process/NN could/MD be/VB designed/VBN to/TO be/VB largely/RB automatic/JJ thanks/NNS to/TO FITE/NNP TRT/NNP s/VBZ high/JJ degree/NN of/IN effectiveness/NN
+Given/VBN a/DT list/NN of/IN words/NNS and/CC a/DT set/NN of/IN transformation/NN rule/NN collections/NNS the/DT process/NN would/MD automatically/RB yield/VB the/DT translation/NN equivalents/NNS of/IN the/DT words/NNS in/IN different/JJ languages/NNS the/DT result/NN would/MD essentially/RB be/VB a/DT multilingual/JJ dictionary/JJ
+The/DT construction/NN of/IN dictionaries/NNS is/VBZ a/DT non/JJ time/NN critical/JJ task/NN given/VBN enough/JJ time/NN it/PRP would/MD be/VB possible/JJ to/TO construct/VB large/JJ multilingual/JJ dictionaries/NNS
+The/DT cost/NN benefits/NNS of/IN an/DT automatic/JJ method/NN are/VBP obvious/JJ
+It/PRP can/MD easily/RB be/VB seen/VBN that/IN there/EX is/VBZ a/DT difference/NN in/IN the/DT cost/NN of/IN automatic/JJ as/IN opposed/VBN to/TO manual/JJ construction/NN of/IN a/DT dictionary/NN of/IN say/VBP 10/CD languages/NNS and/CC 50/CD 000/CD dictionary/JJ entries/NNS
+

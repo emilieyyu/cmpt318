@@ -1,0 +1,989 @@
+A/DT Field/NNP Evaluation/NNP of/IN an/DT Adaptable/JJ Two/CD Interface/NNP Design/NNP for/IN Feature/NNP Rich/NNP Software/NNP JOANNA/NNP MCGRENERE/NNP University/NNP of/IN British/NNP Columbia/NNP RONALD/NNP M/NNP
+BAECKER/NNP University/NNP of/IN Toronto/NNP and/CC KELLOGG/NNP S/NNP
+BOOTH/NNP University/NNP of/IN British/NNP Columbia/NNP Two/CD approaches/NNS for/IN supporting/VBG personalization/NN in/IN complex/JJ software/NN are/VBP system/NN controlled/VBD adaptive/JJ menus/NNS and/CC user/NN controlled/VBD adaptable/JJ menus/NNS
+We/PRP evaluate/VBP a/DT novel/JJ interface/NN design/NN for/IN feature/NN rich/JJ productivity/NN software/NN based/VBN on/IN adaptable/JJ menus/NNS
+The/DT design/NN allows/VBZ the/DT user/NN to/TO easily/RB customize/VB a/DT personalized/JJ interface/NN and/CC also/RB supports/VBZ quick/JJ access/NN to/TO the/DT default/NN interface/NN with/IN all/DT of/IN the/DT standard/JJ features/NNS
+This/DT design/NN was/VBD prototyped/VBN as/IN a/DT front/JJ end/NN to/TO a/DT commercial/JJ word/NN processor/NN
+A/DT field/NN experiment/NN investigated/VBD users/NNS personalizing/VBG behavior/NN and/CC tested/VBD the/DT effects/NNS of/IN different/JJ interface/NN designs/NNS on/IN users/NNS satisfaction/NN and/CC their/PRP$ perceived/VBN ability/NN to/TO navigate/VB control/NN and/CC learn/VB the/DT software/NN
+There/EX were/VBD two/CD conditions/NNS a/DT commercial/JJ word/NN processor/NN with/IN adaptive/JJ menus/NNS and/CC our/PRP$ prototype/NN with/IN adaptable/JJ menus/NNS for/IN the/DT same/JJ word/NN processor/NN
+Our/PRP$ evaluation/NN shows/VBZ 1/CD when/WRB provided/VBN with/IN a/DT flexible/JJ easy/NN to/TO use/VB and/CC easy/JJ to/TO understand/VB customization/NN mechanism/NN the/DT majority/NN of/IN users/NNS do/VBP effectively/RB personalize/VB their/PRP$ interface/NN and/CC 2/CD user/NN controlled/VBN interface/IN adaptation/NN with/IN our/PRP$ adaptable/JJ menus/NNS results/NNS in/IN better/JJR navigation/NN and/CC learnability/NN and/CC allows/VBZ for/IN the/DT adoption/NN of/IN different/JJ personalization/NN strategies/NNS as/IN compared/VBN to/TO a/DT particular/JJ system/NN controlled/VBD adaptive/JJ menu/NN system/NN that/WDT implements/VBZ a/DT single/JJ strategy/NN
+We/PRP report/VBP qualitative/JJ data/NNS obtained/VBN from/IN interviews/NNS and/CC questionnaires/NNS with/IN participants/NNS in/IN the/DT evaluation/NN in/IN addition/NN to/TO quantitative/JJ data/NNS
+1/CD
+INTRODUCTION/NNP Desktop/NNP applications/NNS such/JJ as/IN word/NN processors/NNS spreadsheets/NNS and/CC web/NN browsers/NNS have/VBP become/VBN woven/VBN into/IN the/DT daily/JJ lives/NNS of/IN many/JJ people/NNS in/IN the/DT developed/JJ world/NN
+These/DT applications/NNS have/VBP traditionally/RB started/VBN small/JJ in/IN terms/NNS of/IN functionality/NN and/CC have/VBP grown/VBN with/IN each/DT new/JJ release/NN
+This/DT phenomenon/NN sometimes/RB called/VBD creeping/VBG featurism/NN Hsi/NNP and/CC Potts/NNP 2000/CD Norman/NNP 1998/CD or/CC bloatware/VB Kaufman/NNP and/CC Weed/NNP 1998/CD is/VBZ pervasive/JJ a/DT long/JJ feature/NN list/NN is/VBZ seen/VBN as/IN essential/JJ for/IN products/NNS to/TO compete/VB in/IN the/DT marketplace/NN applications/NNS have/VBP become/VBN more/RBR visually/RB complex/JJ menus/NNS have/VBP multiplied/VBN in/IN size/NN and/CC number/NN and/CC toolbars/NNS have/VBP been/VBN introduced/VBN to/TO reduce/VB complexity/NN but/CC they/PRP too/RB have/VBP grown/VBN in/IN a/DT similar/JJ fashion/NN
+Insufficient/JJ attention/NN has/VBZ been/VBN paid/VBN to/TO the/DT impact/NN of/IN this/DT functionality/NN explosion/NN on/IN the/DT user/NN
+We/PRP introduce/VBP a/DT design/NN that/WDT supports/VBZ two/CD interfaces/NNS between/IN which/WDT the/DT user/NN can/MD easily/RB toggle/VB 1/CD an/DT interface/NN personalized/VBN by/IN the/DT user/NN containing/VBG desired/VBN features/NNS only/RB and/CC 2/CD the/DT default/NN interface/NN with/IN all/DT of/IN the/DT standard/JJ features/NNS
+The/DT target/NN for/IN the/DT design/NN is/VBZ feature/JJ rich/JJ productivity/NN applications/NNS used/VBN by/IN a/DT diversity/NN of/IN users/NNS
+The/DT design/NN has/VBZ been/VBN tested/VBN in/IN a/DT prototype/NN front/NN end/NN to/TO the/DT commercial/JJ word/NN processor/NN Microsoft/NNP Word/NNP 2000/CD MSW2K/NNP and/CC evaluated/VBN in/IN a/DT field/NN experiment/NN with/IN 20/CD participants/NNS
+The/DT two/CD main/JJ goals/NNS of/IN the/DT evaluation/NN were/VBD 1/CD to/TO understand/VB the/DT users/NNS personalization/NN behavior/NN with/IN the/DT new/JJ design/NN and/CC 2/CD to/TO compare/VB our/PRP$ design/NN to/TO the/DT adaptive/JJ interface/NN of/IN MSW2K/CD
+Our/PRP$ choice/NN of/IN goals/NNS determined/VBD our/PRP$ choice/NN of/IN methodology/NN
+Our/PRP$ first/JJ goal/NN was/VBD exploratory/JJ in/IN nature/NN our/PRP$ second/JJ goal/NN was/VBD comparative/JJ
+There/EX is/VBZ a/DT distinction/NN between/IN controlled/JJ laboratory/NN evaluation/NN where/WRB statistical/JJ significance/NN is/VBZ the/DT norm/NN and/CC field/NN evaluation/NN where/WRB qualitative/JJ methods/NNS are/VBP given/VBN more/JJR weight/NN
+We/PRP have/VBP included/VBN comments/NNS from/IN participants/NNS during/IN interviews/NNS which/WDT complement/VBP the/DT quantitative/JJ data/NNS providing/VBG a/DT richer/JJR account/NN of/IN their/PRP$ experience/NN during/IN the/DT experiment/NN
+Our/PRP$ evaluation/NN shows/VBZ 1/CD when/WRB provided/VBN with/IN a/DT flexible/JJ easy/NN to/TO use/VB customization/NN mechanism/NN the/DT majority/NN of/IN users/NNS do/VBP effectively/RB personalize/VB their/PRP$ interface/NN and/CC 2/CD user/NN controlled/VBN interface/IN adaptation/NN with/IN our/PRP$ adaptable/JJ menus/NNS results/NNS in/IN better/JJR navigation/NN and/CC learnability/NN and/CC allows/VBZ for/IN the/DT adoption/NN of/IN different/JJ personalization/NN strategies/NNS as/IN compared/VBN to/TO the/DT particular/JJ systemcontrolled/JJ adaptive/JJ menu/NN system/NN in/IN MSW2K/NNP which/WDT implements/VBZ a/DT single/JJ strategy/NN
+1/CD
+1/CD Design/NNP Solutions/NNPS to/TO Complex/NNP Software/NNP The/DT traditional/JJ all/DT in/IN one/CD interface/NN has/VBZ menus/NNS and/CC toolbars/NNS that/WDT are/VBP static/JJ so/IN every/DT user/NN regardless/RB of/IN task/NN or/CC experience/NN has/VBZ the/DT same/JJ interface/NN
+There/EX are/VBP a/DT number/NN of/IN alternative/JJ interface/NN designs/NNS aimed/VBN at/IN reducing/VBG user/JJR interface/NN complexity/NN although/IN most/JJS have/VBP received/VBN minimal/JJ to/TO no/DT evaluation/NN
+Design/NN solutions/NNS tend/VBP to/TO fit/VB into/IN one/CD of/IN two/CD categories/NNS 1/CD ones/NNS that/WDT take/VBP a/DT level/NN structured/JJ approach/NN Shneiderman/NNP 1997/CD and/CC 2/CD ones/NNS that/WDT offer/VBP a/DT personalized/JJ interface/NN for/IN each/DT user/NN most/RBS commonly/RB using/VBG artificial/JJ intelligence/NN
+A/DT classic/JJ level/NN structured/JJ design/NN includes/VBZ two/CD or/CC more/JJR interfaces/NNS each/DT containing/VBG a/DT predetermined/VBN set/NN of/IN functions/NNS
+The/DT user/NN has/VBZ the/DT option/NN to/TO select/VB an/DT interface/NN level/NN but/CC not/RB to/TO select/VB which/WDT functions/NNS appear/VBP in/IN that/DT level/NN
+Preliminary/JJ research/NN suggests/VBZ that/IN when/WRB an/DT interface/NN is/VBZ missing/VBG even/RB one/CD needed/VBN function/NN the/DT user/NN is/VBZ forced/VBN to/TO the/DT next/JJ level/NN of/IN the/DT interface/NN which/WDT results/VBZ in/IN frustration/NN McGrenere/NNP 2002/CD
+We/PRP address/VBP this/DT limitation/NN in/IN our/PRP$ design/NN which/WDT uses/VBZ a/DT level/NN structured/JJ approach/NN while/IN allowing/VBG the/DT user/NN to/TO modify/VB the/DT contents/NNS of/IN one/CD of/IN the/DT levels/NNS
+There/EX are/VBP a/DT small/JJ number/NN of/IN commercial/JJ applications/NNS that/WDT provide/VBP a/DT level/NN structured/JJ interface/NN e/NN
+g/NN
+Hypercard/NNP and/CC Framemaker/NNP
+Some/DT applications/NNS such/JJ as/IN Eudora/NNP provide/VBP a/DT level/NN structured/JJ approach/NN across/IN versions/NNS by/IN offering/VBG both/DT Pro/NNP and/CC Lite/NNP versions/NNS
+Such/JJ product/NN versioning/VBG however/RB seems/VBZ to/TO be/VB motivated/VBN more/RBR by/IN business/NN considerations/NNS than/IN by/IN an/DT attempt/NN to/TO meet/VB user/NN needs/NNS
+The/DT Carroll/NNP and/CC Carrithers/NNP Training/NNP Wheels/NNP interface/NN to/TO an/DT early/JJ word/NN processor/NN adopts/VBZ a/DT level/NN structured/VBN like/IN approach/NN
+Although/IN there/EX was/VBD only/RB one/CD interface/NN all/DT of/IN the/DT functionality/NN that/WDT was/VBD not/RB needed/VBN for/IN simple/JJ tasks/NNS was/VBD blocked/VBN off/RP such/JJ that/IN when/WRB the/DT user/NN clicked/VBD on/IN a/DT blocked/VBN function/NN a/DT dialog/NN appeared/VBD indicating/VBG that/IN the/DT function/NN was/VBD unavailable/JJ in/IN the/DT training/NN wheels/NNS system/NN
+The/DT design/NN had/VBD the/DT user/NN progressing/VBG through/IN two/CD distinct/JJ phases/NNS
+After/IN the/DT first/JJ phase/NN the/DT training/NN wheels/NNS were/VBD removed/VBN launching/VBG the/DT user/NN into/IN the/DT full/JJ system/NN
+Novice/NN users/NNS were/VBD able/JJ to/TO accomplish/VB tasks/NNS significantly/RB faster/RBR and/CC with/IN significantly/RB fewer/JJR errors/NNS than/IN novice/NN users/NNS using/VBG the/DT full/JJ version/NN Carroll/NNP and/CC Carrithers/NNPS 1984/CD
+Despite/IN the/DT promise/NN of/IN this/DT early/JJ work/NN mechanisms/NNS to/TO support/VB the/DT transition/NN between/IN the/DT blocked/VBN and/CC unblocked/JJ states/NNS were/VBD never/RB investigated/VBN
+In/IN our/PRP$ design/NN users/NNS can/MD move/VB easily/RB back/RB and/CC forth/RB between/IN the/DT designs/NNS
+Unlike/IN a/DT classic/JJ level/NN structured/VBN user/TO interface/VB a/DT personalized/JJ interface/NN is/VBZ one/CD that/WDT is/VBZ tailored/VBN to/TO each/DT individual/JJ user/NN
+The/DT two/CD main/JJ ways/NNS for/IN achieving/VBG personalization/NN are/VBP through/IN system/NN initiated/VBD adaptation/NN namely/RB adaptive/JJ interfaces/NNS and/CC through/IN user/NN initiated/VBD customization/NN namely/RB adaptable/JJ interfaces/NNS
+These/DT two/CD approaches/NNS have/VBP significant/JJ differences/NNS with/IN respect/NN to/TO the/DT goal/NN of/IN reducing/VBG interface/NN complexity/NN
+While/IN the/DT broad/JJ goal/NN of/IN adaptive/JJ and/CC more/RBR generally/RB intelligent/JJ user/NN interfaces/NNS is/VBZ to/TO assist/VB the/DT user/NN by/IN offloading/VBG complexity/NN Miller/NNP et/VB al/JJ
+1991/CD a/DT common/JJ complaint/NN about/IN adaptive/JJ interfaces/NNS is/VBZ that/IN they/PRP result/VBP in/IN the/DT user/NN perceiving/VBG a/DT loss/NN of/IN control/NN Dieterich/NNP et/VB al/JJ
+1993/CD Fischer/NNP 1993/CD
+Adaptable/JJ interfaces/NNS by/IN contrast/NN have/VBP not/RB typically/RB been/VBN designed/VBN for/IN the/DT purposes/NNS of/IN reducing/VBG complexity/NN and/CC so/IN they/PRP are/VBP often/RB difficult/JJ to/TO use/VB
+However/RB they/PRP do/VBP not/RB suffer/VB the/DT same/JJ user/NN control/NN problem/NN Fischer/NNP 1993/CD
+There/EX has/VBZ been/VBN a/DT debate/NN in/IN the/DT user/NN interface/NN design/NN community/NN between/IN those/DT who/WP promote/VBP the/DT use/NN of/IN artificial/JJ intelligence/NN in/IN the/DT interface/NN and/CC those/DT who/WP promote/VBP comprehensible/JJ predictable/JJ and/CC controllable/JJ interfaces/NNS that/WDT give/VBP users/NNS the/DT sense/NN of/IN power/NN mastery/NN control/NN and/CC accomplishment/NN Shneiderman/NNP and/CC Maes/NNP 1997/CD
+We/PRP briefly/VBP survey/NN adaptable/JJ and/CC adaptive/JJ interfaces/NNS in/IN turn/NN before/IN describing/VBG our/PRP$ design/NN and/CC evaluation/NN
+In/IN terms/NNS of/IN adaptable/JJ interfaces/NNS many/JJ commercial/JJ applications/NNS allow/VBP the/DT user/NN to/TO reconfigure/VB the/DT interface/NN in/IN predetermined/VBN ways/NNS such/JJ as/IN by/IN adding/VBG
+removing/VBG functions/NNS to/TO
+from/IN the/DT menus/NNS and/CC toolbars/NNS and/CC by/IN moving/VBG functions/NNS from/IN one/CD menu/NN
+toolbar/NN to/TO another/DT
+Despite/IN the/DT prevalence/NN of/IN such/JJ customization/NN facilities/NNS there/EX has/VBZ been/VBN relatively/RB little/JJ research/NN into/IN their/PRP$ design/NN
+A/DT common/JJ complaint/NN however/RB is/VBZ that/IN the/DT mechanisms/NNS for/IN customizing/VBG are/VBP complex/JJ and/CC can/MD therefore/RB require/VB significant/JJ time/NN for/IN both/DT learning/VBG and/CC doing/VBG the/DT customization/NN
+Thus/RB only/RB the/DT more/RBR sophisticated/JJ users/NNS are/VBP able/JJ to/TO customize/VB
+Mackay/NNP 1990/CD 1991/CD found/VBD the/DT latter/JJ to/TO be/VB true/JJ in/IN the/DT case/NN of/IN UNIX/NNP customization/NN
+She/PRP identified/VBD a/DT small/JJ group/NN of/IN users/NNS which/WDT she/PRP called/VBD the/DT translators/NNS who/WP shared/VBD their/PRP$ customizations/NNS with/IN the/DT rest/NN of/IN the/DT organization/NN
+Others/NNS have/VBP identified/VBN this/DT role/NN and/CC assigned/VBN their/PRP$ own/JJ names/NNS tinkerer/IN MacLean/NNP et/VB al/JJ
+1990/CD and/CC local/JJ developer/NN Gantt/NNP and/CC Nandi/NNP 1992/CD
+By/IN contrast/NN Page/NN et/VBD al/JJ
+1996/CD found/VBD that/IN 92/CD of/IN participants/NNS in/IN a/DT large/JJ field/NN study/NN customized/VBD their/PRP$ word/NN processor/NN
+Closer/NNP examination/NN of/IN their/PRP$ work/NN shows/VBZ however/RB that/IN a/DT very/RB broad/JJ notion/NN of/IN customization/NN was/VBD used/VBN for/IN example/NN changing/VBG the/DT zoom/NN setting/VBG in/IN a/DT dropdown/JJ button/NN on/IN the/DT toolbar/NN was/VBD considered/VBN a/DT customization/NN
+This/DT points/NNS to/TO a/DT need/NN for/IN a/DT better/JJR understanding/NN of/IN the/DT various/JJ forms/NNS of/IN customization/NN
+In/IN our/PRP$ study/NN customization/NN is/VBZ narrowly/RB defined/VBN as/IN adding/VBG
+deleting/VBG items/NNS to/TO
+from/IN the/DT menu/NN
+toolbar/NN which/WDT is/VBZ at/IN least/JJS in/IN many/JJ modern/JJ graphical/JJ user/NN interfaces/VBZ significantly/RB more/RBR difficult/JJ to/TO do/VB than/IN parameter/NN adjustments/NNS
+Relative/JJ to/TO adaptable/JJ interfaces/NNS adaptive/JJ interfaces/NNS have/VBP enjoyed/VBN considerable/JJ attention/NN by/IN the/DT research/NN community/NN given/VBN the/DT breadth/NN of/IN work/NN we/PRP are/VBP unable/JJ to/TO do/VB it/PRP justice/RB in/IN this/DT short/JJ review/NN
+Instead/RB we/PRP summarize/VBP some/DT relevant/JJ trends/NNS and/CC highlight/NN selected/VBN projects/NNS
+For/IN greater/JJR depth/NN the/DT reader/NN is/VBZ referred/VBN to/TO Browne/NNP et/VB al/JJ
+1990/CD and/CC Schneider/NNP Hufschmidt/NNP et/VBD al/JJ
+1993/CD for/IN early/JJ books/NNS on/IN the/DT topic/NN
+More/RBR recent/JJ developments/NNS are/VBP discussed/VBN by/IN Karat/NNP et/VB al/JJ
+2004/CD
+One/CD well/RB known/VBN limitation/NN of/IN early/JJ work/NN in/IN adaptive/JJ interfaces/NNS was/VBD that/IN it/PRP was/VBD too/RB technology/NN focused/VBD systems/NNS were/VBD built/VBN but/CC relatively/RB little/JJ user/NN testing/NN was/VBD conducted/VBN Maybury/NNP and/CC Wahlster/NNP 1999/CD
+This/DT can/MD partially/RB be/VB explained/VBN by/IN the/DT fact/NN that/IN evaluation/NN of/IN adaptive/JJ interfaces/NNS is/VBZ more/RBR complex/JJ than/IN that/DT of/IN standard/JJ interfaces/NNS there/EX is/VBZ greater/JJR variability/NN with/IN adaptive/JJ interfaces/NNS and/CC the/DT evaluation/NN methodology/NN needs/VBZ to/TO accommodate/VB this/DT variability/NN Greenberg/NNP and/CC Witten/NNP 1985/CD Maybury/NNP and/CC Wahlster/NNP 1999/CD
+Some/DT early/JJ examples/NNS of/IN adaptive/JJ interfaces/NNS include/VBP the/DT Adaptive/NNP Telephone/NNP Directory/NNP in/IN which/WDT the/DT hierarchy/NN of/IN names/NNS in/IN the/DT directory/NN adapted/VBD to/TO the/DT user/NN s/VBZ interactions/NNS such/JJ that/IN the/DT most/RBS frequently/RB accessed/VBN names/NNS were/VBD located/VBN at/IN the/DT upper/JJ levels/NNS of/IN the/DT hierarch/NN and/CC the/DT least/JJS frequently/RB accessed/VBN names/NNS were/VBD located/VBN at/IN the/DT lower/JJR levels/NNS Greenberg/NNP and/CC Witten/NNP 1985/CD
+Adaptive/NNP Prompting/NNP augmented/VBD an/DT interface/NN by/IN providing/VBG a/DT permanently/RB visible/JJ dynamic/JJ menu/NN that/WDT included/VBD only/RB the/DT most/RBS appropriate/JJ and/CC most/RBS likely/JJ to/TO be/VB chosen/VBN actions/NNS based/VBN on/IN the/DT user/NN s/NNS context/VBP Malinowski/NNP et/VB al/JJ
+1993/CD
+Both/DT the/DT AIDA/NNP system/NN Cote/NNP Munoz/NNP 1993/CD and/CC the/DT Skill/NNP Adaptive/NNP Interface/NNP Gong/NNP and/CC Salrendy/NNP 1995/CD dynamically/RB adjusted/VBN the/DT balance/NN of/IN functionality/NN offered/VBN to/TO the/DT user/NN through/IN graphical/JJ elements/NNS icons/NNS and/CC menus/NNS and/CC the/DT command/NN line/NN depending/VBG on/IN the/DT user/NN s/VBZ level/NN of/IN expertise/NN
+The/DT Eager/NNP system/NN detected/VBD a/DT repetitive/JJ activity/NN and/CC highlighted/JJ menus/NNS and/CC objects/NNS on/IN the/DT screen/NN to/TO indicate/VB what/WP it/PRP predicted/VBD the/DT user/NN would/MD do/VB next/JJ Cypher/NNP 1991/CD
+Of/IN the/DT adaptive/JJ designs/NNS described/VBN above/IN there/EX was/VBD user/NN testing/NN reported/VBN for/IN the/DT Adaptive/NNP Telephone/NNP Directory/NNP and/CC Eager/NNP
+For/IN the/DT former/JJ the/DT results/NNS strongly/RB favoured/VBD the/DT adaptive/JJ directory/NN compared/VBN to/TO a/DT static/JJ one/CD
+User/NNP testing/NN of/IN Eager/NNP showed/VBD promise/NN in/IN its/PRP$ ability/NN to/TO detect/VB and/CC highlight/VB the/DT correct/JJ menus/NNS and/CC objects/NNS however/RB the/DT most/RBS striking/JJ finding/NN was/VBD that/IN all/DT subjects/NNS were/VBD uncomfortable/JJ with/IN giving/VBG up/RP control/NN when/WRB Eager/NNP took/VBD over/RP p/NN
+37/CD
+The/DT work/NN on/IN the/DT Adaptive/NNP Telephone/NNP Directory/NNP is/VBZ a/DT constrained/JJ example/NN but/CC does/VBZ provide/VB an/DT existence/NN proof/NN for/IN the/DT efficacy/NN of/IN adaptive/JJ interfaces/NNS
+Another/DT limitation/NN of/IN early/JJ adaptive/JJ user/NN interface/NN research/NN is/VBZ that/IN it/PRP focused/VBD largely/RB on/IN prototype/NN systems/NNS Thomas/NNP and/CC Krogsoeter/NNP 1993/CD
+We/PRP note/VBP some/DT exceptions/NNS here/RB
+The/DT AID/NNP project/NN included/VBD an/DT adaptive/JJ front/NN end/NN for/IN the/DT British/NNP Telecom/NNP electronic/JJ mail/NN system/NN Browne/NNP et/VB al/JJ
+1990/CD
+Among/IN other/JJ things/NNS it/PRP provided/VBD adaptive/JJ help/NN based/VBN on/IN the/DT user/NN s/VBZ level/NN of/IN expertise/NN via/IN an/DT application/NN expert/NN
+User/NNP testing/NN over/IN three/CD half/JJ hour/NN sessions/NNS each/DT separated/VBN by/IN three/CD days/NNS showed/VBD relatively/RB poor/JJ results/NNS
+An/DT independent/JJ expert/NN judged/VBD that/IN only/RB 7/CD of/IN the/DT adaptations/NNS made/VBN by/IN the/DT system/NN based/VBN on/IN inferred/JJ user/NN difficulties/NNS and/CC expertise/NN were/VBD useful/JJ
+Flexcel/NNP was/VBD a/DT modified/VBN version/NN of/IN MS/NNP Excel/NNP that/WDT provided/VBD a/DT separate/JJ adaptation/NN toolbar/NN that/WDT allowed/VBD the/DT user/NN to/TO define/VB new/JJ menu/NN entries/NNS and/CC new/JJ key/JJ shortcuts/NNS for/IN function/NN parameterization/NN Krogsoeter/NNP et/VB al/JJ
+1994/CD
+In/IN addition/NN there/EX were/VBD system/NN generated/VBD adaptation/NN suggestions/NNS which/WDT the/DT user/NN accessed/VBN at/IN her/PRP$ convenience/NN
+User/NNP testing/NN showed/VBD some/DT acceptance/NN of/IN the/DT adaptation/NN but/CC revealed/VBD that/IN the/DT transition/NN between/IN the/DT user/NN accepting/VBG systemdefined/JJ adpation/NN suggestions/NNS to/TO actually/RB initiating/VBG adaptations/NNS him/PRP
+herself/PRP was/VBD not/RB satisfactory/JJ
+Debevc/NNP et/VB al/JJ
+s/NNS 1996/CD adaptive/JJ toolbar/NN for/IN MS/NNP Word/NNP proposed/VBD command/NN icon/NN changes/NNS based/VBN on/IN frequency/NN and/CC probability/NN of/IN specific/JJ command/NN use/NN
+User/NNP testing/NN comparing/VBG the/DT adaptive/JJ toolbar/NN to/TO a/DT fixed/VBN toolbar/NN to/TO which/WDT users/NNS could/MD somehow/RB add/VB
+delete/JJ functions/NNS showed/VBD that/IN the/DT adaptive/JJ bar/NN improved/VBD performance/NN for/IN certain/JJ tasks/NNS and/CC that/IN users/NNS were/VBD generally/RB satisfied/VBN with/IN the/DT adaptive/JJ bar/NN
+Similar/JJ adaptive/JJ toolbars/NNS for/IN MS/NNP Word/NNP have/VBP been/VBN also/RB been/VBN proposed/VBN Lim/NNP et/VB al/JJ
+2005/CD Miah/NNP et/VB al/JJ
+1997/CD
+Lastly/NNP Linton/NNP et/VBD al/JJ
+s/NNS 2000/CD recommender/NN system/NN alerted/VBD users/NNS to/TO functionality/NN in/IN MS/NNP Word/NNP currently/RB being/VBG used/VBN by/IN co/NN workers/NNS doing/VBG similar/JJ tasks/NNS
+No/DT user/NN testing/NN has/VBZ been/VBN reported/VBN
+We/PRP note/VBP that/IN all/PDT the/DT user/NN testing/NN mentioned/VBN above/IN has/VBZ been/VBN done/VBN in/IN the/DT lab/NN and/CC with/IN the/DT exception/NN of/IN the/DT AID/NNP project/NN it/PRP has/VBZ all/DT been/VBN single/JJ session/NN
+As/IN seen/VBN above/IN the/DT Microsoft/NNP Office/NNP suite/NN of/IN applications/NNS is/VBZ a/DT common/JJ target/NN for/IN adaptive/JJ user/NN interface/NN research/NN
+It/PRP is/VBZ not/RB surprising/JJ therefore/RB that/IN MSW2K/NNP introduced/VBD an/DT adaptive/JJ user/NN interface/NN namely/RB menus/VBZ that/WDT adapt/VBP to/TO each/DT individual/JJ s/NNS usage/VBP Microsoft/NNP Office/NNP 2000/CD Products/NNPS Enhancements/NNP Guide/NNP 2000/CD
+When/WRB a/DT menu/NN is/VBZ initially/RB opened/VBN a/DT short/JJ menu/NN containing/VBG only/RB a/DT subset/NN of/IN the/DT full/JJ menu/NN contents/NNS is/VBZ displayed/VBN by/IN default/NN
+To/TO access/VB the/DT long/JJ menu/NN one/PRP must/MD hover/VB over/IN the/DT menu/NN with/IN the/DT mouse/NN for/IN a/DT few/JJ seconds/NNS or/CC click/NN on/IN the/DT arrow/JJ icon/NN at/IN the/DT bottom/NN of/IN the/DT short/JJ menu/NN
+When/WRB an/DT item/NN is/VBZ selected/VBN from/IN the/DT long/JJ menu/NN it/PRP will/MD then/RB appear/VB in/IN the/DT short/JJ menu/NN the/DT next/JJ time/NN the/DT menu/NN is/VBZ invoked/VBN
+After/IN some/DT period/NN of/IN non/JJ use/NN menu/NN items/NNS will/MD disappear/VB from/IN the/DT short/JJ menu/NN but/CC will/MD always/RB be/VB available/JJ in/IN the/DT long/JJ menu/NN
+Users/NNS can/MD not/RB view/VB or/CC change/VB the/DT underlying/VBG user/NN model/NN maintained/VBN by/IN the/DT system/NN their/PRP$ only/JJ control/NN is/VBZ to/TO turn/VB the/DT adaptive/JJ menus/NNS on/IN
+off/RB and/CC to/TO reset/VB the/DT data/NNS collected/VBN in/IN the/DT user/NN model/NN
+Csinger/NNP et/VB al/JJ
+1994/CD have/VBP investigated/VBN the/DT utility/NN of/IN an/DT inspectable/JJ user/NN model/NN
+The/DT work/NN documented/VBN in/IN this/DT article/NN aims/VBZ to/TO address/VB a/DT number/NN of/IN the/DT shortcomings/NNS in/IN the/DT literature/NN reported/VBD above/IN
+We/PRP compare/VBP an/DT easy/JJ to/TO use/VB adaptable/JJ two/CD level/NN interface/NN that/WDT was/VBD designed/VBN specifically/RB to/TO reduce/VB complexity/NN to/TO the/DT adaptive/JJ menus/NNS in/IN MSW2K/CD
+The/DT adaptable/JJ model/NN is/VBZ a/DT fully/RB functioning/VBG frontend/NN to/TO MSW2K/NNP that/WDT enabled/VBD us/PRP to/TO conduct/VB a/DT longitudinal/JJ field/NN study/NN and/CC collect/VB data/NNS reflecting/VBG actual/JJ personalization/NN behavior/NN as/RB well/RB as/IN self/PRP reported/VBD data/NNS on/IN preferences/NNS
+2/CD
+DESIGN/NNP OVERVIEW/NNP 2/CD
+1/CD Conceptual/NNP Design/NNP What/WP makes/VBZ our/PRP$ design/NN unique/NN is/VBZ the/DT combination/NN of/IN three/CD design/NN elements/NNS 1/CD There/EX are/VBP two/CD interfaces/NNS one/NN that/WDT is/VBZ personalized/VBN the/DT Personal/NNP Interface/NNP and/CC one/CD that/WDT contains/VBZ the/DT full/JJ set/NN of/IN functions/NNS the/DT Full/NNP Interface/NNP there/EX is/VBZ a/DT switching/VBG mechanism/NN between/IN interfaces/NNS that/WDT requires/VBZ only/RB a/DT single/JJ button/NN click/NN
+2/CD The/DT Personal/NNP Interface/NNP is/VBZ adaptable/JJ by/IN the/DT user/NN with/IN an/DT easy/JJ to/TO understand/VB adaptation/NN mechanism/NN
+3/CD The/DT Personal/NNP Interface/NNP begins/VBZ small/JJ and/CC unless/IN the/DT user/NN adds/VBZ many/JJ functions/NNS it/PRP remains/VBZ a/DT minimal/JJ interface/NN relative/JJ to/TO the/DT Full/NNP Interface/NNP
+The/DT only/JJ difference/NN between/IN the/DT two/CD interfaces/NNS is/VBZ the/DT functions/NNS that/WDT are/VBP displayed/VBN visually/RB in/IN the/DT menus/NNS and/CC toolbars/NNS
+The/DT set/NN of/IN functions/NNS in/IN a/DT particular/JJ menu/NN in/IN the/DT Personal/NNP Interface/NNP is/VBZ always/RB a/DT subset/NN of/IN those/DT in/IN the/DT same/JJ menu/NN in/IN the/DT Full/NNP Interface/NNP and/CC the/DT relative/JJ ordering/NN of/IN functions/NNS is/VBZ preserved/VBN
+Thus/RB the/DT only/JJ choice/NN users/NNS make/VBP with/IN respect/NN to/TO their/PRP$ Personal/NNP Interfaces/NNP is/VBZ whether/IN or/CC not/RB to/TO include/VB particular/JJ functions/NNS
+The/DT conceptual/JJ design/NN was/VBD proposed/VBN by/IN McGrenere/NNP and/CC Moore/NNP 2000/CD based/VBN on/IN a/DT study/NN of/IN 53/CD members/NNS of/IN the/DT general/JJ population/NN who/WP used/VBD MSWord/NNP 97/CD
+They/PRP found/VBD that/IN while/IN many/JJ users/NNS were/VBD having/VBG a/DT negative/JJ experience/NN with/IN the/DT feature/NN richness/NN of/IN the/DT software/NN the/DT majority/NN of/IN users/NNS would/MD not/RB choose/VB a/DT word/NN processor/NN that/WDT gave/VBD them/PRP only/RB the/DT functions/NNS that/IN they/PRP are/VBP currently/RB using/VBG
+Users/NNS want/VBP the/DT ability/NN to/TO discover/VB new/JJ functions/NNS
+The/DT proposed/VBN design/NN allows/VBZ users/NNS to/TO work/VB in/IN a/DT personalized/JJ interface/NN with/IN a/DT reduced/VBN feature/NN set/VBN while/IN providing/VBG one/CD button/NN access/NN to/TO the/DT standard/JJ interface/NN with/IN all/DT features/NNS
+By/IN default/NN the/DT Personal/NNP Interface/NNP is/VBZ displayed/VBN when/WRB the/DT application/NN is/VBZ launched/VBN
+There/EX are/VBP several/JJ reasons/NNS for/IN having/VBG a/DT user/NN controlled/VBN personalizable/JJ interface/NN rather/RB than/IN a/DT predetermined/VBN static/JJ small/JJ interface/NN
+Not/RB only/RB do/VBP users/NNS typically/RB use/VBP very/RB few/JJ features/NNS Linton/NNP et/VBD al/JJ
+2000/CD McGrenere/NNP and/CC Moore/NNP 2000/CD but/CC the/DT overlap/NN between/IN the/DT command/NN vocabulary/NN of/IN different/JJ users/NNS is/VBZ minimal/JJ even/RB for/IN users/NNS in/IN the/DT same/JJ group/NN who/WP perform/VBP similar/JJ tasks/NNS and/CC who/WP have/VBP similar/JJ computer/NN expertise/NN Greenberg/NNP 1993/CD
+The/DT limited/JJ command/NN overlap/NN between/IN users/NNS suggests/VBZ that/IN determining/VBG appropriate/JJ personal/JJ interfaces/NNS a/DT priori/NN is/VBZ not/RB possible/JJ
+Many/JJ users/NNS do/VBP not/RB take/VB advantage/NN of/IN customization/NN features/NNS Mackay/NNP 1991/CD likely/RB because/IN of/IN complexity/NN inherent/JJ in/IN customization/NN
+This/DT is/VBZ a/DT primary/JJ argument/NN for/IN an/DT adaptive/JJ interface/NN
+Our/PRP$ goal/NN has/VBZ been/VBN to/TO make/VB an/DT easy/JJ to/TO understand/VB adaptable/JJ interface/NN instead/RB
+By/IN starting/VBG users/NNS with/IN a/DT small/JJ Personal/NNP Interface/NNP users/NNS are/VBP encouraged/VBN to/TO customize/VB and/CC take/VB control/NN of/IN their/PRP$ interfaces/NNS right/RB from/IN the/DT outset/NN
+Although/IN our/PRP$ proposed/VBN multiple/JJ interface/NN design/NN may/MD seem/VB at/IN first/JJ glance/NN to/TO be/VB somewhat/RB awkward/JJ and/CC nonintuitive/JJ it/PRP was/VBD motivated/VBN by/IN our/PRP$ earlier/JJR research/NN findings/NNS and/CC other/JJ results/NNS from/IN the/DT literature/NN
+The/DT experiment/NN was/VBD designed/VBN to/TO assess/VB the/DT effectiveness/NN of/IN the/DT design/NN and/CC to/TO do/VB a/DT first/JJ comparison/NN with/IN the/DT adaptive/JJ interface/NN of/IN MSW2K/CD
+2/CD
+2/CD Implementation/NNP Our/PRP$ conceptual/JJ design/NN is/VBZ intended/VBN to/TO generalize/VB to/TO any/DT productivity/NN application/NN used/VBN by/IN a/DT diversity/NN of/IN users/NNS with/IN a/DT broad/JJ range/NN of/IN tasks/NNS
+We/PRP chose/VBD to/TO implement/VB our/PRP$ design/NN as/IN a/DT front/JJ end/NN to/TO MSWord/NNP 1/CD because/IN word/NN processing/NN tends/VBZ to/TO be/VB a/DT canonical/JJ example/NN in/IN HCI/NNP research/NN 2/CD because/IN MSWord/NNP is/VBZ relatively/RB easy/JJ to/TO program/VB through/IN Visual/NNP Basic/NNP for/IN Applications/NNP VBA/NNP and/CC 3/CD because/IN MSWord/NNP dominates/VBZ in/IN the/DT marketplace/NN so/IN we/PRP believed/VBD that/IN participants/NNS would/MD be/VB easy/JJ to/TO find/VB
+In/IN order/NN to/TO evaluate/VB this/DT design/NN in/IN a/DT field/NN experiment/NN with/IN participants/NNS who/WP were/VBD already/RB users/NNS of/IN MSW2K/NNP our/PRP$ prototype/NN was/VBD implemented/VBN so/RB that/IN it/PRP did/VBD not/RB interfere/VB with/IN any/DT customization/NN that/IN participants/NNS had/VBD already/RB made/VBN to/TO their/PRP$ MSWord/NNP interface/NN
+It/PRP was/VBD also/RB designed/VBN to/TO be/VB easily/RB installed/VBN on/IN top/NN of/IN an/DT existing/VBG installation/NN of/IN MSWord/NNP
+This/DT was/VBD accomplished/VBN by/IN placing/VBG the/DT required/VBN VBA/NNP code/NN in/IN a/DT specialized/JJ document/NN template/NN that/WDT was/VBD loaded/VBN into/IN MSWord/NNP on/IN each/DT startup/NN
+If/IN necessary/JJ a/DT participant/NN could/MD remove/VB the/DT prototype/NN by/IN simply/RB deleting/VBG this/DT template/NN and/CC re/VB launching/VBG Word/NNP
+The/DT information/NN about/IN function/NN availability/NN in/IN the/DT Personal/NNP Interface/NNP was/VBD stored/VBN in/IN a/DT flat/JJ file/NN enabling/VBG the/DT prototype/NN to/TO be/VB effectively/RB stateless/JJ this/DT would/MD facilitate/VB the/DT quick/JJ reconstruction/NN of/IN a/DT Personal/NNP Interface/NNP should/MD a/DT problem/NN occur/NN with/IN the/DT software/NN
+Figures/NNS 1/CD and/CC 2/CD show/NN screen/NN captures/NNS of/IN the/DT two/CD interfaces/NNS as/RB well/RB as/IN the/DT personalizing/VBG mechanism/NN
+3/CD
+PARTICIPANTS/NNS Twenty/CD experienced/VBD MSWord/NNP users/NNS participated/VBD in/IN this/DT evaluation/NN
+Participation/NN was/VBD solicited/VBN electronically/RB through/IN newsgroups/NNS and/CC listservs/NNS that/WDT were/VBD broadcast/VBN across/IN the/DT University/NNP of/IN Toronto/NNP campus/NN and/CC the/DT surrounding/VBG city/NN
+In/IN order/NN to/TO participate/VB users/NNS had/VBD to/TO meet/VB the/DT following/JJ base/NN criteria/NNS they/PRP had/VBD to/TO have/VB been/VBN using/VBG MSW2K/NNP for/IN at/IN least/JJS 1/CD month/NN they/PRP had/VBD to/TO do/VB the/DT majority/NN of/IN their/PRP$ word/NN processing/NN on/IN a/DT single/JJ computer/NN they/PRP had/VBD to/TO spend/VB a/DT minimum/JJ average/NN of/IN 3/CD hours/NNS word/NN processing/NN per/IN week/NN they/PRP had/VBD to/TO have/VB MSWord/NNP expertise/NN above/IN the/DT novice/NN level/NN they/PRP had/VBD to/TO be/VB at/IN least/JJS 20/CD years/NNS of/IN age/NN and/CC they/PRP had/VBD to/TO live/VB at/IN most/JJS one/CD half/NN hour/NN s/NNS drive/VBP from/IN campus/NN
+In/IN order/NN to/TO ensure/VB that/IN these/DT criteria/NNS were/VBD satisfied/VBN prospective/JJ participants/NNS completed/VBD an/DT online/JJ screening/NN questionnaire/NN
+Ninety/CD eight/CD people/NNS completed/VBN this/DT questionnaire/NN
+They/PRP were/VBD considered/VBN in/IN the/DT order/NN in/IN which/WDT they/PRP applied/VBD
+A/DT participant/JJ s/NNS level/NN of/IN expertise/NN was/VBD assessed/VBN with/IN a/DT Microsoft/NNP Office/NNP screening/VBG questionnaire1/CD that/WDT was/VBD embedded/VBN within/IN the/DT online/JJ preliminary/JJ questionnaire/NN
+The/DT screening/NN questionnaire/NN categorizes/VBZ expertise/NN into/IN five/CD groups/NNS novice/RB beginner/VBP intermediate/JJ advanced/JJ and/CC expert/JJ
+A/DT particpant/NN had/VBD to/TO be/VB ranked/VBN at/IN least/JJS as/IN a/DT beginner/NN in/IN order/NN to/TO participate/VB in/IN our/PRP$ evaluation/NN
+Personality/NN differences/NNS with/IN respect/NN to/TO feature/VB rich/JJ software/NN were/VBD considered/VBN
+We/PRP included/VBD 10/CD feature/NN keen/JJ participants/NNS and/CC 10/CD feature/NN shy/JJ as/IN assessed/VBN by/IN an/DT instrument/NN developed/VBN by/IN McGrenere/NNP and/CC Moore/NNP 2000/CD
+A/DT person/NN is/VBZ categorized/VBN as/IN feature/NN keen/JJ feature/NN neutral/JJ or/CC feature/JJ shy/JJ based/VBN on/IN his/PRP$
+her/PRP$ response/NN to/TO statements/NNS about/IN 1/CD having/VBG many/JJ functions/NNS in/IN the/DT interface/NN 2/CD the/DT desire/NN to/TO have/VB a/DT complete/JJ version/NN of/IN MSWord/NNP i/.
+e/NN
+not/RB a/DT Lite/NNP version/NN and/CC 3/CD the/DT desire/NN to/TO have/VB an/DT up/NN to/TO date/NN version/NN of/IN MSWord/NNP
+There/EX was/VBD no/DT sampling/JJ frame/NN of/IN the/DT user/NN population/NN available/JJ to/TO us/PRP so/IN we/PRP weren/MD t/VB able/JJ to/TO achieve/VB a/DT simple/JJ random/JJ sample/NN that/WDT is/VBZ a/DT representative/JJ sample/NN
+We/PRP have/VBP therefore/RB described/VBN our/PRP$ sample/NN because/IN it/PRP may/MD suggest/VB limits/NNS to/TO generalizability/NN
+An/DT aggregate/JJ description/NN of/IN the/DT participants/NNS is/VBZ found/VBN in/IN Table/NNP I/PRP
+The/DT participants/NNS are/VBP described/VBN individually/RB in/IN Table/NNP II/NNP
+Independent/JJ samples/NNS t/VBP tests/NNS showed/VBD that/IN there/EX were/VBD no/DT statistically/RB significant/JJ differences/NNS between/IN the/DT feature/NN shy/NN and/CC feature/NN keen/JJ participants/NNS in/IN terms/NNS of/IN gender/NN distribution/NN age/NN education/NN MSOffice/NNP expertise/NN or/CC number/NN of/IN years/NNS using/VBG MSWord/NNP
+There/EX were/VBD however/RB a/DT number/NN of/IN attributes/NNS of/IN our/PRP$ sample/NN that/WDT lead/VBD us/PRP to/TO believe/VB that/IN it/PRP was/VBD not/RB fully/RB representative/JJ
+On/IN average/NN the/DT participants/NNS appeared/VBD to/TO be/VB highly/RB educated/VBN a/DT rating/NN of/IN 5/CD equals/NNS the/DT completion/NN of/IN an/DT undergraduate/JJ degree/NN and/CC long/JJ term/NN users/NNS of/IN MSWord/NNP
+There/EX were/VBD no/DT administrative/JJ assistants/NNS roles/NNS that/WDT clearly/RB include/VBP many/JJ users/NNS who/WP do/VBP word/NN processing/NN although/IN an/DT earlier/JJR study/NN we/PRP conducted/VBD did/VBD include/VB them/PRP
+We/PRP do/VBP not/RB have/VB a/DT definitive/JJ reason/NN why/WRB we/PRP did/VBD not/RB get/VB participants/NNS in/IN these/DT roles/NNS
+Perhaps/RB the/DT Call/NNP for/IN Participation/NNP did/VBD not/RB reach/VB these/DT groups/NNS or/CC they/PRP were/VBD reached/VBN but/CC individual/JJ users/NNS did/VBD not/RB feel/VB that/IN they/PRP could/MD participate/VB in/IN this/DT evaluation/NN
+Another/DT likely/JJ point/NN of/IN difference/NN between/IN our/PRP$ sample/NN and/CC a/DT representative/JJ sample/NN is/VBZ that/IN graduate/JJ students/NNS make/VBP up/RP one/CD quarter/NN of/IN the/DT participants/NNS
+This/DT is/VBZ easily/RB explained/VBN by/IN the/DT fact/NN that/IN the/DT Call/NNP for/IN Participation/NNP was/VBD sent/VBN to/TO newsgroups/NNS on/IN a/DT university/NN campus/NN
+4/CD
+EXPERIMENT/NNP PROTOCOL/NNP We/NNP prioritized/VBD our/PRP$ two/CD main/JJ evaluation/NN goals/NNS as/IN follows/VBZ 1/CD To/TO understand/VB the/DT participants/NNS personalization/NN behavior/NN with/IN the/DT new/JJ design/NN
+2/CD To/TO compare/VB our/PRP$ design/NN to/TO the/DT adaptive/JJ interface/NN of/IN MSW2K/NNP a/DT commercial/JJ interface/NN design/NN for/IN feature/NN rich/JJ software/NN
+Given/VBN this/DT prioritization/NN a/DT field/NN experiment/NN was/VBD chosen/VBN instead/RB of/IN a/DT laboratory/NN experiment/NN because/IN it/PRP was/VBD expected/VBN that/IN true/JJ personalizing/VBG behavior/NN would/MD be/VB significantly/RB more/RBR likely/JJ to/TO occur/VB with/IN users/NNS doing/VBG their/PRP$ own/JJ tasks/NNS in/IN their/PRP$ normal/JJ work/NN context/NN rather/RB than/IN in/IN a/DT lab/NN setting/VBG with/IN prescribed/JJ tasks/NNS that/WDT would/MD likely/RB be/VB artificial/JJ and/CC unfamiliar/JJ
+To/TO the/DT extent/NN that/IN it/PRP was/VBD possible/JJ we/PRP did/VBD introduce/VB some/DT controls/NNS in/IN the/DT experiment/NN and/CC so/RB our/PRP$ protocol/NN is/VBZ best/RB described/VBN as/IN a/DT quasi/FW experimental/JJ design/NN
+2/CD There/EX are/VBP several/JJ differences/NNS between/IN the/DT two/CD interface/NN designs/NNS that/IN we/PRP compared/VBD most/RBS notably/RB the/DT degree/NN of/IN user/NN control/NN of/IN customization/NN and/CC the/DT use/NN of/IN a/DT dual/JJ versus/CC single/JJ interface/NN
+As/RB will/MD become/VB evident/JJ our/PRP$ study/NN was/VBD not/RB designed/VBN to/TO tease/VB these/DT factors/NNS apart/RB
+We/PRP instead/RB elected/VBD to/TO examine/VB the/DT overall/JJ efficacy/NN of/IN an/DT adaptable/JJ approach/NN using/VBG the/DT combination/NN of/IN factors/NNS that/IN we/PRP believed/VBD offered/VBN the/DT best/JJS alternative/NN to/TO the/DT existing/VBG adaptive/JJ interface/NN
+Isolating/VBG the/DT impact/NN of/IN each/DT factor/NN once/RB we/PRP were/VBD able/JJ to/TO show/VB that/IN the/DT features/NNS together/RB offer/VBP an/DT advantage/NN is/VBZ an/DT obvious/JJ next/JJ step/NN
+Each/DT participant/NN was/VBD involved/VBN for/IN approximately/RB 6/CD weeks/NNS they/PRP used/VBD MSW2K/NNP prior/RB to/TO the/DT start/NN of/IN the/DT evaluation/NN worked/VBD with/IN our/PRP$ new/JJ design/NN for/IN 4/CD weeks/NNS and/CC returned/VBD to/TO MSW2K/NNP for/IN the/DT remaining/VBG 2/CD weeks/NNS
+Participants/NNS met/VBD with/IN the/DT experimenter/NN on/IN three/CD occasions/NNS and/CC completed/VBD a/DT series/NN of/IN short/JJ on/IN line/NN questionnaires/VBZ Q1/NNP Q8/NNP to/TO assess/VB experience/NN with/IN the/DT software/NN and/CC a/DT final/JJ in/IN depth/NN semistructured/VBN interview/NN
+Figure/NN 3/CD provides/VBZ a/DT timeline/NN for/IN the/DT experiment/NN protocol/NN
+First/NNP Meeting/NNP and/CC Questionnaire/NNP Q1/NNP
+The/DT participant/NN completed/VBD a/DT printed/VBN version/NN of/IN questionnaire/NN Q1/NNP that/WDT assessed/VBD the/DT participant/JJ s/NNS experience/NN with/IN MSW2K/CD
+At/IN the/DT same/JJ time/NN that/IN the/DT participant/NN was/VBD filling/VBG in/IN the/DT questionnaire/NN four/CD programs/NNS were/VBD installed/VBN on/IN the/DT participant/JJ s/NNS machine/NN the/DT prototype/NN software/NN which/WDT we/PRP called/VBD MSW/NNP Personal/NNP 3/CD a/DT software/NN logger/NN for/IN capturing/VBG usage/NN a/DT small/JJ script/NN to/TO transfer/VB the/DT log/NN files/VBZ to/TO a/DT backup/JJ server/NN on/IN the/DT Internet/NNP and/CC a/DT script/NN to/TO delete/VB the/DT prototype/NN in/IN the/DT event/NN of/IN any/DT technical/JJ malfunction/NN
+Each/DT participant/NN s/VBZ Personal/NNP Interface/NNP contained/VBD only/RB six/CD functions/NNS initially/RB Exit/VBP and/CC the/DT list/NN of/IN most/RBS recently/RB used/VBN files/NNS in/IN the/DT File/NNP menu/NN considered/VBD a/DT single/JJ function/NN Open/NNP and/CC Save/NNP on/IN the/DT Standard/NNP Toolbar/NNP and/CC Font/NNP and/CC Font/NNP Size/NNP on/IN the/DT Formatting/NNP Toolbar/NNP
+These/DT six/CD functions/NNS were/VBD selected/VBN judgmentally/RB such/JJ that/IN two/CD frequently/RB used/VBN functions/NNS were/VBD included/VBN for/IN each/DT of/IN the/DT File/NNP menu/NN and/CC the/DT two/CD toolbars/NNS
+Questionnaires/VBZ Q2/CD through/IN Q6/CD
+These/DT questionnaires/NNS assessed/VBD MSW/NNP Personal/NNP
+Q2/CD was/VBD completed/VBN within/IN 2/CD days/NNS of/IN the/DT First/NNP Meeting/NNP and/CC was/VBD intended/VBN to/TO capture/VB the/DT participant/JJ s/NNS first/JJ impression/NN of/IN MSW/NNP Personal/NNP
+Q3/CD Q4/NNP Q5/NNP and/CC Q6/NNP were/VBD completed/VBN 1/CD 2/CD 3/CD and/CC 4/CD weeks/NNS respectively/RB from/IN the/DT First/NNP Meeting/NNP and/CC were/VBD intended/VBN to/TO capture/VB the/DT participant/JJ s/NNS experience/NN of/IN MSW/NNP Personal/NNP over/IN time/NN
+Second/JJ Meeting/NN
+The/DT Second/NNP Meeting/NNP was/VBD held/VBN within/IN 1/CD day/NN of/IN Q6/NNP being/VBG completed/VBN
+MSW/NNP Personal/NNP was/VBD uninstalled/JJ leaving/VBG the/DT participant/NN with/IN MSW2K/CD
+The/DT log/NN files/NNS were/VBD collected/VBN on/IN diskette/NN
+Questionnaire/NNP Q7/NNP
+Q7/CD assessed/VBD the/DT participant/JJ s/NNS experience/NN of/IN MSW2K/NNP one/CD week/NN following/VBG the/DT Second/NNP Meeting/NNP
+It/PRP was/VBD intended/VBN to/TO capture/VB the/DT participant/JJ s/NNS reaction/NN to/TO returning/VBG to/TO MSW2K/CD
+Questionnaire/NNP Q8/CD
+Q8/CD asked/VBD the/DT participant/NN to/TO rank/VB MSW2K/NNP and/CC MSW/NNP Personal/NNP in/IN terms/NNS of/IN each/DT of/IN the/DT dependent/JJ measures/NNS 2/CD weeks/NNS following/VBG the/DT Second/NNP Meeting/NNP
+In/IN contrast/NN to/TO the/DT first/JJ seven/CD questionnaires/NNS which/WDT captured/VBD participants/NNS feedback/VB on/IN just/RB one/CD of/IN MSW2K/NNP or/CC MSW/NNP Personal/NNP Q8/NNP captured/VBD feedback/NN on/IN both/DT interfaces/NNS in/IN particular/JJ rankings/NNS of/IN the/DT interfaces/NNS
+Third/JJ Meeting/NN
+The/DT Third/NNP Meeting/NNP was/VBD held/VBN within/IN 1/CD day/NN of/IN Q8/CD being/VBG completed/VBN
+The/DT log/NN files/NNS were/VBD collected/VBN on/IN diskette/NN and/CC the/DT participant/JJ s/NNS machine/NN was/VBD completely/RB restored/VBN to/TO the/DT state/NN it/PRP was/VBD in/IN prior/RB to/TO the/DT experiment/NN
+A/DT final/JJ in/IN depth/JJ semi/NN structured/JJ debriefing/NN interview/NN was/VBD conducted/VBN with/IN each/DT participant/NN
+Instructions/NNS Given/VBN to/TO the/DT Participants/NNS
+In/IN advance/NN of/IN the/DT experiment/NN participants/NNS were/VBD only/RB told/VBN that/IN some/DT changes/NNS would/MD be/VB made/VBN to/TO their/PRP$ word/NN processing/NN software/NN but/CC they/PRP were/VBD not/RB told/VBN the/DT nature/NN of/IN the/DT changes/NNS
+At/IN the/DT First/NNP Meeting/NNP they/PRP were/VBD told/VBN that/IN a/DT new/JJ version/NN of/IN the/DT software/NN had/VBD been/VBN installed/VBN MSW/NNP Personal/NNP which/WDT contained/VBD two/CD interfaces/NNS
+The/DT experimenter/NN toggled/VBD between/IN the/DT two/CD interfaces/NNS once/RB as/IN a/DT brief/JJ demonstration/NN
+It/PRP was/VBD pointed/VBN out/RP that/IN the/DT Personal/NNP Interface/NNP contained/VBD very/RB few/JJ functions/NNS initially/RB but/CC that/IN functions/NNS could/MD be/VB added/VBN or/CC deleted/VBN with/IN the/DT Modify/NNP button/NN
+The/DT process/NN of/IN personalizing/VBG however/RB was/VBD not/RB demonstrated/VBN
+Participants/NNS were/VBD told/VBN that/IN there/EX was/VBD no/DT right/JJ or/CC wrong/JJ way/NN to/TO use/VB the/DT interfaces/NNS and/CC it/PRP was/VBD specifically/RB mentioned/VBN that/IN they/PRP could/MD choose/VB to/TO use/VB just/RB one/CD of/IN the/DT two/CD interfaces/NNS and/CC essentially/RB ignore/VB the/DT other/JJ or/CC they/PRP could/MD switch/VB between/IN the/DT interfaces/NNS in/IN any/DT way/NN that/WDT suited/VBD their/PRP$ needs/NNS
+Participants/NNS were/VBD not/RB told/VBN that/IN MSW/NNP Personal/NNP would/MD be/VB uninstalled/VBN at/IN the/DT Second/NNP Meeting/NNP
+The/DT impression/NN intended/VBD was/VBD that/IN it/PRP would/MD be/VB used/VBN for/IN the/DT entire/JJ duration/NN of/IN the/DT experiment/NN
+In/IN addition/NN to/TO providing/VBG the/DT instructions/NNS verbally/RB printouts/NNS of/IN the/DT text/NN of/IN the/DT instructions/NNS were/VBD given/VBN
+No/DT information/NN about/IN the/DT goals/NNS or/CC objectives/NNS of/IN the/DT evaluation/NN was/VBD provided/VBN to/TO the/DT participants/NNS at/IN any/DT time/NN during/IN the/DT experiment/NN
+Scheduling/VBG
+In/IN order/NN to/TO ensure/VB the/DT timely/JJ completion/NN of/IN questionnaires/NNS and/CC meetings/NNS an/DT individual/JJ web/NN page/NN was/VBD constructed/VBN for/IN each/DT participant/NN that/WDT contained/VBD all/PDT the/DT necessary/JJ due/JJ dates/NNS as/RB well/RB as/IN URLs/NNS to/TO all/PDT the/DT questionnaires/NNS
+This/DT acted/VBD as/IN a/DT shared/VBN resource/NN between/IN the/DT researcher/NN and/CC each/DT participant/NN
+In/IN addition/NN email/NN reminders/NNS were/VBD sent/VBN by/IN 9/CD 00/CD AM/NNP on/IN the/DT due/JJ date/NN of/IN each/DT questionnaire/NN with/IN the/DT participant/JJ s/NNS web/VBP page/NN URL/NNP directly/RB embedded/VBD in/IN the/DT email/NN which/WDT facilitated/VBD quick/JJ access/NN to/TO the/DT questionnaires/NNS
+Reminders/NNS for/IN each/DT of/IN the/DT three/CD meetings/NNS were/VBD sent/VBN one/CD business/NN day/NN in/IN advance/NN
+The/DT participants/NNS web/POS pages/NNS were/VBD updated/VBN regularly/RB to/TO reflect/VB completed/VBN activities/NNS
+There/EX was/VBD some/DT flexibility/NN in/IN the/DT scheduling/NN if/IN a/DT participant/NN was/VBD unable/JJ to/TO complete/VB a/DT questionnaire/NN or/CC attend/VB a/DT meeting/NN on/IN the/DT scheduled/VBN date/NN the/DT date/NN could/MD be/VB adjusted/VBN slightly/RB
+Adjustments/NNS to/TO the/DT schedule/NN were/VBD mostly/RB made/VBN during/IN the/DT First/NNP Meeting/NNP
+Our/PRP$ goal/NN with/IN respect/NN to/TO scheduling/NN was/VBD to/TO avoid/VB any/DT confusion/NN about/IN the/DT time/NN and/CC dates/NNS of/IN meetings/NNS and/CC the/DT due/JJ dates/NNS of/IN questionnaires/NNS
+In/IN general/JJ we/PRP were/VBD very/RB successful/JJ in/IN that/DT very/RB few/JJ meetings/NNS had/VBD to/TO be/VB rescheduled/VBN during/IN the/DT evaluation/NN and/CC there/EX were/VBD few/JJ questionnaires/NNS that/WDT arrived/VBD late/RB
+Compensation/NN
+Each/DT participant/NN received/VBD a/DT 100/CD gift/NN certificate/NN for/IN a/DT local/JJ department/NN store/NN as/IN compensation/NN
+In/IN addition/NN there/RB was/VBD one/CD 100/CD gift/NN certificate/NN awarded/VBN as/IN a/DT prize/NN to/TO the/DT participant/NN who/WP completed/VBD the/DT most/JJS number/NN of/IN questionnaires/NNS on/IN time/NN
+Formal/JJ Design/NN
+The/DT logistical/JJ constraints/NNS in/IN conducting/VBG this/DT experiment/NN in/IN the/DT field/NN precluded/VBD the/DT counterbalancing/NN of/IN word/NN processor/NN conditions/NNS
+The/DT design/NN is/VBZ a/DT 2/CD personality/NN types/NNS between/IN subjects/NNS 3/CD levels/NNS levels/NNS 1/CD 3/CD MSW2K/CD level/NN 2/CD MSW/NNP Personal/NNP within/IN subjects/NNS design/NN where/WRB level/NN 2/CD is/VBZ nested/VBN with/IN five/CD repetitions/NNS
+The/DT fact/NN that/IN there/EX was/VBD no/DT control/NN group/NN made/VBD this/DT a/DT quasi/NN experimental/JJ design/NN rather/RB than/IN an/DT experimental/JJ design/NN Campbell/NNP and/CC Stanley/NNP 1972/CD
+5/CD
+MEASURES/NNS The/DT dependent/JJ measures/NNS were/VBD based/VBN on/IN logging/VBG data/NNS and/CC data/NNS collected/VBN from/IN the/DT eight/CD questionnaires/NNS
+From/IN the/DT logged/VBN data/NNS we/PRP extracted/VBD the/DT total/JJ time/NN spent/VBD doing/VBG word/NN processing/VBG the/DT time/NN spent/VBN in/IN each/DT interface/NN the/DT number/NN of/IN toggles/NNS between/IN interfaces/NNS the/DT trace/NN of/IN the/DT modifications/NNS made/VBN to/TO the/DT Personal/NNP Interface/NNP the/DT trace/NN of/IN functions/NNS used/VBN and/CC summary/NN statistics/NNS of/IN function/NN use/NN
+The/DT on/IN line/NN questionnaires/NNS included/VBD a/DT number/NN of/IN self/PRP reported/VBD measures/NNS
+Each/DT questionnaire/NN presented/VBD the/DT same/JJ series/NN of/IN 13/CD statements/NNS that/WDT were/VBD rated/VBN on/IN a/DT five/CD point/NN Likert/NNP scale/NN Strongly/NNP Disagree/NNP Disagree/NNP Neutral/NNP Agree/NNP Strongly/NNP Agree/NNP
+The/DT statements/NNS are/VBP given/VBN below/IN in/IN the/DT order/NN in/IN which/WDT they/PRP appear/VBP in/IN the/DT questionnaires/NNS ease/NN of/IN use/NN menu/NN control/NN learnability/NN navigation/NN This/DT software/NN is/VBZ easy/JJ to/TO use/VB
+I/PRP am/VBP in/IN control/NN of/IN the/DT contents/NNS of/IN the/DT menus/NNS and/CC toolbars/NNS
+I/PRP will/MD be/VB able/JJ to/TO learn/VB how/WRB to/TO use/VB all/PDT that/DT is/VBZ offered/VBN in/IN this/DT software/NN
+Navigating/VBG through/IN the/DT menus/NNS and/CC toolbars/NNS is/VBZ easy/JJ to/TO do/VB
+This/DT software/NN is/VBZ engaging/VBG
+The/DT contents/NNS of/IN the/DT menus/NNS and/CC the/DT toolbars/NNS match/VBP my/PRP$ needs/NNS
+Getting/VBG started/VBN with/IN this/DT version/NN of/IN the/DT software/NN is/VBZ easy/JJ
+This/DT software/NN is/VBZ flexible/JJ
+Finding/VBG the/DT options/NNS that/IN I/PRP want/VBP in/IN the/DT menus/NNS and/CC toolbars/NNS is/VBZ easy/JJ
+It/PRP is/VBZ easy/JJ to/TO make/VB the/DT software/NN do/VBP exactly/RB what/WP I/PRP want/VBP
+Discovering/VBG new/JJ features/NNS is/VBZ easy/JJ
+I/PRP get/VBP my/PRP$ word/NN processing/VBG tasks/NNS done/VBN quickly/RB with/IN this/DT software/NN
+This/DT software/NN is/VBZ satisfying/VBG to/TO use/VB
+Q2/CD through/IN Q6/NNP also/RB included/VBD statements/NNS specific/JJ to/TO MSW/NNP Personal/NNP
+These/DT were/VBD rated/VBN on/IN the/DT same/JJ five/CD point/NN Likert/NNP scale/NN personalizing/VBG mechanism/NN easy/JJ to/TO use/VB The/DT mechanism/NN for/IN adding/VBG
+deleting/VBG functions/NNS to/TO
+from/IN my/PRP$ Personal/NNP Interface/NNP is/VBZ easy/JJ to/TO use/VB
+This/DT mechanism/NN for/IN adding/VBG
+deleting/VBG functions/NNS to/TO
+from/IN my/PRP$ Personal/NNP Interface/NNP is/VBZ intuitive/JJ
+This/DT mechanism/NN for/IN adding/VBG
+deleting/VBG functions/NNS to/TO
+from/IN my/PRP$ Personal/NNP Interface/NNP is/VBZ flexible/JJ I/PRP can/MD modify/VB my/PRP$ Personal/NNP Interface/NNP so/IN it/PRP is/VBZ exactly/RB how/WRB I/PRP want/VBP it/PRP
+This/DT mechanism/NN for/IN switching/VBG between/IN interfaces/NNS is/VBZ easy/JJ to/TO use/VB
+This/DT concept/NN of/IN having/VBG two/CD interfaces/NNS is/VBZ easy/JJ to/TO understand/VB
+Having/VBG two/CD interfaces/NNS is/VBZ a/DT good/JJ idea/NN
+6/CD
+HYPOTHESES/VBZ The/DT hypotheses/NNS below/RB are/VBP categorized/VBN according/VBG to/TO the/DT two/CD main/JJ goals/NNS of/IN the/DT evaluation/NN 1/CD to/TO understand/VB the/DT participants/NNS personalization/NN behavior/NN with/IN the/DT new/JJ design/NN and/CC 2/CD to/TO compare/VB our/PRP$ design/NN to/TO the/DT adaptive/JJ interface/NN of/IN MSW2K/CD
+Pilot/NN testing/NN in/IN the/DT field/NN with/IN 4/CD participants/NNS who/WP each/DT used/VBD an/DT earlier/JJR version/NN of/IN the/DT prototype/NN for/IN 2/CD 3/CD months/NNS assisted/VBN in/IN the/DT formulation/NN of/IN our/PRP$ hypotheses/NNS
+6/CD
+1/CD Personalization/NNP Behavior/NNP with/IN Multiple/NNP Interfaces/NNP Design/NNP We/NNP wanted/VBD to/TO understand/VB whether/IN users/NNS could/MD use/VB the/DT MSWord/NNP Personal/NNP design/NN effectively/RB
+Effectiveness/NN relates/VBZ to/TO being/VBG able/JJ to/TO personalize/VB according/VBG to/TO command/NN usage/NN in/IN a/DT way/NN that/WDT is/VBZ not/RB overly/RB cumbersome/JJ
+We/PRP also/RB wanted/VBD to/TO see/VB whether/IN MSWord/NNP Personal/NNP is/VBZ sufficiently/RB flexible/JJ to/TO accommodate/VB a/DT variety/NN of/IN personalization/NN strategies/NNS
+H1/CD Usage/NNP Hypothesis/NNP
+The/DT majority/NN of/IN the/DT participants/NNS will/MD choose/VB to/TO use/VB their/PRP$ Personal/NNP Interface/NNP they/PRP will/MD find/VB the/DT personalizing/VBG mechanism/NN easy/JJ to/TO use/VB intuitive/JJ and/CC flexible/JJ enough/JJ such/JJ that/IN they/PRP will/MD use/VB the/DT mechanism/NN to/TO include/VB all/DT frequently/RB used/VBN functions/NNS and/CC will/MD spend/VB the/DT majority/NN of/IN their/PRP$ time/NN in/IN their/PRP$ Personal/NNP Interface/NNP
+H2/CD Approaches/NNS to/TO Personalization/NNP Hypothesis/NNP
+The/DT multiple/JJ interfaces/NNS design/NN will/MD allow/VB for/IN different/JJ approaches/NNS to/TO personalization/NN
+Individual/JJ differences/NNS feature/VBP shy/JJ vs/NNS
+feature/NN keen/NN will/MD influence/VB the/DT strategies/NNS adopted/VBN
+H3/CD Growth/NN of/IN Personal/NNP Interface/NNP Hypothesis/NNP
+Modifications/NNS to/TO participants/NNS Personal/NNP Interfaces/NNP will/MD be/VB dominated/VBN by/IN additions/NNS and/CC the/DT size/NN of/IN the/DT Personal/NNP Interfaces/NNP will/MD reach/VB a/DT steady/JJ state/NN
+Users/NNS will/MD not/RB continually/RB need/VB to/TO modify/VB their/PRP$ personal/JJ interfaces/NNS
+H4/CD Modification/NNP Triggers/NNP Hypothesis/NNP
+Related/VBN to/TO growth/NN there/EX will/MD be/VB identifiable/JJ triggers4/NN that/WDT prompt/VBD participants/NNS to/TO modify/VB their/PRP$ Personal/NNP Interface/NNP
+For/IN example/NN and/CC most/RBS obviously/RB there/EX will/MD be/VB an/DT initial/JJ trigger/NN to/TO add/VB functions/NNS because/IN the/DT Personal/NNP Interface/NNP will/MD otherwise/RB be/VB almost/RB unusable/JJ
+The/DT last/JJ hypothesis/NN while/IN not/RB directly/RB related/VBN to/TO effectiveness/NN and/CC flexibility/NN was/VBD deemed/VBN important/JJ because/IN if/IN such/JJ triggers/NNS could/MD be/VB identified/VBN they/PRP could/MD provide/VB a/DT design/NN basis/NN for/IN user/NN assisted/VBN personalization/NN
+6/CD
+2/CD Comparison/NNP to/TO Adaptive/NNP Interface/NNP We/NNP hypothesized/VBD about/IN how/WRB the/DT multiple/JJ interfaces/NNS design/NN of/IN MSW/NNP Personal/NNP compares/VBZ to/TO one/CD particular/JJ instance/NN of/IN an/DT adaptive/JJ design/NN namely/RB MSW2K/CD
+While/IN we/PRP expected/VBD differences/NNS in/IN satisfaction/NN we/PRP also/RB expected/VBD that/IN because/IN users/NNS operate/VBP within/IN a/DT small/JJ individually/RB constructed/VBN interface/IN they/PRP would/MD find/VB navigation/NN easier/JJR and/CC would/MD feel/VB a/DT greater/JJR overall/JJ sense/NN of/IN control/NN with/IN MSW/NNP Personal/NNP
+We/PRP also/RB expected/VBD the/DT ability/NN to/TO learn/VB features/NNS would/MD be/VB positively/RB impacted/VBN because/IN operating/VBG in/IN a/DT user/NN controlled/VBN small/JJ interface/NN acts/NNS as/IN a/DT training/NN wheels/NNS interface/VBP to/TO the/DT full/JJ interface/NN
+With/IN many/JJ of/IN these/DT hypotheses/NNS we/PRP expected/VBD individual/JJ differences/NNS to/TO play/VB a/DT role/NN
+H5/CD Satisfaction/NNP Hypothesis/NNP
+Feature/NN shy/JJ participants/NNS will/MD be/VB more/RBR satisfied/JJ with/IN MSW/NNP Personal/NNP than/IN with/IN MSW2K/CD
+The/DT feature/NN shy/NN will/MD be/VB more/RBR satisfied/JJ than/IN the/DT feature/NN keen/VBN with/IN MSW/NNP Personal/NNP
+H6/NNP Navigation/NNP Hypothesis/NNP
+Both/DT feature/NN shy/NN and/CC feature/NN keen/JJ participants/NNS will/MD feel/VB that/IN they/PRP are/VBP better/RBR able/JJ to/TO navigate/VB the/DT menus/NNS and/CC toolbars/NNS with/IN MSW/NNP Personal/NNP than/IN with/IN MSW2K/CD
+H7/NNP Control/NNP Hypothesis/NNP
+Both/DT feature/NN shy/NN and/CC feature/NN keen/JJ participants/NNS will/MD feel/VB a/DT better/JJR sense/NN of/IN control/NN with/IN MSW/NNP Personal/NNP than/IN with/IN MSW2K/CD
+H8/CD Learnability/NNP Hypothesis/NNP
+Feature/NN shy/JJ participants/NNS will/MD feel/VB that/IN they/PRP are/VBP better/RBR able/JJ to/TO learn/VB the/DT available/JJ features/NNS with/IN MSW/NNP Personal/NNP than/IN with/IN MSW2K/CD
+H9/CD Three/CD way/NN Comparison/NNP Hypothesis/NNP
+When/WRB asked/VBD to/TO compare/VB their/PRP$ overall/JJ preference/NN for/IN MSW/NNP Personal/NNP MSW2K/NNP and/CC MSW2K/NNP with/IN the/DT adaptive/JJ menus/NNS turned/VBD off/RP standard/JJ all/DT in/IN one/CD interface/NN feature/NN shy/JJ participants/NNS will/MD prefer/VB the/DT multiple/JJ interfaces/NNS design/NN to/TO an/DT all/NN in/IN one/CD design/NN but/CC will/MD prefer/VB all/DT in/IN one/CD to/TO adaptive/VB
+Feature/NN keen/JJ participants/NNS will/MD prefer/VB all/DT in/IN one/CD to/TO both/DT the/DT adaptive/JJ and/CC multiple/JJ interfaces/NNS designs/NNS
+7/CD
+RESULTS/NNS Most/JJS of/IN the/DT logging/VBG data/NNS for/IN one/CD participant/NN Participant/NNP 9/CD was/VBD lost/VBN due/JJ to/TO technical/JJ reasons/NNS
+We/PRP collected/VBD his/PRP$ interface/NN toggling/NN and/CC Personal/NNP Interface/NNP modification/NN data/NNS but/CC missed/VBD his/PRP$ function/NN usage/NN data/NNS
+Where/WRB this/DT is/VBZ relevant/JJ we/PRP note/VBP N/NNP 19/CD otherwise/RB N/$ 20/CD can/MD be/VB assumed/VBN unless/IN otherwise/RB stated/VBN
+The/DT analysis/NN in/IN Section/NN 7/CD
+2/CD which/WDT focuses/VBZ on/IN uncovering/VBG the/DT participants/NNS personalization/NN behavior/NN with/IN MSW/NNP Personal/NNP relies/VBZ on/IN descriptive/JJ statistics/NNS
+The/DT analysis/NN in/IN Section/NN 0/CD which/WDT focuses/VBZ on/IN the/DT comparison/NN between/IN our/PRP$ design/NN and/CC the/DT adaptive/JJ design/NN in/IN Word/NNP 2000/CD includes/VBZ both/DT inferential/JJ and/CC descriptive/JJ statistics/NNS
+Findings/NNS that/WDT are/VBP p/VB 0/CD
+05/CD are/VBP deemed/VBN to/TO be/VB significant/JJ
+However/RB due/JJ to/TO the/DT qualitative/JJ nature/NN of/IN our/PRP$ field/NN evaluation/NN our/PRP$ inability/NN to/TO control/VB many/JJ of/IN the/DT variables/NNS and/CC our/PRP$ small/JJ number/NN of/IN participants/NNS we/PRP accept/VBP a/DT looser/JJR criterion/NN for/IN borderline/NN significant/JJ results/NNS using/VBG the/DT range/NN of/IN 0/CD
+05/CD p/NN 0/CD
+10/CD
+Many/JJ qualitative/JJ studies/NNS are/VBP done/VBN on/IN so/RB few/JJ participants/NNS that/IN no/DT analyses/NNS can/MD be/VB done/VBN we/PRP are/VBP able/JJ to/TO do/VB some/DT preliminary/JJ statistical/JJ analyses/NNS to/TO suggest/VB phenomena/NNS for/IN future/JJ investigation/NN
+Both/DT sections/NNS conclude/VBP with/IN discussions/NNS that/WDT incorporate/VBP the/DT qualitative/JJ questionnaire/NN and/CC interview/NN data/NNS
+7/CD
+1/CD Experience/NN of/IN Multiple/NNP Interfaces/NNP Design/NNP Our/NNP primary/JJ goal/NN was/VBD to/TO understand/VB personalization/NN behavior/NN with/IN the/DT new/JJ design/NN
+We/PRP examine/VBP the/DT results/NNS for/IN these/DT hypotheses/NNS first/RB
+H1/CD Usage/NNP Hypothesis/NNP
+In/IN the/DT 4/CD weeks/NNS MSWord/NNP Personal/NNP was/VBD installed/VBN the/DT 19/CD participants/NNS each/DT spent/VBN on/IN average/JJ 596/CD minutes/NNS word/NN processing/VBG SD/NNP 554/CD min/NN histogram/NN in/IN Figure/NN 4/CD
+Fourteen/CD of/IN the/DT participants/NNS 74/CD spent/VBD 50/CD or/CC more/JJR of/IN their/PRP$ word/NN processing/NN time/NN in/IN their/PRP$ Personal/NNP Interface/NNP histogram/NN in/IN Figure/NN 5/CD
+These/DT same/JJ participants/NNS added/VBD all/DT frequently/RB used/VBN functions/NNS to/TO their/PRP$ Personal/NNP Interface/NNP those/DT functions/NNS used/VBN on/IN at/IN least/JJS half/NN of/IN the/DT usage/NN days/NNS
+There/EX are/VBP approximately/RB 203/CD functions/NNS in/IN MSW2K/NNP that/IN users/NNS could/MD include/VB in/IN their/PRP$ Personal/NNP Interfaces/NNPS
+5/CD Participants/NNS did/VBD add/VB most/JJS of/IN their/PRP$ frequently/RB used/VBN functions/NNS the/DT more/RBR frequently/RB a/DT function/NN was/VBD used/VBN the/DT more/RBR likely/JJ it/PRP was/VBD added/VBN as/IN shown/VBN in/IN Figure/NN 6/CD
+For/IN example/NN 19/CD participants/NNS had/VBD on/IN average/JJ 29/CD
+8/CD functions/NNS that/WDT were/VBD used/VBN on/IN 25/CD or/CC fewer/JJR of/IN their/PRP$ usage/NN days/NNS and/CC on/IN average/JJ participants/NNS added/VBD 19/CD
+7/CD 66/CD of/IN those/DT functions/NNS to/TO their/PRP$ Personal/NNP Interfaces/NNPS
+The/DT percentage/NN of/IN functions/NNS added/VBD increases/NNS to/TO 90/CD 96/CD and/CC 100/CD respectively/RB for/IN the/DT next/JJ three/CD quartiles/NNS
+Although/IN the/DT majority/NN of/IN the/DT frequently/RB used/VBN functions/NNS were/VBD added/VBN to/TO the/DT Personal/NNP Interfaces/NNP there/EX were/VBD relatively/RB few/JJ such/JJ functions/NNS
+Figure/NN 6/CD shows/VBZ that/IN on/IN average/JJ participants/NNS only/RB had/VBD 0/CD
+7/CD functions/NNS that/WDT were/VBD used/VBN 75/CD or/CC more/JJR of/IN their/PRP$ usage/NN days/NNS
+6/CD Questionnaire/NNP data/NNS indicated/VBD that/IN participants/NNS found/VBD the/DT personalizing/VBG mechanism/NN easy/JJ to/TO use/VB intuitive/JJ and/CC flexible/JJ
+These/DT three/CD attributes/NNS had/VBD mean/VBN ratings/NNS out/IN of/IN 5/CD of/IN 4/CD
+3/CD 4/CD
+1/CD and/CC 4/CD
+0/CD respectively/RB
+Note/VB that/IN all/PDT the/DT data/NNS reported/VBD above/IN represents/NNS aggregate/VBP data/NNS for/IN both/DT the/DT feature/NN keen/NN and/CC the/DT feature/NN shy/JJ participants/NNS
+Independent/JJ sample/NN t/NN tests/NNS were/VBD first/RB run/VBN to/TO see/VB if/IN there/EX were/VBD any/DT significant/JJ differences/NNS between/IN the/DT groups/NNS of/IN participants/NNS for/IN the/DT dependent/JJ measures/NNS investigated/VBN and/CC no/DT statistically/RB significant/JJ differences/NNS were/VBD revealed/VBN
+The/DT largest/JJS Personal/NNP Interface/NNP was/VBD 75/CD functions/NNS by/IN a/DT feature/NN keen/JJ participant/NN
+There/EX was/VBD no/DT correlation/NN between/IN time/NN spent/VBD using/VBG the/DT MSWord/NNP Personal/NNP and/CC the/DT number/NN of/IN functions/NNS added/VBN to/TO the/DT Personal/NNP Interface/NNP
+Terminology/NNP as/RB follows/VBZ frequently/RB used/VBN add/NN frequently/RB used/VBD functions/NNS only/RB all/DT add/VB all/DT functions/NNS that/WDT are/VBP used/VBN upfront/JJ add/JJ majority/NN of/IN functions/NNS right/RB away/RB as/IN you/PRP go/VBP add/VB functions/NNS as/IN they/PRP are/VBP needed/VBN none/NN participant/NN did/VBD not/RB personalize/VB gave/VBD up/RP abandoned/VBN desired/VBN approach/NN
+N/NNP 20/CD
+Summary/NNP Participants/NNPS personalized/VBD their/PRP$ interfaces/NNS according/VBG to/TO the/DT frequency/NN with/IN which/WDT they/PRP used/VBD functions/NNS 74/CD of/IN the/DT participants/NNS spent/VBD 50/CD or/CC more/JJR of/IN their/PRP$ time/NN in/IN their/PRP$ Personal/NNP Interface/NNP and/CC participants/NNS agreed/VBD that/IN the/DT personalizing/VBG mechanism/NN was/VBD easy/JJ to/TO use/VB intuitive/JJ and/CC flexible/JJ
+Hypothesis/NNP Supported/NNP Yes/NNPS
+H2/CD Approach/NNP to/TO Using/VBG Two/CD Interfaces/NNS
+Participants/NNS were/VBD not/RB told/VBN how/WRB they/PRP should/MD use/VB the/DT two/CD interfaces/NNS in/IN MSW/NNP Personal/NNP and/CC were/VBD therefore/RB able/JJ to/TO approach/VB it/PRP in/IN any/DT way/NN that/WDT met/VBD their/PRP$ needs/NNS
+Analysis/NN of/IN the/DT log/NN data/NNS and/CC the/DT debriefing/NN interviews/NNS allows/VBZ us/PRP to/TO approximately/RB discern/VB the/DT general/JJ approaches/NNS that/IN participants/NNS took/VBD to/TO constructing/VBG their/PRP$ Personal/NNP Interfaces/NNPS
+In/IN general/JJ each/DT approach/NN can/MD be/VB broken/VBN down/RP into/IN two/CD independent/JJ components/NNS 1/CD which/WDT functions/NNS were/VBD added/VBN namely/RB only/RB the/DT most/RBS frequently/RB used/VBN functions/NNS or/CC all/DT used/VBN functions/NNS and/CC 2/CD when/WRB functions/NNS were/VBD added/VBN namely/RB upfront/RB within/IN the/DT first/JJ few/JJ days/NNS of/IN usage/NN or/CC gradually/RB as/IN functions/NNS were/VBD needed/VBN as/IN you/PRP go/VBP
+The/DT top/NN of/IN Table/NNP III/NNP gives/VBZ a/DT detailed/JJ breakdown/NN and/CC an/DT overall/JJ summary/NN is/VBZ given/VBN at/IN the/DT bottom/NN of/IN the/DT table/NN
+We/PRP look/VBP first/RB at/IN which/WDT functions/NNS were/VBD added/VBN
+Including/VBG both/DT participant/JJ groups/NNS we/PRP see/VBP that/IN participants/NNS were/VBD almost/RB twice/RB as/IN likely/JJ to/TO add/VB all/DT used/VBN functions/NNS 12/CD participants/NNS as/IN only/RB the/DT frequently/RB used/VBN functions/NNS 7/CD participants/NNS
+Participants/NNS who/WP added/VBD all/DT used/VBN functions/NNS generally/RB expected/VBN to/TO use/VB their/PRP$ Personal/NNP Interface/NNP exclusively/RB whereas/WRB those/DT who/WP added/VBD only/RB regularly/RB used/VBN functions/NNS expected/VBN to/TO switch/VB to/TO the/DT Full/NNP Interface/NNP when/WRB irregularly/RB used/VBN functions/NNS were/VBD needed/VBN
+Taking/VBG individual/JJ differences/NNS into/IN account/NN feature/NN shy/NN were/VBD unexpectedly/RB almost/RB evenly/RB divided/VBN between/IN only/RB including/VBG frequently/RB used/VBN functions/NNS 4/CD participants/NNS and/CC all/DT functions/NNS 5/CD participants/NNS
+We/PRP thought/VBD feature/NN shy/JJ participants/NNS would/MD want/VB as/IN minimal/JJ an/DT interface/NN as/IN possible/JJ that/WDT is/VBZ to/TO only/RB add/VB their/PRP$ frequently/RB used/VBN functions/NNS
+Feature/NN keen/JJ participants/NNS on/IN the/DT other/JJ hand/NN were/VBD more/JJR than/IN twice/RB as/IN likely/JJ to/TO want/VB all/DT their/PRP$ used/VBN functions/NNS in/IN their/PRP$ Personal/NNP Interface/NNP 7/CD participants/NNS rather/RB than/IN just/RB the/DT ones/NNS they/PRP used/VBD frequently/RB 3/CD participants/NNS
+Their/PRP$ preference/NN for/IN all/DT functions/NNS was/VBD expected/VBN
+In/IN terms/NNS of/IN when/WRB the/DT functions/NNS were/VBD added/VBN including/VBG both/DT participant/JJ groups/NNS 6/CD participants/NNS took/VBD the/DT approach/NN of/IN adding/VBG the/DT great/JJ majority/NN of/IN functions/NNS that/IN they/PRP expected/VBD to/TO add/VB upfront/JJ and/CC then/RB only/RB rarely/RB adding/VBG additional/JJ functions/NNS
+By/IN contrast/NN 13/CD participants/NNS took/VBD the/DT approach/NN of/IN adding/VBG some/DT functions/NNS in/IN the/DT beginning/NN and/CC then/RB gradually/RB adding/VBG additional/JJ functions/NNS as/IN you/PRP go/VBP
+Accounting/VBG for/IN individual/JJ differences/NNS feature/VBP shy/JJ participants/NNS clearly/RB favored/VBD the/DT add/NN as/IN you/PRP go/VBP strategy/NN 7/CD participants/NNS to/TO the/DT add/NN upfront/IN strategy/NN 2/CD participants/NNS
+Feature/NN keen/NN participants/NNS also/RB appeared/VBD to/TO favor/VB the/DT add/NN as/IN you/PRP go/VBP strategy/NN 6/CD participants/NNS to/TO 4/CD but/CC not/RB as/RB decisively/RB as/IN the/DT feature/NN shy/NN
+Seven/CD participants/NNS gave/VBD up/RP on/IN their/PRP$ desired/VBN approach/NN to/TO some/DT degree/NN
+For/IN most/JJS this/DT meant/VBD that/IN they/PRP stopped/VBD personalizing/VBG or/CC only/RB added/VBD very/RB few/JJ functions/NNS beyond/IN their/PRP$ first/JJ few/JJ days/NNS of/IN using/VBG MSW/NNP Personal/NNP
+These/DT participants/NNS used/VBD their/PRP$ Personal/NNP Interface/NNP to/TO the/DT extent/NN that/IN they/PRP could/MD but/CC would/MD then/RB switch/VB to/TO the/DT Full/NNP Interface/NNP when/WRB a/DT function/NN not/RB available/JJ in/IN their/PRP$ Personal/NNP Interface/NNP was/VBD needed/VBN rather/RB than/IN taking/VBG the/DT time/NN to/TO add/VB it/PRP
+For/IN example/NN Participant/NNP 1/CD is/VBZ categorized/VBN as/RB all/DT as/IN you/PRP go/VBP gave/VBD up/RP
+She/PRP wanted/VBD to/TO have/VB all/PDT the/DT functions/NNS she/PRP used/VBD in/IN her/PRP$ Personal/NNP Interface/NNP but/CC in/IN the/DT end/NN she/PRP realized/VBD she/PRP was/VBD using/VBG a/DT lot/NN more/JJR functions/NNS than/IN she/PRP expected/VBD some/DT of/IN which/WDT she/PRP was/VBD learning/VBG for/IN a/DT new/JJ contract/NN she/PRP started/VBD during/IN the/DT evaluation/NN
+She/PRP did/VBD continue/VB to/TO personalize/VB throughout/IN the/DT experiment/NN but/CC ended/VBD up/RP just/RB adding/VBG the/DT most/RBS frequently/RB used/VBN functions/NNS which/WDT was/VBD not/RB her/PRP$ desired/VBN approach/NN
+More/RBR typical/JJ behavior/NN of/IN participants/NNS who/WP gave/VBD up/RP is/VBZ described/VBN here/RB by/IN a/DT participant/NN who/WP is/VBZ categorized/VBN as/RB all/DT as/IN you/PRP go/VBP gave/VBD up/RP I/PRP would/MD start/VB out/IN of/IN the/DT personal/JJ
+At/IN the/DT beginning/NN I/PRP was/VBD adding/VBG things/NNS pretty/RB regularly/RB to/TO the/DT personal/JJ but/CC I/PRP felt/VBD that/IN I/PRP was/VBD just/RB continually/RB adding/VBG things/NNS and/CC so/RB eventually/RB I/PRP would/MD just/RB start/VB out/RB and/CC use/VB the/DT personal/JJ as/RB long/RB as/IN it/PRP was/VBD convenient/JJ and/CC then/RB I/PRP would/MD just/RB switch/VB once/RB I/PRP felt/VBD like/IN I/PRP needed/VBD to/TO add/VB another/DT function/NN
+Interview/NNP Participant/NNP 10/CD Participant/NNP 14/CD was/VBD categorized/VBN as/IN none/NN gave/VBD up/RP because/IN he/PRP used/VBD the/DT Full/NNP Interface/NNP almost/RB exclusively/RB and/CC clearly/RB wasn/VB t/NN willing/JJ to/TO spend/VB the/DT time/NN to/TO explore/VB his/PRP$ Personal/NNP Interface/NNP
+It/PRP was/VBD obvious/JJ from/IN his/PRP$ comments/NNS in/IN the/DT debriefing/NN interview/NN that/IN he/PRP really/RB did/VBD not/RB understand/VB the/DT concept/NN of/IN a/DT Personal/NNP Interface/NNP and/CC by/IN the/DT time/NN of/IN the/DT interview/NN he/PRP had/VBD completely/RB forgotten/VBN that/IN he/PRP himself/PRP had/VBD added/VBN four/CD functions/NNS to/TO his/PRP$ Personal/NNP Interface/NNP during/IN the/DT First/NNP Meeting/NNP
+Summary/NNP Participants/NNPS adopted/VBD various/JJ approaches/NNS to/TO personalization/NN in/IN terms/NNS of/IN which/WDT functions/NNS were/VBD added/VBN to/TO their/PRP$ Personal/NNP Interfaces/NNP and/CC when/WRB they/PRP were/VBD added/VBN
+No/DT one/NN strategy/NN dominated/VBD outright/RB
+All/DT as/IN you/PRP go/VBP was/VBD the/DT most/RBS popular/JJ 8/CD participants/NNS but/CC the/DT other/JJ three/CD combinations/NNS were/VBD also/RB adopted/VBN frequently/RB used/VBN upfront/NN 2/CD participants/NNS frequently/RB used/VBN as/IN you/PRP go/VBP 5/CD participants/NNS and/CC all/DT upfront/JJ 4/CD participants/NNS
+Individual/JJ differences/NNS appear/VBP to/TO play/VB a/DT role/NN in/IN the/DT strategy/NN adopted/VBN but/CC not/RB a/DT decisive/JJ role/NN
+Feature/NN keen/NN participants/NNS were/VBD more/RBR likely/JJ to/TO add/VB all/DT used/VBN functions/NNS rather/RB than/IN just/RB their/PRP$ frequently/RB used/VBN functions/NNS
+Seven/CD participants/NNS gave/VBD up/RP to/TO some/DT extent/NN on/IN their/PRP$ preferred/VBN approach/NN
+Hypothesis/NNP Supported/VBD Partially/RB
+The/DT multiple/JJ interfaces/NNS design/NN did/VBD allow/VB for/IN different/JJ approaches/NNS to/TO personalization/NN but/CC individual/JJ differences/NNS did/VBD not/RB strongly/RB influence/VB strategy/NN
+H3/CD Growth/NN of/IN Personal/NNP Interface/NNP Hypothesis/NNP
+The/DT size/NN of/IN participants/NNS Personal/NNP Interfaces/NNP with/IN the/DT exception/NN of/IN seven/CD deleted/VBN functions/NNS increased/VBD monotonically/RB
+All/DT participants/NNS added/VBD functions/NNS and/CC only/RB 3/CD participants/NNS deleted/VBD a/DT combined/VBN total/NN of/IN seven/CD functions/NNS
+For/IN the/DT purposes/NNS of/IN understanding/VBG how/WRB Personal/NNP Interfaces/NNP evolved/VBD we/PRP directed/VBD our/PRP$ attention/NN exclusively/RB to/TO the/DT 13/CD participants/NNS who/WP did/VBD not/RB give/VB up/RP their/PRP$ desired/VBN approach/NN to/TO personalization/NN as/IN these/DT participants/NNS set/VBP up/RP their/PRP$ Personal/NNP Interface/NNP in/IN a/DT way/NN that/WDT met/VBD their/PRP$ needs/NNS
+This/DT group/NN includes/VBZ Participant/NNP 9/CD for/IN whom/WP we/PRP only/RB have/VBP partial/JJ logging/VBG data/NNS and/CC so/RB we/PRP omit/VBP his/PRP$ data/NNS from/IN this/DT analysis/NN which/WDT leaves/VBZ 12/CD participants/NNS
+For/IN this/DT group/NN of/IN participants/NNS there/EX was/VBD an/DT initial/JJ period/NN when/WRB modifications/NNS were/VBD made/VBN regularly/RB
+This/DT series/NN can/MD be/VB defined/VBN by/IN a/DT first/JJ modification/NN followed/VBN by/IN subsequent/JJ modifications/NNS that/WDT were/VBD at/IN most/JJS 2/CD usage/NN days/NNS from/IN the/DT previous/JJ modification/NN
+Table/NNP IV/NNP shows/VBZ that/IN the/DT average/JJ duration/NN of/IN this/DT initial/JJ period/NN lasted/VBD 2/CD
+8/CD days/NNS and/CC for/IN the/DT participant/NN who/WP had/VBD the/DT longest/JJS initial/JJ period/NN it/PRP only/RB lasted/VBD 5/CD days/NNS
+Of/IN the/DT total/JJ number/NN of/IN functions/NNS that/IN these/DT participants/NNS added/VBD during/IN the/DT 4/CD weeks/NNS on/IN average/NN each/DT had/VBD added/VBN 82/CD of/IN his/PRP$
+her/PRP$ total/NN by/IN the/DT end/NN of/IN the/DT initial/JJ period/NN
+On/IN average/JJ participants/NNS personalized/VBN on/IN 3/CD
+8/CD of/IN the/DT days/NNS that/IN word/NN processing/NN occurred/VBD with/IN the/DT participant/NN who/WP most/RBS frequently/RB personalized/VBN doing/VBG so/RB on/IN 6/CD days/NNS
+The/DT size/NN of/IN participants/NNS Personal/NNP Interfaces/NNP did/VBD approximately/RB reach/VB steady/JJ state/NN in/IN that/DT there/EX was/VBD a/DT point/NN at/IN which/WDT the/DT size/NN of/IN the/DT Personal/NNP Interfaces/NNP did/VBD not/RB increase/VB
+decrease/NN by/IN more/JJR than/IN 10/CD
+We/PRP expected/VBD this/DT point/NN to/TO be/VB within/IN the/DT initial/JJ period/NN for/IN the/DT majority/NN of/IN the/DT 12/CD participants/NNS
+The/DT results/NNS show/VBP however/RB that/IN the/DT steady/JJ state/NN point/NN was/VBD reached/VBN by/IN the/DT end/NN of/IN the/DT initial/JJ period/NN for/IN only/JJ half/NN of/IN the/DT 12/CD participants/NNS for/IN 2/CD participants/NNS steady/JJ state/NN was/VBD equal/JJ to/TO the/DT initial/JJ period/NN and/CC for/IN 4/CD it/PRP was/VBD less/JJR than/IN the/DT initial/JJ period/NN
+On/IN average/NN this/DT steady/JJ state/NN period/NN came/VBD after/IN 4/CD
+8/CD days/NNS of/IN usage/NN which/WDT was/VBD on/IN average/JJ 31/CD of/IN the/DT way/NN through/IN the/DT 4/CD weeks/NNS in/IN which/WDT MSW/NNP Personal/NNP was/VBD used/VBN
+On/IN average/NN the/DT last/JJ modification/NN came/VBD 75/CD through/IN the/DT 4/CD weeks/NNS
+The/DT data/NNS can/MD be/VB viewed/VBN on/IN a/DT day/NN by/IN day/NN basis/NN
+The/DT cumulative/JJ total/JJ number/NN of/IN functions/NNS added/VBN by/IN the/DT 12/CD participants/NNS was/VBD 485/CD
+Figure/NN 7/CD shows/NNS that/IN within/IN the/DT first/JJ 2/CD days/NNS that/IN MSW/NNP Personal/NNP was/VBD used/VBN 81/CD of/IN all/DT 485/CD functions/NNS had/VBD been/VBN added/VBN
+Summary/NNP Personalization/NNP was/VBD dominated/VBN by/IN additions/NNS participants/NNS added/VBD on/IN average/NN 90/CD or/CC more/JJR of/IN the/DT functions/NNS that/IN they/PRP were/VBD going/VBG to/TO add/VB within/IN 4/CD
+8/CD usage/NN days/NNS but/CC participants/NNS were/VBD on/IN average/NN not/RB finished/VBD personalizing/VBG until/IN almost/RB three/CD quarters/NNS of/IN the/DT way/NN through/IN the/DT 4/CD weeks/NNS
+Participants/NNS were/VBD not/RB continually/RB personalizing/VBG
+Hypothesis/NNP Supported/NNP Yes/NNPS
+H4/CD Modification/NNP Triggers/NNP Hypothesis/NNP
+In/IN order/NN to/TO evaluate/VB this/DT hypothesis/NN we/PRP began/VBD by/IN identifying/VBG the/DT patterns/NNS of/IN usage/NN with/IN respect/NN to/TO addition/NN in/IN particular/JJ whether/IN a/DT function/NN was/VBD used/VBN before/IN or/CC after/IN it/PRP was/VBD added/VBN and/CC if/IN so/RB how/WRB soon/RB it/PRP was/VBD used/VBN before/IN or/CC after/IN if/IN was/VBD added/VBN
+A/DT detailed/JJ analysis/NN of/IN these/DT usage/NN patterns/NNS enabled/VBD us/PRP to/TO define/VB four/CD triggers/NNS for/IN addition/NN Immediate/NNP need/NN trigger/NN
+The/DT user/NN has/VBZ an/DT immediate/JJ need/NN to/TO use/VB a/DT function/NN that/WDT is/VBZ not/RB currently/RB in/IN his/PRP$
+her/PRP$ Personal/NNP Interface/NNP and/CC therefore/RB adds/VBZ it/PRP
+This/DT is/VBZ shown/VBN clearly/RB in/IN the/DT log/NN file/NN by/IN the/DT pattern/NN add/VB function/NN x/NN followed/VBD directly/RB by/IN use/NN function/NN x/NN
+Initial/JJ trigger/NN
+The/DT user/NN desires/VBZ to/TO add/VB functions/NNS when/WRB first/RB using/VBG MSW/NNP Personal/NNP
+Any/DT function/NN added/VBD within/IN the/DT first/JJ 2/CD days/NNS of/IN usage/NN that/WDT does/VBZ not/RB satisfy/VB the/DT immediate/JJ need/NN trigger/NN satisfies/NNS this/DT trigger/NN
+Previously/RB used/VBN trigger/NN
+The/DT user/NN has/VBZ already/RB used/VBN a/DT function/NN and/CC expects/VBZ to/TO use/VB it/PRP in/IN the/DT future/NN
+Any/DT function/NN that/WDT has/VBZ been/VBN used/VBN before/IN it/PRP is/VBZ added/VBN and/CC does/VBZ not/RB satisfy/VB the/DT immediate/JJ need/NN or/CC initial/JJ triggers/NNS satisfies/NNS this/DT trigger/NN
+Future/JJ use/NN trigger/NN
+The/DT user/NN expects/VBZ to/TO use/VB a/DT function/NN in/IN the/DT future/NN and/CC so/RB adds/VBZ it/PRP to/TO the/DT Personal/NNP Interface/NNP
+Any/DT function/NN that/WDT does/VBZ not/RB satisfy/VB any/DT of/IN the/DT first/JJ three/CD triggers/NNS satisfies/NNS this/DT trigger/NN
+Table/NNP V/NNP summarizes/VBZ our/PRP$ findings/NNS with/IN respect/NN to/TO triggers/NNS for/IN the/DT addition/NN of/IN functions/NNS
+We/PRP see/VBP that/IN the/DT initial/JJ trigger/NN and/CC the/DT immediate/JJ need/NN trigger/NN together/RB accounted/VBD for/IN almost/RB 86/CD of/IN the/DT functions/NNS added/VBD
+The/DT previously/RB used/VBN and/CC future/JJ use/NN triggers/NNS accounted/VBD for/IN the/DT addition/NN of/IN the/DT remaining/VBG functions/NNS which/WDT were/VBD typically/RB added/VBN while/IN an/DT immediately/RB needed/VBN function/NN was/VBD being/VBG added/VBN
+There/EX were/VBD two/CD triggers/NNS for/IN deletion/NN Mistaken/NNP addition/NN trigger/NN
+A/DT function/NN was/VBD added/VBN by/IN mistake/NN
+It/PRP was/VBD not/RB intended/VBN or/CC was/VBD the/DT wrong/JJ function/NN
+Non/NNP use/NN trigger/NN
+A/DT function/NN is/VBZ not/RB being/VBG used/VBN
+Only/RB 3/CD participants/NNS deleted/VBD a/DT combined/VBN total/NN of/IN seven/CD functions/NNS one/CD two/CD and/CC four/CD functions/NNS respectively/RB
+In/IN all/DT seven/CD cases/NNS the/DT function/NN was/VBD deleted/VBN directly/RB after/IN it/PRP was/VBD added/VBN
+When/WRB queried/VBN in/IN the/DT debriefing/NN interview/NN the/DT participant/NN who/WP had/VBD deleted/VBN four/CD functions/NNS indicated/VBD that/IN she/PRP had/VBD been/VBN testing/VBG the/DT personalizing/VBG mechanism/NN and/CC the/DT other/JJ 2/CD participants/NNS said/VBD that/IN the/DT deleted/VBN functions/NNS had/VBD initially/RB been/VBN added/VBN by/IN mistake/NN
+Thus/RB the/DT mistaken/JJ addition/NN trigger/NN applied/VBD to/TO the/DT deletion/NN of/IN three/CD functions/NNS and/CC the/DT non/JJ use/NN trigger/NN did/VBD not/RB apply/VB to/TO any/DT deleted/VBN functions/NNS
+One/CD might/MD initially/RB assume/VB that/IN the/DT lack/NN of/IN the/DT non/JJ use/NN trigger/NN is/VBZ explainable/JJ by/IN the/DT fact/NN that/IN MSW/NNP Personal/NNP was/VBD only/RB used/VBN for/IN one/CD month/NN
+To/TO counter/VB this/DT however/RB the/DT great/JJ majority/NN of/IN participants/NNS indicated/VBN in/IN the/DT debriefing/NN interview/NN that/IN they/PRP would/MD not/RB likely/RB have/VB bothered/VBN to/TO delete/VB functions/NNS even/RB if/IN they/PRP were/VBD not/RB being/VBG used/VBN
+Finally/RB to/TO double/RB check/VB that/IN our/PRP$ participants/NNS were/VBD not/RB simply/RB customizing/VBG when/WRB reminded/VBN of/IN their/PRP$ study/NN participation/NN we/PRP investigated/VBD a/DT potential/JJ correlation/NN between/IN the/DT times/NNS when/WRB subjects/NNS personalized/VBD their/PRP$ interfaces/NNS and/CC times/NNS when/WRB questionnaires/NNS were/VBD due/JJ
+For/IN questionnaires/NNS Q1/CD and/CC Q2/CD 68/CD and/CC 63/CD of/IN the/DT subjects/NNS respectively/RB did/VBD perform/VB at/IN least/JJS one/CD customization/NN on/IN the/DT days/NNS when/WRB those/DT questionnaires/NNS were/VBD answered/VBN
+This/DT is/VBZ not/RB surprising/JJ however/RB given/VBN the/DT minimal/JJ starting/VBG Personal/NNP Interface/NNP and/CC the/DT strong/JJ initial/JJ trigger/NN
+Excluding/VBG customization/NN that/WDT overlapped/VBD with/IN Q1/NNP and/CC Q2/NNP there/EX was/VBD only/RB an/DT average/JJ 17/CD
+3/CD overlap/NN of/IN customization/NN with/IN Q3/NNP through/IN Q6/NNP N/NNP 19/CD
+If/IN we/PRP consider/VBP only/RB those/DT who/WP didn/VBP t/NN give/VB up/RP that/DT average/NN is/VBZ only/RB slightly/RB higher/JJR at/IN 20/CD
+1/CD N/NNP 12/CD
+Thus/RB the/DT data/NNS suggests/VBZ that/DT personalization/NN was/VBD not/RB being/VBG triggered/VBN by/IN questionnaire/NN completion/NN but/CC was/VBD done/VBN at/IN various/JJ times/NNS during/IN the/DT roughly/RB six/CD days/NNS preceding/VBG the/DT days/NNS when/WRB each/DT of/IN the/DT Q3/NNP Q4/NNP Q5/NNP and/CC Q6/NNP questionnaires/NNS were/VBD answered/VBN
+Summary/NNP The/DT initial/JJ trigger/NN accounted/VBD for/IN the/DT majority/NN of/IN additions/NNS 77/CD
+When/WRB participants/NNS added/VBD an/DT immediately/RB needed/VBN function/NN 9/CD they/PRP would/MD typically/RB also/RB add/VB a/DT function/NN they/PRP expected/VBD to/TO use/VB in/IN the/DT future/JJ 13/CD or/CC one/CD they/PRP had/VBD already/RB used/VBN 1/CD
+Seven/CD functions/NNS were/VBD deleted/VBN four/CD to/TO test/VB the/DT mechanism/NN and/CC three/CD because/IN they/PRP had/VBD originally/RB been/VBN added/VBN by/IN mistake/NN
+Hypothesis/NNP Supported/NNP Yes/NNPS
+Discussion/NN and/CC Additional/NNP Qualitative/NNP Feedback/NNP
+Here/RB we/PRP discuss/VBP our/PRP$ findings/NNS about/IN personalization/NN behavior/NN and/CC specifically/RB how/WRB the/DT multiple/JJ interfaces/NNS design/NN impacted/VBD this/DT behavior/NN
+We/PRP include/VBP selected/VBN comments/NNS made/VBN by/IN the/DT participants/NNS about/IN MSW/NNP Personal/NNP both/DT from/IN the/DT open/NN ended/VBD sections/NNS in/IN questionnaires/NNS Q1/CD through/IN Q8/CD and/CC in/IN the/DT final/JJ debriefing/NN interview/NN
+The/DT goal/NN is/VBZ to/TO bring/VB the/DT quantitative/JJ data/NNS to/TO life/NN by/IN placing/VBG it/PRP in/IN the/DT context/NN of/IN the/DT qualitative/JJ data/NNS
+Approach/NNP to/TO Personalization/NNP
+MSWord/NNP Personal/NNP appears/VBZ to/TO provide/VB sufficient/JJ flexibility/NN to/TO allow/VB users/NNS to/TO personalize/VB as/IN they/PRP see/VBP fit/NN
+Of/IN the/DT 13/CD participants/NNS who/WP did/VBD not/RB give/VB up/RP there/EX was/VBD almost/RB an/DT even/JJ distribution/NN between/IN the/DT four/CD combinations/NNS of/IN when/WRB and/CC which/WDT frequently/RB used/VBD upfront/JJ 2/CD frequently/RB used/VBN as/IN you/PRP go/VBP 4/CD all/DT upfront/JJ 4/CD all/DT as/IN you/PRP go/VBP 3/CD
+We/PRP speculate/VBP that/IN this/DT flexibility/NN played/VBD a/DT key/JJ role/NN in/IN the/DT success/NN of/IN the/DT multiple/JJ interfaces/NNS design/NN
+Having/VBG said/VBD that/IN it/PRP is/VBZ interesting/JJ to/TO note/VB that/IN none/NN of/IN the/DT participants/NNS who/WP took/VBD the/DT approach/NN of/IN adding/VBG functions/NNS upfront/WDT ended/VBD up/RP giving/VBG up/RP
+This/DT suggests/VBZ that/IN personalizing/VBG upfront/PRP may/MD be/VB a/DT more/RBR effective/JJ strategy/NN than/IN as/IN you/PRP go/VBP
+User/NNP Assisted/NNP Personalization/NNP
+Four/CD participants/NNS suggested/VBD having/VBG some/DT automated/VBN assistance/NN in/IN the/DT construction/NN of/IN their/PRP$ Personal/NNP Interfaces/NNPS but/CC some/DT of/IN them/PRP did/VBD acknowledge/VB loss/NN of/IN control/NN as/IN a/DT potential/JJ negative/JJ side/NN effect/NN
+Interestingly/RB the/DT quote/NN below/IN is/VBZ from/IN Participant/JJ 7/CD he/PRP was/VBD annoyed/VBN by/IN the/DT adaptive/JJ menus/NN and/CC yet/RB he/PRP was/VBD still/RB hopeful/JJ that/IN the/DT Personal/NNP Interface/NNP could/MD be/VB built/VBN automatically/RB
+So/RB if/IN I/PRP could/MD have/VB something/NN where/WRB it/PRP automatically/RB creates/VBZ the/DT personal/JJ based/VBN on/IN my/PRP$ use/NN without/IN having/VBG to/TO point/NN and/CC click/NN buttons/NNS around/IN which/WDT is/VBZ easy/JJ enough/RB but/CC a/DT bit/NN of/IN a/DT pain/NN if/IN it/PRP automatically/RB could/MD do/VB it/PRP for/IN me/PRP so/RB that/IN over/IN time/NN I/PRP created/VBD a/DT personal/JJ interface/NN by/IN default/NN so/IN my/PRP$ usage/NN pattern/NN creates/VBZ it/PRP without/IN that/IN annoying/VBG short/JJ menu/NN stuff/NN that/WDT would/MD be/VB nice/JJ
+Because/IN then/RB I/PRP wouldn/MD t/VB actually/RB have/VBP to/TO think/VB about/IN it/PRP I/PRP d/VBD just/RB use/VB Word/NNP and/CC it/PRP would/MD create/VB it/PRP as/IN I/PRP go/VBP
+Interview/NNP Participant/NNP 7/CD It/PRP is/VBZ not/RB yet/RB clear/JJ whether/IN fully/RB automated/VBN interface/NN construction/NN is/VBZ effective/JJ but/CC user/NN assisted/VBN personalization/NN has/VBZ potential/JJ
+Knowledge/NNP about/IN customization/NN triggers/NNS should/MD play/VB a/DT role/NN in/IN how/WRB the/DT assistance/NN is/VBZ designed/VBN
+We/PRP return/VBP to/TO this/DT topic/NN in/IN the/DT final/JJ section/NN of/IN this/DT paper/NN
+Role/NNP of/IN the/DT Full/NNP Interface/NNP
+We/PRP checked/VBD whether/IN having/VBG the/DT Full/NNP Interface/NNP was/VBD considered/VBN important/JJ
+Customizable/JJ interfaces/NNS do/VBP not/RB generally/RB provide/VB easy/JJ access/NN to/TO the/DT entire/JJ set/NN of/IN functionality/NN except/IN through/IN a/DT full/JJ reset/NN which/WDT results/VBZ in/IN loss/NN of/IN the/DT customization/NN effort/NN
+We/PRP found/VBD that/IN having/VBG the/DT Full/NNP Interface/NNP was/VBD generally/RB well/RB liked/VBN
+While/IN there/EX were/VBD two/CD participants/NNS who/WP did/VBD not/RB make/VB use/NN of/IN it/PRP at/IN all/PDT the/DT great/JJ majority/NN did/VBD use/VB it/PRP at/IN least/JJS once/RB and/CC appreciated/VBD having/VBG it/PRP available/JJ
+Example/NN representative/NN comments/NNS include/VBP I/PRP d/VBP always/RB want/VBP to/TO have/VB the/DT full/JJ interface/NN to/TO go/VB to/TO just/RB as/IN like/IN a/DT baseline/NN kind/NN of/IN thing/NN
+
+
+
+Because/IN that/DT Word/NNP the/DT full/JJ interface/NN was/VBD there/EX it/PRP was/VBD this/DT safety/NN net/NN of/IN yah/NN I/PRP know/VBP it/PRP s/VBZ over/IN there/RB if/IN I/PRP ever/RB do/VBP need/VB it/PRP anyways/RB
+Interview/NNP Participant/NNP 11/CD I/PRP like/IN the/DT security/NN blanket/NN of/IN having/VBG the/DT full/JJ interface/NN but/CC over/IN a/DT longer/JJR period/NN of/IN time/NN I/PRP probably/RB would/MD have/VB extinguished/VBN my/PRP$ use/NN of/IN it/PRP pretty/RB much/RB
+Interview/NNP Participant/NNP 17/CD What/WP I/PRP would/MD really/RB hate/VB is/VBZ if/IN the/DT personal/JJ one/CD if/IN you/PRP couldn/MD t/RB go/VB back/RB and/CC forth/RB
+The/DT fact/NN that/IN you/PRP could/MD back/VB and/CC forth/RB and/CC that/IN it/PRP was/VBD so/RB easy/JJ to/TO go/VB back/RB and/CC forth/RB that/DT was/VBD very/RB good/JJ
+Interview/NNP Participant/NNP 13/CD So/NNP although/IN our/PRP$ evaluation/NN did/VBD not/RB assess/VB an/DT easy/JJ to/TO customize/VB Personal/NNP Interface/NNP in/IN the/DT absence/NN of/IN an/DT easy/JJ to/TO access/VB Full/NNP Interface/NNP our/PRP$ data/NNS suggests/VBZ that/IN the/DT Full/NNP Interface/NNP is/VBZ an/DT integral/JJ part/NN of/IN the/DT design/NN and/CC that/IN personalizing/VBG behavior/NN would/MD be/VB significantly/RB altered/VBN without/IN having/VBG a/DT full/JJ interface/NN available/JJ
+Initial/NNP Personal/NNP Interface/NNP
+We/PRP initialized/VBD the/DT Personal/NNP Interface/NNP to/TO be/VB small/JJ with/IN the/DT goal/NN of/IN forcing/VBG customization/NN
+Two/CD participants/NNS felt/VBD that/IN the/DT Personal/NNP Interface/NNP should/MD have/VB initially/RB included/VBN more/JJR functions/NNS those/DT functions/NNS that/WDT are/VBP used/VBN by/IN everyone/NN
+For/IN example/NN If/IN there/EX was/VBD an/DT interface/NN maybe/RB it/PRP differs/VBZ by/IN industry/NN I/PRP don/VBP t/CC know/VBP but/CC with/IN the/DT most/RBS common/JJ functions/NNS like/IN print/NN
+Everyone/NN prints/NNS
+Everyone/NN makes/VBZ things/NNS bold/JJ
+So/RB if/IN there/EX was/VBD a/DT kind/NN of/IN pre/NN selected/VBN simple/JJ menu/NN that/WDT wasn/VBD t/VB overwhelming/JJ
+I/PRP would/MD maybe/RB be/VB tempted/VBN to/TO prefer/VB something/NN like/IN that/DT
+Like/IN it/PRP would/MD make/VB my/PRP$ decision/NN harder/JJR to/TO decide/VB should/MD I/PRP use/VB the/DT full/JJ 2000/CD interface/NN or/CC the/DT personal/JJ interface/NN and/CC then/RB be/VB able/JJ to/TO switch/VB
+That/DT distinction/NN would/MD be/VB a/DT little/JJ less/RBR clear/JJ in/IN my/PRP$ mind/NN
+So/RB if/IN there/EX was/VBD a/DT pre/NN selected/VBN bunch/NN of/IN functions/NNS that/IN everyone/NN happens/VBZ to/TO use/VB and/CC I/PRP happen/VBP to/TO fit/VB into/IN that/DT everyone/NN category/NN
+
+
+Interview/NNP Participant/NNP 3/CD The/DT implicit/JJ assumption/NN by/IN these/DT participants/NNS is/VBZ that/IN such/PDT a/DT set/NN exists/VBZ
+Research/NN by/IN Greenberg/NNP into/IN UNIX/NNP command/NN usage/NN showed/VBD however/RB that/IN there/EX is/VBZ only/RB minimal/JJ command/NN overlap/VBP even/RB between/IN participants/NNS within/IN the/DT same/JJ group/NN who/WP are/VBP performing/VBG similar/JJ tasks/NNS Greenberg/NNP 1993/CD
+We/PRP expect/VBP that/IN similar/JJ results/NNS would/MD be/VB found/VBN for/IN MSWord/NNP command/NN usage/NN 7/CD but/CC additional/JJ research/NN would/MD be/VB required/VBN to/TO substantiate/VB that/DT claim/NN
+Assuming/VBG for/IN the/DT moment/NN the/DT existence/NN of/IN a/DT reasonable/JJ set/NN of/IN functions/NNS that/WDT could/MD be/VB used/VBN to/TO initialize/VB the/DT Personal/NNP Interface/NNP it/PRP would/MD be/VB interesting/JJ to/TO see/VB how/WRB personalizing/VBG behavior/NN might/MD change/VB with/IN such/PDT a/DT relatively/RB large/JJ initial/JJ Personal/NNP Interface/NNP
+On/IN the/DT one/CD hand/NN users/NNS would/MD not/RB have/VB to/TO take/VB the/DT time/NN to/TO do/VB any/DT initial/JJ customization/NN
+On/IN the/DT other/JJ hand/NN users/NNS would/MD not/RB be/VB taking/VBG ownership/NN of/IN their/PRP$ Personal/NNP Interfaces/NNP from/IN the/DT outset/NN which/WDT could/MD diminish/VB their/PRP$ overall/JJ engagement/NN in/IN the/DT personalization/NN process/NN
+Another/DT possible/JJ research/NN avenue/NN would/MD be/VB to/TO investigate/VB appropriate/JJ initial/JJ Personal/NNP Interfaces/NNP based/VBN on/IN individual/JJ differences/NNS feature/VBP keen/JJ
+shy/JJ
+Usability/NN of/IN MSWord/NNP Personal/NNP
+Our/PRP$ participants/NNS identified/VBD some/DT basic/JJ usability/NN improvements/NNS to/TO the/DT implementation/NN of/IN the/DT personalizing/VBG mechanism/NN
+Three/CD participants/NNS commented/VBD that/IN it/PRP was/VBD somewhat/RB cumbersome/JJ
+The/DT confirming/VBG dialog/NN box/NN that/WDT appears/VBZ after/IN the/DT selection/NN of/IN each/DT function/NN was/VBD seen/VBN to/TO be/VB unnecessary/JJ
+For/IN example/NN The/DT double/JJ menu/NN that/IN you/PRP get/VBP
+
+
+I/PRP found/VBD confusing/VBG a/DT little/JJ bit/NN but/CC it/PRP was/VBD easy/JJ to/TO use/VB
+
+
+
+It/PRP s/VBZ a/DT little/JJ clunky/JJ
+Interview/NNP Participant/NNP 17/CD I/PRP mean/VBP it/PRP wasn/MD t/VB difficult/JJ
+It/PRP was/VBD just/RB you/PRP had/VBD to/TO click/VB and/CC you/PRP had/VBD to/TO click/VB again/RB and/CC click/VB again/RB and/CC go/VB back/RB and/CC go/VB forth/RB it/PRP was/VBD just/RB bulky/JJ
+Interview/NNP Participant/NNP 22/CD Three/CD participants/NNS wanted/VBD to/TO be/VB able/JJ to/TO add/VB an/DT entire/JJ menu/NN at/IN once/RB
+The/DT current/JJ design/NN requires/VBZ each/DT menu/NN item/NN to/TO be/VB added/VBN one/CD at/IN a/DT time/NN and/CC because/IN of/IN the/DT number/NN of/IN steps/NNS involved/VBN this/DT can/MD be/VB time/NN consuming/VBG if/IN the/DT majority/NN of/IN a/DT menu/NN is/VBZ desired/VBN
+Four/CD participants/NNS felt/VBD that/IN MSW/NNP Personal/NNP was/VBD a/DT good/JJ start/NN but/CC in/IN addition/NN to/TO simply/RB selecting/VBG a/DT subset/NN of/IN functions/NNS for/IN their/PRP$ Personal/NNP Interfaces/NNPS they/PRP wanted/VBD to/TO be/VB able/JJ to/TO restructure/VB the/DT menu/NN hierarchies/VBZ I/PRP would/MD like/VB to/TO be/VB able/JJ to/TO rewrite/VB the/DT stupid/JJ menu/NN structure/NN of/IN the/DT MS/NNP Word/NNP program/NN not/RB just/RB select/VB the/DT options/NNS that/IN I/PRP want/VBP within/IN the/DT stupid/JJ tree/NN structure/NN
+Q4/CD Participant/NNP 7/CD I/PRP would/MD have/VB liked/VBN to/TO put/VB things/NNS in/IN different/JJ places/NNS you/PRP know/VBP
+And/CC this/DT is/VBZ bad/JJ because/IN I/PRP do/VBP this/DT in/IN Word/NNP because/IN I/PRP don/VBP t/NN like/IN what/WP they/PRP have/VBP decided/VBN is/VBZ on/IN this/DT menu/NN
+Interview/NNP Participant/NNP 11/CD Both/DT of/IN these/DT participants/NNS were/VBD surprised/VBN when/WRB they/PRP were/VBD informed/VBN at/IN the/DT end/NN of/IN the/DT evaluation/NN that/IN this/DT restructuring/NN functionality/NN was/VBD available/JJ through/IN MSWord/NNP s/VBZ native/JJ customization/NN facility/NN
+It/PRP is/VBZ worth/JJ noting/VBG that/IN these/DT comments/NNS were/VBD made/VBN by/IN Participants/NNS 7/CD and/CC 11/CD both/DT of/IN whom/WP are/VBP expert/JJ longterm/JJ users/NNS of/IN MSWord/NNP
+One/CD participant/NN requested/VBD the/DT ability/NN to/TO have/VB more/JJR than/IN two/CD interfaces/NNS she/PRP wanted/VBD different/JJ Personal/NNP Interfaces/NNP related/VBD to/TO the/DT different/JJ tasks/NNS she/PRP performed/VBD One/CD thing/NN that/WDT would/MD have/VB been/VBN cool/JJ is/VBZ if/IN I/PRP could/MD have/VB had/VBN different/JJ settings/NNS
+Like/IN if/IN you/PRP have/VBP the/DT default/NN Word/NNP and/CC then/RB a/DT personal/JJ
+
+
+because/IN I/PRP work/VBP on/IN charts/NNS and/CC I/PRP work/VBP on/IN just/RB regular/JJ reports/NNS
+If/IN I/PRP could/MD have/VB two/CD kind/NN of/IN different/JJ settings/NNS say/VBP this/DT is/VBZ going/VBG to/TO be/VB my/PRP$ flowchart/NN settings/NNS
+And/CC those/DT would/MD have/VB draw/VBN all/PDT the/DT draw/NN and/CC shape/NN tools/NNS and/CC everything/NN
+And/CC then/RB this/DT is/VBZ my/PRP$ report/NN interface/NN and/CC that/DT would/MD just/RB have/VB regular/JJ stuff/NN
+That/DT would/MD have/VB been/VBN cool/JJ
+And/CC I/PRP don/VBP t/CC know/VBP if/IN a/DT lot/NN of/IN people/NNS work/VBP like/IN that/DT
+Because/IN sometimes/RB
+
+
+I/PRP m/VBP just/RB writing/VBG reports/NNS or/CC writing/VBG proposals/NNS and/CC stuff/NN like/IN that/DT and/CC then/RB other/JJ times/NNS I/PRP m/VBP just/RB doing/VBG very/RB different/JJ things/NNS and/CC I/PRP need/VBP to/TO switch/VB my/PRP$ orientation/NN around/IN and/CC like/IN have/VBP all/PDT this/DT drawing/NN stuff/NN
+And/CC that/DT just/RB doesn/JJ t/NN fit/NN with/IN regular/JJ writing/NN
+Interview/NNP Participant/NNP 11/CD 8/CD Our/PRP$ design/NN goal/NN for/IN the/DT customization/NN mechanism/NN was/VBD to/TO make/VB it/PRP straightforward/RB
+understandable/JJ so/IN we/PRP opted/VBD for/IN a/DT design/NN that/WDT offered/VBD only/RB basic/JJ functionality/NN adding/VBG
+deleting/VBG functions/NNS and/CC that/DT could/MD be/VB learned/VBN quickly/RB through/IN trial/NN and/CC error/NN
+Despite/IN the/DT comments/NNS above/IN all/DT participants/NNS noted/VBD how/WRB easy/JJ it/PRP was/VBD to/TO use/VB the/DT addition/NN
+deletion/NN mechanism/NN
+Thus/RB we/PRP believe/VBP that/IN it/PRP was/VBD easy/JJ to/TO use/VB in/IN the/DT sense/NN that/IN it/PRP was/VBD easy/JJ to/TO figure/VB out/RP what/WP to/TO do/VB and/CC no/DT errors/NNS occurred/VBD but/CC there/EX were/VBD too/RB many/JJ steps/NNS required/VBN
+One/CD participant/NN pinpointed/VBD our/PRP$ trade/NN off/IN The/DT Add/NNP
+Delete/JJ procedure/NN seems/VBZ slow/JJ and/CC redundant/JJ for/IN some/DT reason/NN but/CC is/VBZ rather/RB idiot/JJ proof/NN
+We/PRP could/MD rectify/VB the/DT clunkiness/NN by/IN removing/VBG the/DT confirmation/NN dialog/NN box/NN and/CC designing/VBG a/DT new/JJ form/NN of/IN menu/NN such/JJ that/IN when/WRB the/DT user/NN is/VBZ selecting/VBG items/NNS from/IN a/DT menu/NN to/TO add/VB to/TO the/DT Personal/NNP Interface/NNP the/DT menu/NN stays/VBZ open/JJ and/CC check/JJ boxes/NNS appear/VBP adjacent/JJ to/TO each/DT item/NN indicating/VBG its/PRP$ availability/NN in/IN the/DT Personal/NNP Interface/NNP
+Currently/RB in/IN order/NN to/TO add/VB a/DT menu/NN item/NN the/DT user/NN selects/VBZ the/DT item/NN as/IN in/IN normal/JJ menu/NN usage/NN after/IN selection/NN the/DT menu/NN disappears/VBZ and/CC the/DT user/NN must/MD reopen/VB the/DT menu/NN in/IN order/NN to/TO add/VB another/DT item/NN
+We/PRP believe/VBP that/DT personalization/NN was/VBD affected/VBN by/IN the/DT design/NN of/IN the/DT personalizing/VBG mechanism/NN
+Some/DT participants/NNS would/MD not/RB likely/RB have/VB given/VBN up/RP if/IN functions/NNS could/MD have/VB been/VBN added/VBN more/RBR quickly/RB
+Some/DT wanted/VBD more/JJR flexibility/NN but/CC to/TO support/VB menu/PRP hierarchy/JJ restructuring/NN and/CC more/JJR than/IN one/CD Personal/NNP Interface/NNP would/MD likely/RB make/VB the/DT personalizing/VBG mechanism/NN inaccessible/JJ to/TO nonadvanced/JJ users/NNS
+The/DT native/JJ MSWord/NNP customization/NN facility/NN does/VBZ allow/VB for/IN some/DT of/IN this/DT but/CC relative/JJ to/TO our/PRP$ personalizing/VBG mechanism/NN it/PRP requires/VBZ substantially/RB more/JJR skill/NN to/TO use/VB
+We/PRP had/VBD expected/VBN the/DT flexibility/NN ratings/NNS recorded/VBN in/IN the/DT questionnaires/NNS to/TO reflect/VB the/DT limitations/NNS of/IN the/DT personalizing/VBG mechanism/NN but/CC the/DT participants/NNS rated/VBN flexibility/NN 4/CD
+0/CD out/IN of/IN 5/CD
+0/CD
+So/RB although/IN some/DT users/NNS did/VBD articulate/VB preferences/NNS for/IN additional/JJ flexibility/NN the/DT quantitative/JJ data/NNS shows/VBZ that/IN the/DT mechanism/NN was/VBD sufficiently/RB flexible/JJ for/IN most/JJS participants/NNS
+One/CD alternative/NN design/NN to/TO explore/VB would/MD be/VB two/CD levels/NNS of/IN customization/NN basic/JJ and/CC advanced/JJ
+Greater/JJR flexibility/NN would/MD be/VB available/JJ through/IN the/DT advanced/JJ level/NN but/CC users/NNS would/MD by/IN default/NN start/NN in/IN the/DT basic/JJ level/NN
+Individual/JJ Differences/NNS
+The/DT expected/VBN differences/NNS between/IN the/DT feature/NN shy/NN and/CC the/DT feature/NN keen/JJ participants/NNS did/VBD not/RB play/VB out/RP in/IN any/DT substantial/JJ way/NN in/IN how/WRB they/PRP personalized/VBD and/CC used/VBD MSW/NNP Personal/NNP and/CC what/WP they/PRP had/VBD to/TO say/VB about/IN their/PRP$ experience/NN using/VBG it/PRP
+Significant/JJ differences/NNS between/IN the/DT two/CD groups/NNS of/IN participants/NNS did/VBD appear/VB however/RB in/IN terms/NNS of/IN how/WRB MSW/NNP Personal/NNP was/VBD compared/VBN to/TO other/JJ interfaces/NNS as/RB will/MD be/VB shown/VBN in/IN the/DT next/JJ section/NN
+7/CD
+2/CD Comparison/NNP with/IN the/DT Adaptive/NNP Interface/NNP We/PRP turn/VBP now/RB to/TO the/DT remaining/VBG hypotheses/NNS which/WDT cover/VBP our/PRP$ secondary/JJ evaluation/NN goal/NN namely/RB to/TO compare/VB the/DT multiple/JJ interfaces/NNS design/NN of/IN MSW/NNP Personal/NNP to/TO the/DT adaptive/JJ interface/NN of/IN MSW2K/CD
+The/DT first/JJ four/CD of/IN these/DT hypotheses/NNS H5/NNP H8/NNP compare/VBP the/DT two/CD interfaces/NNS with/IN respect/NN to/TO satisfaction/NN navigation/NN control/NN and/CC learning/VBG
+The/DT means/NNS of/IN each/DT of/IN these/DT four/CD dependent/JJ measures/NNS at/IN Q1/NNP through/IN Q7/NNP separated/JJ by/IN personality/NN type/NN are/VBP given/VBN in/IN Figure/NN 8/CD
+A/DT series/NN of/IN three/CD factorial/JJ ANOVAs/NNP Analysis/NNP of/IN Variance/NNP was/VBD run/VBN to/TO test/VB for/IN significant/JJ differences/NNS 1/CD Q1/CD vs/NNS
+Q6/CD Compares/VBZ measures/NNS after/IN extended/JJ time/NN in/IN each/DT condition/NN
+Q1/CD responses/NNS reflect/VBP usage/NN of/IN 1/CD month/NN or/CC more/JJR with/IN MSW2K/CD
+Q6/NNP reflects/VBZ 1/CD month/NN s/NNS use/VBP of/IN MSW/NNP Personal/NNP
+2/CD Q6/CD vs/NNS
+Q7/CD Compares/VBZ measures/NNS as/IN an/DT initial/JJ reaction/NN of/IN returning/VBG to/TO MSW2K/NNP after/IN 1/CD month/NN s/NNS use/VBP of/IN MSW/NNP Personal/NNP
+3/CD Q2/NNP Q3/NNP Q4/NNP Q5/NNP Q6/NNP Compares/VBZ measures/NNS at/IN regular/JJ intervals/NNS during/IN 4/CD week/NN usage/NN of/IN MSW/NNP Personal/NNP
+In/IN addition/NN to/TO reporting/VBG statistical/JJ significance/NN we/PRP report/VBP the/DT effect/NN size/NN etasquared/VBD 2/CD which/WDT is/VBZ a/DT measure/NN of/IN the/DT magnitude/NN of/IN the/DT effect/NN of/IN a/DT difference/NN that/WDT is/VBZ independent/JJ of/IN sample/NN size/NN
+Both/DT Landauer/NNP 1997/CD and/CC Vicente/NNP and/CC Torenvliet/NNP 2000/CD note/NN that/IN effect/NN size/NN is/VBZ often/RB more/RBR appropriate/JJ than/IN statistical/JJ significance/NN in/IN applied/JJ research/NN such/JJ as/IN Human/NNP Computer/NNP Interaction/NNP
+The/DT commonly/RB accepted/VBN metric/JJ for/IN interpreting/VBG eta/NN squared/VBD is/VBZ 0/CD
+01/CD is/VBZ a/DT small/JJ effect/NN 0/CD
+06/CD is/VBZ medium/JJ and/CC 0/CD
+14/CD is/VBZ large/JJ
+H5/CD Satisfaction/NNP Hypothesis/NNP
+The/DT MSWord/NNP versions/NNS impacted/VBD the/DT satisfaction/NN of/IN the/DT two/CD groups/NNS of/IN participants/NNS differently/RB Figure/VBP 8/CD
+There/EX was/VBD a/DT borderline/NN significant/JJ cross/NN over/IN interaction/NN for/IN Q1/CD vs/NNS
+Q6/NNP F/NNP 1/CD 18/CD 4/CD
+12/CD MSE/NNP 0/CD
+98/CD p/NN 0/CD
+057/CD 2/CD 0/CD
+19/CD prompting/VBG us/PRP to/TO test/VB the/DT simple/JJ effects/NNS for/IN each/DT group/NN of/IN participants/NNS independently/RB
+The/DT Q1/CD vs/NNS
+Q6/CD comparison/NN was/VBD not/RB significant/JJ for/IN the/DT feature/NN keen/JJ participants/NNS however/RB the/DT increase/NN in/IN satisfaction/NN was/VBD borderline/NN significant/JJ for/IN the/DT feature/NN shy/JJ F/NNP 1/CD 9/CD 3/CD
+65/CD MSE/NNP 1/CD
+34/CD p/NN 0/CD
+089/CD 2/CD 0/CD
+29/CD
+Two/CD further/JJ tests/NNS compared/VBD the/DT satisfaction/NN of/IN the/DT feature/NN shy/JJ participants/NNS to/TO the/DT feature/NN keen/JJ participants/NNS at/IN Q1/NNP and/CC then/RB at/IN Q6/CD
+The/DT feature/NN shy/NN were/VBD found/VBN to/TO be/VB borderline/VBN significantly/RB less/RBR satisfied/JJ than/IN the/DT feature/NN keen/VBN while/IN using/VBG MSW2K/NNP at/IN Q1/NNP t/NN 18/CD 2/CD
+04/CD p/NN 0/CD
+056/CD
+However/RB there/EX was/VBD no/DT significant/JJ difference/NN detected/VBN between/IN the/DT two/CD groups/NNS while/IN using/VBG MSW/NNP Personal/NNP at/IN Q6/NNP
+When/WRB participants/NNS returned/VBD to/TO MSW2K/NNP Q6/NNP to/TO Q7/VB the/DT feature/NN shy/NN appear/VBP to/TO have/VB dropped/VBN in/IN satisfaction/NN and/CC the/DT feature/NN keen/NN had/VBD effectively/RB no/DT change/NN but/CC this/DT cross/NN over/IN interaction/NN was/VBD not/RB significant/JJ
+Summary/NNP The/DT analysis/NN suggests/VBZ that/IN the/DT feature/NN shy/JJ participants/NNS were/VBD less/RBR satisfied/JJ than/IN the/DT feature/NN keen/JJ participants/NNS when/WRB using/VBG MSW2K/NNP however/RB the/DT feature/NN shy/JJ participants/NNS experienced/VBD an/DT increase/NN in/IN satisfaction/NN while/IN using/VBG MSW/NNP Personal/NNP
+The/DT feature/NN keen/JJ participants/NNS did/VBD not/RB experience/VB any/DT change/NN in/IN satisfaction/NN when/WRB they/PRP switched/VBD to/TO MSW/NNP Personal/NNP
+Hypothesis/NNP Supported/VBD Partially/RB
+Feature/NN shy/NN participants/NNS were/VBD more/RBR satisfied/JJ with/IN MSW/NNP Personal/NNP than/IN with/IN MSW2K/NNP but/CC they/PRP were/VBD not/RB more/RBR satisfied/JJ with/IN MSWord/NNP Personal/NNP than/IN the/DT feature/NN keen/JJ participants/NNS
+H6/NNP Navigation/NNP Hypothesis/NNP
+The/DT version/NN of/IN MSWord/NNP had/VBD a/DT significant/JJ main/JJ effect/NN on/IN participants/NNS perceived/VBN ability/NN to/TO navigate/VB in/IN both/PDT the/DT Q1/CD vs/NNS
+Q6/CD comparison/NN F/NNP 1/CD 18/CD 5/CD
+76/CD MSE/NNP 1/CD
+05/CD p/NN 0/CD
+027/CD 2/CD 0/CD
+24/CD and/CC the/DT Q6/CD vs/NNS
+Q7/CD comparison/NN F/NNP 1/CD 18/CD 8/CD
+02/CD MSE/NNP 1/CD
+22/CD p/NN 0/CD
+011/CD 2/CD 0/CD
+31/CD Figure/NN 8/CD
+Both/DT comparisons/NNS favored/VBD MSW/NNP Personal/NNP
+There/EX was/VBD a/DT borderline/NN significant/JJ learning/VBG effect/NN in/IN Q2/CD through/IN Q6/NNP F/NNP 4/CD 72/CD 2/CD
+38/CD MSE/NNP 0/CD
+18/CD p/NN 0/CD
+06/CD 2/CD 0/CD
+12/CD indicating/VBG that/DT navigation/NN became/VBD easier/JJR over/IN time/NN unsurprisingly/RB none/NN of/IN the/DT post/NN hoc/NN pairwise/NN comparisons/NNS with/IN the/DT Bonferonni/NNP error/NN correction/NN were/VBD significant/JJ
+Summary/NNP The/DT analysis/NN suggests/VBZ that/IN both/DT the/DT feature/NN keen/NN and/CC the/DT featureshy/JJ participants/NNS found/VBD it/PRP easier/JJR to/TO navigate/VB the/DT menus/NNS and/CC the/DT toolbars/NNS using/VBG MSW/NNP Personal/NNP than/IN MSW2K/NNP
+Hypothesis/NNP Supported/NNP Yes/NNPS
+H7/NNP Control/NNP Hypothesis/NNP
+The/DT results/NNS of/IN the/DT Q1/CD vs/NNS
+Q6/CD comparison/NN of/IN control/NN are/VBP dominated/VBN by/IN a/DT borderline/NN significant/JJ interaction/NN F/NNP 1/CD 18/CD 4/CD
+38/CD MSE/NNP 0/CD
+82/CD p/NN 0/CD
+051/CD 2/CD 0/CD
+20/CD Figure/NN 8/CD
+Testing/VBG the/DT simple/JJ effects/NNS found/VBD the/DT Q1/CD vs/NNS
+Q6/CD comparison/NN to/TO be/VB nonsignificant/JJ for/IN the/DT feature/NN keen/JJ participants/NNS however/RB the/DT feature/NN shy/NN perceived/VBD a/DT significant/JJ increase/NN in/IN control/NN F/NNP 1/CD 9/CD 11/CD
+17/CD MSE/NNP 0/CD
+64/CD p/NN 0/CD
+009/CD 2/CD 0/CD
+55/CD
+Two/CD further/JJ tests/NNS compared/VBN control/NN for/IN the/DT feature/NN shy/JJ participants/NNS to/TO the/DT feature/NN keen/JJ participants/NNS at/IN Q1/NNP and/CC then/RB at/IN Q6/CD
+The/DT feature/NN shy/NN reported/VBD significantly/RB less/JJR control/NN than/IN the/DT feature/NN keen/VBN while/IN using/VBG MSW2K/NNP at/IN Q1/NNP t/NN 18/CD 2/CD
+72/CD p/NN 0/CD
+014/CD
+However/RB there/EX was/VBD no/DT significant/JJ difference/NN detected/VBN between/IN the/DT two/CD groups/NNS while/IN using/VBG MSW/NNP Personal/NNP at/IN Q6/NNP
+There/EX was/VBD a/DT main/JJ effect/NN for/IN control/NN from/IN Q6/NNP to/TO Q7/NNP F/NNP 1/CD 18/CD 5/CD
+89/CD MSE/NNP 0/CD
+51/CD p/NN 0/CD
+026/CD 2/CD 0/CD
+25/CD suggesting/VBG that/IN both/DT groups/NNS of/IN participants/NNS felt/VBD a/DT loss/NN of/IN control/NN when/WRB returning/VBG to/TO MSW2K/CD
+The/DT statement/NN being/VBG rated/VBN reflects/VBZ a/DT participant/JJ s/NNS general/JJ sense/NN of/IN control/NN over/IN the/DT software/NN and/CC not/RB simply/RB their/PRP$ control/NN of/IN the/DT menus/NNS and/CC toolbars/NNS
+Summary/NNP The/DT analysis/NN suggests/VBZ that/IN at/IN the/DT outset/NN the/DT feature/NN shy/JJ participants/NNS felt/VBD that/IN they/PRP were/VBD less/JJR in/IN control/NN of/IN the/DT MSW2K/NNP software/NN than/IN did/VBD the/DT feature/NN keen/JJ participants/NNS however/RB the/DT feature/NN shy/JJ participants/NNS experienced/VBD an/DT increase/NN in/IN control/NN with/IN MSW/NNP Personal/NNP
+The/DT feature/NN keen/JJ participants/NNS did/VBD not/RB experience/VB a/DT change/NN in/IN control/NN when/WRB they/PRP switched/VBD to/TO MSW/NNP Personal/NNP
+Both/DT groups/NNS of/IN participants/NNS appear/VBP to/TO have/VB experienced/VBN a/DT loss/NN of/IN control/NN when/WRB they/PRP switched/VBD back/RB to/TO MSW2K/NNP after/IN having/VBG used/VBN MSW/NNP Personal/NNP for/IN 4/CD weeks/NNS
+Hypothesis/NNP Supported/VBD Partially/RB
+Feature/NN shy/JJ participants/NNS felt/VBD a/DT better/JJR sense/NN of/IN control/NN with/IN MSWord/NNP Personal/NNP but/CC this/DT was/VBD not/RB the/DT case/NN for/IN the/DT feature/NN keen/JJ participants/NNS
+H8/CD Learnability/NNP Hypothesis/NNP
+In/IN the/DT Q1/CD vs/NNS
+Q6/CD comparison/NN the/DT MSWord/NNP version/NN had/VBD a/DT borderline/NN significant/JJ main/JJ effect/NN on/IN learnability/NN F/NNP 1/CD 18/CD 4/CD
+13/CD MSE/NNP 0/CD
+61/CD p/NN 0/CD
+057/CD 2/CD 0/CD
+19/CD showing/VBG that/IN both/DT groups/NNS of/IN participants/NNS perceived/VBN ability/NN to/TO learn/VB the/DT available/JJ functions/NNS was/VBD greater/JJR with/IN MSW/NNP Personal/NNP than/IN with/IN MSW2K/NNP Figure/NNP 8/CD
+Personality/NN type/NN also/RB had/VBD a/DT borderline/NN significant/JJ main/JJ effect/NN on/IN learnability/NN F/NNP 1/CD 18/CD 4/CD
+07/CD MSE/NNP 0/CD
+60/CD p/NN 0/CD
+059/CD 2/CD 0/CD
+18/CD showing/VBG that/IN independent/JJ of/IN software/NN version/NN feature/NN keen/JJ participants/NNS felt/VBD better/RBR able/JJ to/TO learn/VB the/DT functionality/NN offered/VBN than/IN did/VBD the/DT feature/NN shy/JJ participants/NNS
+The/DT Q6/CD vs/NNS
+Q7/CD comparison/NN showed/VBD that/IN the/DT software/NN version/NN had/VBD a/DT borderline/NN significant/JJ main/JJ effect/NN F/NNP 1/CD 18/CD 3/CD
+08/CD MSE/NNP 0/CD
+20/CD p/NN 0/CD
+096/CD 2/CD 0/CD
+15/CD whereby/WRB participants/NNS perceived/VBN ability/NN to/TO learn/VB decreased/VBN when/WRB they/PRP returned/VBD to/TO MSW2K/CD
+Summary/NNP The/DT analysis/NN suggests/VBZ that/IN the/DT feature/NN keen/JJ participants/NNS generally/RB find/VBP it/PRP easier/JJR to/TO learn/VB functions/NNS than/IN do/VBP the/DT feature/NN shy/JJ participants/NNS and/CC that/IN overall/JJ it/PRP was/VBD easier/JJR to/TO learn/VB functions/NNS with/IN MSW/NNP Personal/NNP than/IN with/IN MSW2K/CD
+Hypothesis/NNP supported/VBD Yes/UH
+H9/CD Three/CD way/NN Comparison/NNP Hypothesis/NNP
+In/IN the/DT final/JJ debriefing/NN interview/NN participants/NNS were/VBD asked/VBN if/IN they/PRP could/MD explain/VB how/WRB what/WP they/PRP called/VBD the/DT changing/VBG menus/NN worked/VBD MSW2K/CD s/NNS adaptive/JJ menus/NNS
+Although/IN all/DT participants/NNS were/VBD aware/JJ of/IN the/DT short/JJ and/CC long/JJ menus/NNS and/CC could/MD explain/VB how/WRB to/TO expand/VB the/DT menus/NN 7/CD of/IN the/DT 20/CD participants/NNS 35/CD had/VBD to/TO be/VB informed/VBN that/IN the/DT short/JJ menus/NNS were/VBD in/IN fact/NN adapting/VBG to/TO their/PRP$ personal/JJ usage/NN
+Given/VBN our/PRP$ sample/NN which/WDT included/VBD no/DT novice/NN users/NNS this/DT was/VBD particularly/RB suprising/VBG
+Participants/NNS were/VBD then/RB asked/VBN to/TO rank/VB according/VBG to/TO preference/VB MSW/NNP Personal/NNP MSW2K/NNP with/IN adaptive/JJ menus/NNS and/CC MSW2K/NNP without/IN adaptive/JJ menus/NNS the/DT standard/NN all/DT in/IN one/CD style/NN interface/NN
+Figure/NN 9/CD shows/VBZ the/DT frequency/NN of/IN the/DT three/CD way/NN rankings/NNS
+Of/IN the/DT six/CD possible/JJ rankings/NNS only/RB five/CD occurred/VBD
+We/PRP analyzed/VBD the/DT frequency/NN with/IN which/WDT each/DT menu/NN condition/NN was/VBD ranked/VBN first/RB by/IN calculating/VBG the/DT Chi/NNP square/VBP statistic/JJ to/TO determine/VB if/IN actual/JJ frequencies/NNS were/VBD significantly/RB different/JJ from/IN the/DT case/NN in/IN which/WDT all/DT frequencies/NNS are/VBP equal/JJ
+If/IN we/PRP consider/VBP all/DT 20/CD participants/NNS there/EX was/VBD a/DT significant/JJ overall/JJ preference/NN for/IN MSW/NNP Personal/NNP 13/CD participants/NNS 65/CD 2/CD 2/CD 20/CD 9/CD
+10/CD p/NN 0/CD
+011/CD
+We/PRP can/MD not/RB apply/VB the/DT Chi/NNP square/VBP statistic/JJ independently/RB for/IN the/DT feature/NN keen/NN and/CC feature/NN shy/JJ because/IN of/IN our/PRP$ small/JJ sample/NN sizes/NNS
+Instead/RB we/PRP next/RB describe/VBP the/DT data/NNS for/IN each/DT group/NN to/TO indicate/VB possible/JJ trends/NNS
+To/TO make/VB two/CD way/NN comparisons/NNS between/IN the/DT interfaces/NNS for/IN each/DT of/IN the/DT personality/NN types/VBZ we/PRP aggregated/VBD across/IN the/DT rankings/NNS
+For/IN example/NN by/IN looking/VBG at/IN the/DT two/CD leftmost/RBS ranking/JJ orders/NNS in/IN the/DT figure/NN we/PRP see/VBP that/IN 7/CD feature/NN shy/JJ participants/NNS preferred/VBN MSW/NNP Personal/NNP to/TO the/DT other/JJ two/CD designs/NNS
+From/IN the/DT remaining/VBG ranking/JJ orders/NNS we/PRP see/VBP that/IN 3/CD feature/NN shy/JJ participants/NNS ranked/VBD the/DT all/DT in/IN one/CD design/NN before/IN the/DT MSW/NNP Personal/NNP design/NN
+This/DT shows/VBZ that/IN for/IN the/DT feature/NN shy/WRB there/EX was/VBD preference/NN for/IN the/DT MSW/NNP Personal/NNP to/TO the/DT all/DT in/IN one/CD design/NN 7/CD participants/NNS to/TO 3/CD participants/NNS
+One/PRP can/MD repeat/VB the/DT same/JJ steps/NNS to/TO find/VB that/IN the/DT feature/NN shy/NN preferred/VBD the/DT all/DT in/IN one/CD to/TO the/DT adaptive/JJ design/NN 8/CD to/TO 2/CD
+However/RB the/DT feature/NN keen/NN did/VBD not/RB prefer/VB the/DT all/DT in/IN one/CD to/TO both/DT the/DT adaptive/JJ and/CC MSW/NNP Personal/NNP designs/VBZ as/RB expected/VBN
+In/IN fact/NN MSW/NNP Personal/NNP was/VBD preferred/VBN to/TO adaptive/VB 7/CD to/TO 3/CD and/CC preferred/VBN to/TO the/DT all/DT in/IN one/CD 6/CD to/TO 4/CD but/CC the/DT adaptive/NN was/VBD preferred/VBN to/TO the/DT all/DT in/IN one/CD 7/CD to/TO 3/CD
+Only/RB 2/CD of/IN the/DT feature/NN shy/NN ranked/VBD adaptive/JJ before/IN all/DT in/IN one/CD as/IN compared/VBN to/TO 7/CD of/IN the/DT feature/NN keen/.
+Summary/NNP Although/IN all/DT participants/NNS were/VBD aware/JJ of/IN the/DT short/JJ and/CC long/JJ menus/NNS in/IN MSW2K/NNP 35/CD had/VBD to/TO be/VB told/VBN that/IN the/DT contents/NNS of/IN the/DT short/JJ menus/NNS were/VBD adapting/VBG to/TO their/PRP$ function/NN usage/NN
+MSWord/NNP Personal/NNP was/VBD preferred/VBN by/IN the/DT majority/NN of/IN feature/NN shy/JJ and/CC feature/JJ keen/JJ participants/NNS 65/CD of/IN all/DT participants/NNS
+Feature/NN shy/JJ s/NNS overall/RB ranking/VBG was/VBD adaptable/JJ all/DT in/IN one/CD adaptive/NN
+Feature/NN keen/JJ s/NNS overall/RB ranking/VBG was/VBD adaptable/JJ adaptive/JJ all/DT in/IN one/CD
+Hypothesis/NNP Supported/VBD Partially/RB
+Feature/NN shy/JJ participants/NNS did/VBD rank/VB adaptable/JJ all/DT in/IN one/CD and/CC then/RB adaptive/JJ but/CC the/DT feature/NN keen/JJ participants/NNS did/VBD not/RB rank/VB all/DT in/IN one/CD before/IN adaptive/JJ and/CC adaptable/JJ
+Discussion/NN and/CC Additional/NNP Qualitative/NNP Feedback/NNP
+Here/RB we/PRP discuss/VBP our/PRP$ findings/NNS related/VBN to/TO the/DT comparison/NN of/IN the/DT two/CD interfaces/NNS
+As/IN before/IN we/PRP include/VBP participants/NNS comments/NNS both/DT from/IN the/DT open/NN ended/VBD sections/NNS in/IN questionnaires/NNS Q1/CD through/IN Q8/CD and/CC in/IN the/DT final/JJ debriefing/NN interview/NN to/TO provide/VB more/JJR context/NN for/IN the/DT quantitative/JJ results/NNS
+Adaptive/NNP Menus/NNP
+The/DT adaptive/JJ menus/NN of/IN MSW2K/NNP were/VBD liked/VBN by/IN some/DT and/CC strongly/RB disliked/VBN by/IN many/JJ but/CC others/NNS had/VBD little/JJ opinion/NN either/DT way/NN
+There/EX were/VBD three/CD participants/NNS who/WP ranked/VBD the/DT adaptive/JJ menus/NNS in/IN Word/NNP 2000/CD first/JJ
+Two/CD had/VBD very/RB positive/JJ comments/NNS when/WRB asked/VBN if/IN they/PRP were/VBD aware/JJ of/IN these/DT menus/NNS and/CC if/IN they/PRP knew/VBD how/WRB they/PRP worked/VBD
+For/IN example/NN Yes/VBZ I/PRP have/VBP noticed/VBN the/DT changing/VBG menus/NN love/NN that/IN
+It/PRP does/VBZ it/PRP on/IN my/PRP$ operating/VBG system/NN as/RB well/RB
+
+
+Yes/UH I/PRP know/VBP how/WRB they/PRP work/VBP it/PRP seems/VBZ that/IN the/DT functions/NNS that/IN you/PRP use/VBP most/RBS often/RB are/VBP the/DT ones/NNS that/WDT show/VBP up/RP
+Or/CC I/PRP don/VBP t/CC know/VBP if/IN they/PRP are/VBP the/DT ones/NNS that/IN I/PRP use/VBP most/RBS often/RB or/CC the/DT ones/NNS that/WDT are/VBP used/VBN most/RBS often/RB
+I/PRP haven/VBP t/NN figured/VBD that/IN one/CD out/RP yet/RB
+
+
+
+
+Actually/RB I/PRP don/VBP t/CC think/VBP it/PRP is/VBZ the/DT ones/NNS that/IN I/PRP use/VBP most/RBS often/RB
+I/PRP think/VBP that/IN it/PRP is/VBZ a/DT standard/JJ small/JJ set/NN and/CC then/RB you/PRP click/VBP on/IN the/DT bottom/NN and/CC the/DT whole/JJ set/NN comes/VBZ up/RP
+Interview/NNP Participant/NNP 22/CD It/PRP seems/VBZ like/IN it/PRP just/RB responds/VBZ to/TO whatever/WDT functions/NNS you/PRP use/VBP most/RBS recently/RB
+It/PRP gives/VBZ you/PRP the/DT most/RBS recent/JJ five/CD or/CC whatever/WDT
+I/PRP like/IN that/DT kind/NN of/IN personalization/NN because/IN it/PRP is/VBZ more/RBR dynamic/JJ and/CC it/PRP just/RB seems/VBZ that/IN I/PRP am/VBP always/RB changing/VBG what/WP I/PRP am/VBP doing/VBG from/IN day/NN to/TO day/NN
+Interview/NNP Participant/NNP 10/CD Interestingly/NNP both/DT participants/NNS were/VBD expert/JJ long/JJ term/NN users/NNS of/IN MSWord/NNP and/CC although/IN they/PRP were/VBD aware/JJ of/IN the/DT adaptive/JJ menus/NNS neither/CC of/IN them/PRP could/MD fully/RB explain/VB how/WRB they/PRP worked/VBD
+Participant/NNP 22/CD suspected/VBD that/IN the/DT menus/NNS adapted/VBD to/TO her/PRP$ usage/NN but/CC then/RB questioned/VBD whether/IN this/DT was/VBD right/RB
+Participant/NNP 10/CD knew/VBD that/IN they/PRP were/VBD adapting/VBG but/CC implied/VBD that/IN there/EX was/VBD a/DT maximum/JJ number/NN of/IN items/NNS that/WDT could/MD be/VB shown/VBN when/WRB in/IN fact/NN if/IN one/CD had/VBD used/VBN all/DT of/IN the/DT menu/NN items/NNS recently/RB they/PRP would/MD all/RB appear/VB in/IN the/DT short/JJ menu/NN
+This/DT suggests/VBZ that/IN the/DT user/NN does/VBZ not/RB have/VB to/TO fully/RB understand/VB the/DT conceptual/JJ model/NN of/IN an/DT adaptive/JJ interface/NN in/IN order/NN to/TO be/VB satisfied/VBN with/IN the/DT interface/NN
+If/IN the/DT adaptation/NN works/VBZ well/RB enough/RB then/RB understanding/VBG the/DT underlying/VBG mechanics/NNS is/VBZ not/RB important/JJ at/IN least/JJS for/IN some/DT users/NNS
+There/EX were/VBD seven/CD participants/NNS who/WP had/VBD very/RB negative/JJ experiences/NNS of/IN the/DT adapting/VBG menus/NNS
+The/DT first/JJ comment/NN below/IN refers/NNS to/TO the/DT ordering/NN of/IN items/NNS when/WRB the/DT menu/NN expands/VBZ from/IN the/DT short/JJ version/NN to/TO the/DT long/JJ one/CD
+If/IN a/DT desired/VBN item/NN is/VBZ not/RB found/VBN in/IN the/DT short/JJ menu/NN then/RB a/DT user/NN will/MD likely/RB have/VB to/TO rescan/VB the/DT full/JJ long/JJ menu/NN because/IN the/DT newly/RB visible/JJ items/NNS are/VBP interspersed/VBN with/IN those/DT that/WDT have/VBP already/RB been/VBN scanned/VBN
+This/DT usability/NN problem/NN might/MD be/VB fixed/VBN by/IN highlighting/VBG the/DT newly/RB visible/JJ items/NNS in/IN such/PDT a/DT way/NN that/IN they/PRP would/MD be/VB scanned/VBN first/RB
+I/PRP don/VBP t/CC know/VBP why/WRB I/PRP dislike/VBP the/DT adaptive/JJ menus/NN because/IN I/PRP know/VBP that/IN
+
+
+well/RB I/PRP have/VBP some/DT idea/NN why/WRB but/CC
+
+
+Well/RB okay/JJ first/RB of/IN all/DT part/NN of/IN the/DT advantage/NN of/IN having/VBG these/DT mega/JJ menus/NN is/VBZ that/IN you/PRP can/MD hunt/VB through/IN them/PRP and/CC I/PRP realize/VBP that/IN the/DT stuff/NN you/PRP use/VBP more/JJR tends/NNS to/TO show/VB up/RP at/IN the/DT top/NN
+But/CC when/WRB you/PRP click/VBP the/DT open/JJ the/DT adaptive/JJ menus/NN the/DT menu/NN shows/VBZ up/RP in/IN the/DT way/NN it/PRP is/VBZ normally/RB
+So/RB if/IN there/EX s/VBZ if/IN you/PRP use/VBP two/CD functions/NNS and/CC they/PRP are/VBP right/JJ side/NN by/IN side/NN and/CC then/RB there/EX s/VBZ actually/RB a/DT bunch/NN of/IN stuff/NN in/IN between/IN that/DT will/MD show/VB up/RP in/IN between/IN
+And/CC so/IN I/PRP find/VBP it/PRP s/VBZ like/IN I/PRP have/VBP to/TO start/VB all/DT over/RB again/RB looking/VBG through/IN the/DT menus/NNS for/IN the/DT functionality/NN which/WDT I/PRP find/VBP really/RB annoying/VBG
+And/CC I/PRP don/VBP t/CC know/VBP why/WRB
+It/PRP s/VBZ confusing/VBG I/PRP just/RB find/VBP it/PRP more/RBR confusing/JJ
+I/PRP think/VBP that/IN s/NNS ultimately/RB it/PRP
+And/CC I/PRP don/VBP t/TO think/VB of/IN myself/PRP as/IN a/DT na/FW ve/FW user/NN and/CC I/PRP don/VBP t/CC know/VBP why/WRB it/PRP bothers/VBZ me/PRP so/RB much/JJ it/PRP just/RB does/VBZ
+Interview/NNP i/FW Participant/NNP 3/CD
+
+
+T/NNP he/PRP adaptive/JJ menus/NNS are/VBP hell/VBG I/PRP don/MD t/VB like/IN them/PRP at/IN all/DT
+So/RB like/IN that/DT s/VBZ a/DT definite/JJ No/NNP like/IN that/DT s/VBZ almost/RB a/DT zero/CD choice/NN
+I/PRP would/MD never/RB pick/VB that/IN like/IN I/PRP just/RB hate/VBP it/PRP
+Interview/NNP Participant/NNP 7/CD I/PRP hate/VBP the/DT menus/NN where/WRB only/RB your/PRP$ most/RBS recently/RB used/VBN items/NNS show/VBP up/RP first/JJ Q7/NNP Participant/NNP 11/CD Well/NNP the/DT first/JJ thing/NN is/VBZ with/IN the/DT Word/NNP 2000/CD I/PRP really/RB really/RB really/RB dislike/VB the/DT I/PRP mentioned/VBD this/DT with/IN my/PRP$ questionnaire/NN before/IN the/DT frequency/NN of/IN use/NN menu/NN
+I/PRP was/VBD often/RB making/VBG mistakes/NNS and/CC because/IN they/PRP only/RB give/VBP you/PRP I/PRP don/VBP t/CC know/VBP a/DT fixed/JJ number/NN maybe/RB six/CD menu/NN items/NNS I/PRP tend/VBP to/TO use/VB a/DT lot/NN of/IN different/JJ functions/NNS regularly/RB all/DT of/IN the/DT time/NN
+So/RB I/PRP was/VBD always/RB you/PRP know/VBP using/VBG that/IN little/JJ piece/NN down/IN arrow/JJ icon/NN and/CC I/PRP was/VBD always/RB making/VBG a/DT mistake/NN going/VBG where/WRB is/VBZ it/PRP
+Where/WRB is/VBZ it/PRP
+Where/WRB is/VBZ it/PRP
+It/PRP s/VBZ gone/VBN It/PRP fell/VBD off/RP
+I/PRP found/VBD that/IN just/RB
+
+
+I/PRP still/RB find/VBP that/IN incredibly/RB frustrating/JJ
+So/RB I/PRP would/MD rather/RB not/RB do/VB that/DT and/CC Word/NNP Personal/NNP didn/NN t/NN do/VBP that/DT
+So/IN I/PRP much/RB prefer/VBP it/PRP
+Interview/NNP Participant/NNP 16/CD Four/CD additional/JJ participants/NNS felt/VBD negatively/RB about/IN the/DT adaptive/JJ menus/NNS but/CC not/RB to/TO the/DT same/JJ extreme/NN as/IN the/DT previous/JJ seven/CD participants/NNS
+For/IN example/NN I/PRP don/VBP t/NN really/RB feel/VB one/CD way/NN or/CC another/DT about/IN that/DT
+In/IN fact/NN I/PRP d/VBP rather/RB it/PRP didn/VBD t/NN do/VBP that/DT because/IN sometimes/RB I/PRP forget/VBP like/IN I/PRP m/VBP looking/VBG for/IN something/NN and/CC I/PRP m/VBP like/IN oh/IN I/PRP can/MD t/RB find/VB it/PRP where/WRB is/VBZ it/PRP
+And/CC I/PRP can/MD t/RB find/VB it/PRP because/IN it/PRP s/VBZ a/DT hidden/JJ thingy/NN
+Interview/NNP Participant/NNP 6/CD One/CD participant/NN did/VBD appreciate/VB having/VBG only/RB some/DT options/NNS visible/JJ through/IN the/DT shortened/VBN menus/NNS but/CC ultimately/RB found/VBD that/IN MSW/NNP Personal/NNP provided/VBD a/DT better/JJR balance/NN for/IN him/PRP This/DT feeling/NN that/IN you/PRP will/MD forget/VB that/IN certain/JJ functions/NNS are/VBP there/RB if/IN you/PRP leave/VBP the/DT adaptive/JJ menus/NNS turned/VBD on/IN but/CC also/RB the/DT menus/NNS are/VBP way/RB too/RB long/JJ if/IN you/PRP leave/VBP everything/NN on/IN i/NNS
+e/NN
+adaptive/JJ menus/NNS turned/VBD off/RP so/RB that/IN you/PRP have/VBP the/DT full/JJ menu/NN
+So/IN it/PRP s/VBZ a/DT balance/NN between/IN the/DT two/CD
+That/DT s/NNS why/WRB the/DT Personal/NNP gave/VBD me/PRP the/DT balance/NN I/PRP wanted/VBD
+Interview/NNP Participant/NNP 17/CD To/TO summarize/VB 13/CD participants/NNS expressed/VBD opinions/NNS about/IN the/DT adaptive/JJ menus/NNS in/IN MSW2K/CD
+For/IN two/CD participants/NNS these/DT menus/NNS worked/VBD very/RB well/RB
+They/PRP were/VBD very/RB strongly/RB disliked/VBN by/IN seven/CD and/CC four/CD were/VBD mildly/RB negative/JJ
+One/CD possible/JJ explanation/NN is/VBZ that/IN the/DT adaptive/JJ model/NN behind/IN the/DT menus/NNS provided/VBD a/DT better/JJR fit/NN for/IN the/DT usage/NN patterns/NNS of/IN the/DT two/CD satisfied/JJ participants/NNS than/IN for/IN the/DT other/JJ participants/NNS usage/VBP patterns/NNS
+Understanding/VBG the/DT required/JJ degree/NN of/IN fit/NN of/IN an/DT adaptive/JJ interface/NN in/IN order/NN to/TO achieve/VB usability/NN is/VBZ an/DT area/NN of/IN future/JJ investigation/NN
+Individual/JJ Differences/NNS in/IN Satisfaction/NN and/CC Control/NN
+Unlike/IN the/DT results/NNS from/IN the/DT first/JJ set/NN of/IN hypotheses/NNS a/DT number/NN of/IN differences/NNS between/IN the/DT feature/NN shy/NN and/CC the/DT feature/NN keen/JJ participants/NNS are/VBP suggested/VBN in/IN the/DT self/NN reported/VBD measures/NNS from/IN Q1/NNP through/IN Q7/NNP
+Results/NNS for/IN perceived/VBN control/NN and/CC satisfaction/NN were/VBD dominated/VBN by/IN interactions/NNS whereby/WRB feature/NN shy/JJ participants/NNS experienced/VBD an/DT increase/NN in/IN both/DT satisfaction/NN and/CC control/NN while/IN using/VBG MSW/NNP Personal/NNP and/CC the/DT feature/NN keen/NN did/VBD not/RB experience/VB any/DT significant/JJ difference/NN
+One/CD way/NN this/DT can/MD be/VB interpreted/VBN is/VBZ that/IN MSW/NNP Personal/NNP appears/VBZ to/TO have/VB improved/VBN satisfaction/NN and/CC sense/NN of/IN control/NN for/IN the/DT feature/NN shy/NN without/IN negatively/RB affecting/VBG the/DT feature/NN keen/.
+Once/RB they/PRP had/VBD used/VBN MSWord/NNP Personal/NNP for/IN 4/CD weeks/NNS the/DT feature/NN shy/NN were/VBD able/JJ to/TO achieve/VB a/DT comparable/JJ level/NN of/IN satisfaction/NN and/CC perceived/VBN control/NN to/TO the/DT feature/NN keen/.
+This/DT suggests/VBZ that/IN through/IN the/DT redesign/NN of/IN the/DT user/NN interface/NN we/PRP can/MD improve/VB the/DT experience/NN of/IN one/CD group/NN of/IN users/NNS without/IN negatively/RB affecting/VBG the/DT experience/NN of/IN another/DT group/NN
+Navigation/NNP The/DT comparison/NN of/IN the/DT Q1/NNP and/CC Q6/NNP data/NNS showed/VBD a/DT strong/JJ effect/NN of/IN navigation/NN for/IN both/DT the/DT feature/NN shy/NN and/CC the/DT feature/NN keen/.
+Some/DT of/IN our/PRP$ participants/NNS specifically/RB noted/VBD the/DT time/NN savings/NNS when/WRB there/EX were/VBD fewer/JJR options/NNS to/TO navigate/VB through/IN in/IN the/DT menus/NNS and/CC toolbars/NNS
+Representative/JJ comments/NNS include/VBP I/PRP really/RB like/IN having/VBG only/RB the/DT tools/NNS I/PRP use/VBP very/RB frequently/RB on/IN my/PRP$ interface/NN if/IN I/PRP so/RB choose/VB
+It/PRP makes/VBZ me/PRP more/RBR efficient/JJ as/IN I/PRP don/VBP t/CC have/VBP to/TO look/VB around/RP for/IN the/DT function/NN I/PRP need/VBP
+Q2/CD Participant/NNP 15/CD While/IN I/PRP use/VBP a/DT standard/JJ set/NN of/IN features/NNS for/IN most/JJS of/IN my/PRP$ work/NN I/PRP am/VBP pleasantly/RB surprised/VBN when/WRB I/PRP go/VBP to/TO use/VB a/DT feature/NN I/PRP haven/VBP t/RB used/VBN for/IN a/DT while/NN and/CC find/VB it/PRP s/VBZ the/DT only/JJ one/CD in/IN the/DT menu/NN
+It/PRP makes/VBZ my/PRP$ task/NN faster/RBR and/CC less/RBR frustrating/JJ
+Q5/CD Participant/NNP 12/CD I/PRP d/MD be/VB in/IN the/DT Microsoft/NNP Word/NNP interface/NN and/CC it/PRP d/MD be/VB like/IN oh/JJ God/NNP just/RB too/RB many/JJ buttons/NNS
+Like/IN I/PRP don/VBP t/CC think/VBP that/IN Microsoft/NNP does/VBZ a/DT really/RB good/JJ job/NN of/IN making/VBG their/PRP$ icon/NN match/VB what/WP the/DT button/NN actually/RB does/VBZ
+And/CC I/PRP will/MD sit/VB there/RB and/CC I/PRP will/MD have/VB to/TO hover/VB over/IN the/DT button/NN and/CC wait/VB for/IN the/DT explanation/NN to/TO come/VB up/RP
+And/CC it/PRP s/VBZ like/IN oh/JJ man/NN what/WP a/DT waste/NN of/IN time/NN So/NNP that/WDT s/VBZ when/WRB I/PRP d/VBP find/VB myself/PRP getting/VBG like/IN okay/NN I/PRP don/VBP t/CC need/VBP all/PDT this/DT crap/NN right/RB now/RB
+It/PRP s/VBZ too/RB hard/JJ to/TO find/VB things/NNS on/IN all/PDT the/DT menubars/NNS and/CC that/IN s/NNS when/WRB I/PRP d/VBP switch/VB back/RB to/TO the/DT personal/JJ
+Interview/NNP Participant/NNP 11/CD These/DT comments/NNS suggest/VBP that/IN the/DT difference/NN in/IN navigation/NN between/IN MSWord/NNP Personal/NNP and/CC MSW2K/NNP is/VBZ not/RB a/DT subtle/JJ difference/NN
+Learnability/NN
+When/WRB participants/NNS were/VBD asked/VBN to/TO assess/VB the/DT learnability/NN of/IN the/DT multiple/JJ interfaces/NNS design/NN and/CC the/DT adaptive/JJ design/NN in/IN questionnaires/NNS Q1/CD to/TO Q7/NNP the/DT multiple/JJ interfaces/NNS design/NN had/VBD significantly/RB higher/JJR ratings/NNS
+In/IN the/DT debriefing/NN interview/NN however/RB the/DT all/DT in/IN one/CD style/NN interface/NN was/VBD presented/VBN as/IN an/DT option/NN alongside/IN the/DT other/JJ two/CD interfaces/NNS
+Fifteen/CD participants/NNS indicated/VBD that/IN the/DT all/DT in/IN one/CD interface/NN was/VBD best/JJS and/CC the/DT standard/JJ reason/NN given/VBN was/VBD that/IN seeing/VBG all/DT of/IN the/DT menu/NN items/VBZ all/DT of/IN the/DT time/NN gives/VBZ one/CD a/DT sense/NN of/IN what/WP is/VBZ available/JJ and/CC thereby/JJ promotes/NNS learning/VBG the/DT available/JJ functions/NNS
+Some/DT participants/NNS specifically/RB mentioned/VBD learning/VBG through/IN exploration/NN
+Two/CD representative/JJ comments/NNS are/VBP 2000/CD without/IN the/DT changing/VBG menus/PRP is/VBZ best/RBS just/RB because/IN you/PRP can/MD see/VB all/DT of/IN your/PRP$ options/NNS so/RB you/PRP know/VBP what/WP all/DT of/IN the/DT features/NNS are/VBP
+Interview/NNP Participant/NNP 2/CD I/PRP want/VBP to/TO learn/VB them/PRP all/DT or/CC nothing/NN
+
+
+In/IN general/JJ I/PRP think/VBP that/IN if/IN they/PRP are/VBP there/EX you/PRP are/VBP more/RBR likely/JJ to/TO say/VB what/WP is/VBZ this/DT
+and/CC use/VB it/PRP
+So/RB maybe/RB a/DT little/JJ bit/NN
+Because/IN I/PRP have/VBP explored/VBN
+The/DT only/JJ way/NN I/PRP ve/VBP learned/VBN to/TO use/VB the/DT program/NN is/VBZ by/IN playing/VBG with/IN it/PRP
+So/IN I/PRP saw/VBD the/DT indexes/NNS and/CC I/PRP went/VBD how/WRB do/VBP you/PRP do/VB that/DT
+so/RB now/RB I/PRP know/VBP how/WRB to/TO make/VB an/DT index/NN
+I/PRP guess/VBP if/IN I/PRP never/RB saw/VBD it/PRP I/PRP d/VBD probably/RB never/RB have/VBP played/VBN with/IN it/PRP
+Interview/NNP Participant/NNP 22/CD Two/CD participants/NNS indicated/VBD that/IN having/VBG everything/NN available/JJ in/IN the/DT Full/NNP Interface/NNP within/IN MSW/NNP Personal/NNP supported/VBD learning/VBG equally/RB as/RB well/RB as/IN did/VBD the/DT allin/NN one/CD interface/NN
+They/PRP did/VBD not/RB need/VB to/TO be/VB accessing/VBG the/DT full/JJ menus/NN all/DT of/IN the/DT time/NN I/PRP think/VBP if/IN I/PRP can/MD switch/VB to/TO the/DT full/JJ interface/NN like/IN that/IN it/PRP s/VBZ very/RB convenient/JJ
+So/RB I/PRP think/VBP the/DT learning/VBG ability/NN in/IN MSW/NNP Personal/NNP shouldn/MD t/RB be/VB impacted/VBN
+
+
+
+Just/RB one/CD click/NN
+Interview/NNP Participant/NNP 5/CD I/PRP want/VBP it/PRP all/DT or/CC I/PRP want/VBP mine/JJ personal/JJ interface/NN
+In/IN the/DT same/JJ way/NN I/PRP don/VBP t/CC want/VBP the/DT computer/NN deciding/VBG what/WP it/PRP s/VBZ going/VBG to/TO show/VB me/PRP
+I/PRP want/VBP to/TO decide/VB myself/PRP
+If/IN I/PRP don/VBP t/CC know/VBP how/WRB to/TO do/VB something/NN then/RB I/PRP want/VBP to/TO go/VB and/CC use/VB the/DT full/JJ interface/NN more/RBR as/IN like/IN a/DT reference/NN or/CC something/NN and/CC have/VBP it/PRP all/DT kind/NN of/IN there/EX
+Interview/NNP Participant/NNP 11/CD Two/CD participants/NNS indicated/VBD that/IN they/PRP learn/VBP through/IN exploration/NN but/CC that/IN they/PRP are/VBP not/RB in/IN exploratory/JJ mode/NN all/DT of/IN the/DT time/NN
+Having/VBG a/DT Personal/NNP Interface/NNP forced/VBD them/PRP to/TO take/VB ownership/NN of/IN learning/VBG as/IN they/PRP actively/RB decided/VBD when/WRB to/TO enter/VB exploratory/JJ mode/NN by/IN switching/VBG to/TO the/DT Full/NNP Interface/NNP
+For/IN example/NN I/PRP think/VBP the/DT one/CD with/IN the/DT adaptive/JJ menus/NNS doesn/VBP t/JJ support/NN it/PRP learning/VBG at/IN all/DT because/IN it/PRP just/RB disappears/VBZ on/IN you/PRP and/CC you/PRP don/MD t/VB even/RB know/VBP that/IN it/PRP is/VBZ there/RB
+I/PRP would/MD say/VB that/IN it/PRP is/VBZ probably/RB similar/JJ between/IN the/DT regular/JJ Word/NNP long/JJ menu/NN and/CC the/DT Personal/NNP one/CD
+Because/IN you/PRP still/RB have/VBP to/TO think/VB that/IN you/PRP need/VBP something/NN different/JJ and/CC find/VB it/PRP
+Often/RB my/PRP$ strategy/NN around/IN that/DT is/VBZ that/DT somebody/NN says/VBZ Oh/NNP try/VB this/DT or/CC there/EX must/MD be/VB a/DT way/NN to/TO do/VB this/DT and/CC then/RB go/VB to/TO help/VB or/CC whatever/WDT
+What/WP about/IN learning/VBG by/IN remembering/VBG labels/NNS you/PRP have/VBP seen/VBN in/IN the/DT long/JJ menus/NNS
+That/DT s/VBZ not/RB been/VBN my/PRP$ experience/NN myself/PRP
+
+
+I/PRP must/MD say/VB that/IN whether/IN it/PRP s/VBZ the/DT Personal/JJ sort/NN of/IN thing/NN or/CC the/DT long/JJ menus/NN for/IN me/PRP at/IN least/JJS it/PRP s/VBZ oh/IN I/PRP have/VBP to/TO go/VB exploring/VBG I/PRP m/VBP going/VBG to/TO go/VB look/NN
+Because/IN with/IN your/PRP$ sort/NN of/IN routine/JJ daily/JJ functions/NNS I/PRP am/VBP not/RB using/VBG the/DT menus/NN I/PRP m/VBP not/RB paying/VBG attention/NN to/TO the/DT menus/NNS
+So/IN I/PRP m/VBP not/RB in/IN explore/VB mode/NN
+I/PRP m/VBP not/RB even/RB in/IN attentive/JJ mode/NN I/PRP wouldn/MD t/VB even/RB notice/VB if/IN I/PRP ve/VBP seen/VBN something/NN related/VBN or/CC not/RB
+So/IN I/PRP wouldn/MD t/VB usually/RB notice/RB
+Interview/NNP Participant/NNP 16/CD None/NN of/IN the/DT participants/NNS thought/VBD that/IN the/DT adaptive/JJ menus/NNS best/RBS supported/VBN learning/NN which/WDT is/VBZ a/DT strong/JJ statement/NN
+Understanding/JJ learnability/NN is/VBZ a/DT rich/JJ area/NN for/IN further/JJ research/NN
+Our/PRP$ participants/NNS certainly/RB did/VBD not/RB perceive/VB that/IN minimalist/JJ interfaces/NNS provide/VBP scaffolding/VBG for/IN learning/VBG we/PRP saw/VBD no/DT general/JJ perception/NN of/IN a/DT Training/NNP Wheels/NNP effect/NN Carroll/NNP and/CC Carrithers/NNPS 1984/CD
+The/DT adaptive/JJ interface/NN provides/VBZ minimalist/JJ short/JJ menus/NNS and/CC they/PRP were/VBD ranked/VBN last/JJ for/IN learnability/NN by/IN all/DT of/IN our/PRP$ participants/NNS
+While/IN five/CD participants/NNS ranked/VBD the/DT adaptable/JJ interface/NN first/RB the/DT majority/NN thought/VBD that/IN allin/DT one/CD best/RBS supported/VBN learning/VBG
+One/CD possible/JJ next/JJ step/NN would/MD be/VB to/TO evaluate/VB the/DT learnability/NN afforded/VBN by/IN these/DT different/JJ interfaces/NNS with/IN novice/NN users/NNS and/CC to/TO use/VB objective/JJ measures/NNS of/IN learning/VBG rather/RB than/IN self/JJR reports/NNS
+We/PRP did/VBD not/RB include/VB any/DT novice/NN users/NNS in/IN our/PRP$ study/NN
+Cost/NN
+benefit/NN Trade/NNP off/RB to/TO Personalization/NNP
+Personalization/NN can/MD be/VB framed/VBN in/IN terms/NNS of/IN a/DT cost/NN
+benefit/NN trade/NN off/RP
+9/CD The/DT goal/NN is/VBZ that/IN the/DT cost/NN of/IN personalizing/VBG time/NN attention/NN away/RB from/IN primary/JJ task/NN will/MD be/VB outweighed/VBN by/IN the/DT benefits/NNS of/IN personalizing/VBG
+We/PRP have/VBP already/RB mentioned/VBN some/DT of/IN the/DT benefits/NNS which/WDT include/VBP reduced/VBN navigation/NN time/NN
+We/PRP note/VBP here/RB that/IN some/DT of/IN the/DT participants/NNS were/VBD analogously/RB very/RB aware/JJ of/IN the/DT costs/NNS for/IN example/NN the/DT cost/NN to/TO set/VB up/RP the/DT Personal/NNP Interface/NNP The/DT personal/JJ interface/NN is/VBZ an/DT interesting/JJ concept/NN but/CC seems/VBZ time/NN consuming/VBG to/TO completely/RB set/VB up/RP
+I/PRP am/VBP still/RB adding/VBG features/NNS to/TO it/PRP
+Q3/CD Participant/NNP 18/CD Initial/JJ configuration/NN was/VBD time/NN consuming/NN but/CC it/PRP is/VBZ ok/JJ if/IN it/PRP only/RB must/MD be/VB done/VBN once/RB
+Q8/CD Participant/NNP 16/CD Another/DT cost/NN is/VBZ the/DT additional/JJ complexity/NN added/VBN to/TO the/DT interface/NN
+While/IN the/DT goal/NN of/IN multiple/JJ interfaces/NNS is/VBZ to/TO allow/VB users/NNS to/TO work/VB predominantly/RB in/IN a/DT simplified/VBN interface/NN there/EX is/VBZ additional/JJ functionality/NN that/WDT needs/VBZ to/TO be/VB included/VBN in/IN the/DT interface/NN in/IN order/NN to/TO make/VB this/DT possible/JJ
+For/IN some/DT that/WDT cost/NN dominated/VBD The/DT thing/NN is/VBZ for/IN me/PRP was/VBD that/IN I/PRP want/VBP my/PRP$ software/NN to/TO be/VB pretty/RB much/RB invisible/JJ to/TO me/PRP and/CC the/DT personal/JJ required/VBN more/JJR visibility/NN than/IN I/PRP would/MD have/VB liked/VBN it/PRP
+Interview/NNP Participant/NNP 13/CD For/IN others/NNS however/RB the/DT benefit/NN clearly/RB dominated/VBD I/PRP think/VBP something/NN like/IN that/DT MSW/NNP Personal/NNP should/MD be/VB made/VBN available/JJ
+It/PRP s/VBZ a/DT nice/JJ thing/NN it/PRP s/VBZ a/DT nice/JJ interface/NN
+I/PRP mean/VBP you/PRP know/VBP I/PRP don/MD t/RB know/VB how/WRB easy/JJ it/PRP would/MD be/VB to/TO be/VB available/JJ to/TO many/JJ people/NNS
+I/PRP guess/VBP that/IN you/PRP would/MD have/VB to/TO package/VB it/PRP or/CC whatever/WDT
+But/CC it/PRP was/VBD a/DT nice/JJ addition/NN
+I/PRP actually/RB enjoyed/VBD it/PRP
+Interview/NNP Participant/NNP 15/CD I/PRP think/VBP that/IN Word/NNP XP10/NNP needs/VBZ a/DT personal/JJ edition/NN even/RB more/RBR than/IN 2000/CD
+Q8/CD Participant/NNP 17/CD I/PRP would/MD like/VB to/TO have/VB Personal/NNP re/NN enabled/VBD on/IN my/PRP$ machine/NN Q8/NNP Participant/NNP 16/CD Thus/NNP for/IN some/DT users/NNS even/RB if/IN the/DT cost/NN to/TO personalizing/VBG was/VBD relatively/RB high/JJ there/EX was/VBD sufficient/JJ benefit/NN derived/VBN from/IN a/DT Personal/NNP Interface/NNP to/TO make/VB it/PRP worthwhile/JJ
+For/IN others/NNS the/DT cost/NN outweighed/VBD the/DT benefit/NN
+The/DT difficulty/NN for/IN design/NN is/VBZ that/IN the/DT perceived/VBN cost/NN and/CC benefit/NN are/VBP both/DT dependent/JJ on/IN individual/JJ users/NNS and/CC difficult/JJ to/TO determine/VB a/DT priori/NN
+Overall/NNP Interface/NNP Preference/NNP
+MSWord/NNP Personal/NNP was/VBD preferred/VBN by/IN the/DT majority/NN of/IN our/PRP$ participants/NNS seven/CD feature/NN shy/JJ and/CC six/CD feature/NN keen/JJ
+Having/VBG such/JJ strong/JJ support/NN by/IN the/DT feature/NN keen/NN was/VBD unexpected/JJ
+However/RB as/IN noted/VBN above/IN the/DT two/CD groups/NNS of/IN participants/NNS differed/VBN in/IN their/PRP$ second/JJ ranking/NN
+Only/RB two/CD of/IN the/DT feature/NN shy/NN ranked/VBD adaptive/JJ before/IN all/DT in/IN one/CD as/IN compared/VBN to/TO seven/CD of/IN the/DT feature/NN keen/.
+This/DT can/MD perhaps/RB be/VB explained/VBN in/IN part/NN by/IN the/DT fact/NN that/IN six/CD of/IN the/DT seven/CD participants/NNS who/WP were/VBD unaware/JJ of/IN the/DT adapting/VBG short/JJ menus/NNS were/VBD feature/JJ shy/JJ participants/NNS
+This/DT indicates/VBZ that/IN lack/NN of/IN knowledge/NN that/IN adaptation/NN is/VBZ taking/VBG place/NN likely/RB contributes/VBZ to/TO overall/JJ dissatisfaction/NN with/IN an/DT adaptive/JJ interface/NN
+Interestingly/RB of/IN the/DT 13/CD participants/NNS who/WP expressed/VBD an/DT opinion/NN about/IN the/DT adaptive/JJ menus/NNS beyond/IN a/DT simple/JJ ranking/NN only/RB two/CD were/VBD positive/JJ
+Yet/RB three/CD participants/NNS ranked/VBD adaptive/JJ first/JJ and/CC 9/CD ranked/VBD it/PRP second/JJ so/RB adaptive/JJ menus/NNS did/VBD have/VB supporters/NNS
+The/DT imbalance/NN in/IN the/DT comments/NNS about/IN these/DT menus/NNS suggests/VBZ that/IN those/DT who/WP disliked/VBD the/DT menus/NNS had/VBD a/DT more/RBR extreme/JJ or/CC passionate/JJ dislike/NN as/IN compared/VBN to/TO those/DT who/WP liked/VBD the/DT menus/NN
+The/DT implication/NN for/IN user/NN interface/NN design/NN could/MD be/VB that/IN even/RB if/IN a/DT design/NN works/VBZ sufficiently/RB well/RB for/IN a/DT large/JJ part/NN of/IN the/DT user/NN population/NN if/IN that/DT same/JJ design/NN is/VBZ perceived/VBN by/IN others/NNS in/IN the/DT user/NN population/NN to/TO work/VB very/RB poorly/RB the/DT negative/JJ views/NNS will/MD dominate/VB
+Not/RB surprisingly/RB the/DT group/NN of/IN 13/CD participants/NNS who/WP ranked/VBD Personal/NNP first/RB is/VBZ almost/RB identical/JJ to/TO the/DT group/NN of/IN 13/CD who/WP did/VBD not/RB give/VB up/RP on/IN their/PRP$ desired/VBN approach/NN to/TO personalization/NN
+One/CD participant/NN who/WP didn/VBD t/NN give/VB up/RP did/VBD not/RB rank/VB MSW/NNP Personal/NNP first/RB and/CC one/CD participant/NN who/WP did/VBD give/VB up/RP did/VBD rank/VB it/PRP first/RB
+Given/VBN that/IN this/DT group/NN spanned/VBD the/DT possible/JJ personalization/NN strategies/NNS it/PRP suggests/VBZ that/IN flexibility/NN of/IN personalization/NN played/VBD a/DT role/NN in/IN the/DT interface/NN ranking/NN
+Users/NNS have/VBP the/DT ability/NN to/TO personalize/VB when/WRB they/PRP want/VBP and/CC what/WP they/PRP want/VBP in/IN MSWord/NNP Personal/NNP
+There/EX is/VBZ no/DT such/JJ flexibility/NN in/IN MSW2K/NNP which/WDT implements/VBZ a/DT single/JJ personalization/NN strategy/NN
+Independence/NN of/IN Variables/NNS
+One/CD might/MD argue/VB that/IN our/PRP$ dependent/JJ measures/NNS of/IN satisfaction/NN navigation/NN control/NN and/CC learning/NN are/VBP at/IN least/JJS somewhat/RB related/VBN to/TO our/PRP$ independent/JJ variable/NN of/IN personality/NN type/NN feature/NN keen/JJ and/CC feature/JJ shy/NN
+For/IN example/NN it/PRP may/MD not/RB be/VB entirely/RB surprising/JJ that/IN the/DT feature/NN shy/WDT were/VBD significantly/RB less/RBR satisfied/JJ than/IN the/DT feature/NN keen/VBN with/IN MSW2K/NNP at/IN the/DT time/NN that/IN Q1/NNP was/VBD administered/VBN
+After/IN all/DT MSW2K/NNP is/VBZ a/DT feature/JJ rich/JJ application/NN
+There/EX was/VBD another/DT independent/JJ variable/JJ however/RB namely/RB the/DT two/CD interface/NN conditions/NNS
+It/PRP is/VBZ the/DT impact/NN of/IN those/DT conditions/NNS on/IN the/DT dependent/JJ measures/NNS that/WDT is/VBZ most/RBS interesting/JJ in/IN the/DT findings/NNS we/PRP have/VBP reported/VBN in/IN this/DT section/NN
+The/DT results/NNS of/IN this/DT evaluation/NN are/VBP promising/VBG however/RB there/EX were/VBD inherent/JJ limitations/NNS and/CC constraints/NNS to/TO the/DT experiment/NN design/NN that/WDT may/MD have/VB affected/VBN the/DT results/NNS
+Four/CD threats/NNS to/TO validity/NN in/IN our/PRP$ experiment/NN are/VBP 1/CD Reactive/JJ effect/NN Participants/NNS were/VBD fully/RB aware/JJ of/IN their/PRP$ participation/NN in/IN the/DT experiment/NN and/CC some/DT may/MD have/VB adjusted/VBN their/PRP$ interactions/NNS and/CC responses/NNS
+2/CD Multiple/NNP treatment/NN interference/NN Participants/NNS were/VBD exposed/VBN to/TO two/CD versions/NNS of/IN MSWord/NNP and/CC there/EX were/VBD likely/JJ effects/NNS of/IN having/VBG used/VBN one/CD version/NN that/WDT were/VBD not/RB erasable/JJ when/WRB using/VBG the/DT second/JJ
+3/CD Researcher/NNP interference/NN A/DT single/JJ researcher/NN performed/VBD the/DT role/NN of/IN the/DT experimenter/NN for/IN this/DT experiment/NN
+There/EX may/MD have/VB been/VBN something/NN specific/JJ to/TO the/DT particular/JJ researcher/NN that/WDT systematically/RB affected/VBD the/DT results/NNS
+4/CD Selection/NN bias/NN Participants/NNS were/VBD a/DT self/NN selected/VBN group/NN because/IN we/PRP did/VBD not/RB have/VB a/DT sampling/JJ frame/NN of/IN all/DT MSW2K/NNP users/NNS and/CC therefore/RB could/MD not/RB draw/VB a/DT simple/JJ random/JJ sample/NN
+The/DT best/JJS way/NN to/TO ensure/VB that/IN there/EX wasn/VBD t/NN anything/NN incidental/JJ in/IN our/PRP$ experiment/NN execution/NN that/WDT determined/VBD the/DT results/NNS would/MD be/VB to/TO replicate/VB the/DT experiment/NN
+Ideally/RB we/PRP would/MD want/VB to/TO conduct/VB a/DT longer/JJR field/NN experiment/NN with/IN a/DT different/JJ person/NN acting/VBG in/IN the/DT researcher/NN role/NN
+Counterbalancing/VBG the/DT order/NN in/IN which/WDT software/NN versions/NNS are/VBP used/VBN would/MD be/VB ideal/JJ
+In/IN addition/NN using/VBG a/DT different/JJ application/NN whether/IN it/PRP be/VB another/DT word/NN processor/NN or/CC another/DT general/JJ productivity/NN application/NN would/MD go/VB a/DT long/JJ way/NN to/TO ensuring/VBG the/DT generalizability/NN of/IN the/DT results/NNS to/TO the/DT class/NN of/IN word/NN processing/NN applications/NNS or/CC general/JJ productivity/NN applications/NNS as/IN a/DT whole/NN
+8/CD
+CONCLUSIONS/NNS AND/CC FUTURE/NNP WORK/NNP We/PRP conclude/VBP with/IN some/DT final/JJ thoughts/NNS about/IN MSWord/NNP Personal/NNP adaptive/JJ versus/CC adaptable/JJ designs/NNS individual/JJ differences/NNS user/VBP assisted/VBN personalization/NN and/CC other/JJ scenarios/NNS of/IN use/NN for/IN multiple/JJ interfaces/NNS designs/NNS
+MSWord/NNP Personal/NNP
+The/DT multiple/JJ interfaces/NNS design/NN of/IN MSWord/NNP Personal/NNP performed/VBD very/RB well/RB in/IN our/PRP$ field/NN evaluation/NN
+Unlike/IN previous/JJ work/NN by/IN Mackay/NNP 1991/CD which/WDT showed/VBD that/IN users/NNS customize/VBP very/RB little/JJ the/DT majority/NN of/IN our/PRP$ participants/NNS did/VBD personalize/VB and/CC they/PRP did/VBD so/RB according/VBG to/TO their/PRP$ function/NN usage/NN
+The/DT fact/NN that/IN MSW/NNP Personal/NNP offers/VBZ a/DT new/JJ style/NN of/IN interface/NN unfamiliar/JJ to/TO all/DT our/PRP$ participants/NNS and/CC requires/VBZ effort/NN to/TO use/VB did/VBD not/RB preclude/VB the/DT majority/NN of/IN participants/NNS 65/CD ranking/VBG it/PRP first/RB preferring/VBG it/PRP to/TO both/DT the/DT adaptive/JJ interface/NN of/IN MSW2K/NNP or/CC an/DT all/NN in/IN one/CD style/NN interface/NN
+We/PRP expect/VBP that/DT had/VBD it/PRP been/VBN possible/JJ to/TO add/VB functions/NNS faster/RBR even/RB more/JJR participants/NNS would/MD have/VB ranked/VBN Personal/NNP first/RB
+That/DT almost/RB as/RB many/JJ of/IN the/DT feature/NN keen/JJ 6/CD participants/NNS as/IN the/DT feature/NN shy/JJ 7/CD participants/NNS ranked/VBD Personal/JJ first/JJ is/VBZ particularly/RB encouraging/JJ
+Adaptive/JJ vs/NNS
+Adaptable/JJ
+Despite/IN the/DT breadth/NN of/IN research/NN into/IN adaptive/JJ user/NN interfaces/VBZ there/EX has/VBZ been/VBN relatively/RB little/JJ empirical/JJ comparison/NN between/IN adaptive/JJ and/CC adaptable/JJ interfaces/NNS and/CC to/TO date/VB all/DT investigations/NNS have/VBP been/VBN relatively/RB short/JJ laboratory/NN experiments/NNS e/VBP
+g/NN
+Debevc/NNP et/VB al/JJ
+1996/CD
+Our/PRP$ experiment/NN allowed/VBD us/PRP to/TO compare/VB one/CD instance/NN of/IN each/DT of/IN these/DT design/NN alternatives/NNS in/IN the/DT context/NN of/IN a/DT commercial/JJ software/NN application/NN with/IN users/NNS carrying/VBG out/RP real/JJ tasks/NNS in/IN their/PRP$ own/JJ environment/NN
+Results/NNS favored/VBD the/DT adaptable/JJ design/NN but/CC the/DT adaptive/JJ interface/NN definitely/RB had/VBD support/NN
+The/DT adaptable/JJ design/NN implemented/VBN in/IN MSWord/NNP Personal/NNP combines/VBZ several/JJ design/NN elements/NNS two/CD interfaces/NNS one/CD personal/JJ interface/NN one/CD full/JJ interface/NN a/DT simple/JJ toggle/NN to/TO switch/VB between/IN the/DT interfaces/NNS an/DT easily/RB adaptable/JJ personal/JJ interface/NN under/IN full/JJ user/NN control/NN and/CC a/DT small/JJ initial/JJ personal/JJ interface/NN
+The/DT interface/NN of/IN MSW2K/NNP by/IN comparison/NN has/VBZ a/DT single/JJ interface/NN which/WDT is/VBZ adapted/VBN solely/RB by/IN the/DT system/NN with/IN the/DT exception/NN that/IN the/DT user/NN can/MD easily/RB open/VB a/DT short/JJ menu/NN into/IN a/DT long/JJ menu/NN
+Our/PRP$ evaluation/NN did/VBD not/RB isolate/VB the/DT effects/NNS of/IN the/DT different/JJ interface/NN design/NN elements/NNS although/IN where/WRB possible/JJ we/PRP did/VBD get/VB qualitative/JJ feedback/NN on/IN those/DT elements/NNS
+Our/PRP$ findings/NNS suggest/VBP that/IN MSW/NNP Personal/NNP was/VBD preferred/VBN to/TO MSW2K/NNP because/IN user/NN controlled/VBD interface/NN adaptation/NN results/NNS in/IN better/JJR navigation/NN and/CC learnability/NN and/CC allows/VBZ for/IN the/DT adoption/NN of/IN different/JJ personalization/NN strategies/NNS as/IN compared/VBN to/TO system/NN controlled/VBN interface/NN adaptation/NN which/WDT implements/VBZ a/DT single/JJ strategy/NN
+Because/IN there/EX were/VBD several/JJ differences/NNS between/IN the/DT two/CD conditions/NNS compared/VBD we/PRP do/VBP not/RB assert/VB that/IN two/CD interfaces/NNS are/VBP always/RB better/JJR than/IN one/CD nor/CC that/IN adaptable/JJ is/VBZ always/RB better/JJR than/IN adaptive/JJ
+A/DT 2/CD 2/CD experimental/JJ design/NN comparing/VBG one/CD
+two/CD interfaces/NNS by/IN adaptive/JJ
+adaptable/JJ would/MD be/VB required/VBN to/TO tease/VB this/DT apart/NN
+We/PRP did/VBD not/RB do/VB this/DT for/IN the/DT reasons/NNS given/VBN earlier/RBR
+Based/VBN on/IN the/DT qualitative/JJ feedback/NN in/IN our/PRP$ evaluation/NN however/RB we/PRP strongly/RB believe/VBP that/IN the/DT two/CD interface/NN aspect/NN of/IN MSW/NNP Personal/NNP was/VBD a/DT key/JJ contributing/VBG factor/NN to/TO its/PRP$ success/NN it/PRP allowed/VBD users/NNS the/DT flexibility/NN to/TO adopt/VB different/JJ personalization/NN strategies/NNS
+We/PRP did/VBD in/IN fact/NN observe/VBP different/JJ personalization/NN strategies/NNS
+We/PRP note/VBP that/IN the/DT effect/NN of/IN the/DT dual/JJ interface/NN namely/RB support/NN to/TO easily/RB move/VB back/RB and/CC forth/RB between/IN a/DT personalized/VBN interface/NN and/CC an/DT interface/NN with/IN default/NN settings/NNS could/MD have/VB been/VBN achieved/VBN through/IN a/DT single/JJ button/NN factory/NN reset/NN operation/NN if/IN the/DT reset/NN was/VBD undoable/JJ at/IN any/DT time/NN by/IN the/DT user/NN
+We/PRP believe/VBP that/IN conceptually/RB this/DT model/NN would/MD be/VB more/RBR difficult/JJ for/IN users/NNS especially/RB novices/NNS to/TO understand/VB and/CC trust/VB
+Informative/JJ next/JJ steps/NNS in/IN the/DT research/NN include/VBP comparing/VBG only/RB two/CD interface/NN designs/VBZ one/CD where/WRB the/DT personal/JJ interface/NN is/VBZ under/IN user/NN control/NN and/CC the/DT other/JJ where/WRB it/PRP is/VBZ under/IN system/NN control/NN as/RB well/RB as/IN comparing/VBG a/DT two/CD interface/NN design/NN to/TO a/DT factory/NN reset/NN model/NN that/WDT achieves/VBZ the/DT same/JJ outcome/NN but/CC with/IN a/DT different/JJ conceptual/JJ model/NN for/IN the/DT user/NN
+More/RBR recent/JJ laboratory/NN research/NN investigating/VBG adaptive/JJ designs/NNS shows/NNS conflicting/VBG evidence/NN
+Findlater/NNP and/CC McGrenere/NNP 2004/CD found/VBD that/IN adaptive/JJ split/NN menus/VBZ Sears/NNP and/CC Shneiderman/NNP 1994/CD were/VBD slower/JJR than/IN static/JJ split/NN menus/NNS and/CC slower/JJR than/IN adaptable/JJ split/NN menus/NNS in/IN most/JJS circumstances/NNS
+Subjects/NNS also/RB preferred/VBD the/DT adaptable/JJ menus/NNS to/TO both/DT the/DT static/JJ and/CC adaptive/JJ ones/NNS
+Gajos/NNP et/VB al/JJ
+2006/CD found/VBD an/DT adaptive/JJ interface/NN to/TO be/VB faster/RBR than/IN a/DT static/JJ one/CD but/CC no/DT adaptable/JJ alternative/NN was/VBD evaluated/VBN
+They/PRP also/RB suggest/VBP some/DT reasons/NNS for/IN the/DT conflicting/JJ evidence/NN for/IN example/NN the/DT frequency/NN with/IN which/WDT adaptations/NNS occur/VBP but/CC more/JJR work/NN is/VBZ needed/VBN to/TO tease/VB these/DT issues/NNS apart/RB
+Alpert/NNP et/VB al/JJ
+2003/CD investigated/VBD user/NN attitudes/NNS regarding/VBG a/DT user/NN adaptive/JJ e/NN commerce/NN website/NN and/CC found/VBD that/IN users/NNS were/VBD unenthusiastic/JJ toward/IN system/NN attempts/NNS to/TO infer/VB user/NN needs/NNS and/CC provide/VB adapted/JJ content/NN accordingly/RB
+A/DT strong/JJ desire/NN to/TO have/VB full/JJ and/CC explicit/JJ control/NN of/IN the/DT content/NN and/CC interaction/NN was/VBD expressed/VBN
+Jameson/NNP and/CC Schwarzkopf/NNP 2002/CD compared/VBN adaptable/JJ and/CC adaptive/JJ systems/NNS for/IN adding/VBG items/NNS to/TO a/DT hotlist/NN for/IN a/DT conference/NN web/NN site/NN
+While/IN there/EX was/VBD no/DT performance/NN difference/NN anecdotal/JJ evidence/NN showed/VBD that/IN some/DT subjects/NNS strongly/RB preferred/VBD the/DT adaptive/JJ system/NN while/IN others/NNS strongly/RB preferred/VBD the/DT adaptable/JJ
+Individual/JJ Differences/NNS
+The/DT existence/NN of/IN individual/JJ differences/NNS with/IN respect/NN to/TO software/NN features/NNS is/VBZ an/DT idea/NN that/WDT has/VBZ been/VBN proposed/VBN in/IN the/DT literature/NN Kaufman/NNP and/CC Weed/NNP 1998/CD McGrenere/NNP and/CC Moore/NNP 2000/CD but/CC has/VBZ undergone/VBN minimal/JJ evaluation/NN
+Based/VBN on/IN our/PRP$ research/NN it/PRP appears/VBZ to/TO have/VB construct/VB validity/NN
+One/CD of/IN the/DT most/RBS interesting/JJ observations/NNS is/VBZ that/IN while/IN there/EX were/VBD no/DT substantial/JJ differences/NNS between/IN the/DT feature/NN keen/NN and/CC the/DT feature/NN shy/JJ participants/NNS in/IN terms/NNS of/IN how/WRB they/PRP used/VBD the/DT two/CD interfaces/NNS and/CC how/WRB they/PRP approached/VBD the/DT task/NN of/IN personalizing/VBG there/EX were/VBD a/DT number/NN of/IN differences/NNS observed/VBN in/IN terms/NNS of/IN the/DT self/NN reported/VBD measures/NNS
+The/DT feature/NN shy/NN felt/VBD more/RBR satisfied/JJ and/CC experienced/VBD a/DT greater/JJR sense/NN of/IN control/NN with/IN MSW/NNP Personal/NNP than/IN with/IN MSW2K/CD whereas/IN there/EX were/VBD no/DT differences/NNS detected/VBN for/IN the/DT feature/NN keen/VBN on/IN these/DT measures/NNS
+Further/JJ work/NN is/VBZ required/VBN to/TO validate/VB the/DT instrument/NN used/VBN to/TO assess/VB the/DT individual/JJ differences/NNS and/CC to/TO understand/VB how/WRB this/DT aspect/NN of/IN personality/NN relates/VBZ to/TO other/JJ well/RB documented/VBN personality/NN differences/NNS
+User/NNP Assisted/NNP Personalization/NNP
+In/IN order/NN to/TO shift/VB the/DT cost/NN benefit/NN ratio/NN of/IN personalization/NN one/CD needs/VBZ to/TO increase/VB the/DT benefit/NN and/CC decrease/VB the/DT cost/NN
+Benefit/NN can/MD be/VB increased/VBN by/IN ensuring/VBG that/IN the/DT personalized/VBN interface/NN is/VBZ always/RB a/DT good/JJ fit/NN for/IN the/DT user/NN and/CC that/IN the/DT cost/NN is/VBZ minimal/JJ
+One/CD way/NN to/TO achieve/VB both/DT of/IN these/DT is/VBZ for/IN the/DT system/NN to/TO assist/VB the/DT user/NN in/IN personalizing/VBG the/DT system/NN provides/VBZ adaptation/NN suggestions/NNS based/VBN on/IN usage/NN information/NN and/CC allows/VBZ the/DT user/NN to/TO accept/VB or/CC reject/VB the/DT suggestions/NNS
+This/DT moves/VBZ the/DT design/NN in/IN the/DT direction/NN of/IN user/NN assisted/VBN personalization/NN that/WDT relies/VBZ on/IN user/NN modeling/VBG technology/NN this/DT was/VBD sometimes/RB called/VBN user/NN controlled/VBD self/NN adaptation/NN in/IN the/DT early/JJ literature/NN Dieterich/NNP et/VB al/JJ
+1993/CD and/CC more/RBR recently/RB mixed/JJ initiative/JJ interaction/NN Horvitz/NNP 1999/CD
+The/DT advantage/NN of/IN this/DT approach/NN is/VBZ that/IN the/DT user/NN retains/VBZ ultimate/JJ control/NN and/CC the/DT system/NN does/VBZ the/DT bookkeeping/NN to/TO manage/VB the/DT knowledge/NN of/IN function/NN usage/NN and/CC changing/VBG patterns/NNS in/IN usage/NN a/DT task/NN at/IN which/WDT the/DT system/NN is/VBZ particularly/RB adept/JJ
+This/DT approach/NN has/VBZ been/VBN investigated/VBN by/IN others/NNS for/IN example/NN in/IN Flexcel/NNP Krogsoeter/NNP et/VBD al/JJ
+1994/CD and/CC the/DT adaptive/JJ toolbar/NN Debevc/NNP et/VB al/JJ
+1996/CD both/DT with/IN mixed/JJ user/NN testing/NN results/NNS
+This/DT research/NN was/VBD conducted/VBN over/IN 10/CD years/NNS ago/RB but/CC has/VBZ not/RB been/VBN commercialized/VBN
+It/PRP has/VBZ recently/RB resurfaced/VBN in/IN the/DT research/NN community/NN Lim/NNP et/VB al/JJ
+2005/CD Miah/NNP et/VB al/JJ
+1997/CD suggesting/VBG that/IN further/JJ exploration/NN of/IN mixed/JJ initiative/NN interaction/NN is/VBZ underway/RB
+Key/NNP aspects/NNS of/IN ongoing/JJ research/NN will/MD be/VB to/TO inform/VB how/WRB and/CC when/WRB to/TO provide/VB personalization/NN suggestions/NNS
+In/IN terms/NNS of/IN when/WRB we/PRP know/VBP from/IN the/DT current/JJ study/NN that/IN there/EX was/VBD both/DT a/DT strong/JJ initial/JJ trigger/NN to/TO add/VB functions/NNS and/CC a/DT need/NN to/TO amortize/VB the/DT cost/NN of/IN customizing/VBG an/DT immediately/RB needed/VBN function/NN by/IN at/IN the/DT same/JJ time/NN adding/VBG functions/NNS that/WDT are/VBP expected/VBN to/TO be/VB used/VBN in/IN the/DT future/NN
+These/DT trigger/NN points/NNS would/MD be/VB naturally/RB occuring/VBG user/NN behaviors/NNS upon/IN which/WDT user/NN assisted/VBD personalization/NN research/NN could/MD build/VB
+Other/JJ Scenarios/NNS for/IN Multiple/NNP Interfaces/NNP
+We/PRP believe/VBP the/DT concept/NN of/IN multiple/JJ interfaces/NNS has/VBZ potential/JJ beyond/IN the/DT level/NN structured/JJ design/NN seen/VBN today/NN in/IN some/DT commercial/JJ applications/NNS
+A/DT possible/JJ scenario/NN of/IN use/NN for/IN multiple/JJ interfaces/NNS is/VBZ to/TO support/VB users/NNS making/VBG the/DT transition/NN to/TO a/DT new/JJ version/NN of/IN an/DT application/NN for/IN example/NN MSW2K/NNP could/MD include/VB the/DT MSW/NNP 97/CD interface/NN
+Often/RB users/NNS delay/VBP upgrading/VBG their/PRP$ software/NN because/IN of/IN the/DT time/NN required/VBN to/TO learn/VB a/DT new/JJ version/NN
+By/IN allowing/VBG users/NNS to/TO continue/VB to/TO work/VB in/IN their/PRP$ old/JJ interface/NN with/IN single/JJ button/NN access/NN to/TO a/DT new/JJ interface/NN users/NNS would/MD be/VB able/JJ to/TO transition/NN at/IN a/DT self/NN directed/VBD pace/NN
+Multiple/JJ interfaces/NNS might/MD also/RB be/VB used/VBN to/TO mimic/VB a/DT competitor/NN s/NNS interface/VBP in/IN the/DT hopes/NNS of/IN attracting/VBG new/JJ customers/NNS for/IN example/NN MSWord/NNP could/MD offer/VB the/DT full/JJ interface/NN of/IN a/DT different/JJ word/NN processor/NN such/JJ as/IN WordPerfect/NNP or/CC vice/NN versa/NN with/IN a/DT single/JJ button/NN click/NN in/IN order/NN to/TO support/VB users/NNS making/VBG the/DT transition/NN to/TO a/DT new/JJ product/NN
+In/IN all/DT three/CD scenarios/NNS help/VBP facilities/NNS could/MD take/VB advantage/NN of/IN the/DT fact/NN that/IN both/DT interfaces/NNS are/VBP accessible/JJ to/TO show/VB the/DT user/NN how/WRB functions/NNS in/IN one/CD interface/NN map/NN to/TO functions/NNS in/IN the/DT second/JJ interface/NN
+This/DT is/VBZ a/DT good/JJ example/NN of/IN how/WRB the/DT adaptable/JJ nature/NN of/IN a/DT multiple/JJ interface/NN design/NN leaves/VBZ the/DT user/NN more/RBR in/IN control/NN of/IN the/DT interface/NN
+We/PRP believe/VBP this/DT is/VBZ especially/RB important/JJ during/IN critical/JJ transitions/NNS such/JJ as/IN from/IN novice/NN to/TO experienced/JJ user/NN from/IN one/CD version/NN of/IN a/DT product/NN to/TO the/DT next/JJ and/CC from/IN one/CD product/NN to/TO a/DT competing/VBG or/CC replacement/NN product/NN
+There/EX are/VBP of/IN course/NN other/JJ interface/NN differences/NNS beyond/IN menus/NNS and/CC toolbars/NNS that/WDT need/VBP to/TO be/VB considered/VBN for/IN the/DT multiple/JJ interface/NN paradigm/NN
+This/DT too/RB is/VBZ an/DT area/NN for/IN future/JJ work/NN
+
